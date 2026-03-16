@@ -230,6 +230,9 @@ a {
   z-index: 1;
   max-width: 600px;
   padding: 0 1rem;
+  margin-left: auto;
+  margin-right: 2rem;
+  text-align: right;
 }
 
 /* Style headings and paragraphs inside overlap layers */
