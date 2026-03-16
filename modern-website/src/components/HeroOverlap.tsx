@@ -22,8 +22,9 @@ const HeroOverlap: React.FC = () => {
       <div className="overlap-layer layer-one">
         <img src={ShriMataji} alt="Shri Mataji" className="overlap-image" />
         <div className="layer-content">
-          <h1>Erlebe Sahaja Yoga</h1>
+          <h1>Erlebe Sahaja Yoga</h1>
           <p>Entdecke die Freude der spontanen Meditation.</p>
+          <button className="explore-btn">🌟 Jetzt Erkunden ✨</button>
         </div>
       </div>
       {/* Second layer: lotus flower */}
@@ -32,6 +33,7 @@ const HeroOverlap: React.FC = () => {
         <div className="layer-content">
           <h1>Finde deine innere Ruhe</h1>
           <p>Begleite uns in München und lerne mehr.</p>
+          <button className="explore-btn">🧘 Jetzt Erkunden 🌸</button>
         </div>
       </div>
     </section>

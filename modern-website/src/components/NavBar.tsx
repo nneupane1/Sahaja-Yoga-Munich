@@ -18,28 +18,22 @@ const NavBar: React.FC = () => {
             <a href="#home">Home</a>
           </li>
           <li className="nav-item-with-dropdown">
-            <a href="#aktuelles">Aktuelles / Kontakt <span className="dropdown-arrow">▼</span></a>
-          </li>
-          <li className="nav-item-with-dropdown">
             <a href="#warum">Warum meditieren <span className="dropdown-arrow">▼</span></a>
-          </li>
-          <li className="nav-item-with-dropdown">
-            <a href="#wie">Wie meditieren <span className="dropdown-arrow">▼</span></a>
-          </li>
-          <li className="nav-item-with-dropdown">
-            <a href="#wo">Wo meditieren <span className="dropdown-arrow">▼</span></a>
           </li>
           <li className="nav-item-with-dropdown">
             <a href="#sy-kultur">SY-Kultur <span className="dropdown-arrow">▼</span></a>
           </li>
           <li className="nav-item-with-dropdown">
+            <a href="#ressourcen">Ressourcen <span className="dropdown-arrow">▼</span></a>
+          </li>
+          <li>
+            <a href="#organisation">Organisation</a>
+          </li>
+          <li className="nav-item-with-dropdown">
             <a href="#blog">Blog <span className="dropdown-arrow">▼</span></a>
           </li>
           <li className="nav-item-with-dropdown">
-            <a href="#ressourcen">Ressourcen <span className="dropdown-arrow">▼</span></a>
-          </li>
-          <li className="nav-item-with-dropdown">
-            <a href="#organisation">Organisation <span className="dropdown-arrow">▼</span></a>
+            <a href="#kontakt">Kontakt <span className="dropdown-arrow">▼</span></a>
           </li>
         </ul>
       </div>
