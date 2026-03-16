@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit",
+    "lint": "tsc --noEmit && echo 'Type checking passed'",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css}\" index.html"
   },
   "dependencies": {
     "react": "^18.2.0",

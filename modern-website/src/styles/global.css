@@ -45,9 +45,16 @@ body {
   color: var(--text-color);
   line-height: 1.6;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
-/* Headings use Josefin Sans for an approachable and elegant feel【300161126228262†L152-L155】. */
+#root {
+  display: block;
+}
+
+main {
+  display: block;
+}
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Josefin Sans', sans-serif;
 }

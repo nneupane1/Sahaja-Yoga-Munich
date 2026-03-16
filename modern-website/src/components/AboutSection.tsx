@@ -1,5 +1,6 @@
 import React from 'react';
 import useScrollReveal from '../hooks/useScrollReveal';
+import chakraImg from '../assets/chakra.png';
 
 /**
  * AboutSection provides a short description of the project. It fades into view
@@ -8,12 +9,6 @@ import useScrollReveal from '../hooks/useScrollReveal';
 const AboutSection: React.FC = () => {
   // Observe the about section container for reveal effect
   useScrollReveal('.about-section', 'reveal', 0.2);
-
-  // Import the chakra illustration. Using import inside the function ensures the
-  // bundler includes the asset and provides an optimized URL at build time.
-  // The image depicts a pastel‑coloured chakra symbol which reinforces the
-  // themes of balance and energy without depicting any real person.
-  const chakraImg = require('../assets/chakra.png');
 
   return (
     <section id="about" className="about-section">
