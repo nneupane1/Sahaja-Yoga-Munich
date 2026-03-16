@@ -15,19 +15,31 @@ const NavBar: React.FC = () => {
         {/* Primary navigation links */}
         <ul className="nav-links">
           <li>
-            <a href="#intro">Was ist Sahaja Yoga?</a>
+            <a href="#home">Home</a>
           </li>
           <li>
-            <a href="#features">Merkmale</a>
+            <a href="#aktuelles">Aktuelles / Kontakt</a>
           </li>
           <li>
-            <a href="#sessions">Sitzungen</a>
+            <a href="#warum">Warum meditieren</a>
           </li>
           <li>
-            <a href="#about">Über uns</a>
+            <a href="#wie">Wie meditieren</a>
           </li>
           <li>
-            <a href="#contact">Kontakt</a>
+            <a href="#wo">Wo meditieren</a>
+          </li>
+          <li>
+            <a href="#sy-kultur">SY-Kultur</a>
+          </li>
+          <li>
+            <a href="#blog">Blog</a>
+          </li>
+          <li>
+            <a href="#ressourcen">Ressourcen</a>
+          </li>
+          <li>
+            <a href="#organisation">Organisation</a>
           </li>
         </ul>
       </div>
