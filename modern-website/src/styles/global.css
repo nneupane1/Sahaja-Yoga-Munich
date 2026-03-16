@@ -104,11 +104,23 @@ a {
   text-decoration: none;
   color: var(--text-color);
   font-weight: 500;
+  font-size: 0.85rem;
   transition: color 0.3s ease;
 }
 
 .navbar .nav-links li a:hover {
   color: var(--accent-color);
+}
+
+.dropdown-arrow {
+  font-size: 0.6rem;
+  margin-left: 0.3rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.navbar .nav-links li.nav-item-with-dropdown a:hover .dropdown-arrow {
+  transform: translateY(2px);
 }
 
 /* Hero section styles */
