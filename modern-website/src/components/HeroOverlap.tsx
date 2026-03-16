@@ -1,5 +1,5 @@
 import React from 'react';
-import hero1 from '../assets/hero1.png';
+import ShriMataji from '../assets/ShriMataji.jpg';
 import hero2 from '../assets/hero2.png';
 import useScrollReveal from '../hooks/useScrollReveal';
 
@@ -18,9 +18,9 @@ const HeroOverlap: React.FC = () => {
 
   return (
     <section className="hero-overlap">
-      {/* First layer: meditation silhouette */}
+      {/* First layer: Shri Mataji meditation silhouette */}
       <div className="overlap-layer layer-one">
-        <img src={hero1} alt="Meditating person" className="overlap-image" />
+        <img src={ShriMataji} alt="Shri Mataji" className="overlap-image" />
         <div className="layer-content">
           <h1>Erlebe Sahaja Yoga</h1>
           <p>Entdecke die Freude der spontanen Meditation.</p>
