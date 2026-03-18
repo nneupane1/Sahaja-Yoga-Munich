@@ -1,52 +1,77 @@
 import React from 'react';
-import useScrollReveal from '../hooks/useScrollReveal';
-
-interface Feature {
-  title: string;
-  description: string;
-  icon: string;
-}
-
-const features: Feature[] = [
-  {
-    title: 'Mühelose Meditation',
-    description:
-      'Erreiche Yoga spontan durch Sahaja Yoga Meditation – keine Asanas, Matten oder spezielle Kleidung erforderlich.',
-    icon: '🧘'
-  },
-  {
-    title: 'Kostenlos',
-    description:
-      'Alle Sitzungen sind kostenlos und werden von engagierten Ehrenamtlichen des Sahaja Yoga Kultur e.V. geleitet.',
-    icon: '🎁'
-  },
-  {
-    title: 'Offen für alle',
-    description:
-      'Anfänger und Fortgeschrittene sind gleichermaßen willkommen. Komm jederzeit dazu und entdecke gemeinsam inneren Frieden.',
-    icon: '🌍'
-  }
-];
+import { useLocale } from '../context/LocaleContext';
 
 /**
- * FeaturesSection lists the key selling points of the project. Each card
- * animates into view as the user scrolls down the page.
+ * Key benefits of the Sahaja Yoga approach.
  */
 const FeaturesSection: React.FC = () => {
-  // Observe feature cards for reveal animation
-  useScrollReveal('.feature-card', 'reveal', 0.2);
+  const { locale } = useLocale();
+  const copy =
+    locale === 'de'
+      ? {
+          title: 'Merkmale',
+          features: [
+            {
+              title: 'Mühelose Meditation',
+              description:
+                'Innere Ruhe kann ohne komplizierte Vorbereitung, äußere Leistung oder geistigen Druck entstehen.',
+              icon: '🧘'
+            },
+            {
+              title: 'Kostenfrei',
+              description:
+                'Alle Treffen werden ehrenamtlich getragen und bleiben offen zugänglich, ohne Gebühren oder Verpflichtungen.',
+              icon: '🎁'
+            },
+            {
+              title: 'Offen für alle',
+              description:
+                'Anfänger und Fortgeschrittene können gleichermaßen teilnehmen und ohne Hürde in die Praxis einsteigen.',
+              icon: '🌍'
+            }
+          ]
+        }
+      : {
+          title: 'Key Qualities',
+          features: [
+            {
+              title: 'Effortless Meditation',
+              description:
+                'Inner quiet can emerge without complicated preparation, outer performance or mental strain.',
+              icon: '🧘'
+            },
+            {
+              title: 'Free of Charge',
+              description:
+                'All sessions are offered voluntarily and remain open to everyone without fees or obligation.',
+              icon: '🎁'
+            },
+            {
+              title: 'Open to Everyone',
+              description:
+                'Beginners and experienced meditators alike can join and enter the practice without barriers.',
+              icon: '🌍'
+            }
+          ]
+        };
 
   return (
-    <section id="features" className="features-section">
-      <div className="container">
-        <h2>Merkmale</h2>
-        <div className="features-grid">
-          {features.map(feature => (
-            <div key={feature.title} className="feature-card">
-              <div className="icon">{feature.icon}</div>
-              <h3>{feature.title}</h3>
-              <p>{feature.description}</p>
-            </div>
+    <section id="features" className="section-band bg-[#dff4ff]">
+      <div className="section-shell">
+        <div id="science-spirituality" aria-hidden="true" className="relative -top-24" />
+        <div>
+          <h2 className="text-center text-4xl sm:text-5xl">{copy.title}</h2>
+        </div>
+
+        <div className="mt-12 grid gap-8 md:grid-cols-3">
+          {copy.features.map(feature => (
+            <article key={feature.title} className="card-soft flex h-full flex-col items-center p-8 text-center">
+              <div className="text-4xl">{feature.icon}</div>
+              <h3 className="mt-5 text-balance text-[1.7rem]">{feature.title}</h3>
+              <p className="mt-4 max-w-[18rem] flex-1 text-[1.02rem] leading-8 text-[#333333]">
+                {feature.description}
+              </p>
+            </article>
           ))}
         </div>
       </div>

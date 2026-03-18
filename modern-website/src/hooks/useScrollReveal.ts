@@ -22,6 +22,7 @@ export default function useScrollReveal(
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add(animationClass);
+            observer.unobserve(entry.target);
           }
         });
       },
@@ -31,7 +32,7 @@ export default function useScrollReveal(
     elements.forEach(el => observer.observe(el));
 
     return () => {
-      elements.forEach(el => observer.unobserve(el));
+      observer.disconnect();
     };
   }, [selector, animationClass, threshold]);
 }

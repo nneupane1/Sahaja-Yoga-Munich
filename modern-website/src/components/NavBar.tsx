@@ -1,41 +1,241 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import shaktiYantram from '../assets/shaktiyantram-clean.png';
+import kundaliniIcon from '../assets/kundalini-clean.png';
+import { useLocale } from '../context/LocaleContext';
+import { topicPages } from '../content/topicPages';
+import { topicPagesEn } from '../content/topicPagesEn';
+
+type NavItem = {
+  label: string;
+  to: string;
+  dropdown?: Array<{ label: string; to: string }>;
+  kind?: 'default' | 'button';
+};
 
 /**
- * A simple navigation bar. It remains sticky at the top of the page and provides
- * anchor links to the different sections of the landing page.
+ * Sticky navigation bar with route and hash links.
  */
 const NavBar: React.FC = () => {
+  const { locale, setLocale } = useLocale();
+  const pages = locale === 'de' ? topicPages : topicPagesEn;
+  const copy =
+    locale === 'de'
+      ? {
+          home: 'Startseite',
+          brand: 'Sahaja Yoga München',
+          shriMataji: 'Shri Mataji',
+          shriDropdown: ['Biografie', 'Geistige Arbeit', 'Zeitleiste', 'Vermächtnis'],
+          blog: 'Blog',
+          contact: 'Kontakt'
+        }
+      : {
+          home: 'Home',
+          brand: 'Sahaja Yoga München',
+          shriMataji: 'Shri Mataji',
+          shriDropdown: ['Biography', 'Spiritual Work', 'Timeline', 'Legacy'],
+          blog: 'Blog',
+          contact: 'Contact'
+        };
+
+  const links: NavItem[] = [
+    { label: copy.home, to: '/' },
+    {
+      label: copy.shriMataji,
+      to: '/shri-mataji',
+      dropdown: [
+        { label: copy.shriDropdown[0], to: '/shri-mataji#lebensweg' },
+        { label: copy.shriDropdown[1], to: '/shri-mataji#geistige-arbeit' },
+        { label: copy.shriDropdown[2], to: '/shri-mataji#zeitleiste' },
+        { label: copy.shriDropdown[3], to: '/shri-mataji#vermaechtnis' }
+      ]
+    },
+    {
+      label: pages.kundalini.navLabel,
+      to: pages.kundalini.route,
+      dropdown: pages.kundalini.sections.map(section => ({
+        label: section.navLabel,
+        to: section.to
+      }))
+    },
+    {
+      label: pages.selfRealization.navLabel,
+      to: pages.selfRealization.route,
+      dropdown: pages.selfRealization.sections.map(section => ({
+        label: section.navLabel,
+        to: section.to
+      }))
+    },
+    {
+      label: pages.science.navLabel,
+      to: pages.science.route,
+      dropdown: pages.science.sections.map(section => ({
+        label: section.navLabel,
+        to: section.to
+      }))
+    },
+    {
+      label: pages.culture.navLabel,
+      to: pages.culture.route,
+      dropdown: pages.culture.sections.map(section => ({
+        label: section.navLabel,
+        to: section.to
+      }))
+    },
+    { label: copy.blog, to: '/blog' },
+    { label: copy.contact, to: '/#contact', kind: 'button' }
+  ];
+
   return (
-    <nav className="navbar">
-      <div className="container">
-        {/* Branding */}
-        <a href="#" className="logo">
-          Sahaja Yoga Munich
-        </a>
-        {/* Primary navigation links */}
-        <ul className="nav-links">
-          <li>
-            <a href="#home">Home</a>
-          </li>
-          <li className="nav-item-with-dropdown">
-            <a href="#warum">Warum meditieren <span className="dropdown-arrow">▼</span></a>
-          </li>
-          <li className="nav-item-with-dropdown">
-            <a href="#sy-kultur">SY-Kultur <span className="dropdown-arrow">▼</span></a>
-          </li>
-          <li className="nav-item-with-dropdown">
-            <a href="#ressourcen">Ressourcen <span className="dropdown-arrow">▼</span></a>
-          </li>
-          <li>
-            <a href="#organisation">Organisation</a>
-          </li>
-          <li className="nav-item-with-dropdown">
-            <a href="#blog">Blog <span className="dropdown-arrow">▼</span></a>
-          </li>
-          <li className="nav-item-with-dropdown">
-            <a href="#kontakt">Kontakt <span className="dropdown-arrow">▼</span></a>
-          </li>
-        </ul>
+    <nav className="sticky top-0 z-50 bg-[#bfe4f8]/95 shadow-[0_1px_6px_rgba(74,113,143,0.12)] backdrop-blur">
+      <div className="flex w-full items-center gap-9 px-4 py-[0.875rem] sm:px-6 lg:px-8">
+        <div className="flex shrink-0 items-center">
+          <Link
+            to="/"
+            className="flex shrink-0 items-center gap-3.5 whitespace-nowrap text-[1.16rem] font-bold text-slate-800"
+          >
+            <span className="-my-[0.875rem] -translate-y-px flex shrink-0 items-center bg-[#bfe4f8]">
+              <img
+                src={shaktiYantram}
+                alt="Shakti Yantram"
+                className="animate-yantram-spin h-[5.05rem] w-[5.05rem] object-contain drop-shadow-[0_8px_14px_rgba(179,93,76,0.14)]"
+              />
+            </span>
+            <span className="ml-1.5 translate-y-px flex items-center gap-1 uppercase">
+              <span>Sahaja Yoga</span>
+              <span className="-ml-6 relative inline-block h-0 w-[4.84rem] shrink-0 overflow-visible align-middle">
+                <img
+                  src={kundaliniIcon}
+                  alt="Kundalini"
+                  className="absolute left-0 top-1/2 h-[4.84rem] w-[4.84rem] -translate-y-[56%] object-contain opacity-100 contrast-125 saturate-125 drop-shadow-[0_10px_18px_rgba(179,93,76,0.24)]"
+                />
+              </span>
+              <span className="-ml-5">München</span>
+            </span>
+          </Link>
+        </div>
+
+        <div className="ml-[5.175rem] overflow-visible">
+          <div className="flex shrink-0 items-center gap-[1.45rem] whitespace-nowrap text-[0.97rem] font-normal text-slate-800">
+            {links.map(link => {
+              const hasDropdown = Boolean(link.dropdown?.length);
+              const isButton = link.kind === 'button';
+              const isHome = link.to === '/';
+              const isCompressedGapItem = [
+                '/shri-mataji',
+                pages.kundalini.route,
+                pages.selfRealization.route,
+                pages.science.route,
+                pages.culture.route
+              ].includes(link.to);
+              const isReducedSizeItem = [
+                '/shri-mataji',
+                pages.kundalini.route,
+                pages.selfRealization.route,
+                pages.science.route,
+                pages.culture.route,
+                '/blog'
+              ].includes(link.to);
+              const isSlightlyRaisedItem = [
+                '/shri-mataji',
+                pages.kundalini.route,
+                pages.selfRealization.route,
+                pages.science.route,
+                pages.culture.route,
+                '/blog',
+                '/#contact'
+              ].includes(link.to);
+              const showCaret = !isButton && hasDropdown && link.to !== '/';
+
+              return (
+                <div
+                  key={link.label}
+                  className={`relative shrink-0 ${hasDropdown ? 'group' : ''} hover:z-[70]`}
+                >
+                  <Link
+                    to={link.to}
+                    className={
+                      isButton
+                        ? 'inline-flex shrink-0 translate-y-px transform-gpu items-center rounded-full bg-[#c8715f] px-[0.8rem] py-[0.3rem] text-[0.72rem] font-bold leading-none text-white shadow-[0_12px_24px_rgba(168,88,69,0.24)] transition duration-200 hover:z-[70] hover:scale-[1.04] hover:bg-[#d7795d]'
+                        : `flex shrink-0 ${
+                            showCaret ? 'translate-y-[7px] ' : isSlightlyRaisedItem ? 'translate-y-px ' : ''
+                          }transform-gpu flex-col items-center justify-center rounded-[1rem] ${
+                            isCompressedGapItem ? 'px-[0.3125rem] ' : 'px-[0.5625rem] '
+                          }py-1 text-center leading-[1.15] transition duration-200 hover:z-[70] hover:scale-[1.05] hover:bg-[rgba(215,121,93,0.11)] hover:font-bold hover:text-[#d7795d] ${
+                            isReducedSizeItem ? 'text-[0.91rem] ' : ''
+                          }${
+                            isHome ? 'text-[#b35d4c] font-medium' : ''
+                          }`
+                    }
+                  >
+                    <span className="whitespace-nowrap">{link.label}</span>
+                    {showCaret && (
+                      <span
+                        aria-hidden="true"
+                        className="-translate-y-px inline-flex h-3 w-3 items-center justify-center text-[#d7795d] transition duration-200 group-hover:text-[#d7795d]"
+                      >
+                        <svg viewBox="0 0 12 12" fill="none" className="h-3 w-3">
+                          <path
+                            d="M2.5 4.25 6 7.75 9.5 4.25"
+                            stroke="currentColor"
+                            strokeWidth="1.35"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </span>
+                    )}
+                  </Link>
+
+                  {hasDropdown && (
+                    <div className="pointer-events-none absolute left-1/2 top-full z-50 hidden min-w-[16rem] -translate-x-1/2 pt-4 group-hover:block group-hover:pointer-events-auto">
+                      <div className="rounded-[1.4rem] border border-[#b35d4c]/24 bg-[rgba(255,241,233,0.82)] p-3 shadow-[0_20px_50px_rgba(74,113,143,0.16)] backdrop-blur">
+                        {link.dropdown?.map(item => (
+                          <Link
+                            key={item.to}
+                            to={item.to}
+                            className="relative flex min-h-[3.15rem] items-center rounded-xl px-4 py-3 text-sm leading-snug text-slate-700 transition duration-200 hover:z-[70] hover:scale-[1.04] hover:bg-[rgba(215,121,93,0.11)] hover:font-bold hover:text-[#d7795d]"
+                          >
+                            {item.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+
+            <div className="-ml-3 flex translate-y-[3px] items-center gap-1">
+              <div className="flex flex-col items-center gap-px">
+                <button
+                  type="button"
+                  onClick={() => setLocale('de')}
+                  aria-label="Deutsch"
+                  className={`inline-flex h-[1.15rem] w-[1.15rem] items-center justify-center rounded-full border text-[0.48rem] leading-none shadow-[0_6px_14px_rgba(72,110,140,0.08)] transition ${
+                    locale === 'de'
+                      ? 'border-[#b35d4c]/30 bg-[rgba(255,250,246,0.95)] text-[#b35d4c]'
+                      : 'border-[#b35d4c]/18 bg-white/75 text-slate-500 hover:border-[#b35d4c]/30 hover:text-[#b35d4c]'
+                  }`}
+                >
+                  🇩🇪
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setLocale('en')}
+                  aria-label="English"
+                  className={`inline-flex h-[1.15rem] w-[1.15rem] items-center justify-center rounded-full border text-[0.48rem] leading-none shadow-[0_6px_14px_rgba(72,110,140,0.08)] transition ${
+                    locale === 'en'
+                      ? 'border-[#b35d4c]/30 bg-[rgba(255,250,246,0.95)] text-[#b35d4c]'
+                      : 'border-[#b35d4c]/18 bg-white/75 text-slate-500 hover:border-[#b35d4c]/30 hover:text-[#b35d4c]'
+                  }`}
+                >
+                  🇬🇧
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </nav>
   );

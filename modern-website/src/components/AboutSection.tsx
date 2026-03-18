@@ -1,33 +1,48 @@
 import React from 'react';
-import useScrollReveal from '../hooks/useScrollReveal';
 import chakraImg from '../assets/chakra.png';
+import { useLocale } from '../context/LocaleContext';
 
 /**
- * AboutSection provides a short description of the project. It fades into view
- * when scrolled into the viewport.
+ * About the Munich center and Sahaja Yoga practice.
  */
 const AboutSection: React.FC = () => {
-  // Observe the about section container for reveal effect
-  useScrollReveal('.about-section', 'reveal', 0.2);
+  const { locale } = useLocale();
+  const copy =
+    locale === 'de'
+      ? {
+          title: 'Über Sahaja Yoga',
+          alt: 'Chakra-Symbol',
+          bodyOne:
+            'Sahaja Yoga ist eine natürliche Meditation, die hilft, die Verbindung mit dem inneren Selbst unmittelbar zu erfahren. Im Mittelpunkt steht das Erwachen der Kundalini und die Verfeinerung des feinstofflichen Systems.',
+          bodyTwo:
+            'Wenn diese Energie erwacht, klärt und harmonisiert sie Chakren und Kanäle und bringt mehr Frieden, Balance und Klarheit in den Alltag. Unsere Treffen werden ehrenamtlich getragen und bleiben immer kostenlos.'
+        }
+      : {
+          title: 'About Sahaja Yoga',
+          alt: 'Chakra symbol',
+          bodyOne:
+            'Sahaja Yoga is a natural form of meditation that helps people experience a living connection with the inner Self. At its heart lies the awakening of Kundalini and the refinement of the subtle system.',
+          bodyTwo:
+            'When this energy awakens, it clarifies and harmonises the chakras and channels, bringing more peace, balance and clarity into daily life. Our sessions are offered voluntarily and always remain free of charge.'
+        };
 
   return (
-    <section id="about" className="about-section">
-      <div className="container about-content">
-        <div className="about-image">
-          <img src={chakraImg} alt="Chakra symbol" />
-        </div>
-        <div className="about-text">
-        <h2>Über Sahaja Yoga</h2>
-          <p>
-            Sahaja Yoga ist eine einfache, altbewährte Meditationstechnik, die dir hilft, Yoga – die
-            Vereinigung mit deinem inneren Selbst – mühelos zu erreichen. Gegründet von
-            Shri Mataji Nirmala Devi, wird Sahaja Yoga weltweit praktiziert und basiert auf dem
-            Erwachen einer heilenden Energie in dir, der Kundalini. Wenn sie erweckt wird, reinigt
-            und balanciert diese Energie das subtile System aus Chakren und Kanälen und bringt
-            tiefen Frieden und Ausgeglichenheit in den Alltag. Unsere Kurse werden von erfahrenen
-            ehrenamtlichen Praktizierenden geleitet und sind immer kostenlos. Du brauchst keine
-            Vorkenntnisse, spezielle Kleidung oder Matten – komm einfach vorbei und erlebe es selbst.
-          </p>
+    <section id="about" className="section-band bg-[#e9f7ff]">
+      <div className="section-shell">
+        <div id="culture-of-spirit" aria-hidden="true" className="relative -top-24" />
+        <div className="card-soft reveal-ready flex flex-col items-center gap-10 p-8 md:flex-row md:items-start md:p-10">
+          <div className="w-full max-w-[300px] shrink-0 text-center">
+            <img src={chakraImg} alt={copy.alt} className="mx-auto w-full max-w-[280px]" />
+          </div>
+          <div className="flex-1">
+            <h2 className="text-center text-4xl sm:text-left sm:text-5xl">{copy.title}</h2>
+            <p className="mt-6 text-[1.05rem] leading-8 text-[#333333]">
+              {copy.bodyOne}
+            </p>
+            <p className="mt-5 text-[1.05rem] leading-8 text-[#333333]">
+              {copy.bodyTwo}
+            </p>
+          </div>
         </div>
       </div>
     </section>
