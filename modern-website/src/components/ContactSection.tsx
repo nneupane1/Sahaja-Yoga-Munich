@@ -27,6 +27,9 @@ const ContactSection: React.FC = () => {
           title: 'Nimm Kontakt auf',
           subtitle:
             'Fragen, Anliegen oder Interesse an einer Einführung? Wir freuen uns, von dir zu hören.',
+          sessionsCardTitle: 'Zu den Meditationszeiten in München',
+          sessionsCardBody: 'Hier findest du alle regelmäßigen Treffen, Zeiten und den Veranstaltungsort.',
+          sessionsCardCta: 'Hier klicken',
           name: 'Name',
           email: 'E-Mail',
           subject: 'Betreff',
@@ -47,6 +50,9 @@ const ContactSection: React.FC = () => {
           title: 'Get in Touch',
           subtitle:
             "Have questions, would like an introduction, or want to join a meditation session? We'd love to hear from you.",
+          sessionsCardTitle: 'See meditation times in Munich',
+          sessionsCardBody: 'Open the full schedule, venue details and weekly meeting information.',
+          sessionsCardCta: 'Click here',
           name: 'Name',
           email: 'Email',
           subject: 'Subject',
@@ -105,6 +111,33 @@ const ContactSection: React.FC = () => {
           <p className="mt-5 text-lg leading-8 text-slate-600 sm:text-[1.28rem]">
             {copy.subtitle}
           </p>
+          <a
+            href="#sessions"
+            className="card-soft warm-hover-glow group mx-auto mt-7 flex max-w-xl items-center justify-between gap-4 rounded-[1.5rem] px-5 py-4 text-left transition duration-300 hover:-translate-y-1 sm:px-6"
+          >
+            <div className="flex min-w-0 items-center gap-4">
+              <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#d8a08d]/34 bg-[rgba(255,247,241,0.96)] text-xl text-[#b35d4c] shadow-[0_10px_20px_rgba(146,92,79,0.08)]">
+                ↑
+              </span>
+              <div className="min-w-0">
+                <p className="text-[0.82rem] font-semibold uppercase tracking-[0.22em] text-[#b56757]">
+                  {copy.sessionsCardCta}
+                </p>
+                <h3 className="mt-1 text-xl leading-tight text-[#6c473d] sm:text-[1.45rem]">
+                  {copy.sessionsCardTitle}
+                </h3>
+                <p className="mt-1 text-sm leading-6 text-slate-600 sm:text-[0.96rem]">
+                  {copy.sessionsCardBody}
+                </p>
+              </div>
+            </div>
+            <span
+              aria-hidden="true"
+              className="shrink-0 text-2xl text-[#b35d4c] transition duration-300 group-hover:translate-x-0.5"
+            >
+              ↗
+            </span>
+          </a>
         </div>
 
         <div className="card-soft reveal-ready mx-auto mt-14 max-w-5xl rounded-[2.2rem] p-6 sm:p-10 lg:p-12">
