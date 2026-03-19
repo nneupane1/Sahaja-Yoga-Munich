@@ -13,6 +13,7 @@ import charlieImg from '../assets/charlie.png';
 import motherImg from '../assets/mother.jpg';
 import mother1Img from '../assets/mother1.jpg';
 import mother3Img from '../assets/mother3.png';
+import villageImg from '../assets/village.jpg';
 import subtleSystemDeImg from '../assets/sahajayogade/das-subtile-system-grafik.jpg';
 import channelsDeImg from '../assets/sahajayogade/Channels-for-SY-website-de-2048x977-2-1024x489.png';
 import leftChannelDeImg from '../assets/sahajayogade/nadis-inside-img-002.jpg';
@@ -610,6 +611,7 @@ const articlesDe: Record<string, KnowledgeArticle> = {
     intro:
       'Meditation wird nicht als starre Routine, sondern als lebendige und flexible Praxis beschrieben. Nach der ersten Selbstverwirklichung kann sie zuhause, morgens oder abends, in Stille oder mit sanfter Unterstützung vertieft werden und gewinnt vor allem durch Regelmäßigkeit an Kraft.',
     heroImage: mother3Img,
+    heroImageMode: 'contain',
     heroImageAlt: 'Meditationspraxis zuhause',
     heroCaption:
       'Die tägliche Praxis ist der Ort, an dem aus einem ersten inneren Durchbruch eine tragfähige Gewohnheit der Stille wird.',
@@ -631,7 +633,8 @@ const articlesDe: Record<string, KnowledgeArticle> = {
           description:
             'Empfohlen wird ein ruhiger Ort zuhause; auch etwas Natur im Raum oder das Meditieren im Freien wird als hilfreich beschrieben. Viele meditieren morgens nach dem Aufwachen und abends vor dem Schlafen.',
           note: 'Als grober Rhythmus werden etwa zehn bis zwanzig Minuten genannt, doch die Praxis bleibt bewusst flexibel.',
-          image: selfRealizationImg,
+          image: lotusImg,
+          imageMode: 'contain',
           alt: 'Meditation zuhause'
         },
         {
@@ -640,7 +643,8 @@ const articlesDe: Record<string, KnowledgeArticle> = {
           description:
             'Man sitzt bequem, entspannt sich, hebt die innere Energie und lässt dann die Gedanken vorbeiziehen, statt gegen sie anzukämpfen. Die Energie soll den Hauptteil der inneren Arbeit übernehmen.',
           note: 'Empfindungen an den Handflächen oder am Scheitel können mit der Zeit deutlicher werden.',
-          image: thoughtlessImg,
+          image: beeImg,
+          imageMode: 'contain',
           alt: 'Meditation in Stille'
         },
         {
@@ -649,7 +653,8 @@ const articlesDe: Record<string, KnowledgeArticle> = {
           description:
             'Mit der Zeit verfeinert sich die Wahrnehmung des subtilen Systems, und kleine Veränderungen in Aufmerksamkeit, Emotionen und Verhalten werden spürbarer. Gemeinsame Meditation kann diesen Prozess merklich beschleunigen.',
           note: 'Auch unterstützende Techniken wie Fußsoaken oder Affirmationen werden als hilfreiche Ergänzungen genannt.',
-          image: improvedPerceptionImg,
+          image: villageImg,
+          imageMode: 'contain',
           alt: 'Vertiefung durch regelmäßige Meditation'
         }
       ]
@@ -1528,6 +1533,7 @@ const articlesEn: Record<string, KnowledgeArticle> = {
     intro:
       'Meditation is described not as a rigid routine but as a living and flexible practice. After the first Self-Realization it can deepen at home, in the morning or evening, in silence or with gentle support, and it draws much of its strength from regularity.',
     heroImage: lotusImg,
+    heroImageMode: 'contain',
     heroImageAlt: 'Meditation practice at home',
     heroCaption:
       'Daily practice is the place where a first inner breakthrough becomes a stable habit of silence.',
@@ -1549,7 +1555,8 @@ const articlesEn: Record<string, KnowledgeArticle> = {
           description:
             'A quiet place at home is recommended; a touch of nature in the room or meditating outdoors is also suggested as beneficial. Many practitioners meditate after waking and again before sleep.',
           note: 'A rough rhythm of ten to twenty minutes is suggested, but the practice remains intentionally flexible.',
-          image: selfRealizationImg,
+          image: lotusImg,
+          imageMode: 'contain',
           alt: 'Meditation at home'
         },
         {
@@ -1558,7 +1565,8 @@ const articlesEn: Record<string, KnowledgeArticle> = {
           description:
             'One sits comfortably, relaxes, raises the inner energy and lets thoughts pass rather than fighting them. The energy is invited to do the deeper work.',
           note: 'Sensations on the palms or at the crown may become clearer over time.',
-          image: thoughtlessImg,
+          image: beeImg,
+          imageMode: 'contain',
           alt: 'Meditation in stillness'
         },
         {
@@ -1567,7 +1575,8 @@ const articlesEn: Record<string, KnowledgeArticle> = {
           description:
             'As meditation becomes regular, subtle perception, attentional control and emotional balance begin to change. Collective meditation is described as a particularly strong accelerator of this process.',
           note: 'Supportive methods such as foot soaking or affirmations are also mentioned as helpful companions.',
-          image: improvedPerceptionImg,
+          image: villageImg,
+          imageMode: 'contain',
           alt: 'Deepening through regular meditation'
         }
       ]
