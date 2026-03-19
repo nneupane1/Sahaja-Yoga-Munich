@@ -14,6 +14,8 @@ import motherImg from '../assets/mother.jpg';
 import mother1Img from '../assets/mother1.jpg';
 import mother3Img from '../assets/mother3.png';
 import villageImg from '../assets/village.jpg';
+import universeImg from '../assets/universe.avif';
+import shriMatajiImg from '../assets/ShriMataji.jpg';
 import subtleSystemDeImg from '../assets/sahajayogade/das-subtile-system-grafik.jpg';
 import channelsDeImg from '../assets/sahajayogade/Channels-for-SY-website-de-2048x977-2-1024x489.png';
 import leftChannelDeImg from '../assets/sahajayogade/nadis-inside-img-002.jpg';
@@ -434,7 +436,8 @@ const articlesDe: Record<string, KnowledgeArticle> = {
           description:
             'Der erste Schritt besteht darin, dass die Aufmerksamkeit aus der Dauerbelastung durch Gedanken, Erinnerungen, Ego und Superego gelöst wird. Dadurch wird sie stiller, fokussierter und gegenwärtiger.',
           note: 'Die Aufmerksamkeit soll nicht länger unruhig zwischen Vergangenheit und Zukunft hin- und herspringen.',
-          image: selfRealizationImg,
+          image: universeImg,
+          imageMode: 'contain',
           alt: 'Selbstverwirklichung als Hebung der Aufmerksamkeit'
         },
         {
@@ -443,7 +446,8 @@ const articlesDe: Record<string, KnowledgeArticle> = {
           description:
             'Die Kundalini steigt durch den zentralen Kanal auf, durchdringt die Chakren und hebt das Feld der Aufmerksamkeit nach oben, statt dass der Mensch es mit Willenskraft erzwingen müsste.',
           note: 'Das Bild des von innen aufgespannten Zeltes dient dazu, diese Ausweitung der Aufmerksamkeit zu erklären.',
-          image: thoughtlessImg,
+          image: lotusImg,
+          imageMode: 'contain',
           alt: 'Aufsteigende innere Energie'
         },
         {
@@ -452,7 +456,8 @@ const articlesDe: Record<string, KnowledgeArticle> = {
           description:
             'Der entscheidende Moment wird dort gesehen, wo die Energie über das Agnya hinaus in Richtung Sahasrara steigt. Hier erscheint Gedankenfreiheit erstmals als reale Erfahrung.',
           note: 'Durch regelmäßige Meditation wird aus diesem Moment eine zunehmend stabilere Bewusstseinslage.',
-          image: improvedPerceptionImg,
+          image: shriMatajiImg,
+          imageMode: 'contain',
           alt: 'Verfeinerte Wahrnehmung'
         }
       ]
@@ -1360,7 +1365,8 @@ const articlesEn: Record<string, KnowledgeArticle> = {
           description:
             'The first change is that attention begins to loosen from the continuous pressure of thoughts, memories, ego and superego. It becomes quieter, more focused and more present.',
           note: 'Attention is no longer meant to keep jumping restlessly between past and future.',
-          image: selfRealizationImg,
+          image: universeImg,
+          imageMode: 'contain',
           alt: 'Self-Realization as lifted attention'
         },
         {
@@ -1369,7 +1375,8 @@ const articlesEn: Record<string, KnowledgeArticle> = {
           description:
             'Kundalini rises through the central channel, pierces the chakras and lifts the field of attention from within, rather than leaving the person to force the process by willpower alone.',
           note: 'The tent-pole image is used to explain this widening and rising of attention.',
-          image: thoughtlessImg,
+          image: lotusImg,
+          imageMode: 'contain',
           alt: 'Rising inner energy'
         },
         {
@@ -1378,7 +1385,8 @@ const articlesEn: Record<string, KnowledgeArticle> = {
           description:
             'The decisive moment is described as the energy moving beyond Agnya toward Sahasrara. There, thoughtless awareness appears as an actual experience rather than a concept.',
           note: 'Regular meditation then turns the first glimpse into something more stable.',
-          image: improvedPerceptionImg,
+          image: shriMatajiImg,
+          imageMode: 'contain',
           alt: 'Refined perception'
         }
       ]
