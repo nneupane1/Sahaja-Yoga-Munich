@@ -411,7 +411,8 @@ const articlesDe: Record<string, KnowledgeArticle> = {
     title: 'Selbstverwirklichung: wie die Aufmerksamkeit in eine höhere Ebene gehoben wird',
     intro:
       'Selbstverwirklichung wird als jener entscheidende Übergang beschrieben, in dem die im dreieckigen Kreuzbein ruhende Kundalini als mütterliche geistige Energie und Kraft des reinen Wunsches erwacht und die Aufmerksamkeit von der ununterbrochenen Belastung durch Gedanken, Ego und Superego entlastet. So wird sie in eine höhere Ebene des Bewusstseins angehoben, und Meditation beginnt nicht als Technik, sondern als tatsächliches inneres Geschehen.',
-    heroImage: beeImg,
+    heroImage: mother3Img,
+    heroImageMode: 'contain',
     heroImageAlt: 'Shri Mataji and Self-Realization',
     heroCaption:
       'Selbstverwirklichung markiert den Moment, in dem Kundalini die Aufmerksamkeit anhebt und Gedankenfreiheit erstmals erfahrbar macht.',
@@ -510,7 +511,7 @@ const articlesDe: Record<string, KnowledgeArticle> = {
     title: 'Gedankenfreie Stille: der vierte Bewusstseinszustand jenseits des Gedankenstroms',
     intro:
       'Gedankenfreie Stille wird ausdrücklich als vierter Bewusstseinszustand beschrieben. Sie ist weder Schlaf noch Traum noch gewöhnliches Wachsein, sondern ein stiller und zugleich hochwacher Zustand, in dem der innere Dialog zurücktritt und das innere Selbst deutlicher hervortritt.',
-    heroImage: lotusImg,
+    heroImage: mother3Img,
     heroImageMode: 'contain',
     heroImageAlt: 'Gedankenfreie Stille',
     heroCaption:
@@ -533,7 +534,8 @@ const articlesDe: Record<string, KnowledgeArticle> = {
           description:
             'Gedankenfreiheit wird als ein Zustand jenseits der drei gewöhnlichen Modi beschrieben. Das Bewusstsein bleibt wach, aber der Mensch ist nicht länger im gewohnten Strom aus innerem Kommentar gefangen.',
           note: 'Stille und Präsenz erscheinen hier zusammen, nicht als Gegensätze.',
-          image: thoughtlessImg,
+          image: lotusImg,
+          imageMode: 'contain',
           alt: 'Gedankenfreie Stille'
         },
         {
@@ -542,7 +544,8 @@ const articlesDe: Record<string, KnowledgeArticle> = {
           description:
             'Die aufsteigende Energie wird als eigentliche Hilfe verstanden. Sie trägt die Aufmerksamkeit über die mentale Ebene hinaus, anstatt dass der Mensch auf derselben Ebene gegen seine Gedanken kämpfen müsste.',
           note: 'Gerade darin liegt der natürliche und spontane Charakter dieser Meditation.',
-          image: selfRealizationImg,
+          image: beeImg,
+          imageMode: 'contain',
           alt: 'Selbstverwirklichung und Gedankenfreiheit'
         },
         {
@@ -551,7 +554,8 @@ const articlesDe: Record<string, KnowledgeArticle> = {
           description:
             'Gedanken und Gefühle werden nicht ausgelöscht, sondern können aus einer ruhigeren inneren Distanz beobachtet werden. Dadurch vermindern sich Zwang, Identifikation und Reaktivität.',
           note: 'Die innere Wahrnehmung richtet sich stärker auf den Fluss des Erlebens als auf seinen ständigen Inhalt.',
-          image: improvedPerceptionImg,
+          image: mother3Img,
+          imageMode: 'contain',
           alt: 'Verfeinerte Wahrnehmung'
         }
       ]
@@ -610,7 +614,7 @@ const articlesDe: Record<string, KnowledgeArticle> = {
     title: 'Meditationspraxis: wie sich die erste Erfahrung zuhause vertieft',
     intro:
       'Meditation wird nicht als starre Routine, sondern als lebendige und flexible Praxis beschrieben. Nach der ersten Selbstverwirklichung kann sie zuhause, morgens oder abends, in Stille oder mit sanfter Unterstützung vertieft werden und gewinnt vor allem durch Regelmäßigkeit an Kraft.',
-    heroImage: mother3Img,
+    heroImage: lotusImg,
     heroImageMode: 'contain',
     heroImageAlt: 'Meditationspraxis zuhause',
     heroCaption:
@@ -1333,7 +1337,8 @@ const articlesEn: Record<string, KnowledgeArticle> = {
     title: 'Self-Realization: how attention is lifted into a higher plane',
     intro:
       'Self-Realization is presented as the decisive transition in which Kundalini, dormant and sleeping within the triangular sacrum bone as a maternal spiritual energy and the power of pure desire, awakens and relieves attention from the relentless burden of thought, ego and superego. Attention is then lifted into a higher plane of consciousness, and meditation begins not as a mental technique, but as an actual inner event.',
-    heroImage: beeImg,
+    heroImage: mother3Img,
+    heroImageMode: 'contain',
     heroImageAlt: 'Shri Mataji and Self-Realization',
     heroCaption:
       'Self-Realization marks the moment when Kundalini begins to lift attention and thoughtless awareness becomes experientially possible.',
@@ -1455,7 +1460,8 @@ const articlesEn: Record<string, KnowledgeArticle> = {
           description:
             'Thoughtless awareness is described as a condition beyond the three ordinary modes. Consciousness remains awake, but the person is no longer trapped in the usual stream of internal commentary.',
           note: 'Stillness and presence appear together here, not as opposites.',
-          image: thoughtlessImg,
+          image: lotusImg,
+          imageMode: 'contain',
           alt: 'Thought-free stillness'
         },
         {
@@ -1464,7 +1470,8 @@ const articlesEn: Record<string, KnowledgeArticle> = {
           description:
             'The rising inner energy is treated as the real assistance. It carries attention beyond the mental plane, rather than asking the mind to conquer itself entirely from within its own noise.',
           note: 'This is one reason the meditation is described as natural, spontaneous and effortless.',
-          image: selfRealizationImg,
+          image: beeImg,
+          imageMode: 'contain',
           alt: 'Self-Realization and thoughtlessness'
         },
         {
@@ -1473,7 +1480,8 @@ const articlesEn: Record<string, KnowledgeArticle> = {
           description:
             'Thoughts and feelings are not erased. They can be observed from a calmer inner distance, which reduces compulsion, identification and emotional overreaction.',
           note: 'Attention shifts toward the flow of experience rather than becoming imprisoned by each passing content.',
-          image: improvedPerceptionImg,
+          image: mother3Img,
+          imageMode: 'contain',
           alt: 'Refined perception'
         }
       ]
