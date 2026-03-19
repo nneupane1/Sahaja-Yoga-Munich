@@ -27,9 +27,9 @@ export const topicPagesEn = {
     heroEyebrow: 'The Subtle System',
     title: 'Kundalini, Nadis & Chakras',
     intro:
-      'The subtle system is the fine network of Kundalini, channels and centres aligned with the nervous system. At the heart of it lies Kundalini, long dormant and sleeping within the triangular sacrum bone. Once awakened, what seemed abstract becomes perceptible in meditation, so that balance, blockage and subtle quality can be felt directly.',
+      'The subtle system is the fine network of Kundalini, channels and centres aligned with the nervous system. At the heart of it lies Kundalini as the power of pure desire, a maternal spiritual energy long dormant and sleeping within the triangular sacrum bone. Once awakened, what seemed abstract becomes perceptible in meditation, so that balance, blockage and subtle quality can be felt directly.',
     heroPanelText:
-      'The system can be understood like a wheel: at the outer edge there is disturbance, at the centre there is peace. Sahaja Yoga draws attention toward that centre as Kundalini nourishes the middle channel and restores the chakras to a more natural state of harmony.',
+      'The system can be understood like a wheel: at the outer edge there is disturbance, at the centre there is peace. Sahaja Yoga draws attention toward that centre as Kundalini nourishes the middle channel and restores the chakras to a more natural state of harmony. Its awakening is presented here as the inner event toward which many religious and spiritual traditions have pointed in different language.',
     heroTags: ['Kundalini', 'Nadis', 'Chakras'],
     heroImage: chakraChartImg,
     heroImageAlt: 'Subtle system diagram',
@@ -165,15 +165,15 @@ export const topicPagesEn = {
         eyebrow: 'Inner Source',
         title: 'Kundalini is the resting power that brings the whole system to life',
         description: [
-          'Kundalini is described as an inborn, indestructible energy resting, dormant and sleeping within the triangular sacrum bone. It is not something imported from outside, but the hidden source of spiritual unfolding already present within the person.',
+          'Kundalini is described as an inborn, indestructible energy resting, dormant and sleeping within the triangular sacrum bone. At the same time it is presented as the power of pure desire and as a maternal spiritual energy, not something imported from outside but the hidden source of spiritual unfolding already present within the person.',
           'When it awakens, it rises through the central channel and nourishes the chakras. This makes not only stillness possible, but also a more refined awareness of one’s actual inner condition.',
-          'Its tone matters: Kundalini is presented as intelligent and gentle. It does not act violently, but in a way that allows the system to reorder itself naturally.'
+          'Its tone matters: Kundalini is presented as intelligent and gentle. It does not act violently, but in a way that allows the system to reorder itself naturally. In this view it heals, improves and blesses life by gradually freeing attention from crude entanglement with material pressures.'
         ],
         sideTitle: 'Key Characteristics',
         sideItems: [
           'Already present within every person',
           'Rises through the Sushumna and nourishes the centres',
-          'Expresses itself through balance, silence and finer perception'
+          'Its awakening has long been treated as a true goal of spiritual life'
         ],
         note:
           'In this view Kundalini is neither metaphor nor suggestion, but the living force behind Self-Realization.'
@@ -236,7 +236,7 @@ export const topicPagesEn = {
     heroEyebrow: 'Higher Consciousness',
     title: 'Self-Realization & Meditation',
     intro:
-      'Self-Realization is presented here as the true enabler of meditation. It begins with Kundalini, dormant and sleeping within the triangular sacrum bone, and awakens from within to relieve attention from the constant pressure of thought, ego, conditioning and emotional overreaction, lifting it into a quieter and higher state of consciousness.',
+      'Self-Realization is presented here as the true enabler of meditation. It begins with Kundalini, dormant and sleeping within the triangular sacrum bone as a maternal spiritual energy and the power of pure desire, and awakens from within to relieve attention from the constant pressure of thought, ego, conditioning and emotional overreaction, lifting it into a quieter and higher state of consciousness.',
     heroPanelText:
       'The process is described in unusually concrete terms: as Kundalini rises through the central channel and pierces the chakras, it stretches the field of attention upward like a tent lifted by its pole. Once it moves beyond Agnya toward the Sahasrara, thoughtless awareness appears not as an idea but as an actual higher state of consciousness.',
     heroTags: ['Self-Realization', 'Thoughtless Awareness', 'Daily Practice'],
@@ -336,7 +336,7 @@ export const topicPagesEn = {
         description: [
           'Attention can only rise when it is no longer continuously overrun by thought, ego and superego. Self-Realization is the opening that makes such a shift possible.',
           'As Kundalini rises through the central channel and pierces the chakras, the field of attention is stretched upward from within. It begins to separate from its habitual knot of thought, memory and immediate emotional reaction.',
-          'Self-Realization therefore appears not as a symbolic blessing, but as a living inner event through which meditation becomes experientially real.'
+          'Self-Realization therefore appears not as a symbolic blessing, but as a living inner event through which meditation becomes experientially real. In this view, something long sought in the world’s spiritual traditions becomes a present possibility.'
         ],
         sideTitle: 'Core Ideas',
         sideItems: [

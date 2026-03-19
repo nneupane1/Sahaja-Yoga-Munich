@@ -16,6 +16,9 @@ const TopicPage: React.FC<TopicPageProps> = ({ page }) => {
   useScrollReveal('.reveal-ready, .slide-ready-left, .slide-ready-right', 'reveal', 0.18);
   const isKundaliniPage = page.route === '/kundalini-energiesystem';
   const isSciencePage = page.route === '/wissenschaft-spiritualitaet';
+  const isSelfRealizationPage = page.route === '/selbstverwirklichung-meditation';
+  const showFloatingHeroTags = !isSciencePage && !isSelfRealizationPage;
+  const showCaptionBelowImage = isSciencePage || isSelfRealizationPage;
   const ctaCopy =
     locale === 'de'
       ? {
@@ -162,23 +165,23 @@ const TopicPage: React.FC<TopicPageProps> = ({ page }) => {
                         <img src={page.heroImage} alt={page.heroImageAlt} className={heroImageClasses} />
                       </div>
 
-                      {!isSciencePage && page.heroTags[0] && (
+                      {showFloatingHeroTags && page.heroTags[0] && (
                         <div className="animate-float-soft absolute left-7 top-7 rounded-full border border-[#b35d4c]/28 bg-[rgba(255,250,246,0.92)] px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b35d4c] shadow-[0_16px_36px_rgba(72,110,140,0.12)]">
                           {page.heroTags[0]}
                         </div>
                       )}
-                      {!isSciencePage && page.heroTags[1] && (
+                      {showFloatingHeroTags && page.heroTags[1] && (
                         <div className="animate-float-soft absolute right-7 top-16 rounded-full border border-[#b35d4c]/28 bg-[#fff7f3]/92 px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b35d4c] shadow-[0_16px_36px_rgba(72,110,140,0.12)] [animation-delay:1.2s]">
                           {page.heroTags[1]}
                         </div>
                       )}
-                      {!isSciencePage && page.heroTags[2] && (
+                      {showFloatingHeroTags && page.heroTags[2] && (
                         <div className="animate-float-soft absolute left-9 bottom-28 rounded-full border border-[#b35d4c]/28 bg-[rgba(255,250,246,0.92)] px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b35d4c] shadow-[0_16px_36px_rgba(72,110,140,0.12)] [animation-delay:2s]">
                           {page.heroTags[2]}
                         </div>
                       )}
 
-                      {!isSciencePage && (
+                      {!showCaptionBelowImage && (
                         <div className="absolute inset-x-8 bottom-8 max-w-xl rounded-[1.45rem] border border-[#b35d4c]/28 bg-[rgba(255,250,246,0.92)] p-5 shadow-[0_18px_40px_rgba(72,110,140,0.14)] backdrop-blur">
                           <p className="text-base leading-7 text-slate-700 sm:text-lg">
                             {page.heroImageCaption}
@@ -187,7 +190,7 @@ const TopicPage: React.FC<TopicPageProps> = ({ page }) => {
                       )}
                     </div>
 
-                    {isSciencePage && page.heroImageCaption && (
+                    {showCaptionBelowImage && page.heroImageCaption && (
                       <div className="card-soft reveal-ready mx-auto mt-6 max-w-2xl rounded-[1.55rem] px-6 py-5 text-center">
                         <p className="text-base leading-7 text-slate-700 sm:text-lg">
                           {page.heroImageCaption}

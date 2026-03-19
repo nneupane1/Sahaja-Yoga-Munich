@@ -63,6 +63,10 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
   const isCompactCenteredHero =
     article.route === '/kundalini-energiesystem/chakren-und-qualitaeten' ||
     article.route === '/kundalini-energiesystem/kundalini';
+  const useTwoUpChannelBlocks = article.route === '/kundalini-energiesystem/kanaele-und-balance';
+  const useThreeUpFeatureBlocks =
+    article.route === '/kundalini-energiesystem/kundalini' ||
+    article.route === '/selbstverwirklichung-meditation/selbstverwirklichung';
   const heroGridClassName = 'grid gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:items-start';
   const heroPanelPositionClassName = heroImageLeft
     ? 'relative z-10 slide-ready-right lg:mt-8'
@@ -88,6 +92,21 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
   const heroActionLinksClassName = isCompactCenteredHero
     ? 'flex flex-wrap justify-center gap-3'
     : 'flex flex-wrap gap-3';
+  const detailsGridClassName =
+    article.route === '/kundalini-energiesystem/kundalini' ||
+    article.route === '/selbstverwirklichung-meditation/selbstverwirklichung' ||
+    article.route === '/kundalini-energiesystem/kanaele-und-balance'
+      ? 'mt-10 grid gap-6 lg:grid-cols-3'
+      : 'mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4';
+  const detailsShellClassName =
+    article.route === '/kundalini-energiesystem/kundalini' ||
+    article.route === '/selbstverwirklichung-meditation/selbstverwirklichung' ||
+    article.route === '/kundalini-energiesystem/kanaele-und-balance'
+      ? 'section-shell max-w-[88rem]'
+      : 'section-shell';
+  const useSplitBlockLayout = useThreeUpFeatureBlocks || useTwoUpChannelBlocks;
+  const leadingBlocks = useSplitBlockLayout ? article.blocks.slice(0, 1) : article.blocks;
+  const trailingBlocks = useSplitBlockLayout ? article.blocks.slice(1) : [];
 
   return (
     <main className="overflow-hidden bg-[linear-gradient(180deg,#dff4ff_0%,#edf9ff_48%,#dff2ff_100%)]">
@@ -233,7 +252,7 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
           </aside>
 
           <div className="space-y-6">
-            {article.blocks.map((block, index) => {
+            {leadingBlocks.map((block, index) => {
               const hasSupportColumn = Boolean(block.points?.length);
               const showInlineSupport = !hasSupportColumn;
 
@@ -288,11 +307,121 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
             })}
           </div>
         </div>
+
+        {useThreeUpFeatureBlocks && trailingBlocks.length > 0 && (
+          <div className="section-shell mt-6 max-w-[96rem]">
+            <div className="grid gap-6 lg:grid-cols-3 lg:items-start">
+              {trailingBlocks.map((block, trailingIndex) => {
+                const index = trailingIndex + 1;
+                const showInlineSupport = !block.points?.length;
+
+                return (
+                  <article
+                    key={block.title}
+                    className="interactive-card reveal-ready group relative h-full overflow-hidden p-6 sm:p-7"
+                  >
+                    <div className="absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,#87c3e3,#c8715f)] opacity-80 transition duration-500 group-hover:h-2" />
+                    <div className="flex h-full flex-col space-y-5">
+                      <span className="text-xs font-semibold uppercase tracking-[0.28em] text-[#b35d4c]">
+                        {copy.blockLabel} 0{index + 1}
+                      </span>
+                      <h2 className="text-balance text-[1.48rem] leading-snug text-slate-800 sm:text-[1.68rem]">
+                        {block.title}
+                      </h2>
+                      <div className="space-y-4 text-[0.95rem] leading-7 text-slate-700">
+                        {block.paragraphs.map(paragraph => (
+                          <p key={paragraph}>{paragraph}</p>
+                        ))}
+                      </div>
+                      {block.points?.length ? (
+                        <div className="mt-auto rounded-[1.3rem] border border-[#b35d4c]/22 bg-[linear-gradient(180deg,rgba(255,255,255,0.94)_0%,rgba(255,244,237,0.94)_100%)] p-4 shadow-[0_14px_30px_rgba(72,110,140,0.07)]">
+                          <div className="space-y-3">
+                            {block.points.map(point => (
+                              <div key={point} className="flex items-start gap-3">
+                                <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-[#c8715f] shadow-[0_0_0_8px_rgba(200,113,95,0.15)]" />
+                                <p className="text-[0.9rem] leading-6 text-slate-700">{point}</p>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      ) : showInlineSupport ? (
+                        <div className="mt-auto rounded-[1.3rem] border border-[#b35d4c]/18 bg-[rgba(255,250,246,0.72)] px-4 py-3 text-[0.9rem] leading-6 text-slate-600">
+                          {article.heroCaption}
+                        </div>
+                      ) : null}
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {useTwoUpChannelBlocks && trailingBlocks.length > 0 && (
+          <div className="section-shell mt-6 max-w-[96rem]">
+            <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
+              {trailingBlocks.map((block, trailingIndex) => {
+                const index = trailingIndex + 1;
+                const hasSupportColumn = Boolean(block.points?.length);
+                const showInlineSupport = !hasSupportColumn;
+
+                return (
+                  <article
+                    key={block.title}
+                    className="interactive-card reveal-ready group relative overflow-hidden p-7 sm:p-8"
+                  >
+                    <div className="absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,#87c3e3,#c8715f)] opacity-80 transition duration-500 group-hover:h-2" />
+                    <div className={hasSupportColumn ? 'grid gap-6 lg:grid-cols-[1.18fr_0.82fr]' : 'grid gap-4'}>
+                      <div className={`space-y-5 ${hasSupportColumn && index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                        <span className="text-xs font-semibold uppercase tracking-[0.28em] text-[#b35d4c]">
+                          {copy.blockLabel} 0{index + 1}
+                        </span>
+                        <h2 className="text-balance text-3xl text-slate-800 sm:text-[2.15rem]">{block.title}</h2>
+                        <div className="space-y-5 text-lg leading-8 text-slate-700">
+                          {block.paragraphs.map(paragraph => (
+                            <p key={paragraph}>{paragraph}</p>
+                          ))}
+                        </div>
+                        {showInlineSupport && (
+                          <div className="rounded-[1.35rem] border border-[#b35d4c]/22 bg-[linear-gradient(180deg,rgba(255,255,255,0.94)_0%,rgba(255,244,237,0.92)_100%)] p-5 shadow-[0_14px_30px_rgba(72,110,140,0.07)]">
+                            <span className="eyebrow">
+                              {article.navLabel}
+                            </span>
+                            <p className="mt-3 text-base leading-7 text-slate-700">{article.heroCaption}</p>
+                          </div>
+                        )}
+                      </div>
+
+                      {hasSupportColumn && (
+                        <div className={`flex items-center ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                          <div
+                            className={`w-full rounded-[1.5rem] border border-[#b35d4c]/22 bg-[linear-gradient(180deg,rgba(255,255,255,0.94)_0%,rgba(255,244,237,0.94)_100%)] p-6 shadow-[0_16px_36px_rgba(72,110,140,0.08)] transition duration-500 group-hover:-translate-y-1 ${
+                              index % 2 === 1 ? 'group-hover:-translate-x-2' : 'group-hover:translate-x-2'
+                            }`}
+                          >
+                            <div className="space-y-4">
+                              {block.points?.map(point => (
+                                <div key={point} className="flex items-start gap-3">
+                                  <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-[#c8715f] shadow-[0_0_0_8px_rgba(200,113,95,0.15)]" />
+                                  <p className="leading-7 text-slate-700">{point}</p>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        )}
       </section>
 
       {article.details && (
         <section className="section-band bg-[#dff2ff] pt-0">
-          <div className="section-shell">
+          <div className={detailsShellClassName}>
             <div className="reveal-ready mx-auto max-w-4xl text-center">
               <span className="eyebrow">
                 {article.details.eyebrow}
@@ -301,13 +430,13 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
               <p className="mt-5 text-lg leading-8 text-slate-700">{article.details.description}</p>
             </div>
 
-            <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            <div className={detailsGridClassName}>
               {article.details.items.map(item => (
                 <article
                   key={`${item.title}-${item.subtitle}`}
                   className="interactive-card reveal-ready group flex h-full flex-col overflow-hidden"
                 >
-                  <div className="relative h-56 overflow-hidden rounded-t-[1.5rem] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.96),rgba(224,243,255,0.92))] p-4">
+                  <div className="relative h-52 overflow-hidden rounded-t-[1.5rem] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.96),rgba(224,243,255,0.92))] p-4">
                     <img
                       src={item.image}
                       alt={item.alt}
@@ -322,12 +451,12 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
                     <span className="text-xs font-semibold uppercase tracking-[0.24em] text-[#b35d4c]">
                       {item.subtitle}
                     </span>
-                    <h3 className="text-balance text-2xl text-slate-800 transition duration-300 group-hover:translate-x-1">
+                    <h3 className="text-balance text-[1.65rem] text-slate-800 transition duration-300 group-hover:translate-x-1">
                       {item.title}
                     </h3>
-                    <p className="flex-1 leading-8 text-slate-700">{item.description}</p>
+                    <p className="flex-1 text-[0.97rem] leading-7 text-slate-700">{item.description}</p>
                     {item.note && (
-                      <p className="rounded-[1rem] border border-[#b35d4c]/22 bg-[#fff5ef]/82 px-4 py-3 text-sm leading-7 text-slate-700">
+                      <p className="rounded-[1rem] border border-[#b35d4c]/22 bg-[#fff5ef]/82 px-4 py-3 text-[0.9rem] leading-6 text-slate-700">
                         {item.note}
                       </p>
                     )}

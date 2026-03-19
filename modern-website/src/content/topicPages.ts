@@ -103,9 +103,9 @@ export const topicPages = {
     heroEyebrow: 'Das subtile System',
     title: 'Kundalini, Nadis & Chakras',
     intro:
-      'Das subtile System ist das feine Netzwerk aus Kundalini, Energiekanälen und Zentren entlang des Nervensystems. Im Herzen dieses Weges ruht die Kundalini still und schlafend im dreieckigen Kreuzbein. Wenn sie erwacht, wird das, was wie Lehre erscheint, zu etwas Erfahrbarem: Gleichgewicht, Blockaden und innere Qualitäten können Schritt für Schritt wirklich gespürt werden.',
+      'Das subtile System ist das feine Netzwerk aus Kundalini, Energiekanälen und Zentren entlang des Nervensystems. Im Herzen dieses Weges ruht die Kundalini als Kraft des reinen Wunsches, als mütterliche geistige Energie, still und schlafend im dreieckigen Kreuzbein. Wenn sie erwacht, wird das, was wie Lehre erscheint, zu etwas Erfahrbarem: Gleichgewicht, Blockaden und innere Qualitäten können Schritt für Schritt wirklich gespürt werden.',
     heroPanelText:
-      'Das System lässt sich wie ein Rad verstehen: Wer an der Peripherie lebt, wird leicht unruhig; wer in die Mitte kommt, findet Frieden. Genau dorthin führt Sahaja Yoga die Aufmerksamkeit, wenn die Kundalini den zentralen Kanal nährt und die Chakren wieder in ihr natürliches Gleichgewicht bringt.',
+      'Das System lässt sich wie ein Rad verstehen: Wer an der Peripherie lebt, wird leicht unruhig; wer in die Mitte kommt, findet Frieden. Genau dorthin führt Sahaja Yoga die Aufmerksamkeit, wenn die Kundalini den zentralen Kanal nährt und die Chakren wieder in ihr natürliches Gleichgewicht bringt. Ihr Erwachen erscheint hier als jener innere Durchbruch, auf den religiöse und spirituelle Traditionen in unterschiedlicher Sprache immer wieder hingewiesen haben.',
     heroTags: ['Kundalini', 'Nadis', 'Chakras'],
     heroImage: chakraChartImg,
     heroImageAlt: 'Darstellung des subtilen Systems',
@@ -241,15 +241,15 @@ export const topicPages = {
         eyebrow: 'Innere Quelle',
         title: 'Die Kundalini ist die ruhende Kraft, die das gesamte System belebt',
         description: [
-          'Die Kundalini wird als angeborene, unzerstörbare Energie beschrieben, die still und schlafend im dreieckigen Kreuzbein ruht. Sie ist nicht etwas, das von außen hinzugefügt werden müsste, sondern der verborgene Ursprung unserer spirituellen Entfaltung.',
+          'Die Kundalini wird als angeborene, unzerstörbare Energie beschrieben, die still und schlafend im dreieckigen Kreuzbein ruht. Zugleich erscheint sie als Kraft des reinen Wunsches und als mütterliche geistige Energie, die nicht von außen hinzugefügt werden muss, sondern den verborgenen Ursprung unserer spirituellen Entfaltung bildet.',
           'Wenn sie erwacht, steigt sie durch den zentralen Kanal auf und nährt die Chakren. Dadurch werden nicht nur Ruhe und Stille möglich, sondern auch eine präzisere Wahrnehmung des eigenen inneren Zustands.',
-          'Gerade diese Verbindung von Sanftheit und Intelligenz ist entscheidend: Die Kundalini handelt nicht gewaltsam, sondern so, dass sich das System organisch neu ordnen kann.'
+          'Gerade diese Verbindung von Sanftheit und Intelligenz ist entscheidend: Die Kundalini handelt nicht gewaltsam, sondern so, dass sich das System organisch neu ordnen kann. In dieser Sicht heilt, verbessert und segnet sie das Leben, weil sie die Aufmerksamkeit nach und nach aus der groben Verstrickung mit materiellen Sorgen befreit.'
         ],
         sideTitle: 'Wesentliche Merkmale',
         sideItems: [
           'Sie ist in jedem Menschen bereits vorhanden',
           'Sie steigt durch die Sushumna und nährt die Zentren',
-          'Ihr Wirken zeigt sich als Balance, Stille und feinere Wahrnehmung'
+          'Ihr Erwachen galt in vielen Traditionen als eigentliches Ziel spiritischer Suche'
         ],
         note:
           'Die Kundalini ist in dieser Sichtweise weder Metapher noch Suggestion, sondern die lebendige Kraft hinter Selbstverwirklichung.'
@@ -312,7 +312,7 @@ export const topicPages = {
     heroEyebrow: 'Höheres Bewusstsein',
     title: 'Selbstverwirklichung & Meditation',
     intro:
-      'Selbstverwirklichung erscheint hier als der eigentliche Ermöglicher der Meditation. Ausgangspunkt ist die Kundalini, die still und schlafend im dreieckigen Kreuzbein ruht. Wenn sie erwacht, wird die Aufmerksamkeit von der ständigen Überlagerung durch Gedanken, Ego, Konditionierungen und emotionale Reaktionen entlastet und in einen stilleren, höheren Zustand des Bewusstseins erhoben.',
+      'Selbstverwirklichung erscheint hier als der eigentliche Ermöglicher der Meditation. Ausgangspunkt ist die Kundalini, die als mütterliche geistige Energie und Kraft des reinen Wunsches still und schlafend im dreieckigen Kreuzbein ruht. Wenn sie erwacht, wird die Aufmerksamkeit von der ständigen Überlagerung durch Gedanken, Ego, Konditionierungen und emotionale Reaktionen entlastet und in einen stilleren, höheren Zustand des Bewusstseins erhoben.',
     heroPanelText:
       'Der Vorgang wird sehr konkret beschrieben: Wenn die Kundalini durch den zentralen Kanal aufsteigt und die Chakren durchdringt, spannt sie das Feld der Aufmerksamkeit wie das Tuch eines Zeltes nach oben. Sobald sie über das Agnya hinaus in Richtung Sahasrara steigt, wird Gedankenfreiheit nicht bloß eine Idee, sondern eine erfahrbare höhere Bewusstseinsebene.',
     heroTags: ['Selbstverwirklichung', 'Gedankenfreiheit', 'Tägliche Praxis'],
@@ -412,7 +412,7 @@ export const topicPages = {
         description: [
           'Die Aufmerksamkeit kann sich nur dann in einen höheren Zustand erheben, wenn die permanente Überlagerung durch Gedanken, Ego und Superego nachlässt. Genau darin liegt die Funktion der Selbstverwirklichung.',
           'Wenn die Kundalini durch den zentralen Kanal steigt und die Chakren durchdringt, wird das Gewebe der Aufmerksamkeit wie von innen nach oben gespannt. Dadurch löst es sich aus der Verstrickung mit Gedanken, Erinnerungen und unmittelbaren Reaktionsmustern.',
-          'Selbstverwirklichung erscheint deshalb nicht als bloßer symbolischer Akt, sondern als tatsächliche innere Öffnung, durch die Meditation erstmals real und erfahrbar wird.'
+          'Selbstverwirklichung erscheint deshalb nicht als bloßer symbolischer Akt, sondern als tatsächliche innere Öffnung, durch die Meditation erstmals real und erfahrbar wird. In dieser Darstellung erfüllt sich damit etwas, was viele religiöse und spirituelle Wege als inneres Ziel vorausgesetzt haben.'
         ],
         sideTitle: 'Kerngedanken',
         sideItems: [

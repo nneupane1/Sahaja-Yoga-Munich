@@ -6,6 +6,8 @@ import improvedPerceptionImg from '../assets/sahajaonline/Improved-perception.jp
 import collectiveMeditationImg from '../assets/sahajaonline/What-is-Collective-Meditation.jpg';
 import tenetsImg from '../assets/sahajaonline/The-10-Defining-Tenets-of-Spirituality-scaled.jpg';
 import kundaliniGif from '../assets/kundalini.gif';
+import kundaliniFireImg from '../assets/kundalinifire.png';
+import mother3Img from '../assets/mother3.png';
 import subtleSystemDeImg from '../assets/sahajayogade/das-subtile-system-grafik.jpg';
 import channelsDeImg from '../assets/sahajayogade/Channels-for-SY-website-de-2048x977-2-1024x489.png';
 import leftChannelDeImg from '../assets/sahajayogade/nadis-inside-img-002.jpg';
@@ -67,50 +69,50 @@ const articlesDe: Record<string, KnowledgeArticle> = {
     eyebrow: 'Lebendige innere Kraft',
     title: 'Kundalini: die ruhende Energie hinter Selbstverwirklichung',
     intro:
-      'Die Kundalini wird als angeborene, unzerstörbare Energie verstanden, die im Menschen bereits vorhanden ist und still und schlafend im dreieckigen Kreuzbein ruht. Wenn sie erwacht, belebt sie das gesamte subtile System und macht Meditation von einer Idee zu einer spürbaren inneren Erfahrung.',
-    heroImage: kundaliniGif,
-    heroImageAlt: 'Darstellung des subtilen Systems',
+      'Die Kundalini wird als angeborene, unzerstörbare Energie verstanden, die im Menschen bereits vorhanden ist und als Kraft des reinen Wunsches, als mütterliche geistige Energie still und schlafend im dreieckigen Kreuzbein ruht. Vertiefende Darstellungen schildern sie zugleich als einen vorgeburtlichen Strom göttlichen Bewusstseins, der durch den Scheitelbereich in das System eintritt, durch die Mitte bis in das Kreuzbein hinabsteigt und dort auf den Augenblick der Wiedererweckung wartet. Wenn sie erwacht, belebt sie das gesamte subtile System und macht Meditation von einer Idee zu einer spürbaren inneren Erfahrung.',
+    heroImage: kundaliniFireImg,
+    heroImageAlt: 'Bildhafte Darstellung der Kundalini im subtilen System',
     heroImageMode: 'contain',
     heroCaption:
-      'Die Systemgrafik zeigt, dass Kundalini nie isoliert gedacht wird: Sie wirkt immer im Zusammenhang mit Kanälen, Chakren und der Aufmerksamkeit.',
-    heroTags: ['Geburtsrecht', 'Kreuzbein', 'Aufstieg durch die Mitte'],
+      'Dieses Bild fasst Kundalini als leuchtende, mütterliche Energie zusammen: Sie ruht im Menschen, steigt durch die Mitte auf und stellt die innere Verbindung zum Göttlichen neu her.',
+    heroTags: ['Aufstieg durch die Mitte'],
     keyPoints: [
       'Kundalini gilt als ursprüngliche und unzerstörbare Energie.',
       'Sie ruht im Kreuzbein und muss nicht von außen hinzugefügt werden.',
-      'Ihr Aufstieg nährt die Chakren und hebt die Aufmerksamkeit in die Mitte.'
+      'Ihr Aufstieg nährt die Chakren, hebt die Aufmerksamkeit in die Mitte und galt in vielen Traditionen als eigentliches Ziel spiritischer Suche.'
     ],
     details: {
       eyebrow: 'Im Überblick',
       title: 'Wie die Kundalini im System verstanden wird',
       description:
-        'Diese Darstellung verbindet Kundalini nicht mit Spektakel, sondern mit innerer Ordnung. Entscheidend sind ihr ruhender Ursprung, ihr sanfter Aufstieg und die Art, wie sie das System von innen her nährt.',
+        'Diese Darstellung verbindet Kundalini nicht mit Spektakel, sondern mit innerer Ordnung. Entscheidend sind ihr ruhender Ursprung, ihr sanfter Aufstieg, ihre Qualität als reine Wunschkraft und die Art, wie sie das System von innen her nährt und segnet.',
       items: [
         {
-          title: 'Im Menschen bereits angelegt',
-          subtitle: 'Angeborenes Potenzial',
+          title: 'Ein vorgeburtlicher Strom des Bewusstseins',
+          subtitle: 'Vom Scheitel in das System',
           description:
-            'Kundalini wird als etwas beschrieben, das schon vorhanden ist. Spirituelles Wachstum bedeutet deshalb, ein eigenes inneres Potenzial zu wecken statt etwas Fremdes zu übernehmen.',
-          note: 'Die Energie bleibt verborgen, bis sie durch Selbstverwirklichung erfahrbar wird.',
-          image: subtleSystemDeImg,
-          alt: 'Gesamtgrafik des subtilen Systems',
+            'Einige Erklärungen beschreiben, dass im frühen embryonalen Leben ein Strom göttlichen Bewusstseins auf Gehirn und Nervenanlage wirkt. Daraus entfalten sich die unterschiedlichen Bahnen des menschlichen Nervensystems, während ein innerer zentraler Bezug zur göttlichen Quelle erhalten bleibt.',
+          note: 'So werden subtile Anatomie und Nervensystem nicht als getrennte Welten, sondern als ineinander bezogene Ebenen verstanden.',
+          image: kundaliniFireImg,
+          alt: 'Bildhafte Darstellung der Kundalini',
           imageMode: 'contain'
         },
         {
-          title: 'Ruhend im Kreuzbein',
-          subtitle: 'Der stille Ausgangspunkt',
+          title: 'Der Weg in das Kreuzbein',
+          subtitle: 'Vom Fontanellenbereich zur Sushumna',
           description:
-            'Ihr Ruhepunkt liegt am unteren Ende des zentralen Kanals. Von dort steigt sie nicht gewaltsam auf, sondern in einer Weise, die dem System erlaubt, sich geordnet und natürlich zu öffnen.',
-          note: 'Die Sushumna gilt als der Weg, auf dem der eigentliche innere Aufstieg geschieht.',
+            'In dieser Bildsprache steigt ein Teil dieser göttlichen Energie durch den Bereich der späteren Fontanelle ein, zieht durch Medulla und zentralen Kanal bis zum unteren Ende der Wirbelsäule und ruht dort im dreieckigen Kreuzbein als latente Kundalini.',
+          note: 'Darum wird die Sushumna als der Weg verstanden, auf dem die eigentliche innere Rückverbindung geschieht.',
           image: centralChannelDeImg,
           alt: 'Zentraler Kanal des subtilen Systems',
           imageMode: 'contain'
         },
         {
-          title: 'Nährung statt Druck',
-          subtitle: 'Sanfte Transformation',
+          title: 'Trennung und Wiederverbindung',
+          subtitle: 'Von der Geburt zur Selbstverwirklichung',
           description:
-            'Wenn die Kundalini die Zentren erreicht, werden sie nicht forciert, sondern genährt. Dadurch entstehen mehr Stille, Klarheit und eine feinere Wahrnehmung des eigenen Zustands.',
-          note: 'Die Wirkung zeigt sich in Meditation, Verhalten, Ausgleich und spürbarer innerer Ruhe.',
+            'Mit der Geburt und mit der allmählichen Bildung von Ego und Superego verliert der Mensch diese ursprüngliche Verbindung aus dem unmittelbaren Erleben. Selbstverwirklichung bedeutet in dieser Sicht, dass die Kundalini wieder aufsteigt und die Verbindung zwischen Spirit, Bewusstsein und allgegenwärtiger göttlicher Kraft lebendig macht.',
+          note: 'Meditation erscheint dadurch nicht als äußere Technik, sondern als Wiederherstellung eines ursprünglich vorhandenen inneren Bandes.',
           image: channelsDeImg,
           alt: 'Kanäle des subtilen Systems',
           imageMode: 'contain'
@@ -121,7 +123,7 @@ const articlesDe: Record<string, KnowledgeArticle> = {
       {
         title: 'Nicht hinzugefügt, sondern entdeckt',
         paragraphs: [
-          'In dieser Darstellung des subtilen Systems ist Kundalini keine von außen kommende Kraft. Sie gehört von Anfang an zum Menschen und bleibt auch dann vorhanden, wenn wir ihre Gegenwart noch nicht bewusst wahrnehmen.',
+          'In dieser Darstellung des subtilen Systems ist Kundalini keine von außen kommende Kraft. Sie gehört von Anfang an zum Menschen und bleibt auch dann vorhanden, wenn wir ihre Gegenwart noch nicht bewusst wahrnehmen. Zugleich wird sie als Kraft des reinen Wunsches verstanden, also als jener tiefste innere Impuls, der den Menschen nicht in Oberflächlichkeit, sondern in Wahrheit und Wachstum führen will.',
           'Gerade dadurch gewinnt die Idee von Selbstverwirklichung ihre Würde: Man muss nichts künstlich erzeugen, sondern lernt, einen verborgenen Ursprung in sich selbst freizulegen.'
         ],
         points: [
@@ -134,7 +136,7 @@ const articlesDe: Record<string, KnowledgeArticle> = {
         title: 'Der Aufstieg durch die Mitte',
         paragraphs: [
           'Wenn Kundalini erwacht, steigt sie durch die Sushumna auf, also durch den zentralen Kanal des subtilen Systems. Dieser Aufstieg wird nicht als dramatischer Ausbruch beschrieben, sondern als intelligenter, geordneter und respektvoller Vorgang.',
-          'Das ist ein wichtiger Akzent: Die Energie „arbeitet“ nicht gegen den Menschen, sondern so, dass Zentren und Aufmerksamkeit von innen her geklärt werden können. Meditation erscheint dadurch als Nährung und nicht als Kampf.'
+          'Das ist ein wichtiger Akzent: Die Energie „arbeitet“ nicht gegen den Menschen, sondern so, dass Zentren und Aufmerksamkeit von innen her geklärt werden können. In manchen Erklärungen wird dieser Weg bereits im embryonalen Leben vorbereitet gesehen, wenn der zentrale Kanal als spätere innere Achse des Aufstiegs angelegt wird.'
         ],
         points: [
           'Sushumna als Hauptweg des Aufstiegs',
@@ -146,14 +148,14 @@ const articlesDe: Record<string, KnowledgeArticle> = {
         title: 'Von der Peripherie zur Mitte',
         paragraphs: [
           'Ein zentrales Bild dieser Tradition ist das Rad: An der Peripherie herrscht Unruhe, im Zentrum Frieden. Kundalini ist genau jene Kraft, die Aufmerksamkeit aus dem hektischen Randgeschehen in die innere Mitte zurückführen soll.',
-          'Darum ist sie im Sahaja-Yoga-Verständnis so entscheidend. Erst wenn diese Bewegung geschieht, wird das subtile System wirklich erfahrbar und Stille bekommt eine organische, tragende Grundlage.'
+          'Darum ist sie im Sahaja-Yoga-Verständnis so entscheidend. Erst wenn diese Bewegung geschieht, wird das subtile System wirklich erfahrbar und Stille bekommt eine organische, tragende Grundlage. Selbstverwirklichung erscheint hier also als Wiederherstellung eines verlorenen inneren Bezuges, nicht als Erwerb von etwas Fremdem.'
         ]
       },
       {
         title: 'Woran ihre Wirkung erkannt wird',
         paragraphs: [
           'Die Wirkung der Kundalini wird nicht nur in Ideen beschrieben, sondern an konkreten Folgen: mehr Ruhe, ausgeglichenere Reaktionen, klarere Wahrnehmung und die Fähigkeit, im gegenwärtigen Moment zu bleiben.',
-          'Je stärker die Zentren genährt werden, desto weniger muss Meditation erzwungen werden. Die Aufmerksamkeit wird von selbst stiller, und die innere Ordnung beginnt, sich auch im Alltag auszudrücken.'
+          'Je stärker die Zentren genährt werden, desto weniger muss Meditation erzwungen werden. Die Aufmerksamkeit wird von selbst stiller, und die innere Ordnung beginnt, sich auch im Alltag auszudrücken. Deshalb wird die Kundalini hier nicht nur als Energie des Erwachens, sondern auch als heilende, verbessernde und segnende Kraft beschrieben, die den Griff materieller Probleme lockern kann.'
         ]
       }
     ],
@@ -402,9 +404,9 @@ const articlesDe: Record<string, KnowledgeArticle> = {
     eyebrow: 'Der innere Durchbruch',
     title: 'Selbstverwirklichung: wie die Aufmerksamkeit in eine höhere Ebene gehoben wird',
     intro:
-      'Selbstverwirklichung wird als jener entscheidende Übergang beschrieben, in dem die im dreieckigen Kreuzbein ruhende Kundalini erwacht und die Aufmerksamkeit von der ununterbrochenen Belastung durch Gedanken, Ego und Superego entlastet. So wird sie in eine höhere Ebene des Bewusstseins angehoben, und Meditation beginnt nicht als Technik, sondern als tatsächliches inneres Geschehen.',
-    heroImage: selfRealizationImg,
-    heroImageAlt: 'Selbstverwirklichung',
+      'Selbstverwirklichung wird als jener entscheidende Übergang beschrieben, in dem die im dreieckigen Kreuzbein ruhende Kundalini als mütterliche geistige Energie und Kraft des reinen Wunsches erwacht und die Aufmerksamkeit von der ununterbrochenen Belastung durch Gedanken, Ego und Superego entlastet. So wird sie in eine höhere Ebene des Bewusstseins angehoben, und Meditation beginnt nicht als Technik, sondern als tatsächliches inneres Geschehen.',
+    heroImage: mother3Img,
+    heroImageAlt: 'Shri Mataji and Self-Realization',
     heroCaption:
       'Selbstverwirklichung markiert den Moment, in dem Kundalini die Aufmerksamkeit anhebt und Gedankenfreiheit erstmals erfahrbar macht.',
     heroTags: ['Aufmerksamkeit', 'Kundalini', 'Sahasrara'],
@@ -464,7 +466,7 @@ const articlesDe: Record<string, KnowledgeArticle> = {
       {
         title: 'Die Rolle der Kundalini beim inneren Durchbruch',
         paragraphs: [
-          'Die eigentliche Bewegung wird der Kundalini zugeschrieben. Während der ersten Selbstverwirklichung und danach in jeder Meditation steigt diese innere Energie durch den zentralen Kanal auf und durchstößt die Zentren von innen her.',
+          'Die eigentliche Bewegung wird der Kundalini zugeschrieben. Während der ersten Selbstverwirklichung und danach in jeder Meditation steigt diese innere Energie durch den zentralen Kanal auf und durchstößt die Zentren von innen her. Sie erscheint dabei nicht nur als latente Energie, sondern als Kraft des reinen Wunsches und als mütterliche Macht, die den Menschen in seinem inneren Aufstieg unterstützt.',
           'Dadurch wird die Aufmerksamkeit nach oben gezogen und von der gewöhnlichen Verflechtung mit Gedanken und unmittelbarer emotionaler Reaktion gelöst. Die Kundalini arbeitet hier nicht gewaltsam, sondern intelligent und ordnend.'
         ],
         points: [
@@ -483,7 +485,7 @@ const articlesDe: Record<string, KnowledgeArticle> = {
       {
         title: 'Warum Selbstverwirklichung erst der Anfang ist',
         paragraphs: [
-          'Der erste Durchbruch wird nicht als Endpunkt verstanden. Er schafft vielmehr die Grundlage dafür, dass Meditation, subtile Wahrnehmung und innere Klärung überhaupt regelmäßig erlebt werden können.',
+          'Der erste Durchbruch wird nicht als Endpunkt verstanden. Er schafft vielmehr die Grundlage dafür, dass Meditation, subtile Wahrnehmung und innere Klärung überhaupt regelmäßig erlebt werden können. In diesem Sinn wird etwas unmittelbar erfahrbar, das viele religiöse und spirituelle Wege als inneres Ziel vorausgesetzt haben.',
           'Mit wiederholter Praxis werden die Ströme der Energie stärker und stabiler. Was zunächst nur für einen Augenblick geschieht, kann sich so zu einer tragfähigeren Form von Stille, Klarheit und Verbundenheit entwickeln.'
         ]
       }
@@ -601,7 +603,7 @@ const articlesDe: Record<string, KnowledgeArticle> = {
     title: 'Meditationspraxis: wie sich die erste Erfahrung zuhause vertieft',
     intro:
       'Meditation wird nicht als starre Routine, sondern als lebendige und flexible Praxis beschrieben. Nach der ersten Selbstverwirklichung kann sie zuhause, morgens oder abends, in Stille oder mit sanfter Unterstützung vertieft werden und gewinnt vor allem durch Regelmäßigkeit an Kraft.',
-    heroImage: selfRealizationImg,
+    heroImage: mother3Img,
     heroImageAlt: 'Meditationspraxis zuhause',
     heroCaption:
       'Die tägliche Praxis ist der Ort, an dem aus einem ersten inneren Durchbruch eine tragfähige Gewohnheit der Stille wird.',
@@ -984,50 +986,50 @@ const articlesEn: Record<string, KnowledgeArticle> = {
     eyebrow: 'Living Inner Power',
     title: 'Kundalini: the resting energy behind Self-Realization',
     intro:
-      'Kundalini is understood as an inborn, indestructible energy already present within the human being and lying dormant, sleeping within the triangular sacrum bone. Once awakened, it animates the whole subtle system and turns meditation from an idea into a lived inner experience.',
-    heroImage: subtleSystemDeImg,
-    heroImageAlt: 'Subtle system diagram',
+      'Kundalini is understood as an inborn, indestructible energy already present within the human being and, as the power of pure desire and a maternal spiritual energy, lying dormant and sleeping within the triangular sacrum bone. Some deeper accounts describe it at the same time as a prenatal current of divine consciousness entering through the fontanelle area, descending through the centre into the sacrum and waiting there for the moment of awakening. Once awakened, it animates the whole subtle system and turns meditation from an idea into a lived inner experience.',
+    heroImage: kundaliniFireImg,
+    heroImageAlt: 'Symbolic image of Kundalini within the subtle system',
     heroImageMode: 'contain',
     heroCaption:
-      'The system diagram shows that Kundalini is never treated in isolation: it works together with the channels, chakras and the movement of attention.',
-    heroTags: ['Birthright', 'Sacrum', 'Ascent through the centre'],
+      'This image gathers the idea of Kundalini into one symbol: a luminous maternal energy resting within the person, rising through the centre and renewing the inner link with the Divine.',
+    heroTags: ['Ascent through the centre'],
     keyPoints: [
       'Kundalini is presented as primordial and indestructible.',
       'It rests in the sacrum and does not need to be brought from outside.',
-      'Its ascent nourishes the chakras and lifts attention into the centre.'
+      'Its ascent nourishes the chakras, lifts attention into the centre and has long been treated as a true goal of spiritual life.'
     ],
     details: {
       eyebrow: 'At a glance',
       title: 'How Kundalini is understood within the system',
       description:
-        'This presentation frames Kundalini not as spectacle but as inner order. The emphasis falls on its resting place, its gentle ascent and the way it nourishes the system from within.',
+        'This presentation frames Kundalini not as spectacle but as inner order. The emphasis falls on its resting place, its gentle ascent, its quality as pure desire and the way it nourishes and blesses the system from within.',
       items: [
         {
-          title: 'Already present within the person',
-          subtitle: 'Inborn potential',
+          title: 'A prenatal current of consciousness',
+          subtitle: 'From the crown into the system',
           description:
-            'Kundalini is described as something already there. Spiritual growth therefore means awakening an inner potential rather than importing something foreign.',
-          note: 'The energy remains hidden until it becomes experiential through Self-Realization.',
-          image: subtleSystemDeImg,
-          alt: 'Whole subtle system diagram',
+            'Some explanations describe divine consciousness as acting on the embryo very early, shaping the system from above and differentiating the channels through which life will later be experienced. In that view the subtle and physical systems unfold together.',
+          note: 'Subtle anatomy and the nervous system are therefore treated as corresponding levels of one developmental process.',
+          image: kundaliniFireImg,
+          alt: 'Symbolic image of Kundalini',
           imageMode: 'contain'
         },
         {
-          title: 'Resting in the sacrum',
-          subtitle: 'The quiet starting point',
+          title: 'The descent into the sacrum',
+          subtitle: 'From the fontanelle to Sushumna',
           description:
-            'Its resting place is at the base of the central channel. From there it does not erupt violently, but rises in a way that lets the system open in an ordered and natural manner.',
-          note: 'The Sushumna is treated as the path of actual inner ascent.',
+            'In this imagery, part of that divine current passes in through the future fontanelle area, moves through the medulla and down the central channel to the base of the spine, where it comes to rest in the triangular sacrum as latent Kundalini.',
+          note: 'That is why the Sushumna is treated as the very path along which reconnection later becomes possible.',
           image: centralChannelDeImg,
           alt: 'Central channel',
           imageMode: 'contain'
         },
         {
-          title: 'Nourishment instead of pressure',
-          subtitle: 'Gentle transformation',
+          title: 'Separation and reconnection',
+          subtitle: 'From birth to Self-Realization',
           description:
-            'As Kundalini reaches the centres, they are not forced but nourished. The result is greater stillness, clarity and a more refined perception of one’s actual state.',
-          note: 'Its effect becomes visible in meditation, behaviour, balance and a steadier inner quiet.',
+            'With birth, and later with the development of ego and superego, this original link is no longer consciously felt. Self-Realization is therefore described as the awakening through which Kundalini rises again and restores a living relationship between Spirit, awareness and the all-pervading Divine force.',
+          note: 'Meditation appears in this account not as an imposed technique, but as the recovery of an original inner connection.',
           image: channelsDeImg,
           alt: 'Subtle channels',
           imageMode: 'contain'
@@ -1038,7 +1040,7 @@ const articlesEn: Record<string, KnowledgeArticle> = {
       {
         title: 'Not added from outside, but discovered within',
         paragraphs: [
-          'In this description of the subtle system, Kundalini is not a force imported from outside. It belongs to the human being from the beginning and remains present even before we consciously perceive it.',
+          'In this description of the subtle system, Kundalini is not a force imported from outside. It belongs to the human being from the beginning and remains present even before we consciously perceive it. It is also understood as the power of pure desire, the deepest inner impulse that moves a person toward truth, growth and fulfilment rather than surface satisfaction.',
           'That is what gives Self-Realization its dignity here: nothing artificial needs to be manufactured. One learns instead to uncover a hidden origin already rooted within one’s own being.'
         ],
         points: [
@@ -1051,7 +1053,7 @@ const articlesEn: Record<string, KnowledgeArticle> = {
         title: 'Its ascent through the middle channel',
         paragraphs: [
           'When Kundalini awakens, it rises through the Sushumna, the central channel of the subtle system. This ascent is not described as a dramatic outburst, but as an intelligent and ordered movement.',
-          'That emphasis matters. The energy is not working against the person, but in a way that allows the centres and attention to clear from within. Meditation therefore appears as nourishment rather than struggle.'
+          'That emphasis matters. The energy is not working against the person, but in a way that allows the centres and attention to clear from within. In some explanations this central path is already prepared in embryonic life, as though the system carries from the beginning a latent route back to its source.'
         ],
         points: [
           'the Sushumna as the main path of ascent',
@@ -1063,14 +1065,14 @@ const articlesEn: Record<string, KnowledgeArticle> = {
         title: 'From the periphery to the centre',
         paragraphs: [
           'A central image in this tradition is the wheel: at the periphery there is agitation, at the centre there is peace. Kundalini is understood as the force that draws attention away from the restless outer edge and back toward the inner centre.',
-          'That is why it matters so much in Sahaja Yoga. Only when this movement happens does the subtle system become genuinely experiential and stillness gain an organic foundation.'
+          'That is why it matters so much in Sahaja Yoga. Only when this movement happens does the subtle system become genuinely experiential and stillness gain an organic foundation. Self-Realization is thus treated as a recovery of a lost inner link, not the acquisition of something foreign.'
         ]
       },
       {
         title: 'How its effect becomes visible',
         paragraphs: [
           'The effect of Kundalini is not described only in concepts but in recognisable consequences: greater quiet, more balanced reactions, clearer perception and a stronger ability to remain in the present.',
-          'As the centres are nourished, meditation requires less forcing. Attention naturally becomes quieter, and inner order begins to express itself in daily life.'
+          'As the centres are nourished, meditation requires less forcing. Attention naturally becomes quieter, and inner order begins to express itself in daily life. For that reason Kundalini is described not only as awakening energy, but also as a force that heals, improves and blesses, loosening the grip of material pressures on the person.'
         ]
       }
     ],
@@ -1319,9 +1321,9 @@ const articlesEn: Record<string, KnowledgeArticle> = {
     eyebrow: 'The Inner Breakthrough',
     title: 'Self-Realization: how attention is lifted into a higher plane',
     intro:
-      'Self-Realization is presented as the decisive transition in which Kundalini, dormant and sleeping within the triangular sacrum bone, awakens and relieves attention from the relentless burden of thought, ego and superego. Attention is then lifted into a higher plane of consciousness, and meditation begins not as a mental technique, but as an actual inner event.',
+      'Self-Realization is presented as the decisive transition in which Kundalini, dormant and sleeping within the triangular sacrum bone as a maternal spiritual energy and the power of pure desire, awakens and relieves attention from the relentless burden of thought, ego and superego. Attention is then lifted into a higher plane of consciousness, and meditation begins not as a mental technique, but as an actual inner event.',
     heroImage: selfRealizationImg,
-    heroImageAlt: 'Self-Realization',
+    heroImageAlt: 'Shri Mataji and Self-Realization',
     heroCaption:
       'Self-Realization marks the moment when Kundalini begins to lift attention and thoughtless awareness becomes experientially possible.',
     heroTags: ['Attention', 'Kundalini', 'Sahasrara'],
@@ -1381,7 +1383,7 @@ const articlesEn: Record<string, KnowledgeArticle> = {
       {
         title: 'The role of Kundalini in the breakthrough',
         paragraphs: [
-          'The actual movement is attributed to Kundalini. During the first Self-Realization, and then again in meditation, this inner energy rises through the central channel and pierces the centres from within.',
+          'The actual movement is attributed to Kundalini. During the first Self-Realization, and then again in meditation, this inner energy rises through the central channel and pierces the centres from within. It is described not only as latent energy, but as the power of pure desire and as a maternal force working for the person’s inner ascent.',
           'Attention is thereby drawn upward and begins to separate from its usual knot of thought and immediate emotional reaction. The energy is described as intelligent and ordering, not violent or dramatic.'
         ],
         points: [
@@ -1400,7 +1402,7 @@ const articlesEn: Record<string, KnowledgeArticle> = {
       {
         title: 'Why Self-Realization is only the beginning',
         paragraphs: [
-          'The first breakthrough is not treated as a final achievement. It creates the basis on which meditation, subtle perception and inner transformation can become regular and reliable.',
+          'The first breakthrough is not treated as a final achievement. It creates the basis on which meditation, subtle perception and inner transformation can become regular and reliable. In that sense, a longing carried through many religious and spiritual traditions becomes something immediate and experiential rather than merely hoped for.',
           'With repeated meditation, the flow of energy is said to strengthen. What first appears only for a moment can gradually become a more stable condition of silence, clarity and connectedness.'
         ]
       }

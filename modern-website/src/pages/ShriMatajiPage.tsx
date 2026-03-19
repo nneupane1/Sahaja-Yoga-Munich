@@ -50,10 +50,31 @@ const ShriMatajiPage: React.FC = () => {
           heroEyebrow: 'Shri Mataji Nirmala Devi',
           heroTitle: 'Ein Leben, ganz dem Wohl und der Erhebung der Menschheit gewidmet.',
           heroBody:
-            'Von Nirmala Srivastava zu Shri Mataji Nirmala Devi vereinte ihr Weg Mut, öffentliche Verantwortung, Familienleben und eine spirituelle Erkenntnis, die sie frei mit der Welt teilte.',
+            'Als Gründerin von Sahaja Yoga vereinte ihr Weg Mut, öffentliche Verantwortung, Familienleben und eine spirituelle Erkenntnis, die sie frei mit der Welt teilte.',
           imageAlt: 'Shri Mataji Nirmala Devi',
           imageNote:
             'Ihre Ausstrahlung verband innere Autorität, mütterliche Wärme und eine lebenslange Hingabe an das Wohl der Menschheit.',
+          visionEyebrow: 'Ihre Gegenwart und ihre geteilte Vision',
+          visionTitle: 'Eine Liebe, die über das Gewöhnliche hinausweist, und eine Vision, die praktisch wurde.',
+          visionLead:
+            'Viele Menschen erlebten in der Begegnung mit Shri Mataji nicht nur Inspiration, sondern eine innere Veränderung. Ihre Gegenwart verband tiefe Liebe, Mitgefühl und Klarheit mit einer seltenen Fähigkeit, geistigen Aufstieg im wirklichen Leben zugänglich zu machen.',
+          visionRoles: ['Lehrerin', 'Gründerin', 'Wegweiserin', 'Mutter'],
+          visionCards: [
+            {
+              title: 'Eine Gegenwart, die Menschen innerlich veränderte',
+              paragraphs: [
+                'Viele empfanden in ihren Worten und in ihrer Persönlichkeit eine Liebe, die weit über den Alltag hinausreichte. Wer ihr begegnete, sprach oft davon, stiller, aufrichtiger und dem eigenen besseren Wesen näher geworden zu sein.',
+                'Darum genügt es kaum zu sagen, sie habe Meditation gelehrt. Sie vermittelte auch Frieden, Tranquillität und geistige Erhebung. Vor allem zeigte sie Menschen, wie sie nach innen schauen und allmählich ihr eigener Guru werden können.'
+              ]
+            },
+            {
+              title: 'Eine geteilte Vision mit einem praktischen Schlüssel',
+              paragraphs: [
+                'Ihre Vision einer besseren Welt blieb nie bloßer Idealismus. Aus ihrer Erfahrung im Umfeld Mahatma Gandhis, aus dem Freiheitskampf Indiens und aus einem langen öffentlichen Leben erwuchs eine Sicht des Menschen, die innere Würde, gesellschaftliche Harmonie und spirituelle Reife zusammen dachte.',
+                'Der praktische Schlüssel dieser Vision war für sie die Selbstverwirklichung. Nicht als fernes Versprechen, sondern als gegenwärtige Möglichkeit: Wenn die Kundalini erwacht, kann der Mensch Frieden, Zufriedenheit und Verbundenheit nicht nur erhoffen, sondern als reale Verwandlung seines Bewusstseins erfahren.'
+              ]
+            }
+          ],
           bioEyebrow: 'Von Nirmala Srivastava zu Shri Mataji',
           bioTitle: 'Eine Biografie, geprägt von Bildung, Mut und Dienst am Menschen.',
           bioParagraphs: [
@@ -160,10 +181,31 @@ const ShriMatajiPage: React.FC = () => {
           heroEyebrow: 'Shri Mataji Nirmala Devi',
           heroTitle: 'A life wholly dedicated to the well-being and upliftment of humanity.',
           heroBody:
-            'From Nirmala Srivastava to Shri Mataji Nirmala Devi, her journey united courage, public responsibility, family life and a spiritual insight she shared freely with the world.',
+            'As the founder of Sahaja Yoga, her journey united courage, public responsibility, family life and a spiritual insight she shared freely with the world.',
           imageAlt: 'Shri Mataji Nirmala Devi',
           imageNote:
             'Her presence brought together inner authority, maternal warmth and a lifelong dedication to human welfare.',
+          visionEyebrow: 'Her Presence and Shared Vision',
+          visionTitle: 'A love beyond the ordinary, and a vision made practical.',
+          visionLead:
+            'Many people felt that meeting Shri Mataji brought more than inspiration; it changed something inwardly. Her presence joined deep love, compassion and clarity with a rare ability to make spiritual ascent tangible within ordinary life.',
+          visionRoles: ['Teacher', 'Founder', 'Guide', 'Mother'],
+          visionCards: [
+            {
+              title: 'A presence that changed people inwardly',
+              paragraphs: [
+                'Many experienced in her words and personality a love that seemed to reach beyond everyday life. Those who encountered her often described becoming quieter, more truthful and closer to the better self within them.',
+                'For that reason it is never enough to say that she merely taught meditation. She also conveyed peace, tranquillity and spiritual ascent. Above all, she showed people how to look within and gradually become their own guru.'
+              ]
+            },
+            {
+              title: 'A shared vision with a practical key',
+              paragraphs: [
+                'Her vision of a better world never remained abstract idealism. From her years around Mahatma Gandhi, from India’s freedom struggle and from a life of public responsibility, there emerged a view of human beings that held together inner dignity, social harmony and spiritual maturity.',
+                'The practical key to that vision was Self-Realization. Not as a distant promise, but as a present possibility: when Kundalini awakens, peace, contentment and connectedness need not remain dreams, but can become a real transformation of awareness.'
+              ]
+            }
+          ],
           bioEyebrow: 'From Nirmala Srivastava to Shri Mataji',
           bioTitle: 'A biography shaped by learning, courage and service.',
           bioParagraphs: [
@@ -298,7 +340,7 @@ const ShriMatajiPage: React.FC = () => {
               {copy.heroEyebrow}
             </span>
             <div className="space-y-5">
-              <h1 className="text-balance text-5xl text-slate-800 sm:text-6xl lg:text-[4.5rem]">
+              <h1 className="text-balance text-[2.55rem] text-slate-800 sm:text-[3.3rem] lg:text-[3.7rem]">
                 {copy.heroTitle}
               </h1>
               <p className="max-w-2xl text-lg leading-8 text-slate-700 sm:text-xl">
@@ -320,21 +362,21 @@ const ShriMatajiPage: React.FC = () => {
             </div>
           </div>
 
-          <div className="reveal-ready relative">
+          <div className="reveal-ready relative lg:max-w-[80%]">
             <div
               aria-hidden="true"
               className="animate-glow-pulse absolute inset-x-10 top-6 h-[88%] rounded-[2.2rem] bg-[radial-gradient(circle_at_center,rgba(104,168,205,0.28),transparent_68%)] blur-2xl"
             />
-            <div className="group relative overflow-hidden rounded-[2rem] border border-[#b35d4c]/25 bg-white/65 p-4 shadow-[0_28px_70px_rgba(72,110,140,0.18)] backdrop-blur transition duration-500 hover:-translate-y-1 hover:shadow-[0_34px_80px_rgba(72,110,140,0.24)]">
+            <div className="group relative overflow-hidden rounded-[1.75rem] border border-[#b35d4c]/25 bg-white/65 p-3 shadow-[0_28px_70px_rgba(72,110,140,0.18)] backdrop-blur transition duration-500 hover:-translate-y-1 hover:shadow-[0_34px_80px_rgba(72,110,140,0.24)]">
               <div className="pointer-events-none absolute inset-0 translate-x-[-120%] bg-[linear-gradient(120deg,transparent_20%,rgba(255,255,255,0.42)_45%,transparent_70%)] opacity-0 transition duration-700 group-hover:translate-x-[120%] group-hover:opacity-100" />
               <img
                 src={motherImg}
                 alt={copy.imageAlt}
-                className="h-[40rem] w-full rounded-[1.5rem] object-cover object-center transition duration-700 group-hover:scale-[1.04]"
+                className="h-[32rem] w-full rounded-[1.3rem] object-cover object-center transition duration-700 group-hover:scale-[1.04]"
               />
             </div>
-            <div className="animate-float-soft relative mt-4 ml-4 max-w-[24rem] rounded-[1.5rem] border border-[#b35d4c]/22 bg-[rgba(255,250,246,0.92)] p-5 shadow-[0_20px_50px_rgba(72,110,140,0.14)] backdrop-blur transition duration-500 hover:-translate-y-1 hover:shadow-[0_24px_56px_rgba(72,110,140,0.18)] sm:max-w-[26rem]">
-              <p className="text-base leading-7 text-slate-700">
+            <div className="animate-float-soft relative mt-4 ml-3 max-w-[19rem] rounded-[1.35rem] border border-[#b35d4c]/22 bg-[rgba(255,250,246,0.92)] p-4 shadow-[0_20px_50px_rgba(72,110,140,0.14)] backdrop-blur transition duration-500 hover:-translate-y-1 hover:shadow-[0_24px_56px_rgba(72,110,140,0.18)] sm:max-w-[21rem]">
+              <p className="text-[0.94rem] leading-6 text-slate-700">
                 {copy.imageNote}
               </p>
             </div>
@@ -356,6 +398,47 @@ const ShriMatajiPage: React.FC = () => {
               <p key={paragraph} className="text-lg leading-8">
                 {paragraph}
               </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-band pt-4">
+        <div className="section-shell grid gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:items-start">
+          <div className="reveal-ready space-y-5">
+            <span className="eyebrow">
+              {copy.visionEyebrow}
+            </span>
+            <h2 className="text-4xl text-slate-800 sm:text-5xl">{copy.visionTitle}</h2>
+            <p className="text-lg leading-8 text-slate-700">{copy.visionLead}</p>
+            <div className="flex flex-wrap gap-3">
+              {copy.visionRoles.map(role => (
+                <span
+                  key={role}
+                  className="hover-chip cursor-default bg-[rgba(255,250,246,0.92)] text-[#b35d4c] hover:translate-y-0 hover:bg-[rgba(255,250,246,0.92)] hover:text-[#b35d4c]"
+                >
+                  {role}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid gap-6">
+            {copy.visionCards.map(card => (
+              <article
+                key={card.title}
+                className="interactive-card reveal-ready group relative overflow-hidden p-8"
+              >
+                <div className="absolute inset-y-0 left-0 w-1 bg-[linear-gradient(180deg,#7bb9dc,#c8715f)] transition duration-500 group-hover:w-3" />
+                <h3 className="text-2xl text-slate-800 transition duration-300 group-hover:translate-x-1">
+                  {card.title}
+                </h3>
+                <div className="mt-5 space-y-4 text-lg leading-8 text-slate-700">
+                  {card.paragraphs.map(paragraph => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </div>
+              </article>
             ))}
           </div>
         </div>
