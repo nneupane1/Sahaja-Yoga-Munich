@@ -1651,7 +1651,7 @@ const articlesEn: Record<string, KnowledgeArticle> = {
     title: 'Inner science: when spirituality becomes a matter of conscious inquiry',
     intro:
       'Spirituality is not presented here as the enemy of reason. It is approached as a form of inner investigation in which attention, consciousness and direct experience are taken seriously and examined with openness.',
-    heroImage: thoughtlessImg,
+    heroImage: mother3Img,
     heroImageAlt: 'Higher consciousness',
     heroCaption:
       'What matters is not mere claim, but the possibility of exploring consciousness as a lived and observable field.',
@@ -1745,7 +1745,7 @@ const articlesEn: Record<string, KnowledgeArticle> = {
     title: 'Integration & development: how meditation can deepen personality',
     intro:
       'Spiritual development is closely tied here to the maturation of personality and character. Attention, tendencies, reactions and realms of consciousness together form a field within which a person may become clearer, steadier and more integrated.',
-    heroImage: tenetsImg,
+    heroImage: motherImg,
     heroImageAlt: 'Inner development and character',
     heroCaption:
       'Inner growth reveals itself not only in states of meditation, but in character, clarity and trustworthy conduct.',
@@ -1792,7 +1792,7 @@ const articlesEn: Record<string, KnowledgeArticle> = {
     title: 'Cultural integration: inner freedom as the ground of genuine openness',
     intro:
       'Cultural integration is not treated here as a slogan of tolerance alone. It grows out of a view of spirituality that takes freedom, conscience, respect and the autonomy of inner experience seriously.',
-    heroImage: tenetsImg,
+    heroImage: motherImg,
     heroImageAlt: 'Cultural integration and inner freedom',
     heroCaption:
       'Where spirituality is not confused with outer coercion, diversity can retain its dignity.',
