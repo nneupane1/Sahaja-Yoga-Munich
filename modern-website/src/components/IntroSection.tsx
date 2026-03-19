@@ -167,8 +167,8 @@ const IntroSection: React.FC = () => {
           <h2 className="text-center text-4xl sm:text-5xl">{copy.title}</h2>
         </div>
 
-        <div className="mt-8 grid gap-8 xl:grid-cols-[1.34fr_0.88fr]">
-          <div className="reveal-ready">
+        <div className="mt-8 grid gap-8 xl:relative xl:left-[-1.5rem] xl:w-[calc(100%+3rem)] xl:grid-cols-[minmax(0,1.68fr)_minmax(22rem,0.72fr)] xl:items-start xl:gap-6 2xl:left-[-2rem] 2xl:w-[calc(100%+4rem)] 2xl:grid-cols-[minmax(0,1.78fr)_minmax(23rem,0.68fr)]">
+          <div className="reveal-ready xl:min-w-0">
             <article className="warm-hover-glow rounded-[1.6rem] border border-[#b35d4c]/35 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,246,240,0.84))] px-6 py-6 text-left shadow-[0_16px_36px_rgba(72,110,140,0.12)] backdrop-blur-sm sm:px-8 sm:py-7">
               <div className="text-center">
                 <div className="inline-flex rounded-full border border-[#b35d4c]/24 bg-[rgba(255,248,243,0.9)] px-4 py-2 shadow-[0_10px_20px_rgba(72,110,140,0.06)]">
@@ -262,7 +262,7 @@ const IntroSection: React.FC = () => {
             </article>
           </div>
 
-          <div className="reveal-ready xl:pt-1">
+          <div className="reveal-ready xl:justify-self-end xl:pt-1 xl:w-full xl:max-w-[26rem] 2xl:max-w-[27rem]">
             <article className="warm-hover-glow overflow-hidden rounded-[1.7rem] border border-[#b35d4c]/35 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,246,240,0.84))] shadow-[0_18px_38px_rgba(72,110,140,0.12)] backdrop-blur-sm xl:sticky xl:top-28">
               <a
                 href={introVideoUrl}
