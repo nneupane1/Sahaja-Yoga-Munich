@@ -18,10 +18,7 @@ const Footer: React.FC = () => {
         };
 
   return (
-    <footer
-      id="contact"
-      className="border-t border-[#b35d4c]/18 bg-[#d8efff] py-8 text-center text-[0.95rem] text-slate-700"
-    >
+    <footer className="border-t border-[#b35d4c]/18 bg-[#d8efff] py-8 text-center text-[0.95rem] text-slate-700">
       <div className="section-shell space-y-2">
         <p>{copy.address}</p>
         <p>

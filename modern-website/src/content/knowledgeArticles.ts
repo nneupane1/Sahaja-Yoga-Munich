@@ -5,6 +5,7 @@ import thoughtlessImg from '../assets/sahajaonline/thoughtless-awareness-and-sel
 import improvedPerceptionImg from '../assets/sahajaonline/Improved-perception.jpg';
 import collectiveMeditationImg from '../assets/sahajaonline/What-is-Collective-Meditation.jpg';
 import tenetsImg from '../assets/sahajaonline/The-10-Defining-Tenets-of-Spirituality-scaled.jpg';
+import kundaliniGif from '../assets/kundalini.gif';
 import subtleSystemDeImg from '../assets/sahajayogade/das-subtile-system-grafik.jpg';
 import channelsDeImg from '../assets/sahajayogade/Channels-for-SY-website-de-2048x977-2-1024x489.png';
 import leftChannelDeImg from '../assets/sahajayogade/nadis-inside-img-002.jpg';
@@ -66,12 +67,12 @@ const articlesDe: Record<string, KnowledgeArticle> = {
     eyebrow: 'Lebendige innere Kraft',
     title: 'Kundalini: die ruhende Energie hinter Selbstverwirklichung',
     intro:
-      'Die Kundalini wird als angeborene, unzerstörbare Energie verstanden, die im Menschen bereits vorhanden ist und im Kreuzbein ruht. Wenn sie erwacht, belebt sie das gesamte subtile System und macht Meditation von einer Idee zu einer spürbaren inneren Erfahrung.',
-    heroImage: subtleSystemDeImg,
+      'Die Kundalini wird als angeborene, unzerstörbare Energie verstanden, die im Menschen bereits vorhanden ist und still und schlafend im dreieckigen Kreuzbein ruht. Wenn sie erwacht, belebt sie das gesamte subtile System und macht Meditation von einer Idee zu einer spürbaren inneren Erfahrung.',
+    heroImage: kundaliniGif,
     heroImageAlt: 'Darstellung des subtilen Systems',
     heroImageMode: 'contain',
     heroCaption:
-      'Die deutsche Systemgrafik zeigt, dass Kundalini nie isoliert gedacht wird: Sie wirkt immer im Zusammenhang mit Kanälen, Chakren und der Aufmerksamkeit.',
+      'Die Systemgrafik zeigt, dass Kundalini nie isoliert gedacht wird: Sie wirkt immer im Zusammenhang mit Kanälen, Chakren und der Aufmerksamkeit.',
     heroTags: ['Geburtsrecht', 'Kreuzbein', 'Aufstieg durch die Mitte'],
     keyPoints: [
       'Kundalini gilt als ursprüngliche und unzerstörbare Energie.',
@@ -82,7 +83,7 @@ const articlesDe: Record<string, KnowledgeArticle> = {
       eyebrow: 'Im Überblick',
       title: 'Wie die Kundalini im System verstanden wird',
       description:
-        'Die deutsche Darstellung verbindet Kundalini nicht mit Spektakel, sondern mit innerer Ordnung. Entscheidend sind ihr ruhender Ursprung, ihr sanfter Aufstieg und die Art, wie sie das System von innen her nährt.',
+        'Diese Darstellung verbindet Kundalini nicht mit Spektakel, sondern mit innerer Ordnung. Entscheidend sind ihr ruhender Ursprung, ihr sanfter Aufstieg und die Art, wie sie das System von innen her nährt.',
       items: [
         {
           title: 'Im Menschen bereits angelegt',
@@ -120,7 +121,7 @@ const articlesDe: Record<string, KnowledgeArticle> = {
       {
         title: 'Nicht hinzugefügt, sondern entdeckt',
         paragraphs: [
-          'In der deutschen Darstellung des subtilen Systems ist Kundalini keine von außen kommende Kraft. Sie gehört von Anfang an zum Menschen und bleibt auch dann vorhanden, wenn wir ihre Gegenwart noch nicht bewusst wahrnehmen.',
+          'In dieser Darstellung des subtilen Systems ist Kundalini keine von außen kommende Kraft. Sie gehört von Anfang an zum Menschen und bleibt auch dann vorhanden, wenn wir ihre Gegenwart noch nicht bewusst wahrnehmen.',
           'Gerade dadurch gewinnt die Idee von Selbstverwirklichung ihre Würde: Man muss nichts künstlich erzeugen, sondern lernt, einen verborgenen Ursprung in sich selbst freizulegen.'
         ],
         points: [
@@ -174,7 +175,7 @@ const articlesDe: Record<string, KnowledgeArticle> = {
     heroImageAlt: 'Darstellung der drei Nadis',
     heroImageMode: 'contain',
     heroCaption:
-      'Die deutsche Grafik macht die Grundidee sichtbar: Links und rechts beschreiben Polaritäten, die Mitte ist der Weg, auf dem Kundalini aufsteigt.',
+      'Die Grafik macht die Grundidee sichtbar: Links und rechts beschreiben Polaritäten, die Mitte ist der Weg, auf dem Kundalini aufsteigt.',
     heroTags: ['Ida', 'Pingala', 'Sushumna'],
     keyPoints: [
       'Der linke Kanal trägt Gefühl, Wunsch und Vergangenheitsbindung.',
@@ -237,7 +238,7 @@ const articlesDe: Record<string, KnowledgeArticle> = {
       {
         title: 'Die Mitte als Weg der inneren Evolution',
         paragraphs: [
-          'Der zentrale Kanal verläuft geradlinig von der Basis der Wirbelsäule bis zum Sahasrara. In der deutschen Darstellung ist er der eigentliche Weg der Evolution, weil nur durch diese Mitte die Kundalini aufsteigen und das System in einer höheren Ordnung zusammenführen kann.',
+          'Der zentrale Kanal verläuft geradlinig von der Basis der Wirbelsäule bis zum Sahasrara. In dieser Darstellung ist er der eigentliche Weg der Evolution, weil nur durch diese Mitte die Kundalini aufsteigen und das System in einer höheren Ordnung zusammenführen kann.',
           'Das erklärt auch, warum Balance hier mehr bedeutet als bloßes Wohlbefinden. Sie ist die Bedingung dafür, dass Aufmerksamkeit im gegenwärtigen Moment ruht und Meditation zu echtem inneren Frieden wird.'
         ],
         points: [
@@ -261,7 +262,7 @@ const articlesDe: Record<string, KnowledgeArticle> = {
     title: 'Chakren & Qualitäten: die Zentren, die Körper, Charakter und Bewusstsein verbinden',
     intro:
       'Die Chakren bilden eine feine Landkarte des Menschen. Jedes Zentrum hat eine subtile Qualität, eine körperliche Manifestation und einen klaren Einfluss darauf, wie wir handeln, fühlen, kommunizieren und meditieren.',
-    heroImage: subtleSystemDeImg,
+    heroImage: kundaliniGif,
     heroImageAlt: 'Subtiles System mit Chakren',
     heroImageMode: 'contain',
     heroCaption:
@@ -276,7 +277,7 @@ const articlesDe: Record<string, KnowledgeArticle> = {
       eyebrow: 'Die Zentren im Überblick',
       title: 'Von Mooladhara bis Sahasrara',
       description:
-        'Die deutsche Chakra-Seite arbeitet die Zentren nicht nur symbolisch aus, sondern in ihrer psychologischen und körperlichen Bedeutung. Genau daraus entsteht eine präzise und moderne Lesart des subtilen Systems.',
+        'Diese Darstellung arbeitet die Zentren nicht nur symbolisch aus, sondern in ihrer psychologischen und körperlichen Bedeutung. Genau daraus entsteht eine präzise und moderne Lesart des subtilen Systems.',
       items: [
         {
           title: 'Mooladhara',
@@ -364,15 +365,15 @@ const articlesDe: Record<string, KnowledgeArticle> = {
       {
         title: 'Warum die Chakren so praktisch lesbar sind',
         paragraphs: [
-          'Die Chakra-Lehre wirkt auf dieser deutschen Grundlage so konkret, weil sie nie nur mit Farben oder Symbolen arbeitet. Jedes Zentrum verbindet eine innere Qualität mit klaren physiologischen Zuständigkeiten.',
+          'Die Chakra-Lehre wirkt so konkret, weil sie nie nur mit Farben oder Symbolen arbeitet. Jedes Zentrum verbindet eine innere Qualität mit klaren physiologischen Zuständigkeiten.',
           'Dadurch werden Unschuld, Kreativität, Zufriedenheit, Sicherheit, Kommunikation, Vergebung und Integration nicht zu abstrakten Tugenden, sondern zu Kräften, die sich im Leben stärken oder abschwächen lassen.'
         ]
       },
       {
         title: 'Die integrierte Gruppe von Swadisthana, Nabhi und Void',
         paragraphs: [
-          'Ein besonderer Akzent der Seite liegt auf der Verbindung von Swadisthana, Nabhi und Void. Diese drei Bereiche arbeiten zusammen, wenn Handeln, materielle Ordnung, Wissen und Selbstführung eine reife Form annehmen sollen.',
-          'Damit wird sichtbar, dass spiritische Entwicklung nicht von alltäglichem Leben getrennt wird. Verdauung, Arbeit, Verantwortung, Disziplin und Wahrheitssuche gehören in dieser Sicht in denselben inneren Zusammenhang.'
+          'Swadisthana, Nabhi und Void bilden zusammen eine integrierte Gruppe. Diese drei Bereiche arbeiten zusammen, wenn Handeln, materielle Ordnung, Wissen und Selbstführung eine reife Form annehmen sollen.',
+          'Damit wird sichtbar, dass spirituelle Entwicklung nicht von alltäglichem Leben getrennt wird. Verdauung, Arbeit, Verantwortung, Disziplin und Wahrheitssuche gehören in dieser Sicht in denselben inneren Zusammenhang.'
         ]
       },
       {
@@ -399,39 +400,91 @@ const articlesDe: Record<string, KnowledgeArticle> = {
     hubRoute: '/selbstverwirklichung-meditation',
     navLabel: 'Selbstverwirklichung',
     eyebrow: 'Der innere Durchbruch',
-    title: 'Selbstverwirklichung: wenn das subtile Selbst erfahrbar wird',
+    title: 'Selbstverwirklichung: wie die Aufmerksamkeit in eine höhere Ebene gehoben wird',
     intro:
-      'Selbstverwirklichung wird als jener Wendepunkt beschrieben, an dem das physische und das subtile Selbst einander bewusst begegnen. Der Mensch spürt nicht nur etwas Beruhigendes, sondern tritt in einen neuen Zustand von Verbundenheit, innerem Wissen und Bewusstheit ein.',
+      'Selbstverwirklichung wird als jener entscheidende Übergang beschrieben, in dem die im dreieckigen Kreuzbein ruhende Kundalini erwacht und die Aufmerksamkeit von der ununterbrochenen Belastung durch Gedanken, Ego und Superego entlastet. So wird sie in eine höhere Ebene des Bewusstseins angehoben, und Meditation beginnt nicht als Technik, sondern als tatsächliches inneres Geschehen.',
     heroImage: selfRealizationImg,
     heroImageAlt: 'Selbstverwirklichung',
     heroCaption:
-      'Selbstverwirklichung markiert den Beginn einer bewusst erfahrbaren Verbindung zwischen der inneren Energie und dem tieferen Selbst.',
-    heroTags: ['Innere Verbindung', 'Neues Bewusstsein', 'Oneness'],
+      'Selbstverwirklichung markiert den Moment, in dem Kundalini die Aufmerksamkeit anhebt und Gedankenfreiheit erstmals erfahrbar macht.',
+    heroTags: ['Aufmerksamkeit', 'Kundalini', 'Sahasrara'],
     keyPoints: [
-      'Selbstverwirklichung verbindet das subtile Selbst mit der allgegenwärtigen Kraft.',
-      'Sie wird als Beginn eines Prozesses verstanden, nicht als Endpunkt.',
-      'Mit ihr wird das subtile System tatsächlich erfahrbar.'
+      'Selbstverwirklichung entlastet die Aufmerksamkeit von Gedanken, Ego und Konditionierungen.',
+      'Die Kundalini steigt dabei durch den zentralen Kanal und durchdringt die Chakren.',
+      'Der erste Durchbruch ist Beginn eines vertiefbaren Prozesses, nicht sein Abschluss.'
     ],
+    details: {
+      eyebrow: 'Der Vorgang im Überblick',
+      title: 'Wie Selbstverwirklichung hier beschrieben wird',
+      description:
+        'Die Darstellung verbindet Psychologie, subtile Anatomie und konkrete Meditation. Aufmerksamkeit, Kundalini und Chakren werden nicht getrennt, sondern als ein einziger innerer Vorgang verstanden.',
+      items: [
+        {
+          title: 'Die Last der Gedanken wird leichter',
+          subtitle: 'Aufmerksamkeit statt Überlagerung',
+          description:
+            'Der erste Schritt besteht darin, dass die Aufmerksamkeit aus der Dauerbelastung durch Gedanken, Erinnerungen, Ego und Superego gelöst wird. Dadurch wird sie stiller, fokussierter und gegenwärtiger.',
+          note: 'Die Aufmerksamkeit soll nicht länger unruhig zwischen Vergangenheit und Zukunft hin- und herspringen.',
+          image: selfRealizationImg,
+          alt: 'Selbstverwirklichung als Hebung der Aufmerksamkeit'
+        },
+        {
+          title: 'Kundalini hebt die innere Ebene an',
+          subtitle: 'Der Aufstieg durch die Mitte',
+          description:
+            'Die Kundalini steigt durch den zentralen Kanal auf, durchdringt die Chakren und hebt das Feld der Aufmerksamkeit nach oben, statt dass der Mensch es mit Willenskraft erzwingen müsste.',
+          note: 'Das Bild des von innen aufgespannten Zeltes dient dazu, diese Ausweitung der Aufmerksamkeit zu erklären.',
+          image: thoughtlessImg,
+          alt: 'Aufsteigende innere Energie'
+        },
+        {
+          title: 'Am Sahasrara wird die Stille erfahrbar',
+          subtitle: 'Vom Durchbruch zur Praxis',
+          description:
+            'Der entscheidende Moment wird dort gesehen, wo die Energie über das Agnya hinaus in Richtung Sahasrara steigt. Hier erscheint Gedankenfreiheit erstmals als reale Erfahrung.',
+          note: 'Durch regelmäßige Meditation wird aus diesem Moment eine zunehmend stabilere Bewusstseinslage.',
+          image: improvedPerceptionImg,
+          alt: 'Verfeinerte Wahrnehmung'
+        }
+      ]
+    },
     blocks: [
       {
-        title: 'Mehr als spirituelle Suche',
+        title: 'Warum Aufmerksamkeit zuerst entlastet werden muss',
         paragraphs: [
-          'Spirituelle Suche wird hier nicht als vage Sehnsucht verstanden, sondern als Rückkehr zum eigenen Ursprung. Der Mensch ist aus dem Subtilen hervorgegangen und kann sich deshalb wieder mit dieser tieferen Wirklichkeit verbinden.',
-          'Selbstverwirklichung bedeutet in diesem Sinn nicht bloß eine schöne Idee, sondern ein tatsächliches Herstellen der Verbindung zwischen äußerem und innerem Sein.'
+          'Der Text setzt nicht bei abstrakter Spiritualität an, sondern bei der realen Überforderung der Aufmerksamkeit. Solange sie ununterbrochen von Gedanken, innerem Kommentar, Erinnerungen und Reaktionen bedrängt wird, kann sie sich nicht in einen höheren Zustand erheben.',
+          'Selbstverwirklichung wird deshalb als eine Art Befreiung der Aufmerksamkeit verstanden. Erst wenn diese Enge nachlässt, kann der Mensch den gegenwärtigen Moment klarer sehen und seine eigenen Reaktionsmuster besser durchschauen.'
+        ],
+        points: [
+          'Aufmerksamkeit ist der Träger des Bewusstseins',
+          'Ego und Superego ziehen sie von der Mitte weg',
+          'Meditation beginnt mit Entlastung, nicht mit Druck'
         ]
       },
       {
-        title: 'Der Eintritt in eine neue Bewusstseinsebene',
+        title: 'Die Rolle der Kundalini beim inneren Durchbruch',
         paragraphs: [
-          'Mit dieser Verbindung öffnet sich eine neue Ebene der Wahrnehmung. Die subtile Energie wird spürbar, die Aufmerksamkeit verfeinert sich, und zugleich entsteht das Gefühl, Teil eines größeren Ganzen zu sein.',
-          'Das Ich verschwindet dabei nicht. Vielmehr bleibt der Mensch als Person bestehen, gewinnt aber eine tiefere Identität, die nicht mehr nur auf Körper, Denken und Rolle beschränkt ist.'
+          'Die eigentliche Bewegung wird der Kundalini zugeschrieben. Während der ersten Selbstverwirklichung und danach in jeder Meditation steigt diese innere Energie durch den zentralen Kanal auf und durchstößt die Zentren von innen her.',
+          'Dadurch wird die Aufmerksamkeit nach oben gezogen und von der gewöhnlichen Verflechtung mit Gedanken und unmittelbarer emotionaler Reaktion gelöst. Die Kundalini arbeitet hier nicht gewaltsam, sondern intelligent und ordnend.'
+        ],
+        points: [
+          'Aufstieg durch die Sushumna',
+          'Durchdringung der Chakren',
+          'Hebung statt Zwang'
         ]
       },
       {
-        title: 'Warum dieser Schritt so zentral ist',
+        title: 'Das Bild des Zeltes und die Öffnung des Sahasrara',
         paragraphs: [
-          'Selbstverwirklichung bildet die Schwelle, ab der Meditation zu einer gelebten Realität wird. Erst hier werden das subtile System, die innere Energie und die Erfahrung von Verbundenheit zu etwas Nachvollziehbarem.',
-          'Darum ist sie nicht Abschluss, sondern Auftakt: Der Weg der Verfeinerung beginnt genau dort, wo diese innere Verbindung spürbar wird.'
+          'Um diesen Vorgang zu veranschaulichen, wird das Bild eines Zeltes verwendet: Wie eine Zeltstange das Gewebe nach oben spannt, so spannt die innere Energie das Feld der Aufmerksamkeit in eine höhere Bewusstseinsebene hinein.',
+          'Besonders bedeutsam ist jener Moment, in dem die Energie über das Agnya hinaus in den Bereich des Sahasrara steigt. Dort wird Gedankenfreiheit als tatsächlicher innerer Zustand möglich.'
+        ]
+      },
+      {
+        title: 'Warum Selbstverwirklichung erst der Anfang ist',
+        paragraphs: [
+          'Der erste Durchbruch wird nicht als Endpunkt verstanden. Er schafft vielmehr die Grundlage dafür, dass Meditation, subtile Wahrnehmung und innere Klärung überhaupt regelmäßig erlebt werden können.',
+          'Mit wiederholter Praxis werden die Ströme der Energie stärker und stabiler. Was zunächst nur für einen Augenblick geschieht, kann sich so zu einer tragfähigeren Form von Stille, Klarheit und Verbundenheit entwickeln.'
         ]
       }
     ],
@@ -446,39 +499,91 @@ const articlesDe: Record<string, KnowledgeArticle> = {
     hubRoute: '/selbstverwirklichung-meditation',
     navLabel: 'Gedankenfreie Stille',
     eyebrow: 'Vierter Bewusstseinszustand',
-    title: 'Gedankenfreie Stille: ein waches Bewusstsein jenseits des Gedankenstroms',
+    title: 'Gedankenfreie Stille: der vierte Bewusstseinszustand jenseits des Gedankenstroms',
     intro:
-      'Gedankenfreie Stille wird als vierter Bewusstseinszustand beschrieben. Sie ist weder Schlaf, Traum noch gewöhnliches Wachsein, sondern ein stiller und doch hochwacher Raum, in dem das Denken seine Dominanz verliert und das innere Selbst deutlicher hervortritt.',
+      'Gedankenfreie Stille wird ausdrücklich als vierter Bewusstseinszustand beschrieben. Sie ist weder Schlaf noch Traum noch gewöhnliches Wachsein, sondern ein stiller und zugleich hochwacher Zustand, in dem der innere Dialog zurücktritt und das innere Selbst deutlicher hervortritt.',
     heroImage: thoughtlessImg,
     heroImageAlt: 'Gedankenfreie Stille',
     heroCaption:
-      'Gedankenfreiheit bedeutet hier nicht Leere, sondern eine ruhige, inspirierte und integrierte Form von Wachheit.',
-    heroTags: ['Turiya', 'Wachheit', 'Inneres Selbst'],
+      'Gedankenfreiheit bedeutet hier nicht Leere, sondern ein stilles, klares und von innen helles Bewusstsein.',
+    heroTags: ['Turiya', 'Innere Stille', 'Klarheit'],
     keyPoints: [
-      'Gedankenfreiheit wird als eigener Bewusstseinszustand verstanden.',
-      'Der Aufstieg der Energie erleichtert diesen Zustand wesentlich.',
-      'Je stärker der Fluss der Energie, desto tiefer und länger wird die Stille.'
+      'Gedankenfreiheit wird als eigenständiger Bewusstseinszustand verstanden.',
+      'Das Gehirn bleibt aktiv, aber der Gedankenstrom verliert seine Herrschaft.',
+      'Die aufsteigende Energie erleichtert diesen Zustand wesentlich und vertieft ihn.'
     ],
+    details: {
+      eyebrow: 'Die innere Dynamik',
+      title: 'Was diesen Zustand besonders macht',
+      description:
+        'Die Darstellung verbindet neurowissenschaftlich klingende Sprache, Erfahrung und subtile Energie. Gedankenfreiheit erscheint dabei weder mystisch verschwommen noch rein psychologisch reduziert.',
+      items: [
+        {
+          title: 'Mehr als Wachen, Träumen und Schlafen',
+          subtitle: 'Der vierte Zustand',
+          description:
+            'Gedankenfreiheit wird als ein Zustand jenseits der drei gewöhnlichen Modi beschrieben. Das Bewusstsein bleibt wach, aber der Mensch ist nicht länger im gewohnten Strom aus innerem Kommentar gefangen.',
+          note: 'Stille und Präsenz erscheinen hier zusammen, nicht als Gegensätze.',
+          image: thoughtlessImg,
+          alt: 'Gedankenfreie Stille'
+        },
+        {
+          title: 'Die Energie nimmt Arbeit ab',
+          subtitle: 'Müheloser als mentales Kämpfen',
+          description:
+            'Die aufsteigende Energie wird als eigentliche Hilfe verstanden. Sie trägt die Aufmerksamkeit über die mentale Ebene hinaus, anstatt dass der Mensch auf derselben Ebene gegen seine Gedanken kämpfen müsste.',
+          note: 'Gerade darin liegt der natürliche und spontane Charakter dieser Meditation.',
+          image: selfRealizationImg,
+          alt: 'Selbstverwirklichung und Gedankenfreiheit'
+        },
+        {
+          title: 'Beobachten statt verstrickt sein',
+          subtitle: 'Das innere Zeugenbewusstsein',
+          description:
+            'Gedanken und Gefühle werden nicht ausgelöscht, sondern können aus einer ruhigeren inneren Distanz beobachtet werden. Dadurch vermindern sich Zwang, Identifikation und Reaktivität.',
+          note: 'Die innere Wahrnehmung richtet sich stärker auf den Fluss des Erlebens als auf seinen ständigen Inhalt.',
+          image: improvedPerceptionImg,
+          alt: 'Verfeinerte Wahrnehmung'
+        }
+      ]
+    },
     blocks: [
       {
-        title: 'Jenseits von Wachen, Träumen und Schlafen',
+        title: 'Ein Zustand jenseits der drei gewöhnlichen Modi',
         paragraphs: [
-          'Gedankenfreie Stille wird als Zustand beschrieben, in dem das Gehirn nicht ausgeschaltet ist, aber nicht mehr im üblichen Modus von Denken und Reagieren arbeitet.',
-          'Gerade deshalb wirkt dieser Zustand so ungewöhnlich: Er verbindet Ruhe mit Wachheit und Stille mit Präsenz.'
+          'Gedankenfreie Stille wird nicht als Abschalten des Gehirns beschrieben. Vielmehr bleibt das Gehirn aktiv, während der übliche Modus aus Denken, Kommentieren und Reagieren an Dominanz verliert.',
+          'Gerade das macht diesen Zustand so bemerkenswert: Er verbindet Ruhe mit hoher Wachheit und Stille mit gegenwärtiger Präsenz.'
+        ],
+        points: [
+          'nicht Schlaf',
+          'nicht Traum',
+          'nicht gewöhnliches Wachbewusstsein'
         ]
       },
       {
-        title: 'Warum die Energie dabei entscheidend ist',
+        title: 'Wie Kundalini Gedankenfreiheit erleichtert',
         paragraphs: [
-          'Dieser Zustand soll nicht allein auf der gewöhnlichen mentalen Ebene erkämpft werden. Die aufsteigende Energie übernimmt einen Großteil der Arbeit und trägt die Aufmerksamkeit über den gewohnten Gedankenstrom hinaus.',
-          'So wird Meditation weniger zu einem Kampf gegen Gedanken und mehr zu einem Prozess des inneren Getragenwerdens.'
+          'Der Text betont ausdrücklich, dass Gedankenfreiheit nicht am besten durch Willenskraft auf der mentalen Ebene erreicht wird. Dort ist der Mensch ja gerade von jenen Gedanken und Gefühlen umgeben, die er überschreiten möchte.',
+          'Die aufsteigende Kundalini nimmt hier einen Großteil der Arbeit ab. Sie trägt die Aufmerksamkeit nach oben und macht die Meditation dadurch natürlicher, müheloser und spontaner.'
+        ],
+        points: [
+          'nicht Kampf gegen Gedanken',
+          'die Energie übernimmt den Hebevorgang',
+          'mühelos, natürlich und spontan'
         ]
       },
       {
-        title: 'Die Qualität dieser Stille',
+        title: 'Wie sich diese Stille innerlich anfühlt',
         paragraphs: [
-          'In diesem Zustand können Gedanken und Gefühle beobachtet werden, ohne dass man sofort in sie hineingezogen wird. Das führt zu mehr innerer Distanz, Klarheit und weniger Reaktivität.',
-          'Je tiefer diese Stille wird, desto freier fließt auch die Energie. Stille und Energiefluss verstärken sich damit gegenseitig.'
+          'In Gedankenfreiheit können Gedanken und Gefühle beobachtet werden, ohne dass man sofort in sie hineingezogen wird. Das schafft eine ungewöhnliche Klarheit: Wahrnehmung wird direkter, Reaktionen werden weniger zwanghaft, und die Gegenwart wird dichter erfahrbar.',
+          'Die Stille ist also nicht leer, sondern erfüllt von Bewusstheit. Je tiefer sie wird, desto freier scheint auch die Energie zu fließen.'
+        ]
+      },
+      {
+        title: 'Warum dieser Zustand auch psychologisch bedeutsam ist',
+        paragraphs: [
+          'Wenn sich Aufmerksamkeit nicht mehr mit jedem Gedankeninhalt identifiziert, entsteht ein beobachtender innerer Standpunkt. Das verändert nicht nur die Meditation, sondern auch den Umgang mit Gefühlen, Impulsen und Gewohnheiten.',
+          'Gerade dadurch erhält Gedankenfreiheit eine therapeutische Dimension: Nicht weil Probleme verschwinden, sondern weil der Mensch ihnen mit weniger Verstrickung und mehr innerer Freiheit begegnen kann.'
         ]
       }
     ],
@@ -493,39 +598,91 @@ const articlesDe: Record<string, KnowledgeArticle> = {
     hubRoute: '/selbstverwirklichung-meditation',
     navLabel: 'Meditationspraxis',
     eyebrow: 'Meditation im Alltag',
-    title: 'Meditationspraxis: wie sich die Erfahrung im Alltag vertieft',
+    title: 'Meditationspraxis: wie sich die erste Erfahrung zuhause vertieft',
     intro:
-      'Meditation wird nicht als starre Routine, sondern als lebendige Praxis beschrieben. Sie lässt sich zuhause, morgens oder abends, in Stille oder mit leiser Unterstützung vertiefen und gewinnt vor allem durch Regelmäßigkeit an Kraft.',
+      'Meditation wird nicht als starre Routine, sondern als lebendige und flexible Praxis beschrieben. Nach der ersten Selbstverwirklichung kann sie zuhause, morgens oder abends, in Stille oder mit sanfter Unterstützung vertieft werden und gewinnt vor allem durch Regelmäßigkeit an Kraft.',
     heroImage: selfRealizationImg,
     heroImageAlt: 'Meditationspraxis zuhause',
     heroCaption:
-      'Die tägliche Praxis ist der Ort, an dem aus einer ersten Erfahrung eine stabile innere Gewohnheit wird.',
-    heroTags: ['Zuhause', 'Regelmäßigkeit', 'Kollektivität'],
+      'Die tägliche Praxis ist der Ort, an dem aus einem ersten inneren Durchbruch eine tragfähige Gewohnheit der Stille wird.',
+    heroTags: ['Morgens & abends', 'Innere Energie', 'Kollektivität'],
     keyPoints: [
-      'Meditation kann flexibel und doch ernsthaft in den Alltag integriert werden.',
-      'Der Schwerpunkt liegt auf Erfahrung statt auf starrer Disziplin.',
-      'Individuelle und kollektive Meditation vertiefen sich gegenseitig.'
+      'Empfohlen werden meist kurze Phasen morgens und abends, jedoch ohne starre Härte.',
+      'Die Praxis beginnt mit Entspannung, dem Heben der Energie und stillem Beobachten.',
+      'Individuelle und kollektive Meditation vertiefen und beschleunigen einander.'
     ],
+    details: {
+      eyebrow: 'Praktische Vertiefung',
+      title: 'Wie die tägliche Meditation beschrieben wird',
+      description:
+        'Die Hinweise bleiben bewusst einfach. Ort, Haltung und Dauer sollen die Erfahrung unterstützen, nicht in ein kompliziertes System von Vorschriften verwandeln.',
+      items: [
+        {
+          title: 'Ort und Rhythmus',
+          subtitle: 'Ruhig, natürlich, tragfähig',
+          description:
+            'Empfohlen wird ein ruhiger Ort zuhause; auch etwas Natur im Raum oder das Meditieren im Freien wird als hilfreich beschrieben. Viele meditieren morgens nach dem Aufwachen und abends vor dem Schlafen.',
+          note: 'Als grober Rhythmus werden etwa zehn bis zwanzig Minuten genannt, doch die Praxis bleibt bewusst flexibel.',
+          image: selfRealizationImg,
+          alt: 'Meditation zuhause'
+        },
+        {
+          title: 'Wie eine Sitzung beginnt',
+          subtitle: 'Entspannen und die Energie heben',
+          description:
+            'Man sitzt bequem, entspannt sich, hebt die innere Energie und lässt dann die Gedanken vorbeiziehen, statt gegen sie anzukämpfen. Die Energie soll den Hauptteil der inneren Arbeit übernehmen.',
+          note: 'Empfindungen an den Handflächen oder am Scheitel können mit der Zeit deutlicher werden.',
+          image: thoughtlessImg,
+          alt: 'Meditation in Stille'
+        },
+        {
+          title: 'Was die Praxis stabiler macht',
+          subtitle: 'Regelmäßigkeit und Kollektivität',
+          description:
+            'Mit der Zeit verfeinert sich die Wahrnehmung des subtilen Systems, und kleine Veränderungen in Aufmerksamkeit, Emotionen und Verhalten werden spürbarer. Gemeinsame Meditation kann diesen Prozess merklich beschleunigen.',
+          note: 'Auch unterstützende Techniken wie Fußsoaken oder Affirmationen werden als hilfreiche Ergänzungen genannt.',
+          image: improvedPerceptionImg,
+          alt: 'Vertiefung durch regelmäßige Meditation'
+        }
+      ]
+    },
     blocks: [
       {
-        title: 'Einfache Bedingungen, tiefe Wirkung',
+        title: 'Ein ruhiger Ort und ein menschlicher Rhythmus',
         paragraphs: [
-          'Für die Praxis wird ein ruhiger Ort empfohlen, gern mit etwas Natur im Raum oder sogar im Freien. Die Bedingungen sollen unterstützend sein, aber nicht künstlich überhöht.',
-          'Wichtiger als Perfektion ist die Freude an der Erfahrung. Die Praxis bleibt flexibel, und der Mensch soll selbst herausfinden, welche Zeiten und Rhythmen für ihn wirklich tragfähig sind.'
+          'Für die Praxis wird ein ruhiger Platz zuhause empfohlen. Etwas Natur im Raum oder auch das Meditieren im Freien kann die Qualität der Erfahrung unterstützen, ohne dass daraus ein Ritualtheater gemacht werden müsste.',
+          'Viele meditieren morgens direkt nach dem Aufwachen und abends vor dem Schlafengehen. Als hilfreicher Rahmen werden eher kurze Zeitspannen genannt, doch die Praxis bleibt bewusst flexibel und soll zum eigenen Leben passen.'
+        ],
+        points: [
+          'ruhiger Ort',
+          'morgens und abends',
+          'kurz, aber regelmäßig'
         ]
       },
       {
-        title: 'Wie eine Sitzung beschrieben wird',
+        title: 'Wie eine einzelne Meditation geführt wird',
         paragraphs: [
-          'Die Praxis beginnt mit dem Entspannen, dem Heben der inneren Energie und dem stillen Verweilen. Gedanken sollen nicht bekämpft, sondern beobachtet und wieder losgelassen werden.',
-          'Mit der Zeit können subtile Empfindungen auf den Handflächen oder am Scheitel deutlicher werden. Die Meditation wird dadurch konkreter und persönlicher.'
+          'Die Anleitung bleibt einfach: bequem sitzen, entspannen, die Augen schließen, die innere Energie heben und dann möglichst in Gedankenfreiheit verweilen. Gedanken sollen nicht unterdrückt, sondern nur beobachtet und vorbeiziehen gelassen werden.',
+          'Oft wird empfohlen, die Energie auf den Handflächen oder als kühlere Empfindung am Scheitel zu spüren. Dadurch wird die Praxis mit der Zeit weniger abstrakt und zunehmend erfahrungsnah.'
+        ],
+        points: [
+          'entspannen',
+          'Energie heben',
+          'Gedanken nur beobachten'
         ]
       },
       {
-        title: 'Die Rolle kollektiver Meditation',
+        title: 'Was nach der Sitzung und mit der Zeit geschieht',
         paragraphs: [
-          'Neben der individuellen Praxis wird gemeinsames Meditieren als kraftvolle Vertiefung beschrieben. Mehrere Menschen in Stille verstärken das Erleben von Energiefluss und Aufmerksamkeit deutlich.',
-          'Individuelle und kollektive Praxis werden nicht gegeneinander ausgespielt. Sie ergänzen sich und tragen gemeinsam dazu bei, dass die Entwicklung ausgeglichener und nachhaltiger wird.'
+          'Am Ende wird empfohlen, die innere Energie noch einmal zu heben, um den Zustand zu schützen und möglichst in den weiteren Tag mitzunehmen. Für den Abend werden ergänzende Techniken wie Fußsoaken als besonders hilfreich beschrieben.',
+          'Mit regelmäßiger Praxis verfeinern sich Wahrnehmung, Aufmerksamkeit und Verhalten allmählich. Kleine Veränderungen werden spürbar, noch bevor große Worte dafür nötig wären.'
+        ]
+      },
+      {
+        title: 'Warum kollektive Meditation so betont wird',
+        paragraphs: [
+          'Gemeinsame Meditation wird als einer der stärksten Faktoren für Stabilität und Wachstum beschrieben. In der Gruppe vertiefen sich Stille, Aufmerksamkeit und das Empfinden des Energieflusses oft leichter und deutlicher.',
+          'Kollektive Praxis ersetzt die persönliche Meditation nicht, sondern ergänzt sie. Gerade das Zusammenspiel von beidem lässt die Entwicklung ausgeglichener und nachhaltiger werden.'
         ]
       }
     ],
@@ -827,12 +984,12 @@ const articlesEn: Record<string, KnowledgeArticle> = {
     eyebrow: 'Living Inner Power',
     title: 'Kundalini: the resting energy behind Self-Realization',
     intro:
-      'Kundalini is understood as an inborn, indestructible energy already present within the human being and resting in the sacrum. Once awakened, it animates the whole subtle system and turns meditation from an idea into a lived inner experience.',
+      'Kundalini is understood as an inborn, indestructible energy already present within the human being and lying dormant, sleeping within the triangular sacrum bone. Once awakened, it animates the whole subtle system and turns meditation from an idea into a lived inner experience.',
     heroImage: subtleSystemDeImg,
     heroImageAlt: 'Subtle system diagram',
     heroImageMode: 'contain',
     heroCaption:
-      'The German system diagram shows that Kundalini is never treated in isolation: it works together with the channels, chakras and the movement of attention.',
+      'The system diagram shows that Kundalini is never treated in isolation: it works together with the channels, chakras and the movement of attention.',
     heroTags: ['Birthright', 'Sacrum', 'Ascent through the centre'],
     keyPoints: [
       'Kundalini is presented as primordial and indestructible.',
@@ -843,7 +1000,7 @@ const articlesEn: Record<string, KnowledgeArticle> = {
       eyebrow: 'At a glance',
       title: 'How Kundalini is understood within the system',
       description:
-        'The German presentation frames Kundalini not as spectacle but as inner order. The emphasis falls on its resting place, its gentle ascent and the way it nourishes the system from within.',
+        'This presentation frames Kundalini not as spectacle but as inner order. The emphasis falls on its resting place, its gentle ascent and the way it nourishes the system from within.',
       items: [
         {
           title: 'Already present within the person',
@@ -881,7 +1038,7 @@ const articlesEn: Record<string, KnowledgeArticle> = {
       {
         title: 'Not added from outside, but discovered within',
         paragraphs: [
-          'In the German description of the subtle system, Kundalini is not a force imported from outside. It belongs to the human being from the beginning and remains present even before we consciously perceive it.',
+          'In this description of the subtle system, Kundalini is not a force imported from outside. It belongs to the human being from the beginning and remains present even before we consciously perceive it.',
           'That is what gives Self-Realization its dignity here: nothing artificial needs to be manufactured. One learns instead to uncover a hidden origin already rooted within one’s own being.'
         ],
         points: [
@@ -935,7 +1092,7 @@ const articlesEn: Record<string, KnowledgeArticle> = {
     heroImageAlt: 'Three nadis diagram',
     heroImageMode: 'contain',
     heroCaption:
-      'The German diagram makes the core idea visible: left and right describe polarities, while the middle is the path along which Kundalini rises.',
+      'The diagram makes the core idea visible: left and right describe polarities, while the middle is the path along which Kundalini rises.',
     heroTags: ['Ida', 'Pingala', 'Sushumna'],
     keyPoints: [
       'The left channel carries feeling, desire and relation to the past.',
@@ -998,7 +1155,7 @@ const articlesEn: Record<string, KnowledgeArticle> = {
       {
         title: 'The middle as the path of inner evolution',
         paragraphs: [
-          'The central channel runs from the base of the spine straight toward the Sahasrara. In the German explanation it is the actual path of evolution, because only through this middle line can Kundalini rise and unify the system in a higher order.',
+          'The central channel runs from the base of the spine straight toward the Sahasrara. Here it is understood as the actual path of evolution, because only through this middle line can Kundalini rise and unify the system in a higher order.',
           'This also explains why balance means more than comfort. It is the condition that allows attention to settle in the present and meditation to become real inner peace.'
         ],
         points: [
@@ -1037,7 +1194,7 @@ const articlesEn: Record<string, KnowledgeArticle> = {
       eyebrow: 'The centres at a glance',
       title: 'From Mooladhara to Sahasrara',
       description:
-        'The German chakra page develops the centres not merely symbolically, but through their psychological and physical meaning. That is what gives this system a modern and surprisingly precise feel.',
+        'This presentation develops the centres not merely symbolically, but through their psychological and physical meaning. That is what gives this system a modern and surprisingly precise feel.',
       items: [
         {
           title: 'Mooladhara',
@@ -1132,7 +1289,7 @@ const articlesEn: Record<string, KnowledgeArticle> = {
       {
         title: 'The integrated group of Swadisthana, Nabhi and Void',
         paragraphs: [
-          'A distinctive emphasis of the German page is the relationship between Swadisthana, Nabhi and the Void. These three work together whenever action, material order, knowledge and self-discipline need to mature in a balanced way.',
+          'Swadisthana, Nabhi and the Void form an integrated group. These three work together whenever action, material order, knowledge and self-discipline need to mature in a balanced way.',
           'This makes the larger point clear: spiritual development is not detached from ordinary life. Digestion, work, responsibility, discipline and truth-seeking belong to the same field of growth.'
         ]
       },
@@ -1160,39 +1317,91 @@ const articlesEn: Record<string, KnowledgeArticle> = {
     hubRoute: '/selbstverwirklichung-meditation',
     navLabel: 'Self-Realization',
     eyebrow: 'The Inner Breakthrough',
-    title: 'Self-Realization: when the subtle self becomes experiential',
+    title: 'Self-Realization: how attention is lifted into a higher plane',
     intro:
-      'Self-Realization is described as the turning point at which the physical and subtle self consciously meet. A person does not merely feel calmer, but enters a new condition of connectedness, inner knowledge and awakened awareness.',
+      'Self-Realization is presented as the decisive transition in which Kundalini, dormant and sleeping within the triangular sacrum bone, awakens and relieves attention from the relentless burden of thought, ego and superego. Attention is then lifted into a higher plane of consciousness, and meditation begins not as a mental technique, but as an actual inner event.',
     heroImage: selfRealizationImg,
     heroImageAlt: 'Self-Realization',
     heroCaption:
-      'Self-Realization marks the beginning of a conscious link between inner energy and the deeper self.',
-    heroTags: ['Inner Link', 'New Consciousness', 'Oneness'],
+      'Self-Realization marks the moment when Kundalini begins to lift attention and thoughtless awareness becomes experientially possible.',
+    heroTags: ['Attention', 'Kundalini', 'Sahasrara'],
     keyPoints: [
-      'Self-Realization links the subtle self with the all-pervading power.',
-      'It is understood as the beginning of a process, not its endpoint.',
-      'From that moment the subtle system becomes truly experiential.'
+      'Self-Realization relieves attention from thought, ego and conditioning.',
+      'Kundalini rises through the central channel and pierces the chakras.',
+      'The first breakthrough is the beginning of a deepening process, not its end.'
     ],
+    details: {
+      eyebrow: 'The process at a glance',
+      title: 'How Self-Realization is described here',
+      description:
+        'The presentation joins psychology, subtle anatomy and meditation. Attention, Kundalini and the chakras are treated not as separate ideas but as one living inner process.',
+      items: [
+        {
+          title: 'The burden on attention lightens',
+          subtitle: 'Attention rather than overload',
+          description:
+            'The first change is that attention begins to loosen from the continuous pressure of thoughts, memories, ego and superego. It becomes quieter, more focused and more present.',
+          note: 'Attention is no longer meant to keep jumping restlessly between past and future.',
+          image: selfRealizationImg,
+          alt: 'Self-Realization as lifted attention'
+        },
+        {
+          title: 'Kundalini raises the inner plane',
+          subtitle: 'The ascent through the middle',
+          description:
+            'Kundalini rises through the central channel, pierces the chakras and lifts the field of attention from within, rather than leaving the person to force the process by willpower alone.',
+          note: 'The tent-pole image is used to explain this widening and rising of attention.',
+          image: thoughtlessImg,
+          alt: 'Rising inner energy'
+        },
+        {
+          title: 'At Sahasrara stillness becomes real',
+          subtitle: 'From breakthrough to practice',
+          description:
+            'The decisive moment is described as the energy moving beyond Agnya toward Sahasrara. There, thoughtless awareness appears as an actual experience rather than a concept.',
+          note: 'Regular meditation then turns the first glimpse into something more stable.',
+          image: improvedPerceptionImg,
+          alt: 'Refined perception'
+        }
+      ]
+    },
     blocks: [
       {
-        title: 'More than spiritual seeking',
+        title: 'Why attention first has to be relieved',
         paragraphs: [
-          'Spiritual search is understood here as a return to one’s own roots. Human beings have emerged from the subtle plane and can rediscover that deeper reality within themselves.',
-          'Self-Realization is therefore not a symbolic gesture. It is the actual establishment of a link between outer life and inner essence.'
+          'The page does not begin with vague spirituality, but with the strain placed on attention. As long as it is continuously overrun by thoughts, inner commentary, memory and reactivity, it cannot rise into a subtler state.',
+          'Self-Realization is therefore described as a freeing of attention. Once the pressure loosens, the present moment becomes clearer and the roots of one’s reactions become easier to see.'
+        ],
+        points: [
+          'attention carries consciousness',
+          'ego and superego pull it away from the centre',
+          'meditation begins with relief, not pressure'
         ]
       },
       {
-        title: 'Entering a new plane of awareness',
+        title: 'The role of Kundalini in the breakthrough',
         paragraphs: [
-          'With this connection, a new plane of awareness opens. Subtle energy becomes perceptible, attention refines itself and a sense of belonging to something greater begins to emerge.',
-          'The personal self does not vanish. It remains, but is no longer confined to body, thought and social identity alone.'
+          'The actual movement is attributed to Kundalini. During the first Self-Realization, and then again in meditation, this inner energy rises through the central channel and pierces the centres from within.',
+          'Attention is thereby drawn upward and begins to separate from its usual knot of thought and immediate emotional reaction. The energy is described as intelligent and ordering, not violent or dramatic.'
+        ],
+        points: [
+          'ascent through Sushumna',
+          'piercing of the chakras',
+          'lifting instead of forcing'
         ]
       },
       {
-        title: 'Why this step is decisive',
+        title: 'The tent image and the opening of Sahasrara',
         paragraphs: [
-          'Self-Realization is the threshold where meditation becomes lived fact rather than concept. The subtle system, inner energy and connectedness all become more tangible from this point onward.',
-          'That is why it is not the end but the beginning: the real path of inner refinement starts where this connection becomes felt.'
+          'To make this movement understandable, the page uses the image of a tent: just as a tent pole stretches the canvas upward, inner energy stretches the field of attention into a higher state of consciousness.',
+          'Special importance is given to the moment when the energy moves beyond Agnya toward the Sahasrara. There thoughtless awareness becomes possible as a lived inner state.'
+        ]
+      },
+      {
+        title: 'Why Self-Realization is only the beginning',
+        paragraphs: [
+          'The first breakthrough is not treated as a final achievement. It creates the basis on which meditation, subtle perception and inner transformation can become regular and reliable.',
+          'With repeated meditation, the flow of energy is said to strengthen. What first appears only for a moment can gradually become a more stable condition of silence, clarity and connectedness.'
         ]
       }
     ],
@@ -1207,39 +1416,91 @@ const articlesEn: Record<string, KnowledgeArticle> = {
     hubRoute: '/selbstverwirklichung-meditation',
     navLabel: 'Thought-Free Stillness',
     eyebrow: 'Fourth State of Consciousness',
-    title: 'Thought-free stillness: a wakeful state beyond the thought stream',
+    title: 'Thought-free stillness: the fourth state beyond the thought stream',
     intro:
-      'Thought-free stillness is described as a fourth state of consciousness. It is neither sleep, dream nor ordinary waking, but a silent and highly alert realm in which thought loses its dominance and the inner self becomes more evident.',
+      'Thought-free stillness is explicitly described as a fourth state of consciousness. It is neither sleep, dream nor ordinary waking, but a silent and highly alert condition in which inner dialogue recedes and the inner self becomes more evident.',
     heroImage: thoughtlessImg,
     heroImageAlt: 'Thought-free stillness',
     heroCaption:
-      'Thoughtlessness is presented here not as emptiness, but as a calm, inspired and deeply integrated kind of wakefulness.',
-    heroTags: ['Turiya', 'Wakefulness', 'Inner Self'],
+      'Thoughtlessness is presented here not as emptiness, but as a still, lucid and inwardly luminous kind of wakefulness.',
+    heroTags: ['Turiya', 'Stillness', 'Clarity'],
     keyPoints: [
       'Thoughtlessness is treated as a distinct state of consciousness.',
-      'The ascent of inner energy greatly facilitates this condition.',
-      'The stronger the energy flow, the deeper and longer the stillness becomes.'
+      'The brain remains active, but the thought stream loses its dominance.',
+      'The rising inner energy greatly facilitates and deepens this state.'
     ],
+    details: {
+      eyebrow: 'Inner dynamics',
+      title: 'What makes this state distinctive',
+      description:
+        'The presentation joins neuroscience-flavoured language, direct experience and subtle energy. Thoughtlessness is portrayed as neither vague mysticism nor a merely psychological trick.',
+      items: [
+        {
+          title: 'Beyond waking, dreaming and sleep',
+          subtitle: 'The fourth state',
+          description:
+            'Thoughtless awareness is described as a condition beyond the three ordinary modes. Consciousness remains awake, but the person is no longer trapped in the usual stream of internal commentary.',
+          note: 'Stillness and presence appear together here, not as opposites.',
+          image: thoughtlessImg,
+          alt: 'Thought-free stillness'
+        },
+        {
+          title: 'The energy makes it easier',
+          subtitle: 'More than mental effort',
+          description:
+            'The rising inner energy is treated as the real assistance. It carries attention beyond the mental plane, rather than asking the mind to conquer itself entirely from within its own noise.',
+          note: 'This is one reason the meditation is described as natural, spontaneous and effortless.',
+          image: selfRealizationImg,
+          alt: 'Self-Realization and thoughtlessness'
+        },
+        {
+          title: 'Observing instead of being entangled',
+          subtitle: 'The witnessing self',
+          description:
+            'Thoughts and feelings are not erased. They can be observed from a calmer inner distance, which reduces compulsion, identification and emotional overreaction.',
+          note: 'Attention shifts toward the flow of experience rather than becoming imprisoned by each passing content.',
+          image: improvedPerceptionImg,
+          alt: 'Refined perception'
+        }
+      ]
+    },
     blocks: [
       {
-        title: 'Beyond waking, dreaming and sleep',
+        title: 'A state beyond the three ordinary modes',
         paragraphs: [
-          'Thought-free awareness is described as a state in which the brain is not switched off, yet is no longer operating in its usual pattern of restless thought and reaction.',
-          'That is what gives this condition its unusual force: it joins stillness with lucidity and silence with presence.'
+          'Thought-free stillness is not described as shutting the brain down. Rather, the brain remains active while the usual mode of restless thinking and reacting loses its grip.',
+          'That is what gives the state its unusual force: stillness is joined with lucidity, and silence is joined with presence.'
+        ],
+        points: [
+          'not sleep',
+          'not dream',
+          'not ordinary waking consciousness'
         ]
       },
       {
-        title: 'Why the energy matters',
+        title: 'How Kundalini helps thoughtlessness arise',
         paragraphs: [
-          'This state is not expected to be forced through mental effort alone. The rising of inner energy is said to carry attention beyond its usual stream of thought.',
-          'Meditation thus becomes less of a struggle against mind and more of a process of being lifted beyond it.'
+          'The page strongly suggests that thoughtlessness is not best forced through willpower at the mental level. That is precisely the level at which one is surrounded by the thoughts and feelings one is trying to transcend.',
+          'The rising of Kundalini does much of the lifting. It carries attention upward, making meditation less a struggle against mind and more a process of being borne beyond it.'
+        ],
+        points: [
+          'not a battle against thought',
+          'the energy performs the lifting movement',
+          'natural, spontaneous, effortless'
         ]
       },
       {
-        title: 'The quality of this silence',
+        title: 'What this silence feels like inwardly',
         paragraphs: [
-          'In thought-free stillness, thoughts and feelings can be observed without instant identification or reaction. That brings greater clarity and less inner compulsion.',
-          'As stillness deepens, energy flow is also said to grow stronger. Silence and subtle energy thus reinforce one another.'
+          'In thought-free stillness, thoughts and feelings can be observed without immediate identification or reaction. This creates an unusual clarity: perception becomes cleaner, and the present moment is felt more directly.',
+          'The stillness is therefore not empty, but filled with awareness. As it deepens, the flow of subtle energy is also said to become freer and stronger.'
+        ]
+      },
+      {
+        title: 'Why the state also matters psychologically',
+        paragraphs: [
+          'When attention no longer identifies with every thought-content, an observing inner standpoint begins to form. That changes not only meditation, but the way emotions, impulses and habits are met.',
+          'Thoughtlessness therefore acquires a therapeutic dimension: not because difficulty disappears, but because the person can meet it with less entanglement and greater inward freedom.'
         ]
       }
     ],
@@ -1254,39 +1515,91 @@ const articlesEn: Record<string, KnowledgeArticle> = {
     hubRoute: '/selbstverwirklichung-meditation',
     navLabel: 'Meditation Practice',
     eyebrow: 'Meditation in Daily Life',
-    title: 'Meditation practice: how the experience deepens in daily life',
+    title: 'Meditation practice: how the first experience deepens at home',
     intro:
-      'Meditation is described not as a rigid routine but as a living practice. It can deepen at home, in the morning or evening, in silence or with gentle support, and it gains much of its strength through regularity.',
+      'Meditation is described not as a rigid routine but as a living and flexible practice. After the first Self-Realization it can deepen at home, in the morning or evening, in silence or with gentle support, and it draws much of its strength from regularity.',
     heroImage: selfRealizationImg,
     heroImageAlt: 'Meditation practice at home',
     heroCaption:
-      'Daily practice is the place where a first experience grows into a stable inner habit.',
-    heroTags: ['At Home', 'Regularity', 'Collectivity'],
+      'Daily practice is the place where a first inner breakthrough becomes a stable habit of silence.',
+    heroTags: ['Morning & evening', 'Inner energy', 'Collectivity'],
     keyPoints: [
-      'Meditation can be integrated into daily life with flexibility and seriousness.',
-      'The emphasis is on experience rather than rigid discipline.',
-      'Individual and collective meditation strengthen one another.'
+      'Short morning and evening sessions are often recommended, but without harsh rigidity.',
+      'The sitting begins with relaxation, raising the energy and resting in stillness.',
+      'Individual and collective meditation strengthen and accelerate one another.'
     ],
+    details: {
+      eyebrow: 'Practical deepening',
+      title: 'How daily meditation is described',
+      description:
+        'The guidance is intentionally simple. Place, posture and duration are meant to support the experience, not turn it into a complicated system of rules.',
+      items: [
+        {
+          title: 'Place and rhythm',
+          subtitle: 'Quiet, natural, sustainable',
+          description:
+            'A quiet place at home is recommended; a touch of nature in the room or meditating outdoors is also suggested as beneficial. Many practitioners meditate after waking and again before sleep.',
+          note: 'A rough rhythm of ten to twenty minutes is suggested, but the practice remains intentionally flexible.',
+          image: selfRealizationImg,
+          alt: 'Meditation at home'
+        },
+        {
+          title: 'How a sitting begins',
+          subtitle: 'Relax and raise the energy',
+          description:
+            'One sits comfortably, relaxes, raises the inner energy and lets thoughts pass rather than fighting them. The energy is invited to do the deeper work.',
+          note: 'Sensations on the palms or at the crown may become clearer over time.',
+          image: thoughtlessImg,
+          alt: 'Meditation in stillness'
+        },
+        {
+          title: 'What stabilises the practice',
+          subtitle: 'Regularity and collectivity',
+          description:
+            'As meditation becomes regular, subtle perception, attentional control and emotional balance begin to change. Collective meditation is described as a particularly strong accelerator of this process.',
+          note: 'Supportive methods such as foot soaking or affirmations are also mentioned as helpful companions.',
+          image: improvedPerceptionImg,
+          alt: 'Deepening through regular meditation'
+        }
+      ]
+    },
     blocks: [
       {
-        title: 'Simple conditions, deep effects',
+        title: 'A quiet place and a human rhythm',
         paragraphs: [
-          'A quiet place is recommended, perhaps with some contact with nature or a sense of freshness in the environment. The setting should support the experience without turning into theatre.',
-          'What matters most is enjoyment of the meditative depth itself. Practice remains flexible, and each person is encouraged to find a rhythm that is genuinely sustainable.'
+          'A quiet place at home is recommended. A little nature in the room, or even meditating outdoors, is treated as helpful, though the point is to support experience rather than stage an atmosphere.',
+          'Many people meditate in the morning after waking and again before sleeping. A short but regular rhythm is preferred over heroic intensity, and the practitioner is encouraged to find what is genuinely sustainable.'
+        ],
+        points: [
+          'quiet place',
+          'morning and evening',
+          'short, but regular'
         ]
       },
       {
-        title: 'How a session is approached',
+        title: 'How a single meditation is approached',
         paragraphs: [
-          'A sitting begins with relaxation, raising the inner energy and then simply resting in stillness. Thoughts are not meant to be fought, only observed and allowed to pass.',
-          'Over time, subtle sensations on the palms or at the crown may become clearer. In that way the practice becomes increasingly personal and concrete.'
+          'The guidance remains simple: sit comfortably, relax, close the eyes, raise the inner energy and rest, as far as possible, in thoughtless awareness. Thoughts are not to be suppressed, only observed and allowed to pass.',
+          'People are encouraged to feel the energy on the palms or at the crown. As those sensations become clearer, the practice turns less abstract and more directly experiential.'
+        ],
+        points: [
+          'relax',
+          'raise the energy',
+          'watch thoughts without reacting'
         ]
       },
       {
-        title: 'The role of collective meditation',
+        title: 'What happens after the sitting and over time',
         paragraphs: [
-          'Alongside private practice, meditating with others is described as a powerful intensification. Shared stillness often heightens the sense of subtle flow and presence.',
-          'Collective meditation does not replace personal effort. Instead, both forms of practice support one another and help make growth steadier and more balanced.'
+          'At the end of meditation, practitioners are advised to raise the inner energy again, as a way of protecting and extending the state into the rest of the day. At night, complementary methods such as foot soaking are suggested.',
+          'With regular practice, subtle perception, state of mind, attention and even behaviour begin to shift. The changes are often small at first, but they accumulate and become tangible.'
+        ]
+      },
+      {
+        title: 'Why collective meditation is so strongly emphasised',
+        paragraphs: [
+          'Collective meditation is described as one of the strongest success factors on the path. In shared stillness, energy flow and attention often become easier to feel and more stable to sustain.',
+          'It does not replace personal meditation. Rather, individual and collective practice reinforce one another and make growth steadier, gentler and more balanced.'
         ]
       }
     ],

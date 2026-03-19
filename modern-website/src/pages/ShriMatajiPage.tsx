@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import motherImg from '../assets/mother1.jpg';
 import villageImg from '../assets/village.jpg';
 import { useLocale } from '../context/LocaleContext';
@@ -10,17 +10,42 @@ import useScrollReveal from '../hooks/useScrollReveal';
  */
 const ShriMatajiPage: React.FC = () => {
   const { locale } = useLocale();
+  const location = useLocation();
   useScrollReveal('.reveal-ready', 'reveal', 0.18);
+
+  useEffect(() => {
+    const sectionMap: Record<string, string> = {
+      '/shri-mataji/biografie': 'lebensweg',
+      '/shri-mataji/geistige-arbeit': 'geistige-arbeit',
+      '/shri-mataji/oeffentliche-programme': 'oeffentliche-programme',
+      '/shri-mataji/zeitleiste': 'zeitleiste',
+      '/shri-mataji/vermaechtnis': 'vermaechtnis'
+    };
+
+    const targetId = sectionMap[location.pathname];
+
+    if (!targetId) {
+      return;
+    }
+
+    const element = document.getElementById(targetId);
+
+    if (element) {
+      window.requestAnimationFrame(() => {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+  }, [location.pathname]);
 
   const copy =
     locale === 'de'
       ? {
           sectionLinks: [
-            { href: '#lebensweg', label: 'Biografie' },
-            { href: '#geistige-arbeit', label: 'Geistige Arbeit' },
-            { href: '#oeffentliche-programme', label: 'Öffentliche Programme' },
-            { href: '#zeitleiste', label: 'Zeitleiste' },
-            { href: '#vermaechtnis', label: 'Vermächtnis' }
+            { to: '/shri-mataji/biografie', label: 'Biografie' },
+            { to: '/shri-mataji/geistige-arbeit', label: 'Geistige Arbeit' },
+            { to: '/shri-mataji/oeffentliche-programme', label: 'Öffentliche Programme' },
+            { to: '/shri-mataji/zeitleiste', label: 'Zeitleiste' },
+            { to: '/shri-mataji/vermaechtnis', label: 'Vermächtnis' }
           ],
           heroEyebrow: 'Shri Mataji Nirmala Devi',
           heroTitle: 'Ein Leben, ganz dem Wohl und der Erhebung der Menschheit gewidmet.',
@@ -126,11 +151,11 @@ const ShriMatajiPage: React.FC = () => {
         }
       : {
           sectionLinks: [
-            { href: '#lebensweg', label: 'Biography' },
-            { href: '#geistige-arbeit', label: 'Spiritual Work' },
-            { href: '#oeffentliche-programme', label: 'Public Programs' },
-            { href: '#zeitleiste', label: 'Timeline' },
-            { href: '#vermaechtnis', label: 'Legacy' }
+            { to: '/shri-mataji/biografie', label: 'Biography' },
+            { to: '/shri-mataji/geistige-arbeit', label: 'Spiritual Work' },
+            { to: '/shri-mataji/oeffentliche-programme', label: 'Public Programs' },
+            { to: '/shri-mataji/zeitleiste', label: 'Timeline' },
+            { to: '/shri-mataji/vermaechtnis', label: 'Legacy' }
           ],
           heroEyebrow: 'Shri Mataji Nirmala Devi',
           heroTitle: 'A life wholly dedicated to the well-being and upliftment of humanity.',
@@ -284,8 +309,8 @@ const ShriMatajiPage: React.FC = () => {
             <div className="flex flex-wrap gap-3">
               {copy.sectionLinks.map(link => (
                 <Link
-                  key={link.href}
-                  to={`/shri-mataji${link.href}`}
+                  key={link.to}
+                  to={link.to}
                   className="hover-chip group inline-flex items-center gap-3"
                 >
                   {link.label}

@@ -26,6 +26,11 @@ const App: React.FC = () => {
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<BlogArticleRoute />} />
         <Route path="/shri-mataji" element={<ShriMatajiPage />} />
+        <Route path="/shri-mataji/biografie" element={<ShriMatajiPage />} />
+        <Route path="/shri-mataji/geistige-arbeit" element={<ShriMatajiPage />} />
+        <Route path="/shri-mataji/oeffentliche-programme" element={<ShriMatajiPage />} />
+        <Route path="/shri-mataji/zeitleiste" element={<ShriMatajiPage />} />
+        <Route path="/shri-mataji/vermaechtnis" element={<ShriMatajiPage />} />
         <Route path="/kundalini-energiesystem" element={<KundaliniPage />} />
         <Route
           path="/selbstverwirklichung-meditation"

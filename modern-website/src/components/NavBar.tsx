@@ -5,6 +5,7 @@ import kundaliniIcon from '../assets/kundalini-clean.png';
 import { useLocale } from '../context/LocaleContext';
 import { topicPages } from '../content/topicPages';
 import { topicPagesEn } from '../content/topicPagesEn';
+import { getKnowledgeArticle } from '../content/knowledgeArticles';
 
 type NavItem = {
   label: string;
@@ -25,7 +26,7 @@ const NavBar: React.FC = () => {
           home: 'Startseite',
           brand: 'Sahaja Yoga München',
           shriMataji: 'Shri Mataji',
-          shriDropdown: ['Biografie', 'Geistige Arbeit', 'Zeitleiste', 'Vermächtnis'],
+          shriDropdown: ['Biografie', 'Geistige Arbeit', 'Öffentliche Programme', 'Zeitleiste', 'Vermächtnis'],
           blog: 'Blog',
           contact: 'Kontakt'
         }
@@ -33,10 +34,26 @@ const NavBar: React.FC = () => {
           home: 'Home',
           brand: 'Sahaja Yoga München',
           shriMataji: 'Shri Mataji',
-          shriDropdown: ['Biography', 'Spiritual Work', 'Timeline', 'Legacy'],
+          shriDropdown: ['Biography', 'Spiritual Work', 'Public Programs', 'Timeline', 'Legacy'],
           blog: 'Blog',
           contact: 'Contact'
         };
+
+  const withArticleLabels = (
+    sections: Array<{ navLabel: string; to: string }>
+  ) =>
+    sections.map(section => ({
+      label: getKnowledgeArticle(locale, section.to)?.navLabel ?? section.navLabel,
+      to: section.to
+    }));
+
+  const kundaliniDropdown = [
+    {
+      label: locale === 'de' ? 'Der subtile Körper' : 'The Subtle Body',
+      to: pages.kundalini.route
+    },
+    ...withArticleLabels(pages.kundalini.sections)
+  ];
 
   const links: NavItem[] = [
     { label: copy.home, to: '/' },
@@ -44,43 +61,32 @@ const NavBar: React.FC = () => {
       label: copy.shriMataji,
       to: '/shri-mataji',
       dropdown: [
-        { label: copy.shriDropdown[0], to: '/shri-mataji#lebensweg' },
-        { label: copy.shriDropdown[1], to: '/shri-mataji#geistige-arbeit' },
-        { label: copy.shriDropdown[2], to: '/shri-mataji#zeitleiste' },
-        { label: copy.shriDropdown[3], to: '/shri-mataji#vermaechtnis' }
+        { label: copy.shriDropdown[0], to: '/shri-mataji/biografie' },
+        { label: copy.shriDropdown[1], to: '/shri-mataji/geistige-arbeit' },
+        { label: copy.shriDropdown[2], to: '/shri-mataji/oeffentliche-programme' },
+        { label: copy.shriDropdown[3], to: '/shri-mataji/zeitleiste' },
+        { label: copy.shriDropdown[4], to: '/shri-mataji/vermaechtnis' }
       ]
     },
     {
       label: pages.kundalini.navLabel,
       to: pages.kundalini.route,
-      dropdown: pages.kundalini.sections.map(section => ({
-        label: section.navLabel,
-        to: section.to
-      }))
+      dropdown: kundaliniDropdown
     },
     {
       label: pages.selfRealization.navLabel,
       to: pages.selfRealization.route,
-      dropdown: pages.selfRealization.sections.map(section => ({
-        label: section.navLabel,
-        to: section.to
-      }))
+      dropdown: withArticleLabels(pages.selfRealization.sections)
     },
     {
       label: pages.science.navLabel,
       to: pages.science.route,
-      dropdown: pages.science.sections.map(section => ({
-        label: section.navLabel,
-        to: section.to
-      }))
+      dropdown: withArticleLabels(pages.science.sections)
     },
     {
       label: pages.culture.navLabel,
       to: pages.culture.route,
-      dropdown: pages.culture.sections.map(section => ({
-        label: section.navLabel,
-        to: section.to
-      }))
+      dropdown: withArticleLabels(pages.culture.sections)
     },
     { label: copy.blog, to: '/blog' },
     { label: copy.contact, to: '/#contact', kind: 'button' }
@@ -101,16 +107,16 @@ const NavBar: React.FC = () => {
                 className="animate-yantram-spin h-[5.05rem] w-[5.05rem] object-contain drop-shadow-[0_8px_14px_rgba(179,93,76,0.14)]"
               />
             </span>
-            <span className="ml-1.5 translate-y-px flex items-center gap-1 uppercase">
+            <span className="animate-drift-x ml-1.5 translate-y-[2px] flex items-center gap-1 uppercase">
               <span>Sahaja Yoga</span>
               <span className="-ml-6 relative inline-block h-0 w-[4.84rem] shrink-0 overflow-visible align-middle">
                 <img
                   src={kundaliniIcon}
                   alt="Kundalini"
-                  className="absolute left-0 top-1/2 h-[4.84rem] w-[4.84rem] -translate-y-[56%] object-contain opacity-100 contrast-125 saturate-125 drop-shadow-[0_10px_18px_rgba(179,93,76,0.24)]"
+                  className="absolute left-[-0.08rem] top-1/2 h-[4.37rem] w-[4.37rem] -translate-y-[60%] object-contain opacity-100 contrast-125 saturate-125 drop-shadow-[0_10px_18px_rgba(179,93,76,0.24)]"
                 />
               </span>
-              <span className="-ml-5">München</span>
+              <span className="-ml-[1.95rem]">München</span>
             </span>
           </Link>
         </div>
@@ -188,7 +194,7 @@ const NavBar: React.FC = () => {
                   </Link>
 
                   {hasDropdown && (
-                    <div className="pointer-events-none absolute left-1/2 top-full z-50 hidden min-w-[16rem] -translate-x-1/2 pt-4 group-hover:block group-hover:pointer-events-auto">
+                    <div className="pointer-events-none absolute left-1/2 top-full z-50 hidden min-w-[16rem] -translate-x-1/2 pt-4 group-hover:block group-hover:pointer-events-auto group-focus-within:block group-focus-within:pointer-events-auto">
                       <div className="rounded-[1.4rem] border border-[#b35d4c]/24 bg-[rgba(255,241,233,0.82)] p-3 shadow-[0_20px_50px_rgba(74,113,143,0.16)] backdrop-blur">
                         {link.dropdown?.map(item => (
                           <Link
@@ -206,8 +212,8 @@ const NavBar: React.FC = () => {
               );
             })}
 
-            <div className="-ml-3 flex translate-y-[3px] items-center gap-1">
-              <div className="flex flex-col items-center gap-px">
+            <div className="-ml-3 flex translate-x-[4px] translate-y-[9px] items-center gap-1">
+              <div className="group relative flex flex-col items-center gap-px">
                 <button
                   type="button"
                   onClick={() => setLocale('de')}
@@ -218,20 +224,39 @@ const NavBar: React.FC = () => {
                       : 'border-[#b35d4c]/18 bg-white/75 text-slate-500 hover:border-[#b35d4c]/30 hover:text-[#b35d4c]'
                   }`}
                 >
-                  🇩🇪
+                  <span className="text-[0.58rem] leading-none">🇩🇪</span>
                 </button>
-                <button
-                  type="button"
-                  onClick={() => setLocale('en')}
-                  aria-label="English"
-                  className={`inline-flex h-[1.15rem] w-[1.15rem] items-center justify-center rounded-full border text-[0.48rem] leading-none shadow-[0_6px_14px_rgba(72,110,140,0.08)] transition ${
-                    locale === 'en'
-                      ? 'border-[#b35d4c]/30 bg-[rgba(255,250,246,0.95)] text-[#b35d4c]'
-                      : 'border-[#b35d4c]/18 bg-white/75 text-slate-500 hover:border-[#b35d4c]/30 hover:text-[#b35d4c]'
-                  }`}
+                <span
+                  aria-hidden="true"
+                  className="inline-flex h-[0.68rem] w-[0.68rem] items-center justify-center text-[#b35d4c]"
                 >
-                  🇬🇧
-                </button>
+                  <svg viewBox="0 0 12 12" fill="none" className="h-[0.68rem] w-[0.68rem]">
+                    <path
+                      d="M2.5 4.25 6 7.75 9.5 4.25"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+
+                <div className="pointer-events-none absolute left-1/2 top-full z-50 hidden -translate-x-1/2 pt-1 group-hover:block group-hover:pointer-events-auto group-focus-within:block group-focus-within:pointer-events-auto">
+                  <div className="rounded-[1rem] border border-[#b35d4c]/24 bg-[rgba(255,241,233,0.82)] p-2 shadow-[0_20px_50px_rgba(74,113,143,0.16)] backdrop-blur">
+                    <button
+                      type="button"
+                      onClick={() => setLocale('en')}
+                      aria-label="English"
+                      className={`inline-flex h-[1.25rem] w-[1.25rem] items-center justify-center rounded-full border text-[0.48rem] leading-none shadow-[0_6px_14px_rgba(72,110,140,0.08)] transition ${
+                        locale === 'en'
+                          ? 'border-[#b35d4c]/30 bg-[rgba(255,250,246,0.95)] text-[#b35d4c]'
+                          : 'border-[#b35d4c]/18 bg-white/75 text-slate-500 hover:border-[#b35d4c]/30 hover:text-[#b35d4c]'
+                      }`}
+                    >
+                      <span className="text-[0.58rem] leading-none">🇬🇧</span>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

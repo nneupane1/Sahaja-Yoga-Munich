@@ -3,8 +3,7 @@ import HeroOverlap from '../components/HeroOverlap';
 import IntroSection from '../components/IntroSection';
 import FeaturesSection from '../components/FeaturesSection';
 import SessionsSection from '../components/SessionsSection';
-import BlogSection from '../components/BlogSection';
-import AboutSection from '../components/AboutSection';
+import ContactSection from '../components/ContactSection';
 import useScrollReveal from '../hooks/useScrollReveal';
 
 /**
@@ -19,8 +18,7 @@ const HomePage: React.FC = () => {
       <IntroSection />
       <FeaturesSection />
       <SessionsSection />
-      <BlogSection />
-      <AboutSection />
+      <ContactSection />
     </main>
   );
 };

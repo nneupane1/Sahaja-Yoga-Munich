@@ -52,9 +52,14 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
     article.heroImageMode === 'contain'
       ? 'h-[24rem] w-full rounded-[1.6rem] object-contain bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(225,243,255,0.92))] p-6 sm:h-[29rem]'
       : 'h-[24rem] w-full rounded-[1.6rem] object-cover object-center transition duration-700 group-hover:scale-[1.04] sm:h-[29rem]';
+  const forceImageRight =
+    article.route === '/kundalini-energiesystem/kanaele-und-balance' ||
+    article.route === '/kundalini-energiesystem/kundalini';
   const heroImageLeft =
-    article.hubRoute === '/kundalini-energiesystem' ||
-    article.hubRoute === '/kultur-des-geistes';
+    forceImageRight
+      ? false
+      : article.hubRoute === '/kundalini-energiesystem' ||
+        article.hubRoute === '/kultur-des-geistes';
   const isCompactCenteredHero =
     article.route === '/kundalini-energiesystem/chakren-und-qualitaeten' ||
     article.route === '/kundalini-energiesystem/kundalini';
@@ -228,53 +233,59 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
           </aside>
 
           <div className="space-y-6">
-            {article.blocks.map((block, index) => (
-              <article
-                key={block.title}
-                className="interactive-card reveal-ready group relative overflow-hidden p-7 sm:p-8"
-              >
-                <div className="absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,#87c3e3,#c8715f)] opacity-80 transition duration-500 group-hover:h-2" />
-                <div className="grid gap-6 lg:grid-cols-[1.18fr_0.82fr]">
-                  <div className={`space-y-5 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                    <span className="text-xs font-semibold uppercase tracking-[0.28em] text-[#b35d4c]">
-                      {copy.blockLabel} 0{index + 1}
-                    </span>
-                    <h2 className="text-balance text-3xl text-slate-800 sm:text-[2.15rem]">{block.title}</h2>
-                    <div className="space-y-5 text-lg leading-8 text-slate-700">
-                      {block.paragraphs.map(paragraph => (
-                        <p key={paragraph}>{paragraph}</p>
-                      ))}
-                    </div>
-                  </div>
+            {article.blocks.map((block, index) => {
+              const hasSupportColumn = Boolean(block.points?.length);
+              const showInlineSupport = !hasSupportColumn;
 
-                  <div className={`flex items-center ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                    <div
-                      className={`w-full rounded-[1.5rem] border border-[#b35d4c]/22 bg-[linear-gradient(180deg,rgba(255,255,255,0.94)_0%,rgba(255,244,237,0.94)_100%)] p-6 shadow-[0_16px_36px_rgba(72,110,140,0.08)] transition duration-500 group-hover:-translate-y-1 ${
-                        index % 2 === 1 ? 'group-hover:-translate-x-2' : 'group-hover:translate-x-2'
-                      }`}
-                    >
-                      {block.points?.length ? (
-                        <div className="space-y-4">
-                          {block.points.map(point => (
-                            <div key={point} className="flex items-start gap-3">
-                              <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-[#c8715f] shadow-[0_0_0_8px_rgba(200,113,95,0.15)]" />
-                              <p className="leading-7 text-slate-700">{point}</p>
-                            </div>
-                          ))}
-                        </div>
-                      ) : (
-                        <div className="space-y-3">
+              return (
+                <article
+                  key={block.title}
+                  className="interactive-card reveal-ready group relative overflow-hidden p-7 sm:p-8"
+                >
+                  <div className="absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,#87c3e3,#c8715f)] opacity-80 transition duration-500 group-hover:h-2" />
+                  <div className={hasSupportColumn ? 'grid gap-6 lg:grid-cols-[1.18fr_0.82fr]' : 'grid gap-4'}>
+                    <div className={`space-y-5 ${hasSupportColumn && index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                      <span className="text-xs font-semibold uppercase tracking-[0.28em] text-[#b35d4c]">
+                        {copy.blockLabel} 0{index + 1}
+                      </span>
+                      <h2 className="text-balance text-3xl text-slate-800 sm:text-[2.15rem]">{block.title}</h2>
+                      <div className="space-y-5 text-lg leading-8 text-slate-700">
+                        {block.paragraphs.map(paragraph => (
+                          <p key={paragraph}>{paragraph}</p>
+                        ))}
+                      </div>
+                      {showInlineSupport && (
+                        <div className="rounded-[1.35rem] border border-[#b35d4c]/22 bg-[linear-gradient(180deg,rgba(255,255,255,0.94)_0%,rgba(255,244,237,0.92)_100%)] p-5 shadow-[0_14px_30px_rgba(72,110,140,0.07)]">
                           <span className="eyebrow">
                             {article.navLabel}
                           </span>
-                          <p className="text-base leading-7 text-slate-700">{article.heroCaption}</p>
+                          <p className="mt-3 text-base leading-7 text-slate-700">{article.heroCaption}</p>
                         </div>
                       )}
                     </div>
+
+                    {hasSupportColumn && (
+                      <div className={`flex items-center ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                        <div
+                          className={`w-full rounded-[1.5rem] border border-[#b35d4c]/22 bg-[linear-gradient(180deg,rgba(255,255,255,0.94)_0%,rgba(255,244,237,0.94)_100%)] p-6 shadow-[0_16px_36px_rgba(72,110,140,0.08)] transition duration-500 group-hover:-translate-y-1 ${
+                            index % 2 === 1 ? 'group-hover:-translate-x-2' : 'group-hover:translate-x-2'
+                          }`}
+                        >
+                          <div className="space-y-4">
+                            {block.points?.map(point => (
+                              <div key={point} className="flex items-start gap-3">
+                                <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-[#c8715f] shadow-[0_0_0_8px_rgba(200,113,95,0.15)]" />
+                                <p className="leading-7 text-slate-700">{point}</p>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
-                </div>
-              </article>
-            ))}
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>

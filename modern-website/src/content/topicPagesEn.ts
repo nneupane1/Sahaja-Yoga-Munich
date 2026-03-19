@@ -26,14 +26,14 @@ export const topicPagesEn = {
     heroEyebrow: 'The Subtle System',
     title: 'Kundalini, Nadis & Chakras',
     intro:
-      'The subtle system is the fine network of Kundalini, channels and centres aligned with the nervous system. In Sahaja Yoga this does not remain abstract theory: meditation gradually makes this inner architecture perceptible, so that balance, blockage and subtle quality can be felt directly.',
+      'The subtle system is the fine network of Kundalini, channels and centres aligned with the nervous system. At the heart of it lies Kundalini, long dormant and sleeping within the triangular sacrum bone. Once awakened, what seemed abstract becomes perceptible in meditation, so that balance, blockage and subtle quality can be felt directly.',
     heroPanelText:
       'The system can be understood like a wheel: at the outer edge there is disturbance, at the centre there is peace. Sahaja Yoga draws attention toward that centre as Kundalini nourishes the middle channel and restores the chakras to a more natural state of harmony.',
     heroTags: ['Kundalini', 'Nadis', 'Chakras'],
     heroImage: chakraChartImg,
     heroImageAlt: 'Subtle system diagram',
     heroImageCaption:
-      'This German-source diagram presents the subtle system as one living map in which centres, channels and Kundalini belong to a single inner process.',
+      'This diagram presents the subtle system as one living map in which centres, channels and Kundalini belong to a single inner process.',
     heroImageMode: 'contain',
     highlights: [
       {
@@ -56,7 +56,7 @@ export const topicPagesEn = {
       eyebrow: 'The Three Nadis',
       title: 'How attention moves through the inner system',
       description:
-        'The German visual language makes it clear that the nadis are not decorative lines. They describe three actual movements of attention: feeling and the past, action and the future, and the centred current of inner evolution.',
+        'The visual language makes it clear that the nadis are not decorative lines. They describe three actual movements of attention: feeling and the past, action and the future, and the centred current of inner evolution.',
       items: [
         {
           title: 'Left Channel',
@@ -164,7 +164,7 @@ export const topicPagesEn = {
         eyebrow: 'Inner Source',
         title: 'Kundalini is the resting power that brings the whole system to life',
         description: [
-          'Kundalini is described as an inborn, indestructible energy resting in the sacrum. It is not something imported from outside, but the hidden source of spiritual unfolding already present within the person.',
+          'Kundalini is described as an inborn, indestructible energy resting, dormant and sleeping within the triangular sacrum bone. It is not something imported from outside, but the hidden source of spiritual unfolding already present within the person.',
           'When it awakens, it rises through the central channel and nourishes the chakras. This makes not only stillness possible, but also a more refined awareness of one’s actual inner condition.',
           'Its tone matters: Kundalini is presented as intelligent and gentle. It does not act violently, but in a way that allows the system to reorder itself naturally.'
         ],
@@ -235,43 +235,43 @@ export const topicPagesEn = {
     heroEyebrow: 'Higher Consciousness',
     title: 'Self-Realization & Meditation',
     intro:
-      'Self-Realization can be understood as the true enabler of meditation. Attention is gradually released from the burden of relentless thought, ego and conditioning, and is raised into a quieter, higher state of consciousness.',
+      'Self-Realization is presented here as the true enabler of meditation. It begins with Kundalini, dormant and sleeping within the triangular sacrum bone, and awakens from within to relieve attention from the constant pressure of thought, ego, conditioning and emotional overreaction, lifting it into a quieter and higher state of consciousness.',
     heroPanelText:
-      'The process is described through a striking image: as Kundalini rises through the chakras, it stretches the canvas of attention upward like the pole of a tent. In that movement, a brief glimpse of thoughtless awareness becomes a state that can be deepened through practice.',
+      'The process is described in unusually concrete terms: as Kundalini rises through the central channel and pierces the chakras, it stretches the field of attention upward like a tent lifted by its pole. Once it moves beyond Agnya toward the Sahasrara, thoughtless awareness appears not as an idea but as an actual higher state of consciousness.',
     heroTags: ['Self-Realization', 'Thoughtless Awareness', 'Daily Practice'],
     heroImage: redSunsetImg,
     heroImageAlt: 'Self realization visual',
     heroImageCaption:
-      'Self-Realization marks the moment when attention begins to rise into a higher and more silent mode of consciousness.',
+      'Self-Realization marks the moment when attention is lifted from within into a higher and quieter mode of consciousness.',
     heroImageMode: 'cover',
     highlights: [
       {
-        title: 'Attention Is Lifted',
+        title: 'Attention Is Relieved',
         description:
-          'It is not outer discipline alone, but the actual ascent of inner energy, that raises attention beyond habitual mental patterns.'
+          'Attention is freed from the constant bombardment of thoughts, ego and superego, making a higher state of awareness genuinely possible.'
       },
       {
-        title: 'Thought-Free Presence',
+        title: 'The Energy Carries the Process',
         description:
-          'Meditation is described as a wakeful state without mental overload, where calm and observation coexist naturally.'
+          'Thoughtlessness is not meant to be forced at the mental level. The rising inner energy does much of the work, carrying attention beyond the ordinary stream of thought.'
       },
       {
-        title: 'Deepens with Practice',
+        title: 'Practice Stabilises the State',
         description:
-          'With regular meditation, thoughtless awareness is no longer momentary but becomes steadier and more enduring.'
+          'With regular meditation, a passing glimpse of silence gradually becomes steadier, deeper and more available in daily life.'
       }
     ],
     showcases: {
       eyebrow: 'Inner Experience Made Visible',
-      title: 'Meditation is presented as a process that unfolds in depth',
+      title: 'From first awakening to mature meditation practice',
       description:
-        'The imagery of ascent, stillness and subtle awareness helps make the path from first awakening to daily meditation feel concrete and accessible.',
+        'The imagery joins the first inner breakthrough with thoughtless awareness, subtle perception and home practice. The path is shown not as a single event but as an experience meant to grow into a way of living.',
       items: [
         {
           title: 'The Enabling Moment',
           label: 'Self-Realization',
           description:
-            'Self-Realization is presented as the decisive turning point at which the inner architecture first becomes alive to awareness.',
+            'Self-Realization appears as the decisive moment in which inner energy begins to lift attention and the subtle architecture becomes experientially real.',
           image: selfRealizationImg,
           alt: 'Self realization'
         },
@@ -279,7 +279,7 @@ export const topicPagesEn = {
           title: 'Thoughtless Awareness',
           label: 'Fourth State of Consciousness',
           description:
-            'Thoughtlessness is not dullness but a quiet, lucid and fully aware mode of presence.',
+            'Thoughtlessness is described not as dullness but as a lucid, quiet and fully wakeful mode of presence.',
           image: thoughtlessImg,
           alt: 'Thoughtless awareness'
         },
@@ -287,7 +287,7 @@ export const topicPagesEn = {
           title: 'Kundalini Rising',
           label: 'Inner Dynamics',
           description:
-            'The ascent of Kundalini is presented as the real inner movement that raises attention and deepens perception.',
+            'Kundalini is presented as the living inner movement that rises through the middle, pierces the centres and reorganises awareness from within.',
           image: kundaliniEnergyImg,
           alt: 'Kundalini rising'
         }
@@ -295,33 +295,33 @@ export const topicPagesEn = {
     },
     process: {
       eyebrow: 'Meditative Sequence',
-      title: 'From the first awakening to stable thoughtless awareness',
+      title: 'From Self-Realization to stable inner stillness',
       description:
-        'Meditation is described as a clear inner process that begins with Self-Realization and becomes more stable through practice.',
+        'Meditation is described as a recognisable inner process: the awakening begins it, the ascent of Kundalini opens it, and daily practice makes it increasingly stable.',
       items: [
         {
           step: '01',
-          title: 'The burden of thought loosens',
+          title: 'Attention is released from mental pressure',
           description:
-            'Attention is relieved from the constant pressure of ego, superego and reactive thinking.'
+            'The pressure of ego, superego, memory and reactive thinking loosens its hold on attention.'
         },
         {
           step: '02',
-          title: 'Kundalini rises through the middle',
+          title: 'Kundalini rises through Sushumna and the chakras',
           description:
-            'It pierces the chakras and draws attention toward a more subtle plane of consciousness.'
+            'The inner energy rises through the central channel, pierces the centres and stretches the field of attention upward like a tent.'
         },
         {
           step: '03',
-          title: 'Thoughtlessness becomes real',
+          title: 'At Sahasrara thoughtlessness becomes real',
           description:
-            'The present moment is felt more directly, without being crowded by inner commentary.'
+            'As the energy moves beyond Agnya toward Sahasrara, attention becomes quieter, more present and less crowded by internal commentary.'
         },
         {
           step: '04',
-          title: 'Daily practice lengthens the state',
+          title: 'Daily and collective practice deepen it',
           description:
-            'Regular meditation turns a brief glimpse of silence into something more stable and repeatable.'
+            'Morning and evening meditation, together with collective practice, turn a brief glimpse of silence into something stronger and more enduring.'
         }
       ]
     },
@@ -331,20 +331,20 @@ export const topicPagesEn = {
         to: '/selbstverwirklichung-meditation/selbstverwirklichung',
         navLabel: 'Self-Realization',
         eyebrow: 'The Catalyst',
-        title: 'Self-Realization opens access to a higher state of consciousness',
+        title: 'Self-Realization lifts attention into a higher plane of consciousness',
         description: [
-          'Attention only rises meaningfully when it is no longer continuously overrun by thought. Self-Realization is the opening that makes such a shift possible.',
-          'As Kundalini rises through the central channel and pierces the chakras, attention is lifted upward. It begins to separate from the usual knot of thought and immediate emotional reactivity.',
-          'Self-Realization therefore appears not as a symbolic act, but as a living inner opening that introduces a calmer and clearer mode of perception.'
+          'Attention can only rise when it is no longer continuously overrun by thought, ego and superego. Self-Realization is the opening that makes such a shift possible.',
+          'As Kundalini rises through the central channel and pierces the chakras, the field of attention is stretched upward from within. It begins to separate from its habitual knot of thought, memory and immediate emotional reaction.',
+          'Self-Realization therefore appears not as a symbolic blessing, but as a living inner event through which meditation becomes experientially real.'
         ],
         sideTitle: 'Core Ideas',
         sideItems: [
           'Attention is the carrier of consciousness',
-          'Kundalini lifts that attention into a subtler plane',
-          'Meditation begins with experience rather than technique alone'
+          'Kundalini raises that attention through the middle channel',
+          'The first awakening is the beginning of a longer process'
         ],
         note:
-          'The image of a tent being raised from within captures the widening of attention with unusual clarity.'
+          'The image of a tent being raised from within captures the widening of attention with unusual clarity: the person does not pull attention upward by force; the energy lifts it.'
       },
       {
         id: 'gedankenfreiheit',
@@ -353,18 +353,18 @@ export const topicPagesEn = {
         eyebrow: 'Thoughtless Awareness',
         title: 'Thoughtlessness is silent wakefulness, not emptiness',
         description: [
-          'Thoughtless awareness is neither sleep nor vague trance. It is a calm, inspired and highly alert state of consciousness.',
-          'Because attention is no longer crowded by its usual stream of thought, observation becomes cleaner. Perception is more direct, reactions are less compulsive, and emotional overload begins to ease.',
-          'Thoughtlessness is therefore treated as a distinct state that goes beyond relaxation. It is spiritually significant, psychologically relevant and practically transformative.'
+          'Thoughtless awareness is neither sleep, trance nor ordinary waking. It is described as a fourth state of consciousness in which the brain continues to function but the inner dialogue loses its dominance.',
+          'Because attention is no longer crowded by the usual stream of thoughts, observation becomes cleaner. Thoughts and feelings begin to appear more as contents in awareness than as forces we must instantly obey.',
+          'For that reason the state is treated as much more than relaxation. It is spiritually significant, psychologically clarifying and practically transformative.'
         ],
         sideTitle: 'Qualities of This State',
         sideItems: [
-          'Wakeful and present rather than dull',
-          'Inwardly quiet without escaping reality',
-          'Clearer observation without reactive mental noise'
+          'Wakeful and present rather than dull or sleepy',
+          'Quiet inwardly without leaving reality behind',
+          'Observation without immediate identification or reaction'
         ],
         note:
-          'Thoughtless awareness is explicitly treated as a distinct and higher state of consciousness.'
+          'Thoughtless awareness is explicitly presented as a distinct higher state of consciousness, not simply a side effect of resting.'
       },
       {
         id: 'praxis',
@@ -373,28 +373,28 @@ export const topicPagesEn = {
         eyebrow: 'Deepening',
         title: 'Regular meditation makes the experience stable and practical',
         description: [
-          'One of the clearest ideas in this teaching is that each session of meditation helps Kundalini rise more steadily and strongly. Thoughtless awareness therefore does not remain a passing moment but gradually lasts longer.',
-          'Meditation is not described as an isolated experience, but as a practice that sharpens sensitivity to the subtle system. The more regularly one meditates, the easier it becomes to recognise one’s inner states and imbalances.',
-          'This gives Sahaja meditation a strongly practical character: simple in entry, but capable of producing remarkable depth, steadiness and inner refinement over time.'
+          'After the first awakening, a simple daily rhythm is recommended: a quiet place, ideally morning and evening, often in short periods of around ten to twenty minutes.',
+          'The sitting begins with relaxation and raising the inner energy. Instead of fighting thoughts, one lets them pass and allows the energy to do the deeper work.',
+          'Over time sensations on the palms or at the crown become clearer, inner perception refines itself, and collective meditation is said to accelerate and stabilise this process.'
         ],
         sideTitle: 'Effects of Regular Practice',
         sideItems: [
-          'The experience becomes more reproducible',
-          'Periods of inner stillness lengthen',
-          'The subtle system becomes easier to perceive'
+          'Morning and evening, but without rigid harshness',
+          'The energy works; thoughts are observed rather than fought',
+          'Collective meditation accelerates and stabilises growth'
         ],
         note:
-          'Daily meditation is presented as the bridge from a fleeting glimpse of silence to a more stable conscious state.'
+          'The practice is not meant to become mechanical: experience comes before theory, and steadiness grows best through enjoyment of the state itself.'
       }
     ],
     closing: {
-      title: 'Meditation is described here as an evolution of consciousness',
+      title: 'Meditation is described here as a gradual evolution of consciousness',
       description:
-        'Self-Realization, thoughtless awareness and daily practice form a coherent path. Meditation begins with the awakening of inner energy, becomes tangible in silence, and deepens through repetition into a richer quality of life.',
+        'Self-Realization, thoughtless awareness and daily practice form a coherent path. The first awakening of Kundalini, the relief of attention and the regular rhythm of meditation at home or in collectivity are presented as successive stages of a living inner development.',
       points: [
-        'Self-Realization lifts attention into a higher inner plane.',
-        'Thoughtless awareness is treated as a distinct, wakeful state of being.',
-        'Daily practice makes the experience stable, practical and embodied.'
+        'Self-Realization raises attention beyond the ordinary stream of thought.',
+        'Thoughtless awareness is treated as a fourth, silent and highly wakeful state.',
+        'Regular practice makes the experience concrete, embodied and more enduring.'
       ]
     }
   },

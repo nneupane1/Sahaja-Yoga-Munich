@@ -1,7 +1,8 @@
 import React from 'react';
 import ShriMataji from '../assets/ShriMataji.jpg';
 import sunriseImg from '../assets/sunrise.jpeg';
-import kundaliniImg from '../assets/kundalini-clean.png';
+import kundaliniOverlay from '../assets/kundalini-overlay-clean.webp';
+import kundaliniLogo from '../assets/kundalini-clean.png';
 import { useLocale } from '../context/LocaleContext';
 
 /**
@@ -74,7 +75,7 @@ const HeroOverlap: React.FC = () => {
                   ))}
                 </h1>
                 <div className="animate-drift-x mt-3 inline-flex items-center gap-2 rounded-full border border-[#e1a08c]/35 bg-[rgba(255,250,246,0.5)] px-3 py-1.5 shadow-[0_8px_18px_rgba(132,89,71,0.12)]">
-                  <span className="animate-glow-pulse-fast h-2.5 w-2.5 rounded-full bg-[#63cf7d] shadow-[0_0_0_6px_rgba(99,207,125,0.24),0_0_15px_rgba(99,207,125,0.46)]" />
+                  <span className="animate-glow-pulse-fast h-2.5 w-2.5 rounded-full bg-[#2f8b45] shadow-[0_0_0_6px_rgba(47,139,69,0.24),0_0_15px_rgba(47,139,69,0.42)]" />
                   <span className="text-[0.68rem] font-bold tracking-[0.24em] text-[#b56757]">
                     {copy.heroFreeLabel}
                   </span>
@@ -101,34 +102,23 @@ const HeroOverlap: React.FC = () => {
           className="overlap-image object-cover object-[center_49%]"
         />
         <img
-          src={kundaliniImg}
-          alt={copy.imageAltKundalini}
-          className="pointer-events-none absolute left-[48.2%] top-3 z-[2] w-[8.5rem] -translate-x-1/2 object-contain opacity-80 drop-shadow-[0_16px_24px_rgba(175,91,45,0.22)] sm:left-[47.8%] sm:top-4 sm:w-[9.75rem] lg:left-[47.4%] lg:top-5 lg:w-[11rem]"
+          src={kundaliniLogo}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute left-[48.15%] top-[18%] z-[4] w-[9.6rem] -translate-x-1/2 -translate-y-1/2 object-contain opacity-[0.98] sm:w-[11.2rem] lg:w-[12.8rem]"
+          style={{
+            filter:
+              'saturate(1.08) contrast(1.08) drop-shadow(0 0 6px rgba(255,222,170,0.45)) drop-shadow(0 6px 14px rgba(175,91,45,0.22))'
+          }}
         />
-        <div className="layer-content self-end pb-8 sm:pb-12 lg:pb-16">
-          <div className="relative max-w-md lg:translate-x-24 xl:translate-x-40">
-            <div className="pointer-events-none absolute -inset-5 rounded-[2rem] border border-[#e3a18b]/45 bg-[linear-gradient(145deg,rgba(255,250,246,0.16),rgba(244,232,220,0.08))] shadow-[0_24px_70px_rgba(132,89,71,0.18)]" />
-            <div className="pointer-events-none absolute -left-4 -top-4 h-14 w-14 rounded-full border border-[#f0c3ae]/55 bg-[radial-gradient(circle_at_35%_35%,rgba(255,246,240,0.95),rgba(232,177,137,0.38)_58%,rgba(206,119,94,0.1)_100%)] blur-[1px]" />
-            <div className="pointer-events-none absolute -bottom-5 -right-3 h-16 w-16 rounded-full border border-[#e9ab97]/45 bg-[radial-gradient(circle_at_40%_40%,rgba(255,249,243,0.92),rgba(225,166,127,0.34)_62%,rgba(199,118,90,0.1)_100%)] blur-[1px]" />
-            <div className="pointer-events-none absolute left-4 top-5 h-3 w-3 rounded-full bg-[#f3d0bc]/90 shadow-[14px_3px_0_0_rgba(243,208,188,0.88),7px_13px_0_0_rgba(237,184,156,0.7)]" />
-            <div className="pointer-events-none absolute bottom-6 right-5 h-3 w-3 rounded-full bg-[#f2c3aa]/90 shadow-[14px_3px_0_0_rgba(242,195,170,0.84),7px_13px_0_0_rgba(229,160,129,0.62)]" />
-            <div className="layer-pane relative flex max-w-md flex-col items-center border-[#e1a08c]/55 bg-[linear-gradient(145deg,rgba(255,252,249,0.22),rgba(252,243,236,0.1))] px-4 py-5 text-center shadow-[0_18px_45px_rgba(129,87,69,0.14)] backdrop-blur-[1.5px] sm:px-5 sm:py-6">
-              <span className="eyebrow border border-[#e1a08c]/35 bg-[rgba(255,250,246,0.55)] px-3 py-1.5 text-[0.62rem] text-[#b56757] shadow-[0_8px_18px_rgba(132,89,71,0.12)]">
-                {copy.secondaryTag}
-              </span>
-              <h2 className="mt-4 text-3xl text-[#5a3a31] sm:text-4xl">{copy.secondaryTitle}</h2>
-              <p className="mt-3 text-sm text-[#49362f] sm:text-base">
-                {copy.secondaryBody}
-              </p>
-              <a
-                href="#intro"
-                className="explore-btn mt-4 border border-[#e1a08c]/45 bg-[rgba(232,181,116,0.88)] px-4 py-2 text-[0.82rem] shadow-[0_12px_24px_rgba(132,89,71,0.12)] hover:bg-[rgba(221,168,92,0.92)]"
-              >
-                {copy.secondaryCta}
-              </a>
-            </div>
-          </div>
-        </div>
+        <img
+          src={kundaliniOverlay}
+          alt={copy.imageAltKundalini}
+          className="pointer-events-none absolute left-[48.15%] top-[61%] z-[2] w-[23.75rem] -translate-x-1/2 -translate-y-1/2 object-contain opacity-[0.78] sm:w-[27.55rem] lg:w-[31.35rem]"
+          style={{
+            filter: 'brightness(0.985) contrast(1.05) saturate(1.01)'
+          }}
+        />
       </div>
     </section>
   );

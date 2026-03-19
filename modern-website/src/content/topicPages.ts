@@ -102,7 +102,7 @@ export const topicPages = {
     heroEyebrow: 'Das subtile System',
     title: 'Kundalini, Nadis & Chakras',
     intro:
-      'Das subtile System ist das feine Netzwerk aus Kundalini, Energiekanälen und Zentren entlang des Nervensystems. In Sahaja Yoga bleibt es keine abstrakte Lehre: Die Wahrnehmung verfeinert sich so, dass Gleichgewicht, Blockaden und innere Qualitäten Schritt für Schritt wirklich gespürt werden können.',
+      'Das subtile System ist das feine Netzwerk aus Kundalini, Energiekanälen und Zentren entlang des Nervensystems. Im Herzen dieses Weges ruht die Kundalini still und schlafend im dreieckigen Kreuzbein. Wenn sie erwacht, wird das, was wie Lehre erscheint, zu etwas Erfahrbarem: Gleichgewicht, Blockaden und innere Qualitäten können Schritt für Schritt wirklich gespürt werden.',
     heroPanelText:
       'Das System lässt sich wie ein Rad verstehen: Wer an der Peripherie lebt, wird leicht unruhig; wer in die Mitte kommt, findet Frieden. Genau dorthin führt Sahaja Yoga die Aufmerksamkeit, wenn die Kundalini den zentralen Kanal nährt und die Chakren wieder in ihr natürliches Gleichgewicht bringt.',
     heroTags: ['Kundalini', 'Nadis', 'Chakras'],
@@ -132,7 +132,7 @@ export const topicPages = {
       eyebrow: 'Die drei Nadis',
       title: 'Wie sich Aufmerksamkeit durch das System bewegt',
       description:
-        'Die deutsche Bildsprache macht deutlich, dass die Nadis keine dekorativen Linien sind. Sie beschreiben drei sehr konkrete Bewegungsrichtungen der Aufmerksamkeit: Gefühl und Vergangenheit, Aktivität und Zukunft sowie die zentrierte Spur der inneren Entwicklung.',
+        'Die Bildsprache macht deutlich, dass die Nadis keine dekorativen Linien sind. Sie beschreiben drei sehr konkrete Bewegungsrichtungen der Aufmerksamkeit: Gefühl und Vergangenheit, Aktivität und Zukunft sowie die zentrierte Spur der inneren Entwicklung.',
       items: [
         {
           title: 'Linker Kanal',
@@ -240,7 +240,7 @@ export const topicPages = {
         eyebrow: 'Innere Quelle',
         title: 'Die Kundalini ist die ruhende Kraft, die das gesamte System belebt',
         description: [
-          'Die Kundalini wird als angeborene, unzerstörbare Energie beschrieben, die im Kreuzbein ruht. Sie ist nicht etwas, das von außen hinzugefügt werden müsste, sondern der verborgene Ursprung unserer spirituellen Entfaltung.',
+          'Die Kundalini wird als angeborene, unzerstörbare Energie beschrieben, die still und schlafend im dreieckigen Kreuzbein ruht. Sie ist nicht etwas, das von außen hinzugefügt werden müsste, sondern der verborgene Ursprung unserer spirituellen Entfaltung.',
           'Wenn sie erwacht, steigt sie durch den zentralen Kanal auf und nährt die Chakren. Dadurch werden nicht nur Ruhe und Stille möglich, sondern auch eine präzisere Wahrnehmung des eigenen inneren Zustands.',
           'Gerade diese Verbindung von Sanftheit und Intelligenz ist entscheidend: Die Kundalini handelt nicht gewaltsam, sondern so, dass sich das System organisch neu ordnen kann.'
         ],
@@ -311,43 +311,43 @@ export const topicPages = {
     heroEyebrow: 'Höheres Bewusstsein',
     title: 'Selbstverwirklichung & Meditation',
     intro:
-      'Selbstverwirklichung erscheint als eigentlicher Ermöglicher der Meditation. Die Aufmerksamkeit löst sich aus der permanenten Belastung durch Gedanken, Ego und Konditionierungen und steigt in einen höheren, stilleren Zustand des Bewusstseins auf.',
+      'Selbstverwirklichung erscheint hier als der eigentliche Ermöglicher der Meditation. Ausgangspunkt ist die Kundalini, die still und schlafend im dreieckigen Kreuzbein ruht. Wenn sie erwacht, wird die Aufmerksamkeit von der ständigen Überlagerung durch Gedanken, Ego, Konditionierungen und emotionale Reaktionen entlastet und in einen stilleren, höheren Zustand des Bewusstseins erhoben.',
     heroPanelText:
-      'Die Seite formuliert diesen Prozess ungewöhnlich anschaulich: Wenn die Kundalini durch die Chakren steigt, spannt sie das Gewebe der Aufmerksamkeit wie ein Zelt nach oben. So wird aus einem Moment der Gedankenfreiheit eine vertiefbare, wiederholbare meditative Erfahrung.',
+      'Der Vorgang wird sehr konkret beschrieben: Wenn die Kundalini durch den zentralen Kanal aufsteigt und die Chakren durchdringt, spannt sie das Feld der Aufmerksamkeit wie das Tuch eines Zeltes nach oben. Sobald sie über das Agnya hinaus in Richtung Sahasrara steigt, wird Gedankenfreiheit nicht bloß eine Idee, sondern eine erfahrbare höhere Bewusstseinsebene.',
     heroTags: ['Selbstverwirklichung', 'Gedankenfreiheit', 'Tägliche Praxis'],
     heroImage: redSunsetImg,
     heroImageAlt: 'Selbstverwirklichung',
     heroImageCaption:
-      'Selbstverwirklichung beschreibt den Punkt, an dem sich die Aufmerksamkeit spürbar in einen höheren Zustand des Bewusstseins erhebt.',
+      'Selbstverwirklichung bezeichnet den Punkt, an dem die Aufmerksamkeit von innen angehoben und in eine höhere, stillere Bewusstseinsebene geführt wird.',
     heroImageMode: 'cover',
     highlights: [
       {
-        title: 'Aufmerksamkeit hebt sich',
+        title: 'Aufmerksamkeit wird entlastet',
         description:
-          'Nicht äußere Disziplin, sondern das tatsächliche Aufsteigen der inneren Energie hebt die Aufmerksamkeit über gewohnte Denkmuster hinaus.'
+          'Die Aufmerksamkeit wird von der ständigen Überlagerung durch Gedanken, Ego und Superego gelöst und kann sich dadurch überhaupt erst in eine höhere Ebene erheben.'
       },
       {
-        title: 'Gedankenfreie Präsenz',
+        title: 'Die Energie trägt den Vorgang',
         description:
-          'Meditation wird als wacher Zustand ohne mentale Überlastung beschrieben, in dem Beobachtung und Frieden zugleich möglich sind.'
+          'Gedankenfreiheit soll nicht auf der mentalen Ebene erkämpft werden. Die aufsteigende Kundalini übernimmt einen Großteil der inneren Arbeit und hebt die Aufmerksamkeit über den gewohnten Gedankenstrom hinaus.'
       },
       {
-        title: 'Regelmäßig vertiefbar',
+        title: 'Praxis macht den Zustand stabil',
         description:
-          'Mit wiederholter Praxis wird Gedankenfreiheit nicht nur kurz erlebt, sondern stabiler und länger anhaltend.'
+          'Mit regelmäßiger Meditation wird aus einem kurzen Moment der Stille ein tragfähiger Zustand, der sich im Alltag vertieft und verlängert.'
       }
     ],
     showcases: {
       eyebrow: 'Innere Erfahrung sichtbar gemacht',
-      title: 'Selbstverwirklichung wird mit konkreter meditativer Praxis verbunden',
+      title: 'Vom ersten Erwachen bis zur reifen Meditationspraxis',
       description:
-        'Die offiziellen Seiten arbeiten mit Bildern von Aufstieg, stiller Aufmerksamkeit und Selbstfürsorge, um die Praxis vom ersten Erlebnis bis zur täglichen Vertiefung nachvollziehbar zu machen.',
+        'Die Bildsprache verbindet den ersten inneren Durchbruch mit Gedankenfreiheit, subtiler Wahrnehmung und häuslicher Praxis. So wird deutlich, dass die Erfahrung nicht isoliert bleibt, sondern in einen Lebensrhythmus hineinwachsen soll.',
       items: [
         {
           title: 'Der ermöglichende Moment',
           label: 'Self-Realization',
           description:
-            'Selbstverwirklichung wird als Schlüsselmoment dargestellt, der die innere Architektur erstmals bewusst erfahrbar macht.',
+            'Selbstverwirklichung erscheint als jener Augenblick, in dem die innere Energie die Aufmerksamkeit anhebt und die subtile Wirklichkeit erstmals konkret erfahrbar macht.',
           image: selfRealizationImg,
           alt: 'Selbstverwirklichung'
         },
@@ -355,7 +355,7 @@ export const topicPages = {
           title: 'Thoughtless Awareness',
           label: 'Vierter Bewusstseinszustand',
           description:
-            'Gedankenfreiheit ist kein Wegdämmern, sondern eine ruhige, klare und wache Form von Präsenz.',
+            'Gedankenfreiheit wird als vierter Bewusstseinszustand verstanden: nicht dumpf, nicht schläfrig, sondern ruhig, klar und hochwach.',
           image: thoughtlessImg,
           alt: 'Gedankenfreie Aufmerksamkeit'
         },
@@ -363,7 +363,7 @@ export const topicPages = {
           title: 'Die Energie steigt',
           label: 'Kundalini als Dynamik',
           description:
-            'Die innere Bewegung der Kundalini wird als realer Vorgang beschrieben, der Aufmerksamkeit und Wahrnehmung anhebt.',
+            'Die Kundalini wird als lebendige Kraft beschrieben, die durch die Mitte aufsteigt, die Zentren durchdringt und Wahrnehmung sowie Bewusstheit neu ordnet.',
           image: kundaliniEnergyImg,
           alt: 'Kundalini als innere Dynamik'
         }
@@ -371,33 +371,33 @@ export const topicPages = {
     },
     process: {
       eyebrow: 'Meditativer Ablauf',
-      title: 'Von der ersten Erweckung zur stabilen Gedankenfreiheit',
+      title: 'Von der Selbstverwirklichung zur stabilen inneren Stille',
       description:
-        'Meditation erscheint als klarer innerer Ablauf, der bei der Selbstverwirklichung beginnt und sich durch regelmäßige Praxis vertieft.',
+        'Meditation wird als ein nachvollziehbarer innerer Prozess beschrieben, der mit dem Erwachen der Kundalini beginnt und durch regelmäßige Praxis in eine stabilere Bewusstseinsform hineinwächst.',
       items: [
         {
           step: '01',
-          title: 'Die Gedankenlast löst sich',
+          title: 'Die Aufmerksamkeit wird von Denkbelastung befreit',
           description:
-            'Die Aufmerksamkeit wird vom ständigen Bombardement durch Ego, Superego und reaktives Denken entlastet.'
+            'Ego, Superego, Erinnerungsdruck und reaktives Denken verlieren ihre dauernde Dominanz über die Aufmerksamkeit.'
         },
         {
           step: '02',
-          title: 'Die Kundalini steigt durch die Mitte',
+          title: 'Die Kundalini steigt durch Sushumna und Chakren',
           description:
-            'Sie durchstößt die Chakren und hebt die Aufmerksamkeit in eine subtilere Bewusstseinsebene.'
+            'Die innere Energie steigt durch den zentralen Kanal, durchdringt die Zentren und spannt das Feld der Aufmerksamkeit wie ein Zelt nach oben.'
         },
         {
           step: '03',
-          title: 'Gedankenfreiheit wird erfahrbar',
+          title: 'Am Sahasrara wird Gedankenfreiheit erfahrbar',
           description:
-            'Man nimmt den gegenwärtigen Moment wacher wahr, ohne von innerem Kommentar übersteuert zu sein.'
+            'Wenn die Energie über das Agnya hinaus in Richtung Sahasrara steigt, wird die Aufmerksamkeit stiller, gegenwärtiger und freier von innerem Kommentar.'
         },
         {
           step: '04',
-          title: 'Regelmäßige Praxis verlängert den Zustand',
+          title: 'Tägliche Praxis und Kollektivität vertiefen ihn',
           description:
-            'Mit täglicher Meditation wird aus einem Moment der Stille eine tragfähigere, wiederkehrende Erfahrung.'
+            'Mit morgendlicher und abendlicher Praxis sowie gemeinsamer Meditation wird aus dem ersten Augenblick der Stille eine stabilere, wiederkehrende Erfahrung.'
         }
       ]
     },
@@ -407,20 +407,20 @@ export const topicPages = {
         to: '/selbstverwirklichung-meditation/selbstverwirklichung',
         navLabel: 'Selbstverwirklichung',
         eyebrow: 'Der Auslöser',
-        title: 'Selbstverwirklichung macht einen höheren Bewusstseinszustand zugänglich',
+        title: 'Selbstverwirklichung hebt die Aufmerksamkeit in eine höhere Bewusstseinsebene',
         description: [
-          'Die Aufmerksamkeit kann sich nur dann wirklich in einen höheren Zustand erheben, wenn sie nicht länger ununterbrochen von Gedanken überlagert wird. Genau hier setzt Selbstverwirklichung an.',
-          'Wenn die Kundalini durch den zentralen Kanal steigt und die Chakren durchdringt, wird die Aufmerksamkeit gleichsam nach oben gezogen. Dadurch löst sie sich von der engen Verflechtung aus Denken und unmittelbarer emotionaler Reaktion.',
-          'Selbstverwirklichung erscheint so nicht als symbolischer Akt, sondern als innere Öffnung, die den Menschen erstmals in eine ruhigere, klarere Form des Wahrnehmens versetzt.'
+          'Die Aufmerksamkeit kann sich nur dann in einen höheren Zustand erheben, wenn die permanente Überlagerung durch Gedanken, Ego und Superego nachlässt. Genau darin liegt die Funktion der Selbstverwirklichung.',
+          'Wenn die Kundalini durch den zentralen Kanal steigt und die Chakren durchdringt, wird das Gewebe der Aufmerksamkeit wie von innen nach oben gespannt. Dadurch löst es sich aus der Verstrickung mit Gedanken, Erinnerungen und unmittelbaren Reaktionsmustern.',
+          'Selbstverwirklichung erscheint deshalb nicht als bloßer symbolischer Akt, sondern als tatsächliche innere Öffnung, durch die Meditation erstmals real und erfahrbar wird.'
         ],
         sideTitle: 'Kerngedanken',
         sideItems: [
-          'Die Aufmerksamkeit ist der Träger des Bewusstseins',
-          'Die Kundalini hebt diese Aufmerksamkeit in eine höhere Ebene',
-          'Meditation beginnt mit Erfahrung, nicht nur mit Technik'
+          'Aufmerksamkeit ist der Träger des Bewusstseins',
+          'Kundalini hebt diese Aufmerksamkeit durch die Mitte an',
+          'Der erste Durchbruch ist Beginn eines lebendigen Prozesses'
         ],
         note:
-          'Die offizielle Seite nutzt das Bild eines von innen aufgespannten Zeltes, um die Ausweitung der Aufmerksamkeit zu erklären.'
+          'Ein zentrales Bild dafür ist das von innen aufgespannte Zelt: Nicht der Mensch zieht die Aufmerksamkeit gewaltsam hoch, sondern die innere Energie richtet sie auf.'
       },
       {
         id: 'gedankenfreiheit',
@@ -429,48 +429,48 @@ export const topicPages = {
         eyebrow: 'Thoughtless Awareness',
         title: 'Gedankenfreiheit ist stille Wachheit, nicht Leere',
         description: [
-          'Die Thoughtless-Awareness-Seite macht deutlich, dass dieser Zustand kein Einschlafen und keine diffuse Trance ist. Vielmehr handelt es sich um eine ruhige, inspirierte und zugleich aufmerksame Form des Bewusstseins.',
-          'Weil die Aufmerksamkeit von ihrem gewohnten Gedankenstrom entlastet ist, entsteht eine neue Qualität der Beobachtung. Wahrnehmung wird direkter, Reaktionen werden weniger zwanghaft und emotionale Überfrachtung nimmt ab.',
-          'Gedankenfreiheit erscheint damit als eigenständiger Bewusstseinszustand, der über Entspannung hinausgeht. Er wird als spirituell, psychologisch und praktisch relevant zugleich beschrieben.'
+          'Gedankenfreiheit ist weder Schlaf noch Trance noch gewöhnliches Wachsein. Sie wird als vierter Bewusstseinszustand beschrieben, in dem das Gehirn nicht abgeschaltet ist, aber der innere Dialog seine Herrschaft verliert.',
+          'Weil Aufmerksamkeit nicht mehr von Gedankeninhalten überdeckt wird, entsteht eine beobachtende Klarheit. Gedanken und Gefühle erscheinen dann eher als Inhalte im Bewusstsein als als etwas, das uns sofort mitreißt.',
+          'Gerade dadurch geht dieser Zustand weit über bloße Entspannung hinaus. Er verbindet Stille, Gegenwärtigkeit und eine ungewöhnlich klare Form innerer Wachheit.'
         ],
         sideTitle: 'Qualitäten dieses Zustands',
         sideItems: [
-          'Wach und präsent statt träge',
-          'Innere Ruhe ohne Flucht aus der Wirklichkeit',
-          'Klarere Beobachtung ohne reaktiven Gedankenlärm'
+          'Wach und präsent statt dumpf oder schläfrig',
+          'Still, ohne den Kontakt zur Realität zu verlieren',
+          'Beobachtung ohne sofortige Identifikation oder Reaktion'
         ],
         note:
-          'Die offizielle Thoughtless-Awareness-Seite spricht ausdrücklich von einem vierten Zustand des Bewusstseins.'
+          'Der Zustand wird ausdrücklich als eigenständige höhere Bewusstseinsform behandelt, nicht als bloßer Nebeneffekt von Ruhe.'
       },
       {
         id: 'praxis',
         to: '/selbstverwirklichung-meditation/meditationspraxis',
         navLabel: 'Meditation im Alltag',
         eyebrow: 'Vertiefung',
-        title: 'Meditation wird durch Regelmäßigkeit tragfähig und konkret',
+        title: 'Regelmäßige Meditation macht die Erfahrung stabil und lebensnah',
         description: [
-          'Ein zentrales Argument lautet, dass mit jeder Meditationssitzung die Kundalini gleichsam stärker und klarer aufsteigt. Dadurch hält Gedankenfreiheit nicht nur einen Augenblick an, sondern verlängert sich schrittweise.',
-          'Meditation wird deshalb nicht als punktuelles Erlebnis beschrieben, sondern als Praxis, die die Sensibilität für das eigene System steigert. Je häufiger man meditiert, desto leichter werden innere Zustände und Ungleichgewichte erkannt.',
-          'So erhält Sahaja-Meditation einen sehr praktischen Charakter: Sie bleibt einfach zugänglich, entwickelt aber mit der Zeit Tiefe, Stabilität und eine dauerhaftere innere Qualität.'
+          'Nach der ersten Erfahrung wird eine einfache tägliche Praxis empfohlen: ein ruhiger Ort, nach Möglichkeit morgens und abends, meist in überschaubaren Zeiträumen von etwa zehn bis zwanzig Minuten.',
+          'Die Meditation beginnt mit Entspannung und dem Heben der inneren Energie. Statt Gedanken zu bekämpfen, lässt man sie vorbeiziehen und erlaubt der Energie, die eigentliche Arbeit zu tun.',
+          'Mit der Zeit werden die Empfindungen auf den Handflächen oder am Scheitel klarer, die innere Wahrnehmung verfeinert sich, und gemeinsames Meditieren hilft, diesen Prozess spürbar zu beschleunigen.'
         ],
         sideTitle: 'Was regelmäßige Praxis bewirkt',
         sideItems: [
-          'Die Erfahrung wird reproduzierbarer',
-          'Die Aufmerksamkeitsdauer in Stille nimmt zu',
-          'Das feinstoffliche System wird deutlicher wahrnehmbar'
+          'Morgens und abends, aber ohne starre Härte',
+          'Die Energie darf arbeiten; Gedanken werden nur beobachtet',
+          'Kollektive Meditation beschleunigt und stabilisiert'
         ],
         note:
-          'Regelmäßige Meditation erscheint ausdrücklich als der Weg von momentaner zu konsistenter Gedankenfreiheit.'
+          'Die Praxis soll nicht mechanisch werden: Erfahrung geht vor Theorie, und Beständigkeit wächst am besten aus Freude an der Tiefe heraus.'
       }
     ],
     closing: {
-      title: 'Hier wird Meditation als Bewusstseinsentwicklung präzise beschrieben',
+      title: 'Hier wird Meditation als allmähige Evolution des Bewusstseins beschrieben',
       description:
-        'Selbstverwirklichung, Gedankenfreiheit und tägliche Praxis bilden eine klare Linie. Meditation beginnt mit dem Erwachen der inneren Energie, wird in der stillen Aufmerksamkeit erfahrbar und vertieft sich durch regelmäßige Anwendung zu einer neuen Lebensqualität.',
+        'Selbstverwirklichung, Gedankenfreiheit und tägliche Praxis bilden einen zusammenhängenden Weg. Die erste Erweckung der Kundalini, die Entlastung der Aufmerksamkeit und die regelmäßige Meditation zuhause oder im Kollektiv werden als aufeinander aufbauende Stufen eines lebendigen inneren Wachstums verstanden.',
       points: [
-        'Selbstverwirklichung hebt die Aufmerksamkeit in eine höhere Ebene.',
-        'Gedankenfreiheit wird als eigenständiger, wacher Bewusstseinszustand beschrieben.',
-        'Die tägliche Praxis macht diese Erfahrung stabil, konkret und alltagstauglich.'
+        'Selbstverwirklichung hebt die Aufmerksamkeit über den gewöhnlichen Gedankenstrom hinaus.',
+        'Gedankenfreiheit wird als vierter, stiller und zugleich hochwacher Zustand beschrieben.',
+        'Regelmäßige Praxis macht die Erfahrung konkret, verkörpert und dauerhaft tragfähiger.'
       ]
     }
   },

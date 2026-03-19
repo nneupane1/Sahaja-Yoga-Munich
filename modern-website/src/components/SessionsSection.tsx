@@ -13,6 +13,9 @@ const SessionsSection: React.FC = () => {
           title: 'Meditationszeiten in München',
           intro:
             'Hier findest du die regelmäßigen Sahaja-Yoga-Treffen in München, den Veranstaltungsort und die schnellsten Kontaktwege auf einen Blick.',
+          cityLinksLead:
+            'Weitere Sahaja-Yoga-Meditationszentren in anderen Städten im ganzen Land findest du hier.',
+          cityLinksCta: 'Hier klicken',
           contactTitle: 'Vor Ort in München',
           contactHeadline: 'Ein offener Raum für ruhige, geführte Meditation',
           contactIntro:
@@ -75,6 +78,9 @@ const SessionsSection: React.FC = () => {
           title: 'Meditation Times in Munich',
           intro:
             'Here you can find our regular Sahaja Yoga meetings in Munich, the venue and the quickest ways to contact us.',
+          cityLinksLead:
+            'More Sahaja Yoga meditation centres in other cities across the country can be found here.',
+          cityLinksCta: 'Click here',
           contactTitle: 'In Munich',
           contactHeadline: 'A welcoming space for calm, guided meditation',
           contactIntro:
@@ -151,50 +157,65 @@ const SessionsSection: React.FC = () => {
 
         <div className="card-soft warm-hover-glow mt-12 overflow-hidden p-6 sm:p-8 lg:p-10">
           <div className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-            <aside className="warm-hover-glow relative overflow-hidden rounded-[1.7rem] border border-[#d8a08d]/32 bg-[linear-gradient(180deg,rgba(255,255,255,0.76),rgba(255,245,239,0.48))] p-6 shadow-[0_20px_42px_rgba(179,93,76,0.08)] sm:p-7">
-              <div className="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full bg-[radial-gradient(circle,rgba(214,125,92,0.14)_0%,rgba(214,125,92,0)_72%)]" />
-              <div className="pointer-events-none absolute -bottom-10 -left-10 h-32 w-32 rounded-full bg-[radial-gradient(circle,rgba(110,181,192,0.16)_0%,rgba(110,181,192,0)_72%)]" />
-              <p className="relative text-sm font-semibold uppercase tracking-[0.28em] text-[#b56757]">
-                {copy.contactTitle}
-              </p>
-              <h3 className="relative mt-3 text-2xl leading-tight text-[#6c473d] sm:text-[2rem]">
-                {copy.contactHeadline}
-              </h3>
-              <p className="relative mt-4 max-w-xl text-[0.98rem] leading-7 text-slate-600">
-                {copy.contactIntro}
-              </p>
+            <div className="flex flex-col gap-4">
+              <aside className="warm-hover-glow relative overflow-hidden rounded-[1.7rem] border border-[#d8a08d]/32 bg-[linear-gradient(180deg,rgba(255,255,255,0.76),rgba(255,245,239,0.48))] p-6 shadow-[0_20px_42px_rgba(179,93,76,0.08)] sm:p-7">
+                <div className="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full bg-[radial-gradient(circle,rgba(214,125,92,0.14)_0%,rgba(214,125,92,0)_72%)]" />
+                <div className="pointer-events-none absolute -bottom-10 -left-10 h-32 w-32 rounded-full bg-[radial-gradient(circle,rgba(110,181,192,0.16)_0%,rgba(110,181,192,0)_72%)]" />
+                <p className="relative text-sm font-semibold uppercase tracking-[0.28em] text-[#b56757]">
+                  {copy.contactTitle}
+                </p>
+                <h3 className="relative mt-3 text-2xl leading-tight text-[#6c473d] sm:text-[2rem]">
+                  {copy.contactHeadline}
+                </h3>
+                <p className="relative mt-4 max-w-xl text-[0.98rem] leading-7 text-slate-600">
+                  {copy.contactIntro}
+                </p>
 
-              <div className="relative mt-6 grid gap-4 sm:grid-cols-2">
-                {copy.contactItems.map(item => (
-                  <div
-                    key={item.label}
-                    className={`warm-hover-glow rounded-[1.25rem] border border-[#d8a08d]/28 bg-[rgba(255,255,255,0.7)] px-4 py-4 shadow-[0_12px_24px_rgba(179,93,76,0.07)] ${
-                      item.wide ? 'sm:col-span-2' : ''
-                    }`}
-                  >
-                    <p className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-slate-500">
-                      {item.label}
-                    </p>
-                    {item.href ? (
-                      <a
-                        href={item.href}
-                        className="mt-2 block text-base leading-7 text-slate-700 transition hover:text-[#b56757] sm:text-[1.05rem]"
-                      >
-                        {item.value}
-                      </a>
-                    ) : (
-                      <p className="mt-2 text-base leading-7 text-slate-700 sm:text-[1.05rem]">
-                        {item.value}
+                <div className="relative mt-6 grid gap-4 sm:grid-cols-2">
+                  {copy.contactItems.map(item => (
+                    <div
+                      key={item.label}
+                      className={`warm-hover-glow rounded-[1.25rem] border border-[#d8a08d]/28 bg-[rgba(255,255,255,0.7)] px-4 py-4 shadow-[0_12px_24px_rgba(179,93,76,0.07)] ${
+                        item.wide ? 'sm:col-span-2' : ''
+                      }`}
+                    >
+                      <p className="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-slate-500">
+                        {item.label}
                       </p>
-                    )}
-                  </div>
-                ))}
-              </div>
+                      {item.href ? (
+                        <a
+                          href={item.href}
+                          className="mt-2 block text-base leading-7 text-slate-700 transition hover:text-[#b56757] sm:text-[1.05rem]"
+                        >
+                          {item.value}
+                        </a>
+                      ) : (
+                        <p className="mt-2 text-base leading-7 text-slate-700 sm:text-[1.05rem]">
+                          {item.value}
+                        </p>
+                      )}
+                    </div>
+                  ))}
+                </div>
 
-              <div className="warm-hover-glow relative mt-6 rounded-[1.35rem] border border-[#d9a089]/26 bg-[rgba(255,251,248,0.78)] px-4 py-4 shadow-[0_12px_24px_rgba(179,93,76,0.06)]">
-                <p className="text-sm leading-6 text-slate-600">{copy.freeNote}</p>
+                <div className="warm-hover-glow relative mt-6 rounded-[1.35rem] border border-[#d9a089]/26 bg-[rgba(255,251,248,0.78)] px-4 py-4 shadow-[0_12px_24px_rgba(179,93,76,0.06)]">
+                  <p className="text-sm leading-6 text-slate-600">{copy.freeNote}</p>
+                </div>
+              </aside>
+
+              <div className="warm-hover-glow rounded-[1.25rem] border border-[#d8a08d]/26 bg-[linear-gradient(180deg,rgba(255,255,255,0.82),rgba(255,245,239,0.62))] px-4 py-4 shadow-[0_12px_24px_rgba(179,93,76,0.06)]">
+                <p className="text-[0.9rem] leading-6 text-slate-600">{copy.cityLinksLead}</p>
+                <a
+                  href="https://www.sahajayoga.de/kurse/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-3 inline-flex items-center gap-2 rounded-full border border-[#d8a08d]/32 bg-[rgba(255,250,246,0.94)] px-4 py-2 text-sm font-semibold text-[#b56757] transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/45 hover:bg-[rgba(255,244,238,0.98)]"
+                >
+                  <span aria-hidden="true">👉</span>
+                  <span>{copy.cityLinksCta}</span>
+                </a>
               </div>
-            </aside>
+            </div>
 
             <div className="warm-hover-glow rounded-[1.7rem] border border-[#d8a08d]/28 bg-[linear-gradient(180deg,rgba(255,255,255,0.56),rgba(227,242,248,0.4))] p-6 shadow-[0_18px_36px_rgba(74,113,143,0.08)] sm:p-7">
               <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#b56757]">
