@@ -225,7 +225,7 @@ const SessionsSection: React.FC = () => {
                 <h3 className="text-2xl leading-tight text-[#6c473d] sm:text-[2rem]">
                   {copy.scheduleTitle}
                 </h3>
-                <span className="inline-flex w-fit items-center rounded-full border border-[#d8a08d]/28 bg-[rgba(255,251,248,0.78)] px-3 py-1 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b56757]">
+                <span className="inline-flex w-fit -translate-y-1 items-center rounded-full border border-[#d8a08d]/28 bg-[rgba(255,251,248,0.78)] px-3 py-1 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b56757]">
                   {copy.sessions.length} {locale === 'de' ? 'Termine pro Woche' : 'sessions per week'}
                 </span>
               </div>

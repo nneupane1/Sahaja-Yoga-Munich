@@ -7,6 +7,7 @@ import improvedPerceptionImg from '../assets/sahajaonline/Improved-perception.jp
 import collectiveMeditationImg from '../assets/sahajaonline/What-is-Collective-Meditation.jpg';
 import tenetsImg from '../assets/sahajaonline/The-10-Defining-Tenets-of-Spirituality-scaled.jpg';
 import redSunsetImg from '../assets/redsunset.jpeg';
+import universeImg from '../assets/universe.avif';
 import leftChannelImg from '../assets/sahajayogade/nadis-inside-img-002.jpg';
 import rightChannelImg from '../assets/sahajayogade/nadis-inside-img-00003.jpg';
 import mooladharaImg from '../assets/sahajayogade/chakras-inside-img-01-600x338-1.jpg';
@@ -407,11 +408,11 @@ export const topicPagesEn = {
       'Meditation need not be reduced to a mere relaxation response. At the centre lies a real state of consciousness whose subjective richness and objective correlates can be considered together.',
     heroPanelText:
       'This approach builds a precise bridge: thoughtless awareness is treated as a genuine experience, while modern neuroimaging, EEG and broader research are seen as ways to investigate its accompanying patterns.',
-    heroTags: ['EEG', 'Consciousness', 'Holistic Health'],
-    heroImage: thoughtlessImg,
-    heroImageAlt: 'Meditative awareness visual',
+    heroTags: [],
+    heroImage: universeImg,
+    heroImageAlt: 'Cosmic image for science and consciousness',
     heroImageCaption:
-      'Meditation is reframed here not only as relaxation, but as the conscious suspension of the ordinary flow of thought.',
+      'Science and spirituality are framed here within a wider field: inner experience, consciousness and order are approached as parts of a larger whole.',
     heroImageMode: 'cover',
     highlights: [
       {

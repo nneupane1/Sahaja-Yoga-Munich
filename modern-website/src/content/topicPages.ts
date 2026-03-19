@@ -7,6 +7,7 @@ import improvedPerceptionImg from '../assets/sahajaonline/Improved-perception.jp
 import collectiveMeditationImg from '../assets/sahajaonline/What-is-Collective-Meditation.jpg';
 import tenetsImg from '../assets/sahajaonline/The-10-Defining-Tenets-of-Spirituality-scaled.jpg';
 import redSunsetImg from '../assets/redsunset.jpeg';
+import universeImg from '../assets/universe.avif';
 import leftChannelImg from '../assets/sahajayogade/nadis-inside-img-002.jpg';
 import rightChannelImg from '../assets/sahajayogade/nadis-inside-img-00003.jpg';
 import mooladharaImg from '../assets/sahajayogade/chakras-inside-img-01-600x338-1.jpg';
@@ -483,11 +484,11 @@ export const topicPages = {
       'Meditation sollte nicht auf eine bloße Entspannungsreaktion reduziert werden. Im Mittelpunkt steht vielmehr ein erfahrbarer Bewusstseinszustand, dessen subjektive Tiefe und objektive Begleitphänomene gemeinsam betrachtet werden können.',
     heroPanelText:
       'Die wissenschaftlichen Seiten schlagen damit eine präzise Brücke: Gedankenfreiheit wird als reale Erfahrung beschrieben, und moderne Neuroimaging- und EEG-Forschung werden als Mittel genannt, diese Erfahrung in ihren Begleitmustern zu untersuchen.',
-    heroTags: ['EEG', 'Bewusstsein', 'Ganzheitliche Gesundheit'],
-    heroImage: thoughtlessImg,
-    heroImageAlt: 'Gedankenfreie Aufmerksamkeit und innere Fürsorge',
+    heroTags: [],
+    heroImage: universeImg,
+    heroImageAlt: 'Kosmische Darstellung von Wissenschaft und Bewusstsein',
     heroImageCaption:
-      'Meditation erscheint hier neu: nicht nur als Relaxation, sondern als bewusst erlebte Unterbrechung des gewohnten Gedankenstroms.',
+      'Die Begegnung von Wissenschaft und Spiritualität wird hier als weiter Raum gedacht: innere Erfahrung, Bewusstsein und Ordnung erscheinen als Teile eines größeren Zusammenhangs.',
     heroImageMode: 'cover',
     highlights: [
       {

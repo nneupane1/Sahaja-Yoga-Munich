@@ -149,39 +149,51 @@ const TopicPage: React.FC<TopicPageProps> = ({ page }) => {
                 />
 
                 {page.heroImage ? (
-                  <div className="group relative mx-auto max-w-[46rem] overflow-hidden rounded-[2.3rem] border border-[#b35d4c]/25 bg-white/72 p-4 shadow-[0_28px_70px_rgba(72,110,140,0.18)] backdrop-blur transition duration-500 hover:-translate-y-1 hover:shadow-[0_34px_80px_rgba(72,110,140,0.24)]">
-                    <div className="pointer-events-none absolute inset-0 translate-x-[-120%] bg-[linear-gradient(120deg,transparent_20%,rgba(255,255,255,0.38)_45%,transparent_70%)] opacity-0 transition duration-700 group-hover:translate-x-[120%] group-hover:opacity-100" />
-                    <div
-                      className={`rounded-[1.6rem] ${
-                        page.heroImageMode === 'contain'
-                          ? 'bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.96),rgba(220,242,255,0.92))]'
-                          : ''
-                      }`}
-                    >
-                      <img src={page.heroImage} alt={page.heroImageAlt} className={heroImageClasses} />
+                  <div className={`${isSciencePage ? 'mx-auto max-w-[46rem]' : ''}`}>
+                    <div className="group relative mx-auto max-w-[46rem] overflow-hidden rounded-[2.3rem] border border-[#b35d4c]/25 bg-white/72 p-4 shadow-[0_28px_70px_rgba(72,110,140,0.18)] backdrop-blur transition duration-500 hover:-translate-y-1 hover:shadow-[0_34px_80px_rgba(72,110,140,0.24)]">
+                      <div className="pointer-events-none absolute inset-0 translate-x-[-120%] bg-[linear-gradient(120deg,transparent_20%,rgba(255,255,255,0.38)_45%,transparent_70%)] opacity-0 transition duration-700 group-hover:translate-x-[120%] group-hover:opacity-100" />
+                      <div
+                        className={`rounded-[1.6rem] ${
+                          page.heroImageMode === 'contain'
+                            ? 'bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.96),rgba(220,242,255,0.92))]'
+                            : ''
+                        }`}
+                      >
+                        <img src={page.heroImage} alt={page.heroImageAlt} className={heroImageClasses} />
+                      </div>
+
+                      {!isSciencePage && page.heroTags[0] && (
+                        <div className="animate-float-soft absolute left-7 top-7 rounded-full border border-[#b35d4c]/28 bg-[rgba(255,250,246,0.92)] px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b35d4c] shadow-[0_16px_36px_rgba(72,110,140,0.12)]">
+                          {page.heroTags[0]}
+                        </div>
+                      )}
+                      {!isSciencePage && page.heroTags[1] && (
+                        <div className="animate-float-soft absolute right-7 top-16 rounded-full border border-[#b35d4c]/28 bg-[#fff7f3]/92 px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b35d4c] shadow-[0_16px_36px_rgba(72,110,140,0.12)] [animation-delay:1.2s]">
+                          {page.heroTags[1]}
+                        </div>
+                      )}
+                      {!isSciencePage && page.heroTags[2] && (
+                        <div className="animate-float-soft absolute left-9 bottom-28 rounded-full border border-[#b35d4c]/28 bg-[rgba(255,250,246,0.92)] px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b35d4c] shadow-[0_16px_36px_rgba(72,110,140,0.12)] [animation-delay:2s]">
+                          {page.heroTags[2]}
+                        </div>
+                      )}
+
+                      {!isSciencePage && (
+                        <div className="absolute inset-x-8 bottom-8 max-w-xl rounded-[1.45rem] border border-[#b35d4c]/28 bg-[rgba(255,250,246,0.92)] p-5 shadow-[0_18px_40px_rgba(72,110,140,0.14)] backdrop-blur">
+                          <p className="text-base leading-7 text-slate-700 sm:text-lg">
+                            {page.heroImageCaption}
+                          </p>
+                        </div>
+                      )}
                     </div>
 
-                    {page.heroTags[0] && (
-                      <div className="animate-float-soft absolute left-7 top-7 rounded-full border border-[#b35d4c]/28 bg-[rgba(255,250,246,0.92)] px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b35d4c] shadow-[0_16px_36px_rgba(72,110,140,0.12)]">
-                        {page.heroTags[0]}
+                    {isSciencePage && page.heroImageCaption && (
+                      <div className="card-soft reveal-ready mx-auto mt-6 max-w-2xl rounded-[1.55rem] px-6 py-5 text-center">
+                        <p className="text-base leading-7 text-slate-700 sm:text-lg">
+                          {page.heroImageCaption}
+                        </p>
                       </div>
                     )}
-                    {page.heroTags[1] && (
-                      <div className="animate-float-soft absolute right-7 top-16 rounded-full border border-[#b35d4c]/28 bg-[#fff7f3]/92 px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b35d4c] shadow-[0_16px_36px_rgba(72,110,140,0.12)] [animation-delay:1.2s]">
-                        {page.heroTags[1]}
-                      </div>
-                    )}
-                    {page.heroTags[2] && (
-                      <div className="animate-float-soft absolute left-9 bottom-28 rounded-full border border-[#b35d4c]/28 bg-[rgba(255,250,246,0.92)] px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b35d4c] shadow-[0_16px_36px_rgba(72,110,140,0.12)] [animation-delay:2s]">
-                        {page.heroTags[2]}
-                      </div>
-                    )}
-
-                    <div className="absolute inset-x-8 bottom-8 max-w-xl rounded-[1.45rem] border border-[#b35d4c]/28 bg-[rgba(255,250,246,0.92)] p-5 shadow-[0_18px_40px_rgba(72,110,140,0.14)] backdrop-blur">
-                      <p className="text-base leading-7 text-slate-700 sm:text-lg">
-                        {page.heroImageCaption}
-                      </p>
-                    </div>
                   </div>
                 ) : (
                   <div className="group relative min-h-[32rem] max-w-[42rem] overflow-hidden rounded-[2.3rem] border border-[#b35d4c]/25 bg-white/72 p-6 shadow-[0_28px_70px_rgba(72,110,140,0.16)] backdrop-blur transition duration-500 hover:-translate-y-1 hover:shadow-[0_34px_80px_rgba(72,110,140,0.22)]">
