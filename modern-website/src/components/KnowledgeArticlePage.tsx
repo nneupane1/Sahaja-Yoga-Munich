@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import type { KnowledgeArticle } from '../content/knowledgeArticles';
 import { useLocale } from '../context/LocaleContext';
 import useScrollReveal from '../hooks/useScrollReveal';
+import motherImg from '../assets/mother.jpg';
+import mother1Img from '../assets/mother1.jpg';
+import mother3Img from '../assets/mother3.png';
+import lotusImg from '../assets/lotus.png';
 
 type KnowledgeArticlePageProps = {
   article: KnowledgeArticle;
@@ -48,13 +52,17 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
             'Each of these pages extends the same field of ideas from a different angle.'
         };
 
+  const isThoughtlessStillnessPage = article.route === '/selbstverwirklichung-meditation/gedankenfreie-stille';
   const heroImageClasses =
     article.heroImageMode === 'contain'
-      ? 'h-[24rem] w-full rounded-[1.6rem] object-contain bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(225,243,255,0.92))] p-6 sm:h-[29rem]'
+      ? isThoughtlessStillnessPage
+        ? 'h-[24rem] w-full rounded-[1.6rem] object-contain bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(225,243,255,0.92))] p-3 scale-[1.04] sm:h-[29rem]'
+        : 'h-[24rem] w-full rounded-[1.6rem] object-contain bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(225,243,255,0.92))] p-6 sm:h-[29rem]'
       : 'h-[24rem] w-full rounded-[1.6rem] object-cover object-center transition duration-700 group-hover:scale-[1.04] sm:h-[29rem]';
   const forceImageRight =
     article.route === '/kundalini-energiesystem/kanaele-und-balance' ||
-    article.route === '/kundalini-energiesystem/kundalini';
+    article.route === '/kundalini-energiesystem/kundalini' ||
+    article.route === '/kundalini-energiesystem/chakren-und-qualitaeten';
   const heroImageLeft =
     forceImageRight
       ? false
@@ -63,10 +71,23 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
   const isCompactCenteredHero =
     article.route === '/kundalini-energiesystem/chakren-und-qualitaeten' ||
     article.route === '/kundalini-energiesystem/kundalini';
-  const useTwoUpChannelBlocks = article.route === '/kundalini-energiesystem/kanaele-und-balance';
+  const hideFloatingHeroTags =
+    article.route === '/selbstverwirklichung-meditation/selbstverwirklichung' ||
+    article.route === '/selbstverwirklichung-meditation/gedankenfreie-stille' ||
+    article.route === '/selbstverwirklichung-meditation/meditationspraxis';
+  const showCaptionBelowHeroImage =
+    article.route === '/selbstverwirklichung-meditation/selbstverwirklichung' ||
+    article.route === '/selbstverwirklichung-meditation/meditationspraxis' ||
+    article.route === '/selbstverwirklichung-meditation/gedankenfreie-stille';
+  const useTwoUpChannelBlocks =
+    article.route === '/kundalini-energiesystem/kanaele-und-balance' ||
+    article.route === '/kundalini-energiesystem/chakren-und-qualitaeten' ||
+    article.route === '/wissenschaft-spiritualitaet/gesundheit-und-forschung';
   const useThreeUpFeatureBlocks =
     article.route === '/kundalini-energiesystem/kundalini' ||
-    article.route === '/selbstverwirklichung-meditation/selbstverwirklichung';
+    article.route === '/selbstverwirklichung-meditation/selbstverwirklichung' ||
+    article.route === '/selbstverwirklichung-meditation/gedankenfreie-stille' ||
+    article.route === '/selbstverwirklichung-meditation/meditationspraxis';
   const heroGridClassName = 'grid gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:items-start';
   const heroPanelPositionClassName = heroImageLeft
     ? 'relative z-10 slide-ready-right lg:mt-8'
@@ -92,21 +113,32 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
   const heroActionLinksClassName = isCompactCenteredHero
     ? 'flex flex-wrap justify-center gap-3'
     : 'flex flex-wrap gap-3';
+  const useSquareMeditationDetails =
+    article.route === '/selbstverwirklichung-meditation/gedankenfreie-stille' ||
+    article.route === '/selbstverwirklichung-meditation/meditationspraxis';
   const detailsGridClassName =
     article.route === '/kundalini-energiesystem/kundalini' ||
     article.route === '/selbstverwirklichung-meditation/selbstverwirklichung' ||
-    article.route === '/kundalini-energiesystem/kanaele-und-balance'
+    article.route === '/kundalini-energiesystem/kanaele-und-balance' ||
+    useSquareMeditationDetails
       ? 'mt-10 grid gap-6 lg:grid-cols-3'
       : 'mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4';
   const detailsShellClassName =
     article.route === '/kundalini-energiesystem/kundalini' ||
     article.route === '/selbstverwirklichung-meditation/selbstverwirklichung' ||
-    article.route === '/kundalini-energiesystem/kanaele-und-balance'
-      ? 'section-shell max-w-[88rem]'
+    article.route === '/kundalini-energiesystem/kanaele-und-balance' ||
+    useSquareMeditationDetails
+      ? 'section-shell max-w-[96rem]'
       : 'section-shell';
   const useSplitBlockLayout = useThreeUpFeatureBlocks || useTwoUpChannelBlocks;
   const leadingBlocks = useSplitBlockLayout ? article.blocks.slice(0, 1) : article.blocks;
   const trailingBlocks = useSplitBlockLayout ? article.blocks.slice(1) : [];
+  const placeholderRelatedImageMap: Record<string, string[]> = {
+    '/wissenschaft-spiritualitaet/integration-und-entwicklung': [mother1Img, mother3Img, lotusImg],
+    '/wissenschaft-spiritualitaet/gesundheit-und-forschung': [motherImg, mother3Img, lotusImg]
+  };
+  const placeholderRelatedImages = placeholderRelatedImageMap[article.route];
+  const usePlaceholderRelatedImages = Boolean(placeholderRelatedImages);
 
   return (
     <main className="overflow-hidden bg-[linear-gradient(180deg,#dff4ff_0%,#edf9ff_48%,#dff2ff_100%)]">
@@ -133,12 +165,12 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
                 <div className="pointer-events-none absolute inset-0 translate-x-[-120%] bg-[linear-gradient(120deg,transparent_22%,rgba(255,255,255,0.4)_45%,transparent_72%)] opacity-0 transition duration-700 group-hover:translate-x-[120%] group-hover:opacity-100" />
                 <img src={article.heroImage} alt={article.heroImageAlt} className={heroImageClasses} />
 
-                {article.heroTags[0] && (
+                {!hideFloatingHeroTags && article.heroTags[0] && (
                   <div className="animate-float-soft absolute left-7 top-7 rounded-full border border-[#b35d4c]/28 bg-[rgba(255,250,246,0.92)] px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b35d4c] shadow-[0_16px_36px_rgba(72,110,140,0.12)]">
                     {article.heroTags[0]}
                   </div>
                 )}
-                {article.heroTags[1] && (
+                {!hideFloatingHeroTags && article.heroTags[1] && (
                   <div className="animate-float-soft absolute right-7 top-16 rounded-full border border-[#b35d4c]/28 bg-[#fff7f3]/92 px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b35d4c] shadow-[0_16px_36px_rgba(72,110,140,0.12)] [animation-delay:1.2s]">
                     {article.heroTags[1]}
                   </div>
@@ -146,14 +178,14 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
 
                 <div
                   className={
-                    isCompactCenteredHero
+                    isCompactCenteredHero || showCaptionBelowHeroImage
                       ? 'mx-auto mt-5 max-w-2xl rounded-[1.3rem] border border-[#b35d4c]/22 bg-[rgba(255,250,246,0.96)] px-5 py-4 text-center shadow-[0_14px_32px_rgba(72,110,140,0.1)]'
                       : 'absolute inset-x-8 bottom-8 max-w-lg rounded-[1.4rem] border border-[#b35d4c]/28 bg-[rgba(255,250,246,0.92)] p-5 shadow-[0_18px_40px_rgba(72,110,140,0.14)] backdrop-blur'
                   }
                 >
                   <p
                     className={
-                      isCompactCenteredHero
+                      isCompactCenteredHero || showCaptionBelowHeroImage
                         ? 'text-sm leading-6 text-slate-700 sm:text-[0.95rem]'
                         : 'text-base leading-7 text-slate-700 sm:text-lg'
                     }
@@ -434,9 +466,15 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
               {article.details.items.map(item => (
                 <article
                   key={`${item.title}-${item.subtitle}`}
-                  className="interactive-card reveal-ready group flex h-full flex-col overflow-hidden"
+                  className={`interactive-card reveal-ready group flex h-full flex-col overflow-hidden ${
+                    useSquareMeditationDetails ? 'lg:h-[32rem]' : ''
+                  }`}
                 >
-                  <div className="relative h-52 overflow-hidden rounded-t-[1.5rem] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.96),rgba(224,243,255,0.92))] p-4">
+                  <div
+                    className={`relative overflow-hidden rounded-t-[1.5rem] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.96),rgba(224,243,255,0.92))] p-4 ${
+                      useSquareMeditationDetails ? 'h-40' : 'h-52'
+                    }`}
+                  >
                     <img
                       src={item.image}
                       alt={item.alt}
@@ -447,7 +485,7 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
                       }`}
                     />
                   </div>
-                  <div className="flex flex-1 flex-col space-y-3 p-6">
+                  <div className={`flex flex-1 flex-col space-y-3 ${useSquareMeditationDetails ? 'p-5' : 'p-6'}`}>
                     <span className="text-xs font-semibold uppercase tracking-[0.24em] text-[#b35d4c]">
                       {item.subtitle}
                     </span>
@@ -479,33 +517,43 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
           </div>
 
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            {relatedArticles.map(item => (
-              <Link
-                key={item.route}
-                to={item.route}
-                className="interactive-card reveal-ready group flex h-full flex-col overflow-hidden p-7 hover:translate-x-2"
-              >
-                <div className="relative overflow-hidden rounded-[1.35rem] border border-[#b35d4c]/28 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(255,244,237,0.92))] p-4">
-                  <img
-                    src={item.heroImage}
-                    alt={item.heroImageAlt}
-                    className={`w-full rounded-[1rem] transition duration-700 group-hover:scale-[1.04] ${
-                      item.heroImageMode === 'contain'
-                        ? 'h-52 object-contain'
-                        : 'h-52 object-cover object-center'
-                    }`}
-                  />
-                </div>
-                <div className="mt-6 flex flex-1 flex-col space-y-3">
-                  <span className="text-xs font-semibold uppercase tracking-[0.24em] text-[#b35d4c]">
-                    {item.eyebrow}
-                  </span>
-                  <h3 className="text-balance text-2xl text-slate-800 transition duration-300 group-hover:translate-x-1">
-                    {item.navLabel}
-                  </h3>
-                  <p className="flex-1 leading-8 text-slate-700">{item.intro}</p>
-                </div>
-              </Link>
+            {relatedArticles.map((item, index) => (
+              (() => {
+                const useContainPlaceholder =
+                  article.route === '/wissenschaft-spiritualitaet/gesundheit-und-forschung' &&
+                  index < 2;
+
+                return (
+                  <Link
+                    key={item.route}
+                    to={item.route}
+                    className="interactive-card reveal-ready group flex h-full flex-col overflow-hidden p-7 hover:translate-x-2"
+                  >
+                    <div className="relative overflow-hidden rounded-[1.35rem] border border-[#b35d4c]/28 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(255,244,237,0.92))] p-4">
+                      <img
+                        src={usePlaceholderRelatedImages ? placeholderRelatedImages[index] ?? item.heroImage : item.heroImage}
+                        alt={item.heroImageAlt}
+                        className={`w-full rounded-[1rem] transition duration-700 group-hover:scale-[1.04] ${
+                          useContainPlaceholder
+                            ? 'h-52 object-contain p-3'
+                            : (usePlaceholderRelatedImages ? 'cover' : item.heroImageMode) === 'contain'
+                              ? 'h-52 object-contain'
+                              : 'h-52 object-cover object-center'
+                        }`}
+                      />
+                    </div>
+                    <div className="mt-6 flex flex-1 flex-col space-y-3">
+                      <span className="text-xs font-semibold uppercase tracking-[0.24em] text-[#b35d4c]">
+                        {item.eyebrow}
+                      </span>
+                      <h3 className="text-balance text-2xl text-slate-800 transition duration-300 group-hover:translate-x-1">
+                        {item.navLabel}
+                      </h3>
+                      <p className="flex-1 leading-8 text-slate-700">{item.intro}</p>
+                    </div>
+                  </Link>
+                );
+              })()
             ))}
           </div>
         </div>

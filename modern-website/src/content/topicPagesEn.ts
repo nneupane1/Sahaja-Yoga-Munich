@@ -8,6 +8,12 @@ import collectiveMeditationImg from '../assets/sahajaonline/What-is-Collective-M
 import tenetsImg from '../assets/sahajaonline/The-10-Defining-Tenets-of-Spirituality-scaled.jpg';
 import redSunsetImg from '../assets/redsunset.jpeg';
 import universeImg from '../assets/universe.avif';
+import beeImg from '../assets/bee.png';
+import lotusImg from '../assets/lotus.png';
+import shriMatajiImg from '../assets/ShriMataji.jpg';
+import motherImg from '../assets/mother.jpg';
+import mother1Img from '../assets/mother1.jpg';
+import mother3Img from '../assets/mother3.png';
 import leftChannelImg from '../assets/sahajayogade/nadis-inside-img-002.jpg';
 import rightChannelImg from '../assets/sahajayogade/nadis-inside-img-00003.jpg';
 import mooladharaImg from '../assets/sahajayogade/chakras-inside-img-01-600x338-1.jpg';
@@ -273,7 +279,7 @@ export const topicPagesEn = {
           label: 'Self-Realization',
           description:
             'Self-Realization appears as the decisive moment in which inner energy begins to lift attention and the subtle architecture becomes experientially real.',
-          image: selfRealizationImg,
+          image: lotusImg,
           alt: 'Self realization'
         },
         {
@@ -281,7 +287,7 @@ export const topicPagesEn = {
           label: 'Fourth State of Consciousness',
           description:
             'Thoughtlessness is described not as dullness but as a lucid, quiet and fully wakeful mode of presence.',
-          image: thoughtlessImg,
+          image: shriMatajiImg,
           alt: 'Thoughtless awareness'
         },
         {
@@ -442,7 +448,7 @@ export const topicPagesEn = {
           label: 'State of Consciousness',
           description:
             'Thoughtlessness is presented as a real condition of calm, alert and intuitive awareness, not a vague abstraction.',
-          image: thoughtlessImg,
+          image: beeImg,
           alt: 'Thoughtless awareness state'
         },
         {
@@ -450,7 +456,7 @@ export const topicPagesEn = {
           label: 'Systemic View',
           description:
             'The chakra chart presents spirituality as an organised inner system rather than a diffuse metaphor.',
-          image: chakraChartImg,
+          image: universeImg,
           alt: 'Chakra chart'
         },
         {
@@ -458,7 +464,7 @@ export const topicPagesEn = {
           label: 'Regulation',
           description:
             'The interplay of left, right and centre offers a model for energetic and psychological regulation.',
-          image: tendenciesImg,
+          image: mother3Img,
           alt: 'Balance of tendencies'
         }
       ]
@@ -578,7 +584,7 @@ export const topicPagesEn = {
     heroPanelText:
       'That is where this cultural vision finds its strength: clearer attention deepens art, shared stillness deepens community, and spiritual life becomes credible when it matures the human being from within.',
     heroTags: ['Creativity', 'Collective Meditation', 'Character'],
-    heroImage: collectiveMeditationImg,
+    heroImage: lotusImg,
     heroImageAlt: 'Collective meditation',
     heroImageCaption:
       'Collective meditation is presented as a quiet answer to modern isolation: people come together without comparison, noise or hierarchy, and discover belonging through stillness.',
@@ -611,7 +617,7 @@ export const topicPagesEn = {
           label: 'Creative Attention',
           description:
             'Meditation refines awareness and allows subtler detail in art, atmosphere and daily life to become more visible.',
-          image: improvedPerceptionImg,
+          image: mother1Img,
           alt: 'Improved perception'
         },
         {
@@ -619,7 +625,7 @@ export const topicPagesEn = {
           label: 'Collective Meditation',
           description:
             'Collective meditation is described as a response to overstimulation, loneliness and contemporary fragmentation.',
-          image: collectiveMeditationImg,
+          image: motherImg,
           alt: 'Collective meditation'
         },
         {
@@ -627,7 +633,7 @@ export const topicPagesEn = {
           label: 'Spiritual Tenets',
           description:
             'The defining principles of spiritual life place inner truth, maturity and conduct at the centre.',
-          image: tenetsImg,
+          image: mother1Img,
           alt: 'Spiritual tenets'
         }
       ]

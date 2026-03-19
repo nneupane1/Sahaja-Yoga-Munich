@@ -8,6 +8,12 @@ import collectiveMeditationImg from '../assets/sahajaonline/What-is-Collective-M
 import tenetsImg from '../assets/sahajaonline/The-10-Defining-Tenets-of-Spirituality-scaled.jpg';
 import redSunsetImg from '../assets/redsunset.jpeg';
 import universeImg from '../assets/universe.avif';
+import beeImg from '../assets/bee.png';
+import lotusImg from '../assets/lotus.png';
+import shriMatajiImg from '../assets/ShriMataji.jpg';
+import motherImg from '../assets/mother.jpg';
+import mother1Img from '../assets/mother1.jpg';
+import mother3Img from '../assets/mother3.png';
 import leftChannelImg from '../assets/sahajayogade/nadis-inside-img-002.jpg';
 import rightChannelImg from '../assets/sahajayogade/nadis-inside-img-00003.jpg';
 import mooladharaImg from '../assets/sahajayogade/chakras-inside-img-01-600x338-1.jpg';
@@ -349,7 +355,7 @@ export const topicPages = {
           label: 'Self-Realization',
           description:
             'Selbstverwirklichung erscheint als jener Augenblick, in dem die innere Energie die Aufmerksamkeit anhebt und die subtile Wirklichkeit erstmals konkret erfahrbar macht.',
-          image: selfRealizationImg,
+          image: lotusImg,
           alt: 'Selbstverwirklichung'
         },
         {
@@ -357,7 +363,7 @@ export const topicPages = {
           label: 'Vierter Bewusstseinszustand',
           description:
             'Gedankenfreiheit wird als vierter Bewusstseinszustand verstanden: nicht dumpf, nicht schläfrig, sondern ruhig, klar und hochwach.',
-          image: thoughtlessImg,
+          image: shriMatajiImg,
           alt: 'Gedankenfreie Aufmerksamkeit'
         },
         {
@@ -518,7 +524,7 @@ export const topicPages = {
           label: 'Bewusstseinszustand',
           description:
             'Gedankenfreiheit wird als realer, ruhiger und intuitiver Zustand beschrieben, nicht als bloßes Konzept.',
-          image: thoughtlessImg,
+          image: beeImg,
           alt: 'Thoughtless Awareness'
         },
         {
@@ -526,7 +532,7 @@ export const topicPages = {
           label: 'Systemische Sicht',
           description:
             'Das Chakra-Diagramm zeigt, wie Spiritualität als strukturiertes System statt als diffuse Metapher erscheint.',
-          image: chakraChartImg,
+          image: universeImg,
           alt: 'Chakra-Diagramm'
         },
         {
@@ -534,7 +540,7 @@ export const topicPages = {
           label: 'Regulation',
           description:
             'Die Dynamik zwischen links, rechts und Mitte bietet ein Modell für psychische und energetische Balance.',
-          image: tendenciesImg,
+          image: mother3Img,
           alt: 'Diagramm innerer Tendenzen'
         }
       ]
@@ -654,7 +660,7 @@ export const topicPages = {
     heroPanelText:
       'Gerade darin liegt die kulturelle Kraft dieser Sichtweise: Wer seine Aufmerksamkeit klärt, erlebt Kunst tiefer, wird verbindungsfähiger und entwickelt jene Qualitäten, die Gemeinschaft, Schönheit und echte Menschlichkeit tragen.',
     heroTags: ['Kreativität', 'Collective Meditation', 'Charakter'],
-    heroImage: collectiveMeditationImg,
+    heroImage: lotusImg,
     heroImageAlt: 'Kollektive Meditation',
     heroImageCaption:
       'Kollektive Meditation erscheint als stiller Gegenentwurf zu moderner Vereinzelung: Menschen sitzen gemeinsam, ohne Vergleich und ohne Hierarchie.',
@@ -687,7 +693,7 @@ export const topicPages = {
           label: 'Creative attention',
           description:
             'Meditation verfeinert die Aufmerksamkeit und lässt subtile Details in Kunst und Alltag deutlicher hervortreten.',
-          image: improvedPerceptionImg,
+          image: mother1Img,
           alt: 'Verfeinerte Wahrnehmung'
         },
         {
@@ -695,7 +701,7 @@ export const topicPages = {
           label: 'Collective Meditation',
           description:
             'Kollektive Meditation wird als Antwort auf Einsamkeit, Überstimulation und innere Vereinzelung der Gegenwart gelesen.',
-          image: collectiveMeditationImg,
+          image: motherImg,
           alt: 'Kollektive Meditation'
         },
         {
@@ -703,7 +709,7 @@ export const topicPages = {
           label: 'Spiritual integrity',
           description:
             'Die spirituellen Grundsätze betonen, dass echte Reifung immer auch Verhaltens- und Charakterqualität einschließt.',
-          image: tenetsImg,
+          image: mother1Img,
           alt: 'Grundsätze geistiger Reifung'
         }
       ]

@@ -7,6 +7,11 @@ import collectiveMeditationImg from '../assets/sahajaonline/What-is-Collective-M
 import tenetsImg from '../assets/sahajaonline/The-10-Defining-Tenets-of-Spirituality-scaled.jpg';
 import kundaliniGif from '../assets/kundalini.gif';
 import kundaliniFireImg from '../assets/kundalinifire.png';
+import beeImg from '../assets/bee.png';
+import lotusImg from '../assets/lotus.png';
+import charlieImg from '../assets/charlie.png';
+import motherImg from '../assets/mother.jpg';
+import mother1Img from '../assets/mother1.jpg';
 import mother3Img from '../assets/mother3.png';
 import subtleSystemDeImg from '../assets/sahajayogade/das-subtile-system-grafik.jpg';
 import channelsDeImg from '../assets/sahajayogade/Channels-for-SY-website-de-2048x977-2-1024x489.png';
@@ -264,7 +269,7 @@ const articlesDe: Record<string, KnowledgeArticle> = {
     title: 'Chakren & Qualitäten: die Zentren, die Körper, Charakter und Bewusstsein verbinden',
     intro:
       'Die Chakren bilden eine feine Landkarte des Menschen. Jedes Zentrum hat eine subtile Qualität, eine körperliche Manifestation und einen klaren Einfluss darauf, wie wir handeln, fühlen, kommunizieren und meditieren.',
-    heroImage: kundaliniGif,
+    heroImage: charlieImg,
     heroImageAlt: 'Subtiles System mit Chakren',
     heroImageMode: 'contain',
     heroCaption:
@@ -405,7 +410,7 @@ const articlesDe: Record<string, KnowledgeArticle> = {
     title: 'Selbstverwirklichung: wie die Aufmerksamkeit in eine höhere Ebene gehoben wird',
     intro:
       'Selbstverwirklichung wird als jener entscheidende Übergang beschrieben, in dem die im dreieckigen Kreuzbein ruhende Kundalini als mütterliche geistige Energie und Kraft des reinen Wunsches erwacht und die Aufmerksamkeit von der ununterbrochenen Belastung durch Gedanken, Ego und Superego entlastet. So wird sie in eine höhere Ebene des Bewusstseins angehoben, und Meditation beginnt nicht als Technik, sondern als tatsächliches inneres Geschehen.',
-    heroImage: mother3Img,
+    heroImage: beeImg,
     heroImageAlt: 'Shri Mataji and Self-Realization',
     heroCaption:
       'Selbstverwirklichung markiert den Moment, in dem Kundalini die Aufmerksamkeit anhebt und Gedankenfreiheit erstmals erfahrbar macht.',
@@ -504,7 +509,8 @@ const articlesDe: Record<string, KnowledgeArticle> = {
     title: 'Gedankenfreie Stille: der vierte Bewusstseinszustand jenseits des Gedankenstroms',
     intro:
       'Gedankenfreie Stille wird ausdrücklich als vierter Bewusstseinszustand beschrieben. Sie ist weder Schlaf noch Traum noch gewöhnliches Wachsein, sondern ein stiller und zugleich hochwacher Zustand, in dem der innere Dialog zurücktritt und das innere Selbst deutlicher hervortritt.',
-    heroImage: thoughtlessImg,
+    heroImage: lotusImg,
+    heroImageMode: 'contain',
     heroImageAlt: 'Gedankenfreie Stille',
     heroCaption:
       'Gedankenfreiheit bedeutet hier nicht Leere, sondern ein stilles, klares und von innen helles Bewusstsein.',
@@ -702,7 +708,7 @@ const articlesDe: Record<string, KnowledgeArticle> = {
     title: 'Innere Wissenschaft: wenn Spiritualität zu einer Frage bewusster Erfahrung wird',
     intro:
       'Spiritualität wird hier nicht als Gegensatz zur Vernunft dargestellt. Vielmehr erscheint sie als eine Form innerer Forschung, bei der Aufmerksamkeit, Bewusstsein und unmittelbare Erfahrung ernst genommen und mit prüfender Offenheit betrachtet werden.',
-    heroImage: thoughtlessImg,
+    heroImage: mother3Img,
     heroImageAlt: 'Höheres Bewusstsein',
     heroCaption:
       'Das Entscheidende ist nicht bloße Behauptung, sondern die Möglichkeit, Bewusstsein als erfahrbares Feld genauer zu untersuchen.',
@@ -749,7 +755,7 @@ const articlesDe: Record<string, KnowledgeArticle> = {
     title: 'Gesundheit & Forschung: Meditation als mehrschichtige Form von Regulierung',
     intro:
       'Meditation wird hier nicht auf ein subjektives Wohlgefühl reduziert. Vielmehr erscheint sie als Praxis, die mentale, körperliche und energetische Prozesse zugleich berührt und dadurch in Forschung wie im Alltag ernst genommen werden kann.',
-    heroImage: tendenciesImg,
+    heroImage: mother1Img,
     heroImageAlt: 'Gesundheit und Regulation',
     heroCaption:
       'Balance, Regulation und Wohlbefinden werden als vernetzte Prozesse verstanden, nicht als voneinander isolierte Themen.',
@@ -796,7 +802,7 @@ const articlesDe: Record<string, KnowledgeArticle> = {
     title: 'Integration & Entwicklung: wie Meditation Persönlichkeit vertiefen kann',
     intro:
       'Spirituelle Entwicklung wird hier eng mit Persönlichkeits- und Charakterreifung verknüpft. Aufmerksamkeit, Tendenzen, Reaktionen und Bewusstseinsräume bilden gemeinsam ein Feld, in dem der Mensch klarer, reifer und integrierter werden kann.',
-    heroImage: tenetsImg,
+    heroImage: motherImg,
     heroImageAlt: 'Geistige Entwicklung und Charakter',
     heroCaption:
       'Innere Entwicklung zeigt sich nicht nur in Zuständen, sondern in gereifterem Charakter, größerer Klarheit und verlässlicherem Verhalten.',
@@ -843,7 +849,7 @@ const articlesDe: Record<string, KnowledgeArticle> = {
     title: 'Kulturelle Integration: innere Freiheit als Grundlage echter Offenheit',
     intro:
       'Kulturelle Integration wird hier nicht als bloße Toleranzformel verstanden. Sie wächst aus einem Verständnis von Spiritualität, das Freiheit, Gewissen, Respekt und die Eigenständigkeit innerer Erfahrung ernst nimmt.',
-    heroImage: tenetsImg,
+    heroImage: motherImg,
     heroImageAlt: 'Kulturelle Integration und geistige Freiheit',
     heroCaption:
       'Wo Spiritualität nicht mit äußerem Zwang verwechselt wird, kann Vielfalt ihren würdigen Platz behalten.',
@@ -1181,7 +1187,7 @@ const articlesEn: Record<string, KnowledgeArticle> = {
     title: 'Chakras & qualities: the centres that connect body, character and consciousness',
     intro:
       'The chakras form a subtle map of the human being. Each centre carries a distinct quality, a bodily manifestation and a clear influence on how we act, feel, relate and meditate.',
-    heroImage: subtleSystemDeImg,
+    heroImage: charlieImg,
     heroImageAlt: 'Subtle system with chakras',
     heroImageMode: 'contain',
     heroCaption:
@@ -1322,7 +1328,7 @@ const articlesEn: Record<string, KnowledgeArticle> = {
     title: 'Self-Realization: how attention is lifted into a higher plane',
     intro:
       'Self-Realization is presented as the decisive transition in which Kundalini, dormant and sleeping within the triangular sacrum bone as a maternal spiritual energy and the power of pure desire, awakens and relieves attention from the relentless burden of thought, ego and superego. Attention is then lifted into a higher plane of consciousness, and meditation begins not as a mental technique, but as an actual inner event.',
-    heroImage: selfRealizationImg,
+    heroImage: beeImg,
     heroImageAlt: 'Shri Mataji and Self-Realization',
     heroCaption:
       'Self-Realization marks the moment when Kundalini begins to lift attention and thoughtless awareness becomes experientially possible.',
@@ -1421,7 +1427,8 @@ const articlesEn: Record<string, KnowledgeArticle> = {
     title: 'Thought-free stillness: the fourth state beyond the thought stream',
     intro:
       'Thought-free stillness is explicitly described as a fourth state of consciousness. It is neither sleep, dream nor ordinary waking, but a silent and highly alert condition in which inner dialogue recedes and the inner self becomes more evident.',
-    heroImage: thoughtlessImg,
+    heroImage: mother3Img,
+    heroImageMode: 'contain',
     heroImageAlt: 'Thought-free stillness',
     heroCaption:
       'Thoughtlessness is presented here not as emptiness, but as a still, lucid and inwardly luminous kind of wakefulness.',
@@ -1520,7 +1527,7 @@ const articlesEn: Record<string, KnowledgeArticle> = {
     title: 'Meditation practice: how the first experience deepens at home',
     intro:
       'Meditation is described not as a rigid routine but as a living and flexible practice. After the first Self-Realization it can deepen at home, in the morning or evening, in silence or with gentle support, and it draws much of its strength from regularity.',
-    heroImage: selfRealizationImg,
+    heroImage: lotusImg,
     heroImageAlt: 'Meditation practice at home',
     heroCaption:
       'Daily practice is the place where a first inner breakthrough becomes a stable habit of silence.',
@@ -1666,7 +1673,7 @@ const articlesEn: Record<string, KnowledgeArticle> = {
     title: 'Health & research: meditation as a multi-layered form of regulation',
     intro:
       'Meditation is not reduced here to a subjective feeling of calm. It is approached as a practice touching mental, physical and energetic processes at once, which is why it can be taken seriously both in research and in daily life.',
-    heroImage: tendenciesImg,
+    heroImage: mother1Img,
     heroImageAlt: 'Health and regulation',
     heroCaption:
       'Balance, regulation and well-being are treated as connected processes rather than isolated themes.',
