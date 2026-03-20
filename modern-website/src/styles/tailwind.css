@@ -94,14 +94,23 @@
 
   .hero-overlap {
     @apply relative h-[200vh];
+    isolation: isolate;
   }
 
   .overlap-layer {
     @apply sticky top-0 flex h-screen w-full items-center justify-center overflow-hidden;
+    isolation: isolate;
+    contain: paint;
+    clip-path: inset(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    will-change: transform;
   }
 
   .overlap-image {
     @apply absolute inset-0 h-full w-full object-cover object-center;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
 
   .layer-content {

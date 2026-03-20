@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import ShriMataji from '../assets/ShriMataji.jpg';
 import sunriseImg from '../assets/sunrise.jpeg';
 import kundaliniOverlay from '../assets/kundalini-overlay-clean.webp';
@@ -10,6 +10,42 @@ import { useLocale } from '../context/LocaleContext';
  */
 const HeroOverlap: React.FC = () => {
   const { locale } = useLocale();
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const [showSunriseOverlay, setShowSunriseOverlay] = useState(false);
+
+  useEffect(() => {
+    let frame = 0;
+
+    const updateOverlayVisibility = () => {
+      const section = sectionRef.current;
+      if (!section) {
+        return;
+      }
+
+      const rect = section.getBoundingClientRect();
+      const viewportHeight = Math.max(window.innerHeight, 1);
+      const progress = Math.min(Math.max(-rect.top / viewportHeight, 0), 2);
+      const nextVisible = progress >= 0.72 && rect.bottom > 0;
+
+      setShowSunriseOverlay(prev => (prev === nextVisible ? prev : nextVisible));
+    };
+
+    const requestVisibilityUpdate = () => {
+      cancelAnimationFrame(frame);
+      frame = window.requestAnimationFrame(updateOverlayVisibility);
+    };
+
+    updateOverlayVisibility();
+    window.addEventListener('scroll', requestVisibilityUpdate, { passive: true });
+    window.addEventListener('resize', requestVisibilityUpdate);
+
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener('scroll', requestVisibilityUpdate);
+      window.removeEventListener('resize', requestVisibilityUpdate);
+    };
+  }, []);
+
   const copy =
     locale === 'de'
       ? {
@@ -46,8 +82,8 @@ const HeroOverlap: React.FC = () => {
         };
 
   return (
-    <section id="home" className="hero-overlap">
-      <div id="shri-mataji" className="overlap-layer reveal-ready">
+    <section id="home" ref={sectionRef} className="hero-overlap">
+      <div id="shri-mataji" className="overlap-layer">
         <div className="absolute inset-0 bg-[linear-gradient(90deg,#cfdfea_0%,#dbe8ef_44%,#eef2f1_74%,#f8f4ef_100%)]" />
         <img
           src={ShriMataji}
@@ -95,30 +131,53 @@ const HeroOverlap: React.FC = () => {
         </div>
       </div>
 
-      <div className="overlap-layer reveal-ready">
+      <div className="overlap-layer isolate">
         <img
           src={sunriseImg}
           alt={copy.imageAltSecondary}
           className="overlap-image object-cover object-[center_49%]"
         />
-        <img
-          src={kundaliniLogo}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none absolute left-[48.15%] top-[18%] z-[4] w-[9.6rem] -translate-x-1/2 -translate-y-1/2 object-contain opacity-[0.98] sm:w-[11.2rem] lg:w-[12.8rem]"
+        <div
+          className={`pointer-events-none absolute inset-0 z-[3] overflow-hidden isolate transition-opacity duration-150 ${
+            showSunriseOverlay ? 'opacity-100' : 'opacity-0'
+          }`}
           style={{
-            filter:
-              'saturate(1.08) contrast(1.08) drop-shadow(0 0 6px rgba(255,222,170,0.45)) drop-shadow(0 6px 14px rgba(175,91,45,0.22))'
+            contain: 'paint',
+            backfaceVisibility: 'hidden',
+            WebkitBackfaceVisibility: 'hidden'
           }}
-        />
-        <img
-          src={kundaliniOverlay}
-          alt={copy.imageAltKundalini}
-          className="pointer-events-none absolute left-[48.15%] top-[61%] z-[2] w-[23.75rem] -translate-x-1/2 -translate-y-1/2 object-contain opacity-[0.78] sm:w-[27.55rem] lg:w-[31.35rem]"
-          style={{
-            filter: 'brightness(0.985) contrast(1.05) saturate(1.01)'
-          }}
-        />
+        >
+          <img
+            src={kundaliniLogo}
+            alt=""
+            aria-hidden="true"
+            className={`absolute left-[48.15%] top-[18%] z-[4] w-[9.6rem] -translate-x-1/2 -translate-y-1/2 object-contain transition-all duration-700 ease-[cubic-bezier(0.18,0.9,0.2,1)] sm:w-[11.2rem] lg:w-[12.8rem] ${
+              showSunriseOverlay
+                ? 'scale-100 opacity-[0.98] blur-0'
+                : 'translate-y-6 scale-[0.86] opacity-0 blur-[2px]'
+            }`}
+            style={{
+              filter:
+                'saturate(1.08) contrast(1.08) drop-shadow(0 0 6px rgba(255,222,170,0.45)) drop-shadow(0 6px 14px rgba(175,91,45,0.22))',
+              backfaceVisibility: 'hidden',
+              WebkitBackfaceVisibility: 'hidden'
+            }}
+          />
+          <img
+            src={kundaliniOverlay}
+            alt={copy.imageAltKundalini}
+            className={`absolute left-[48.15%] top-[61%] z-[2] w-[23.75rem] -translate-x-1/2 -translate-y-1/2 object-contain transition-all duration-900 ease-[cubic-bezier(0.18,0.9,0.2,1)] sm:w-[27.55rem] lg:w-[31.35rem] ${
+              showSunriseOverlay
+                ? 'scale-100 opacity-[0.78] blur-0'
+                : 'translate-y-10 scale-[0.92] opacity-0 blur-[3px]'
+            }`}
+            style={{
+              filter: 'brightness(0.985) contrast(1.05) saturate(1.01)',
+              backfaceVisibility: 'hidden',
+              WebkitBackfaceVisibility: 'hidden'
+            }}
+          />
+        </div>
       </div>
     </section>
   );

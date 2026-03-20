@@ -6,7 +6,9 @@ import useScrollReveal from '../hooks/useScrollReveal';
 import motherImg from '../assets/mother.jpg';
 import mother1Img from '../assets/mother1.jpg';
 import mother3Img from '../assets/mother3.png';
+import beeImg from '../assets/bee.png';
 import lotusImg from '../assets/lotus.png';
+import villageImg from '../assets/village.jpg';
 
 type KnowledgeArticlePageProps = {
   article: KnowledgeArticle;
@@ -134,6 +136,7 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
   const leadingBlocks = useSplitBlockLayout ? article.blocks.slice(0, 1) : article.blocks;
   const trailingBlocks = useSplitBlockLayout ? article.blocks.slice(1) : [];
   const placeholderRelatedImageMap: Record<string, string[]> = {
+    '/kultur-des-geistes/kreativitaet': [lotusImg, beeImg, villageImg],
     '/wissenschaft-spiritualitaet/integration-und-entwicklung': [mother1Img, mother3Img, lotusImg],
     '/wissenschaft-spiritualitaet/gesundheit-und-forschung': [motherImg, mother3Img, lotusImg]
   };

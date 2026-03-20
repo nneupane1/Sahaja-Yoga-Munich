@@ -910,7 +910,7 @@ const articlesDe: Record<string, KnowledgeArticle> = {
     title: 'Kreativität: wenn Meditation Wahrnehmung und Ausdruck vertieft',
     intro:
       'Kreativität wird nicht nur als Talent oder Leistung verstanden, sondern als Ausdruck verfeinerter Aufmerksamkeit. Meditation soll die Fähigkeit stärken, subtile Details wahrzunehmen, präsent zu bleiben und Ausdruck mit Tiefe zu füllen.',
-    heroImage: improvedPerceptionImg,
+    heroImage: universeImg,
     heroImageAlt: 'Kreative Wahrnehmung',
     heroCaption:
       'Kreative Arbeit gewinnt an Intensität, wenn Aufmerksamkeit gereinigt wird und die Gegenwart nicht mehr vom Gedankenlärm überdeckt ist.',
@@ -1839,7 +1839,7 @@ const articlesEn: Record<string, KnowledgeArticle> = {
     title: 'Creativity: when meditation deepens perception and expression',
     intro:
       'Creativity is understood here not only as talent or achievement, but as the visible expression of refined attention. Meditation is said to sharpen subtle perception, deepen presence and enrich the quality of artistic or imaginative expression.',
-    heroImage: improvedPerceptionImg,
+    heroImage: universeImg,
     heroImageAlt: 'Creative perception',
     heroCaption:
       'Creative work gains intensity when awareness is purified and the present is no longer drowned in mental noise.',
