@@ -248,14 +248,15 @@ export const topicPages = {
         title: 'Die Kundalini ist die ruhende Kraft, die das gesamte System belebt',
         description: [
           'Die Kundalini wird als angeborene, unzerstörbare Energie beschrieben, die still und schlafend im dreieckigen Kreuzbein ruht. Zugleich erscheint sie als Kraft des reinen Wunsches und als mütterliche geistige Energie, die nicht von außen hinzugefügt werden muss, sondern den verborgenen Ursprung unserer spirituellen Entfaltung bildet.',
-          'Wenn sie erwacht, steigt sie durch den zentralen Kanal auf und nährt die Chakren. Dadurch werden nicht nur Ruhe und Stille möglich, sondern auch eine präzisere Wahrnehmung des eigenen inneren Zustands.',
-          'Gerade diese Verbindung von Sanftheit und Intelligenz ist entscheidend: Die Kundalini handelt nicht gewaltsam, sondern so, dass sich das System organisch neu ordnen kann. In dieser Sicht heilt, verbessert und segnet sie das Leben, weil sie die Aufmerksamkeit nach und nach aus der groben Verstrickung mit materiellen Sorgen befreit.'
+          'Wenn sie erwacht, steigt sie durch den zentralen Kanal auf und nährt die Chakren. Dieser Aufstieg wird wie eine zweite Geburt verstanden: Was lange verborgen im Menschen heranreift, tritt vom Mooladhara bis zum Sahasrara in ein neues geistiges Leben.',
+          'Gerade diese Verbindung von Sanftheit und Intelligenz ist entscheidend: Die Kundalini handelt nicht gewaltsam, sondern so, dass sich das System organisch neu ordnen kann. Wo sie an Belastungen in den Zentren reibt, kann Wärme entstehen; an Händen und Fingerkuppen zeigen sich dabei oft Kühle, Wärme oder Kribbeln als subtile Rückmeldung. In dieser Sicht heilt, verbessert und segnet sie das Leben, weil sie die Aufmerksamkeit nach und nach aus der groben Verstrickung mit materiellen Sorgen befreit.'
         ],
         sideTitle: 'Wesentliche Merkmale',
         sideItems: [
           'Sie ist in jedem Menschen bereits vorhanden',
           'Sie steigt durch die Sushumna und nährt die Zentren',
-          'Ihr Erwachen galt in vielen Traditionen als eigentliches Ziel spiritischer Suche'
+          'Ihr Erwachen galt in vielen Traditionen als eigentliches Ziel spiritischer Suche',
+          'Ihre Klärung wird in den Händen und Fingerkuppen oft unmittelbar spürbar'
         ],
         note:
           'Die Kundalini ist in dieser Sichtweise weder Metapher noch Suggestion, sondern die lebendige Kraft hinter Selbstverwirklichung.'
@@ -269,13 +270,14 @@ export const topicPages = {
         description: [
           'Der linke Kanal steht für Emotion, Wunschkraft und Vergangenheitsbindung. Sein reiner Ausdruck ist Freude; aus dem Gleichgewicht geraten kann er sich als Schwere, Schuldgefühl oder Rückzug zeigen.',
           'Der rechte Kanal versorgt Handlung, Planung und mentale Dynamik. In Balance wirkt er klar und effizient, bei Überlastung wird er leicht reizbar, angespannt oder aggressiv.',
-          'Der zentrale Kanal ist der Weg des Gleichgewichts. Hier steigt die Kundalini auf, und hier lernt die Aufmerksamkeit, nicht länger zwischen Vergangenheit und Zukunft hin- und herzuschwanken.'
+          'Der zentrale Kanal ist der Weg des Gleichgewichts. Hier steigt die Kundalini auf, und hier lernt die Aufmerksamkeit, nicht länger zwischen Vergangenheit und Zukunft hin- und herzuschwanken. In der Meditation soll sich diese Balance sogar in Händen und Fingerkuppen ablesen lassen.'
         ],
         sideTitle: 'Kanalqualitäten',
         sideItems: [
           'Ida: Freude, Gefühl, Erinnerung, Mondqualität',
           'Pingala: Aktion, Analyse, Zukunft, Sonnenqualität',
-          'Sushumna: Mitte, Evolution, Gegenwart, Frieden'
+          'Sushumna: Mitte, Evolution, Gegenwart, Frieden',
+          'Hände und Fingerkuppen spiegeln linke, rechte und zentrale Tendenzen'
         ],
         note:
           'Die Nadis machen sichtbar, dass spiritische Balance immer auch eine Balance der Aufmerksamkeit ist.'
@@ -289,13 +291,14 @@ export const topicPages = {
         description: [
           'Die sieben Hauptchakren liegen entlang der Wirbelsäule und sind mit wichtigen Nervengeflechten verbunden. Jedes von ihnen beeinflusst sowohl körperliche Funktionen als auch eine bestimmte innere Qualität.',
           'Störungen im Leben lassen sich in dieser Sicht oft als Ungleichgewicht eines oder mehrerer Zentren lesen. Wenn die Kundalini aufsteigt, werden diese Zentren nicht gezwungen, sondern genährt und in ihr natürliches Potenzial zurückgeführt.',
-          'Darum ist die Chakra-Lehre hier keine abstrakte Symbolik. Sie ist eine präzise Sprache dafür, wie Persönlichkeit, Gesundheit und Meditation ineinandergreifen.'
+          'Darum ist die Chakra-Lehre hier keine abstrakte Symbolik. Sie ist eine präzise Sprache dafür, wie Persönlichkeit, Gesundheit und Meditation ineinandergreifen. Weil sich die Zentren in Händen und Fingerkuppen widerspiegeln, können Wärme, Kühle oder Kribbeln während der Meditation als feine Zeichen der inneren Reinigung gelesen werden.'
         ],
         sideTitle: 'Die Aufstiegslogik',
         sideItems: [
           'Jedes Chakra hat eine subtile Qualität und eine körperliche Manifestation',
           'Void, Nabhi und Swadisthana wirken als zusammenhängende Gruppe',
-          'Von Mooladhara bis Sahasrara wird Entwicklung als Nährung statt als Zwang verstanden'
+          'Von Mooladhara bis Sahasrara wird Entwicklung als Nährung statt als Zwang verstanden',
+          'Fingerkuppen und Hände werden als lesbare Karte des subtilen Zustands verstanden'
         ],
         note:
           'Die Zentren lesen sich wie eine innere Landkarte: von Unschuld und Kreativität über Sicherheit, Kommunikation und Vergebung bis zur Integration.'
@@ -320,7 +323,7 @@ export const topicPages = {
     intro:
       'Selbstverwirklichung erscheint hier als der eigentliche Ermöglicher der Meditation. Ausgangspunkt ist die Kundalini, die als mütterliche geistige Energie und Kraft des reinen Wunsches still und schlafend im dreieckigen Kreuzbein ruht. Wenn sie erwacht, wird die Aufmerksamkeit von der ständigen Überlagerung durch Gedanken, Ego, Konditionierungen und emotionale Reaktionen entlastet und in einen stilleren, höheren Zustand des Bewusstseins erhoben.',
     heroPanelText:
-      'Der Vorgang wird sehr konkret beschrieben: Wenn die Kundalini durch den zentralen Kanal aufsteigt und die Chakren durchdringt, spannt sie das Feld der Aufmerksamkeit wie das Tuch eines Zeltes nach oben. Sobald sie über das Agnya hinaus in Richtung Sahasrara steigt, wird Gedankenfreiheit nicht bloß eine Idee, sondern eine erfahrbare höhere Bewusstseinsebene.',
+      'Der Vorgang wird sehr konkret beschrieben: Wenn die Kundalini durch den zentralen Kanal aufsteigt und die Chakren durchdringt, spannt sie das Feld der Aufmerksamkeit wie das Tuch eines Zeltes nach oben. Diese Bewegung wird zugleich wie ein innerer Geburtsvorgang verstanden: Wie ein Kind im Mutterleib reift und geboren wird, so reift das Bewusstsein durch den Aufstieg vom Mooladhara bis zum Sahasrara zu einer zweiten Geburt. Wo die Energie an Negativitäten reibt, kann Wärme entstehen, und an Händen und Fingerkuppen werden Kühle, Wärme oder Kribbeln als subtile Zeichen dieser Klärung gedeutet.',
     heroTags: ['Selbstverwirklichung', 'Gedankenfreiheit', 'Tägliche Praxis'],
     heroImage: redSunsetImg,
     heroImageAlt: 'Selbstverwirklichung',
@@ -417,7 +420,7 @@ export const topicPages = {
         title: 'Selbstverwirklichung hebt die Aufmerksamkeit in eine höhere Bewusstseinsebene',
         description: [
           'Die Aufmerksamkeit kann sich nur dann in einen höheren Zustand erheben, wenn die permanente Überlagerung durch Gedanken, Ego und Superego nachlässt. Genau darin liegt die Funktion der Selbstverwirklichung.',
-          'Wenn die Kundalini durch den zentralen Kanal steigt und die Chakren durchdringt, wird das Gewebe der Aufmerksamkeit wie von innen nach oben gespannt. Dadurch löst es sich aus der Verstrickung mit Gedanken, Erinnerungen und unmittelbaren Reaktionsmustern.',
+          'Wenn die Kundalini durch den zentralen Kanal steigt und die Chakren durchdringt, wird das Gewebe der Aufmerksamkeit wie von innen nach oben gespannt. Dadurch löst es sich aus der Verstrickung mit Gedanken, Erinnerungen und unmittelbaren Reaktionsmustern. Dieser Aufstieg wird als geistige Entsprechung eines Werdens und Geborenwerdens gelesen.',
           'Selbstverwirklichung erscheint deshalb nicht als bloßer symbolischer Akt, sondern als tatsächliche innere Öffnung, durch die Meditation erstmals real und erfahrbar wird. In dieser Darstellung erfüllt sich damit etwas, was viele religiöse und spirituelle Wege als inneres Ziel vorausgesetzt haben.'
         ],
         sideTitle: 'Kerngedanken',
@@ -458,7 +461,7 @@ export const topicPages = {
         description: [
           'Nach der ersten Erfahrung wird eine einfache tägliche Praxis empfohlen: ein ruhiger Ort, nach Möglichkeit morgens und abends, meist in überschaubaren Zeiträumen von etwa zehn bis zwanzig Minuten.',
           'Die Meditation beginnt mit Entspannung und dem Heben der inneren Energie. Statt Gedanken zu bekämpfen, lässt man sie vorbeiziehen und erlaubt der Energie, die eigentliche Arbeit zu tun.',
-          'Mit der Zeit werden die Empfindungen auf den Handflächen oder am Scheitel klarer, die innere Wahrnehmung verfeinert sich, und gemeinsames Meditieren hilft, diesen Prozess spürbar zu beschleunigen.'
+          'Mit der Zeit werden die Empfindungen auf den Handflächen oder an den Fingerkuppen klarer: Wärme, Kühle oder Kribbeln werden als subtile Rückmeldungen des inneren Zustands verstanden, und gemeinsames Meditieren hilft, diesen Prozess spürbar zu beschleunigen.'
         ],
         sideTitle: 'Was regelmäßige Praxis bewirkt',
         sideItems: [

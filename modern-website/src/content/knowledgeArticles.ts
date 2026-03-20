@@ -77,7 +77,7 @@ const articlesDe: Record<string, KnowledgeArticle> = {
     eyebrow: 'Lebendige innere Kraft',
     title: 'Kundalini: die ruhende Energie hinter Selbstverwirklichung',
     intro:
-      'Die Kundalini wird als angeborene, unzerstörbare Energie verstanden, die im Menschen bereits vorhanden ist und als Kraft des reinen Wunsches, als mütterliche geistige Energie still und schlafend im dreieckigen Kreuzbein ruht. Vertiefende Darstellungen schildern sie zugleich als einen vorgeburtlichen Strom göttlichen Bewusstseins, der durch den Scheitelbereich in das System eintritt, durch die Mitte bis in das Kreuzbein hinabsteigt und dort auf den Augenblick der Wiedererweckung wartet. Wenn sie erwacht, belebt sie das gesamte subtile System und macht Meditation von einer Idee zu einer spürbaren inneren Erfahrung.',
+      'Die Kundalini wird als angeborene, unzerstörbare Energie verstanden, die im Menschen bereits vorhanden ist und als Kraft des reinen Wunsches, als mütterliche geistige Energie still und schlafend im dreieckigen Kreuzbein ruht. Vertiefende Darstellungen schildern sie zugleich als einen vorgeburtlichen Strom göttlichen Bewusstseins, der durch den Scheitelbereich in das System eintritt, durch die Mitte bis in das Kreuzbein hinabsteigt und dort auf den Augenblick der Wiedererweckung wartet. Wenn sie erwacht, belebt sie das gesamte subtile System und macht Meditation von einer Idee zu einer spürbaren inneren Erfahrung. Dieser Aufstieg wird dabei wie ein geistiger Geburtsvorgang gelesen: Was im Inneren lange heranreifte, tritt vom Mooladhara bis zum Sahasrara in eine zweite Geburt des Bewusstseins.',
     heroImage: kundaliniFireImg,
     heroImageAlt: 'Bildhafte Darstellung der Kundalini im subtilen System',
     heroImageMode: 'contain',
@@ -163,7 +163,8 @@ const articlesDe: Record<string, KnowledgeArticle> = {
         title: 'Woran ihre Wirkung erkannt wird',
         paragraphs: [
           'Die Wirkung der Kundalini wird nicht nur in Ideen beschrieben, sondern an konkreten Folgen: mehr Ruhe, ausgeglichenere Reaktionen, klarere Wahrnehmung und die Fähigkeit, im gegenwärtigen Moment zu bleiben.',
-          'Je stärker die Zentren genährt werden, desto weniger muss Meditation erzwungen werden. Die Aufmerksamkeit wird von selbst stiller, und die innere Ordnung beginnt, sich auch im Alltag auszudrücken. Deshalb wird die Kundalini hier nicht nur als Energie des Erwachens, sondern auch als heilende, verbessernde und segnende Kraft beschrieben, die den Griff materieller Probleme lockern kann.'
+          'Je stärker die Zentren genährt werden, desto weniger muss Meditation erzwungen werden. Die Aufmerksamkeit wird von selbst stiller, und die innere Ordnung beginnt, sich auch im Alltag auszudrücken. Trifft die Kundalini beim Durchdringen eines Zentrums auf Negativitäten, kann Wärme entstehen; wo der Fluss freier wird, werden Kühle oder feines Kribbeln beschrieben.',
+          'Weil sich Chakren und Kanäle in Händen und Fingerkuppen widerspiegeln, erscheint diese innere Arbeit zugleich als lesbare Oberfläche des subtilen Systems. Mit beständiger Meditation wächst daraus jene feine Wahrnehmung, die alten Gurus und Heiligen als gelebte subtile Weisheit zugeschrieben wurde.'
         ]
       }
     ],
@@ -180,7 +181,7 @@ const articlesDe: Record<string, KnowledgeArticle> = {
     eyebrow: 'Ida, Pingala und Sushumna',
     title: 'Kanäle & Balance: wie die Nadis Gefühl, Handlung und Gegenwart ordnen',
     intro:
-      'Die Nadis sind die Wege, durch die sich Aufmerksamkeit und subtile Energie im Menschen bewegen. An ihnen lässt sich ablesen, ob wir in Freude, Aktivität oder zentrierter Gegenwärtigkeit leben oder ob unser inneres System aus dem Gleichgewicht geraten ist.',
+      'Die Nadis sind die Wege, durch die sich Aufmerksamkeit und subtile Energie im Menschen bewegen. An ihnen lässt sich ablesen, ob wir in Freude, Aktivität oder zentrierter Gegenwärtigkeit leben oder ob unser inneres System aus dem Gleichgewicht geraten ist. In der Meditation sollen sich diese Bewegungen sogar in den Händen und Fingerkuppen widerspiegeln.',
     heroImage: channelsDeImg,
     heroImageAlt: 'Darstellung der drei Nadis',
     heroImageMode: 'contain',
@@ -376,7 +377,8 @@ const articlesDe: Record<string, KnowledgeArticle> = {
         title: 'Warum die Chakren so praktisch lesbar sind',
         paragraphs: [
           'Die Chakra-Lehre wirkt so konkret, weil sie nie nur mit Farben oder Symbolen arbeitet. Jedes Zentrum verbindet eine innere Qualität mit klaren physiologischen Zuständigkeiten.',
-          'Dadurch werden Unschuld, Kreativität, Zufriedenheit, Sicherheit, Kommunikation, Vergebung und Integration nicht zu abstrakten Tugenden, sondern zu Kräften, die sich im Leben stärken oder abschwächen lassen.'
+          'Dadurch werden Unschuld, Kreativität, Zufriedenheit, Sicherheit, Kommunikation, Vergebung und Integration nicht zu abstrakten Tugenden, sondern zu Kräften, die sich im Leben stärken oder abschwächen lassen.',
+          'Gerade deshalb werden auch Hände und Fingerkuppen ernst genommen: Weil sich die Zentren dort widerspiegeln, können Wärme, Kühle oder Kribbeln während der Meditation als Hinweise auf Reinigung, freien Fluss oder vorübergehende Belastung gelesen werden. Mit vertiefter Praxis wird diese Sprache immer genauer.'
         ]
       },
       {
@@ -412,7 +414,7 @@ const articlesDe: Record<string, KnowledgeArticle> = {
     eyebrow: 'Der innere Durchbruch',
     title: 'Selbstverwirklichung: wie die Aufmerksamkeit in eine höhere Ebene gehoben wird',
     intro:
-      'Selbstverwirklichung wird als jener entscheidende Übergang beschrieben, in dem die im dreieckigen Kreuzbein ruhende Kundalini als mütterliche geistige Energie und Kraft des reinen Wunsches erwacht und die Aufmerksamkeit von der ununterbrochenen Belastung durch Gedanken, Ego und Superego entlastet. So wird sie in eine höhere Ebene des Bewusstseins angehoben, und Meditation beginnt nicht als Technik, sondern als tatsächliches inneres Geschehen.',
+      'Selbstverwirklichung wird als jener entscheidende Übergang beschrieben, in dem die im dreieckigen Kreuzbein ruhende Kundalini als mütterliche geistige Energie und Kraft des reinen Wunsches erwacht und die Aufmerksamkeit von der ununterbrochenen Belastung durch Gedanken, Ego und Superego entlastet. So wird sie in eine höhere Ebene des Bewusstseins angehoben, und Meditation beginnt nicht als Technik, sondern als tatsächliches inneres Geschehen. Dieser Aufstieg wird wie eine zweite Geburt verstanden: Wie ein Kind im Mutterleib reift und geboren wird, so reift das Bewusstsein durch die Bewegung der Kundalini zu einer neuen inneren Lebensform.',
     heroImage: mother3Img,
     heroImageMode: 'contain',
     heroImageAlt: 'Shri Mataji and Self-Realization',
@@ -479,7 +481,7 @@ const articlesDe: Record<string, KnowledgeArticle> = {
         title: 'Die Rolle der Kundalini beim inneren Durchbruch',
         paragraphs: [
           'Die eigentliche Bewegung wird der Kundalini zugeschrieben. Während der ersten Selbstverwirklichung und danach in jeder Meditation steigt diese innere Energie durch den zentralen Kanal auf und durchstößt die Zentren von innen her. Sie erscheint dabei nicht nur als latente Energie, sondern als Kraft des reinen Wunsches und als mütterliche Macht, die den Menschen in seinem inneren Aufstieg unterstützt.',
-          'Dadurch wird die Aufmerksamkeit nach oben gezogen und von der gewöhnlichen Verflechtung mit Gedanken und unmittelbarer emotionaler Reaktion gelöst. Die Kundalini arbeitet hier nicht gewaltsam, sondern intelligent und ordnend.'
+          'Dadurch wird die Aufmerksamkeit nach oben gezogen und von der gewöhnlichen Verflechtung mit Gedanken und unmittelbarer emotionaler Reaktion gelöst. Die Kundalini arbeitet hier nicht gewaltsam, sondern intelligent und ordnend. Ihr Aufstieg wird deshalb als inneres Werden gelesen, das vom Mooladhara bis zum Sahasrara denselben verborgenen Rhythmus trägt wie Wachstum und Geburt.'
         ],
         points: [
           'Aufstieg durch die Sushumna',
@@ -498,7 +500,8 @@ const articlesDe: Record<string, KnowledgeArticle> = {
         title: 'Warum Selbstverwirklichung erst der Anfang ist',
         paragraphs: [
           'Der erste Durchbruch wird nicht als Endpunkt verstanden. Er schafft vielmehr die Grundlage dafür, dass Meditation, subtile Wahrnehmung und innere Klärung überhaupt regelmäßig erlebt werden können. In diesem Sinn wird etwas unmittelbar erfahrbar, das viele religiöse und spirituelle Wege als inneres Ziel vorausgesetzt haben.',
-          'Mit wiederholter Praxis werden die Ströme der Energie stärker und stabiler. Was zunächst nur für einen Augenblick geschieht, kann sich so zu einer tragfähigeren Form von Stille, Klarheit und Verbundenheit entwickeln.'
+          'Mit wiederholter Praxis werden die Ströme der Energie stärker und stabiler. Was zunächst nur für einen Augenblick geschieht, kann sich so zu einer tragfähigeren Form von Stille, Klarheit und Verbundenheit entwickeln.',
+          'Dabei werden auch die Rückmeldungen in Händen und Fingerkuppen feiner lesbar: Wärme kann auf Reinigung hinweisen, Kühle auf freien Fluss, Kribbeln auf subtile Aktivität. Mit Hingabe an die Meditation wächst daraus eine innere Lesekunst, wie sie in alten spirituellen Traditionen großen Gurus und Heiligen zugeschrieben wurde.'
         ]
       }
     ],
@@ -1006,7 +1009,7 @@ const articlesEn: Record<string, KnowledgeArticle> = {
     eyebrow: 'Living Inner Power',
     title: 'Kundalini: the resting energy behind Self-Realization',
     intro:
-      'Kundalini is understood as an inborn, indestructible energy already present within the human being and, as the power of pure desire and a maternal spiritual energy, lying dormant and sleeping within the triangular sacrum bone. Some deeper accounts describe it at the same time as a prenatal current of divine consciousness entering through the fontanelle area, descending through the centre into the sacrum and waiting there for the moment of awakening. Once awakened, it animates the whole subtle system and turns meditation from an idea into a lived inner experience.',
+      'Kundalini is understood as an inborn, indestructible energy already present within the human being and, as the power of pure desire and a maternal spiritual energy, lying dormant and sleeping within the triangular sacrum bone. Some deeper accounts describe it at the same time as a prenatal current of divine consciousness entering through the fontanelle area, descending through the centre into the sacrum and waiting there for the moment of awakening. Once awakened, it animates the whole subtle system and turns meditation from an idea into a lived inner experience. This ascent is also read as a spiritual birth-process: what has long been ripening inwardly moves from Mooladhara to Sahasrara into a second birth of consciousness.',
     heroImage: kundaliniFireImg,
     heroImageAlt: 'Symbolic image of Kundalini within the subtle system',
     heroImageMode: 'contain',
@@ -1092,7 +1095,8 @@ const articlesEn: Record<string, KnowledgeArticle> = {
         title: 'How its effect becomes visible',
         paragraphs: [
           'The effect of Kundalini is not described only in concepts but in recognisable consequences: greater quiet, more balanced reactions, clearer perception and a stronger ability to remain in the present.',
-          'As the centres are nourished, meditation requires less forcing. Attention naturally becomes quieter, and inner order begins to express itself in daily life. For that reason Kundalini is described not only as awakening energy, but also as a force that heals, improves and blesses, loosening the grip of material pressures on the person.'
+          'As the centres are nourished, meditation requires less forcing. Attention naturally becomes quieter, and inner order begins to express itself in daily life. Where Kundalini meets negativity while piercing a centre, warmth may arise; where the movement becomes freer, coolness or subtle tingling may be felt.',
+          'Because the chakras and channels are reflected in the hands and fingertips, this inner work is also treated as something readable on the surface of awareness. With sustained meditation, that sensitivity deepens into the kind of subtle literacy older traditions attributed to saints and realized beings.'
         ]
       }
     ],
@@ -1109,7 +1113,7 @@ const articlesEn: Record<string, KnowledgeArticle> = {
     eyebrow: 'Ida, Pingala and Sushumna',
     title: 'Channels & balance: how the nadis organise feeling, action and presence',
     intro:
-      'The nadis are the pathways through which attention and subtle energy move within the person. They make it possible to read whether we are living in joy, over-activity or centred presence, and why the inner system can become balanced or strained.',
+      'The nadis are the pathways through which attention and subtle energy move within the person. They make it possible to read whether we are living in joy, over-activity or centred presence, and why the inner system can become balanced or strained. In meditation these movements are also said to be reflected in the hands and fingertips.',
     heroImage: channelsDeImg,
     heroImageAlt: 'Three nadis diagram',
     heroImageMode: 'contain',
@@ -1305,7 +1309,8 @@ const articlesEn: Record<string, KnowledgeArticle> = {
         title: 'Why the chakras are so practically readable',
         paragraphs: [
           'This chakra teaching feels concrete because it never works with colour symbolism alone. Each centre links an inner quality with very specific physiological functions and recognisable patterns of behaviour.',
-          'That turns innocence, creativity, satisfaction, security, communication, forgiveness and integration into more than ideals. They become actual forces that can either strengthen or weaken in lived experience.'
+          'That turns innocence, creativity, satisfaction, security, communication, forgiveness and integration into more than ideals. They become actual forces that can either strengthen or weaken in lived experience.',
+          'For the same reason the hands and fingertips are taken seriously: because the centres are said to be reflected there, warmth, coolness or tingling in meditation can be read as signs of purification, freer flow or temporary obstruction. With practice this subtle language becomes increasingly precise.'
         ]
       },
       {
@@ -1341,7 +1346,7 @@ const articlesEn: Record<string, KnowledgeArticle> = {
     eyebrow: 'The Inner Breakthrough',
     title: 'Self-Realization: how attention is lifted into a higher plane',
     intro:
-      'Self-Realization is presented as the decisive transition in which Kundalini, dormant and sleeping within the triangular sacrum bone as a maternal spiritual energy and the power of pure desire, awakens and relieves attention from the relentless burden of thought, ego and superego. Attention is then lifted into a higher plane of consciousness, and meditation begins not as a mental technique, but as an actual inner event.',
+      'Self-Realization is presented as the decisive transition in which Kundalini, dormant and sleeping within the triangular sacrum bone as a maternal spiritual energy and the power of pure desire, awakens and relieves attention from the relentless burden of thought, ego and superego. Attention is then lifted into a higher plane of consciousness, and meditation begins not as a mental technique, but as an actual inner event. This ascent is treated as a second birth: just as a baby ripens in the mother’s womb and comes into the world, consciousness ripens through the movement of Kundalini into a new inner life.',
     heroImage: mother3Img,
     heroImageMode: 'contain',
     heroImageAlt: 'Shri Mataji and Self-Realization',
@@ -1408,7 +1413,7 @@ const articlesEn: Record<string, KnowledgeArticle> = {
         title: 'The role of Kundalini in the breakthrough',
         paragraphs: [
           'The actual movement is attributed to Kundalini. During the first Self-Realization, and then again in meditation, this inner energy rises through the central channel and pierces the centres from within. It is described not only as latent energy, but as the power of pure desire and as a maternal force working for the person’s inner ascent.',
-          'Attention is thereby drawn upward and begins to separate from its usual knot of thought and immediate emotional reaction. The energy is described as intelligent and ordering, not violent or dramatic.'
+          'Attention is thereby drawn upward and begins to separate from its usual knot of thought and immediate emotional reaction. The energy is described as intelligent and ordering, not violent or dramatic. Its ascent is therefore read as an inner becoming that carries the same hidden rhythm as growth and birth.'
         ],
         points: [
           'ascent through Sushumna',
@@ -1427,7 +1432,8 @@ const articlesEn: Record<string, KnowledgeArticle> = {
         title: 'Why Self-Realization is only the beginning',
         paragraphs: [
           'The first breakthrough is not treated as a final achievement. It creates the basis on which meditation, subtle perception and inner transformation can become regular and reliable. In that sense, a longing carried through many religious and spiritual traditions becomes something immediate and experiential rather than merely hoped for.',
-          'With repeated meditation, the flow of energy is said to strengthen. What first appears only for a moment can gradually become a more stable condition of silence, clarity and connectedness.'
+          'With repeated meditation, the flow of energy is said to strengthen. What first appears only for a moment can gradually become a more stable condition of silence, clarity and connectedness.',
+          'At the same time the signals in the hands and fingertips become more readable: warmth may suggest purification, coolness freer flow, tingling subtle activity. Through dedicated practice this develops into an inner literacy reminiscent of the subtle knowledge once attributed to great gurus and saints.'
         ]
       }
     ],

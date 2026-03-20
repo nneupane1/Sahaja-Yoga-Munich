@@ -60,6 +60,7 @@ const HeroOverlap: React.FC = () => {
           secondaryBody:
             'Begleite uns in München und lerne eine einfache, natürliche Form der Meditation kennen.',
           secondaryCta: 'Mehr erfahren',
+          sunriseCornerCard: 'Lasst uns in den Ozean eintauchen ...',
           imageAltPrimary: 'Shri Mataji',
           imageAltSecondary: 'Sonnenaufgang',
           imageAltKundalini: 'Kundalini Symbol'
@@ -76,6 +77,7 @@ const HeroOverlap: React.FC = () => {
           secondaryBody:
             'Join us in Munich and discover a simple, natural way to meditate.',
           secondaryCta: 'Learn more',
+          sunriseCornerCard: 'Lets dive into the ocean ...',
           imageAltPrimary: 'Shri Mataji',
           imageAltSecondary: 'Sunrise',
           imageAltKundalini: 'Kundalini symbol'
@@ -137,6 +139,31 @@ const HeroOverlap: React.FC = () => {
           alt={copy.imageAltSecondary}
           className="overlap-image object-cover object-[center_49%]"
         />
+        <div
+          className={`pointer-events-none absolute bottom-10 left-3 z-[4] transition-all duration-700 ease-out sm:bottom-16 sm:left-5 lg:bottom-20 lg:left-7 ${
+            showSunriseOverlay ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+          }`}
+        >
+          <a
+            href="#intro"
+            className="pointer-events-auto group inline-flex cursor-pointer items-center gap-2 rounded-[0.95rem] bg-transparent px-3 py-2 shadow-[0_10px_22px_rgba(132,89,71,0.09)] transition duration-300 hover:-translate-y-1 hover:scale-[1.02] sm:px-3.5 sm:py-2.5"
+            aria-label={locale === 'de' ? 'Zum Abschnitt Was ist Sahaja Yoga?' : 'Go to the What is Sahaja Yoga section'}
+            title={locale === 'de' ? 'Zum Abschnitt Was ist Sahaja Yoga?' : 'Go to What is Sahaja Yoga'}
+          >
+            <span
+              className="text-[1.72rem] leading-none tracking-[0.01em] text-white underline decoration-white/0 underline-offset-[0.22em] transition duration-300 group-hover:decoration-white/90 sm:text-[1.9rem]"
+              style={{ fontFamily: '"Great Vibes", "Parisienne", cursive' }}
+            >
+              {copy.sunriseCornerCard}
+            </span>
+            <span
+              aria-hidden="true"
+              className="animate-drift-x text-[0.92rem] text-white/95 transition duration-300 group-hover:translate-x-1 group-hover:text-white sm:text-[1rem]"
+            >
+              ↗
+            </span>
+          </a>
+        </div>
         <div
           className={`pointer-events-none absolute inset-0 z-[3] overflow-hidden isolate transition-opacity duration-150 ${
             showSunriseOverlay ? 'opacity-100' : 'opacity-0'

@@ -38,15 +38,18 @@ const IntroSection: React.FC = () => {
             intro:
               'Im Sanskrit weisen diese Worte bereits auf die lebendige Philosophie dieses Weges hin: Was in uns mitgeboren ist, soll erwachen, sich integrieren und sich als bewusste Einheit mit dem universellen Selbst entfalten. Sahaja Yoga bedeutet daher die spontane Vereinigung unserer inneren mütterlichen Energie mit der allgegenwärtigen göttlichen Kraft, durch die der Mensch wieder in lebendige Verbindung mit seinem wahren Selbst tritt. Darum bedeutet Yoga in seiner tiefsten Essenz die Integration und Manifestation unseres noch unentfalteten Potenzials in das universelle Selbst und nicht bloß die heutige kommerzialisierte Verengung eines heiligen Wortes auf körperliche Dehnübungen, die höchstens einen Teil der Wahrheit berühren.',
             paragraphs: [
-              'Im Zentrum steht das Erwachen der Kundalini, die im dreieckigen Kreuzbein ruht, still und schlafend wie eine mitgeborene innere Kraft. Wenn sie durch den zentralen Sushumna-Kanal aufsteigt, bringt sie die linke Ida- und die rechte Pingala-Seite ins Gleichgewicht und beginnt, die Chakren von innen her zu klären.',
-              'Wenn diese Energie die Zentren durchdringt und schließlich das Sahasrara öffnet, beginnt das, was im eigentlichen Sinn Yoga genannt werden kann: die Integration unserer inneren Qualitäten. Das Licht des Geistes berührt das zentrale Nervensystem, und die Aufmerksamkeit findet in einen Zustand gedankenfreien Gewahrseins.',
-              'In dieser Stille wird Meditation nicht gemacht, sondern geschieht. Sie wird müheloser, spontaner und zugleich wacher. Frieden entsteht nicht als Flucht, sondern als innere Ordnung.'
+              'Im Herzen von Sahaja Yoga steht das Erwachen der Kundalini, die im dreieckigen Kreuzbein ruht, still und schlafend wie eine mitgeborene mütterliche Kraft, die lange darauf gewartet hat, uns durch ihr Erwachen eine zweite Geburt des Geistes zu schenken. Wenn sie durch den zentralen Sushumna-Kanal aufsteigt, bringt sie die linke Ida- und die rechte Pingala-Seite ins Gleichgewicht und beginnt, die Chakren von innen her zu klären.',
+              'Dieser Aufstieg wird als derselbe geistige Vorgang verstanden, durch den verborgenes Leben zur Geburt reift: So wie ein Kind im Mutterleib wächst und schließlich das Licht der Welt erblickt, so steigt die Kundalini vom Mooladhara bis zum Sahasrara und schenkt dem Bewusstsein eine zweite Geburt. Auf spiritueller Ebene sind dies ein und dieselbe Bewegung, und Suchende sind eingeladen, diese Wahrheit nicht bloß zu glauben, sondern in der eigenen Erfahrung zu bezeugen. Wenn die Kundalini dabei an Negativitäten in den Chakren arbeitet, kann oben am Scheitel Wärme spürbar werden, nicht als Störung, sondern als Zeichen dafür, dass Reinigung geschieht.',
+              'Weil sich Chakren und Kanäle an den Händen und Fingerkuppen widerspiegeln, wird diese subtile Arbeit in der Meditation oft als Kribbeln, Wärme oder Kühle erfahrbar. Für viele Suchende wird es mit der Zeit ganz natürlich, eine kühle Brise am Scheitel, an den Händen oder sogar im ganzen Körper wahrzunehmen. Solche Empfindungen werden als feine Sprache gelesen, durch die der innere Zustand des Systems sichtbar wird.',
+              'In dieser Stille wird Meditation nicht gemacht, sondern geschieht. Sie wird müheloser, spontaner und zugleich wacher. Mit vertiefter Praxis wird diese innere Lesbarkeit immer klarer, ähnlich jener alten Weisheit, die großen Gurus und Heiligen zugeschrieben wurde, die das subtile Geschehen im Menschen meistern konnten.'
             ],
             reflectionTitle: 'Selbstverwirklichung',
             reflectionBody:
               'Selbstverwirklichung ist wie das Pflanzen eines ersten Samens. Sobald der Keim erscheint, entsteht tief im Inneren die Verantwortung, ihn wachsen zu lassen, bis aus ihm ein schöner Baum wird, der Blüten und Früchte trägt.',
             reflectionNote:
               'Wie Shri Mataji sinngemäß sagte: Niemand bezahlt eine Pflanze dafür, dass sie eine Blüte hervorbringt. Ebenso kann Selbstverwirklichung nicht gekauft werden, weil sie ein spontaner lebendiger Prozess ist.',
+            freeSessionsNote:
+              'Unsere Treffen werden ehrenamtlich getragen und bleiben immer kostenfrei.',
             closing:
               'Unsere Treffen werden ehrenamtlich getragen und bleiben immer kostenfrei. Sahaja Yoga verfeinert das subtile System, harmonisiert Chakren und Kanäle und bringt dadurch mehr Frieden, Gleichgewicht und Klarheit in den Alltag.',
             openHereTitle: 'HIER KLICKEN',
@@ -111,15 +114,18 @@ const IntroSection: React.FC = () => {
             intro:
               'In Sanskrit, these words already point to the living philosophy of the path: what is born within us is meant to awaken, integrate and flower into conscious union with the universal Self. Sahaja Yoga therefore means the spontaneous union of our inner motherly energy with the all-pervading divine power, through which human attention returns to a living connection with the true Self. Therefore Yoga, in its deepest essence, means the integration and manifestation of our still-untapped potential into the universal Self, not merely the modern commercial reduction of a sacred word to body-stretching exercise, which is only a partial truth.',
             paragraphs: [
-              'At its heart lies the awakening of Kundalini, long dormant and sleeping within the triangular sacrum bone as an inborn inner energy. As it rises through the central Sushumna channel, it balances the left Ida and right Pingala channels and begins to clear the chakras from within.',
-              'When this energy pierces the centres and finally opens the Sahasrara, real Yoga begins: the integration of our inner qualities. The light of the Spirit touches the central nervous system, and attention settles into the state of thoughtless awareness.',
-              'In that stillness meditation is no longer forced. It becomes effortless, spontaneous and at the same time more awake. Peace is not an escape from life, but a deeper inner order within it.'
+              'At the heart of Sahaja Yoga lies the awakening of Kundalini, resting within the triangular sacrum bone as an inborn motherly energy that has long been waiting to grant us our second birth through its awakening. As it rises through the central Sushumna channel, it balances the left Ida and right Pingala channels and begins to clear the chakras from within.',
+              'This ascent is understood as the same spiritual dynamic by which hidden life ripens into birth: just as a baby grows within the mother’s womb and finally comes into the world, so Kundalini rises from Mooladhara to Sahasrara and grants consciousness its second birth. At the spiritual level these are one and the same movement, and seekers are invited to verify that truth through direct experience rather than belief alone. As Kundalini works through the negativities lodged in the chakras, warmth may sometimes be felt at the top of the head, not as a problem, but as a sign that purification is taking place.',
+              'Because the chakras and channels are reflected in the hands and fingertips, this subtle work is often experienced in meditation as tingling, warmth or coolness. For many seekers it is also very natural, in time, to feel a cool breeze flowing from the top of the head, across the hands or even through the whole body. Such sensations are treated as a fine language through which the inner condition of the system becomes readable.',
+              'In that stillness meditation is no longer forced. It becomes effortless, spontaneous and at the same time more awake. With dedicated practice this subtle readability grows clearer, echoing an older wisdom in which saints and realized beings were said to master the inner language of the subtle system.'
             ],
             reflectionTitle: 'Self-Realization',
             reflectionBody:
               'Self-Realization is like planting the first seed and seeing its sprout emerge. With that first sign of life comes a deep inner inspiration to let it grow into a beautiful tree, until flowers and fruits begin to manifest.',
             reflectionNote:
               'As Shri Mataji explained, no one pays a plant to make a flower bloom. In the same way, Self-Realization cannot be bought, because it is a spontaneous living process.',
+            freeSessionsNote:
+              'Our sessions are offered voluntarily and always remain free of charge.',
             closing:
               'Our sessions are offered voluntarily and always remain free of charge. As Kundalini awakens, the subtle system becomes clearer and more harmonious, bringing greater peace, balance and clarity into daily life.',
             openHereTitle: 'CLICK HERE',
@@ -168,10 +174,11 @@ const IntroSection: React.FC = () => {
         </div>
 
         <div className="mt-8">
-          <div className="warm-hover-glow rounded-[1.9rem] border border-[#b35d4c]/35 bg-[linear-gradient(180deg,rgba(255,255,255,0.94),rgba(255,246,240,0.88))] p-4 shadow-[0_20px_42px_rgba(72,110,140,0.14)] backdrop-blur-sm sm:p-5 lg:relative lg:left-[-1.5rem] lg:w-[calc(100%+3rem)] 2xl:left-[-2rem] 2xl:w-[calc(100%+4rem)]">
-            <div className="grid gap-6 lg:grid-cols-[minmax(0,1.68fr)_minmax(22rem,0.72fr)] 2xl:grid-cols-[minmax(0,1.78fr)_minmax(23rem,0.68fr)]">
+          <div className="lg:relative lg:left-1/2 lg:w-[min(80vw,90rem)] lg:max-w-none lg:-translate-x-1/2">
+            <div className="w-full rounded-[1.9rem] border border-[#b35d4c]/35 bg-[linear-gradient(180deg,rgba(255,255,255,0.94),rgba(255,246,240,0.88))] p-4 shadow-[0_20px_42px_rgba(72,110,140,0.14)] backdrop-blur-sm sm:p-5 lg:px-6 xl:px-7">
+            <div className="grid gap-5 lg:grid-cols-[minmax(0,2.02fr)_minmax(21rem,0.58fr)] xl:gap-6 2xl:grid-cols-[minmax(0,2.12fr)_minmax(21.75rem,0.54fr)]">
               <div className="reveal-ready lg:min-w-0">
-                <article className="rounded-[1.6rem] border border-[#b35d4c]/28 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,246,240,0.84))] px-6 py-6 text-left shadow-[0_14px_30px_rgba(72,110,140,0.1)] sm:px-8 sm:py-7">
+                <article className="warm-hover-glow rounded-[1.6rem] border border-[#b35d4c]/28 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,246,240,0.84))] px-6 py-6 text-left shadow-[0_14px_30px_rgba(72,110,140,0.1)] sm:px-8 sm:py-7">
               <div className="text-center">
                 <div className="inline-flex rounded-full border border-[#b35d4c]/24 bg-[rgba(255,248,243,0.9)] px-4 py-2 shadow-[0_10px_20px_rgba(72,110,140,0.06)]">
                   <p className="text-[0.76rem] font-semibold uppercase tracking-[0.22em] text-[#b56757] sm:text-[0.82rem]">
@@ -184,7 +191,7 @@ const IntroSection: React.FC = () => {
               </div>
 
               <div className="mt-6">
-                <div className="mx-auto max-w-4xl space-y-3 border-y border-[#b35d4c]/18 py-4">
+                <div className="w-full space-y-3 border-y border-[#b35d4c]/18 py-4">
                   <div className="grid overflow-hidden rounded-[1.05rem] border border-[#b35d4c]/20 bg-[rgba(255,250,246,0.72)] sm:grid-cols-2">
                     <p className="px-4 py-3 text-left text-[1.08rem] leading-8 text-slate-700 sm:px-5 sm:text-[1.14rem]">
                       <span className="font-bold text-[#b56757]">{copy.meaningCard.lines[0].term}</span>
@@ -210,62 +217,78 @@ const IntroSection: React.FC = () => {
                   </div>
                 </div>
 
-                <p className="mt-6 max-w-4xl text-left text-[1.02rem] leading-8 text-[#8f5e4f] sm:text-[1.06rem]">
+                <p className="mt-6 w-full text-left text-[1.02rem] leading-8 text-[#8f5e4f] sm:text-[1.06rem]">
                   {copy.meaningCard.intro}
                 </p>
 
-                <div className="mt-8 grid gap-6 lg:grid-cols-[1.12fr_0.88fr]">
-                  <div className="space-y-5">
-                    {copy.meaningCard.paragraphs.map(paragraph => (
-                      <p key={paragraph} className="text-[1rem] leading-8 text-[#333333]">
-                        {paragraph}
-                      </p>
+                <div className="mt-8 grid gap-6 lg:grid-cols-[1.26fr_0.74fr] xl:grid-cols-[1.3fr_0.7fr]">
+                  <div className="space-y-4">
+                    {copy.meaningCard.paragraphs.slice(0, 2).map(paragraph => (
+                      <article
+                        key={paragraph}
+                        className="warm-hover-glow rounded-[1.3rem] border border-[#d8a08d]/30 bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(255,244,238,0.66))] p-4 shadow-[0_14px_28px_rgba(179,93,76,0.08)] sm:p-5"
+                      >
+                        <p className="text-[1rem] leading-8 text-[#333333]">{paragraph}</p>
+                      </article>
                     ))}
                   </div>
 
-                  <aside className="rounded-[1.4rem] border border-[#b35d4c]/24 bg-[linear-gradient(180deg,rgba(255,250,246,0.94),rgba(255,243,235,0.88))] p-6 shadow-[0_16px_34px_rgba(72,110,140,0.08)]">
-                    <p className="text-[0.76rem] font-semibold uppercase tracking-[0.22em] text-[#b56757]">
-                      {copy.meaningCard.reflectionTitle}
-                    </p>
-                    <p className="mt-4 text-[1rem] leading-8 text-[#333333]">
-                      {copy.meaningCard.reflectionBody}
-                    </p>
-                    <p className="mt-4 text-[0.96rem] leading-7 text-[#8f5e4f]">
-                      {copy.meaningCard.reflectionNote}
-                    </p>
-                  </aside>
-                </div>
-
-                <div className="mx-auto mt-7 max-w-4xl rounded-[1.25rem] border border-[#b35d4c]/20 bg-[rgba(255,250,246,0.78)] px-5 py-4">
-                  <p className="text-[0.98rem] leading-8 text-[#333333]">
-                    {copy.meaningCard.closing}
-                  </p>
-                </div>
-
-                <div className="mx-auto mt-6 max-w-4xl rounded-[1.4rem] border border-[#b35d4c]/24 bg-[linear-gradient(135deg,rgba(255,248,243,0.94),rgba(255,255,255,0.82))] px-5 py-5 shadow-[0_14px_30px_rgba(72,110,140,0.08)]">
-                  <div className="flex flex-col gap-4">
-                    <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4">
-                      <Link
-                        to={copy.meaningCard.openHereLink.to}
-                        className="inline-flex shrink-0 items-center justify-center gap-2 rounded-[0.85rem] border border-[#b35d4c]/26 bg-[rgba(255,255,255,0.94)] px-4 py-2.5 text-[0.74rem] font-semibold uppercase tracking-[0.1em] text-[#b56757] shadow-[0_10px_20px_rgba(72,110,140,0.06)] transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/42 hover:bg-[rgba(255,244,238,0.98)]"
-                      >
-                        <span aria-hidden="true" className="text-[1.12rem] leading-none">
-                          👉
-                        </span>
-                        <span>{copy.meaningCard.openHereTitle}</span>
-                      </Link>
-                      <p className="max-w-xl text-[0.91rem] font-bold leading-6 text-[#8f5e4f] sm:text-[0.95rem]">
-                        {copy.meaningCard.openHereBody}
+                  <div className="self-start justify-self-end w-full max-w-[21.5rem] space-y-4">
+                    <aside className="warm-hover-glow rounded-[1.3rem] border border-[#d8a08d]/30 bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(255,244,238,0.66))] p-4 shadow-[0_14px_28px_rgba(179,93,76,0.08)] sm:p-5">
+                      <p className="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-[#b56757]">
+                        {copy.meaningCard.reflectionTitle}
                       </p>
-                    </div>
+                      <p className="mt-3 text-[0.94rem] leading-7 text-[#333333]">
+                        {copy.meaningCard.reflectionBody}
+                      </p>
+                      <p className="mt-3 text-[0.9rem] leading-6 text-[#8f5e4f]">
+                        {copy.meaningCard.reflectionNote}
+                      </p>
+                    </aside>
+
+                    <article className="warm-hover-glow rounded-[1.3rem] border border-[#d8a08d]/30 bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(255,244,238,0.66))] p-4 shadow-[0_14px_28px_rgba(179,93,76,0.08)]">
+                      <p className="text-[0.94rem] font-medium leading-7 text-[#8f5e4f]">
+                        {copy.meaningCard.freeSessionsNote}
+                      </p>
+                    </article>
+                  </div>
+
+                  <div className="lg:col-span-2 grid gap-4 lg:grid-cols-[1.26fr_0.74fr] xl:grid-cols-[1.3fr_0.7fr]">
+                    {copy.meaningCard.paragraphs.slice(2).map((paragraph, index) => (
+                      <article
+                        key={paragraph}
+                        className="warm-hover-glow rounded-[1.3rem] border border-[#d8a08d]/30 bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(255,244,238,0.66))] p-4 shadow-[0_14px_28px_rgba(179,93,76,0.08)] sm:p-5"
+                      >
+                        <p className="text-[1rem] leading-8 text-[#333333]">{paragraph}</p>
+                        {locale === 'de' && index === 0 ? (
+                          <div className="mt-5 rounded-[1.15rem] border border-[#b35d4c]/22 bg-[linear-gradient(135deg,rgba(255,249,245,0.98),rgba(255,255,255,0.9))] p-4 shadow-[0_12px_24px_rgba(72,110,140,0.08)]">
+                            <p className="text-[0.88rem] font-bold leading-6 text-[#8f5e4f]">
+                              {copy.meaningCard.openHereBody}
+                            </p>
+                            <div className="mt-3">
+                              <Link
+                                to={copy.meaningCard.openHereLink.to}
+                                className="inline-flex items-center justify-center gap-2 rounded-[0.9rem] border border-[#b35d4c]/28 bg-[rgba(255,255,255,0.96)] px-4 py-2.5 text-[0.75rem] font-semibold uppercase tracking-[0.1em] text-[#b56757] shadow-[0_10px_18px_rgba(72,110,140,0.06)] transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/42 hover:bg-[rgba(255,244,238,0.98)]"
+                              >
+                                <span aria-hidden="true" className="text-[1.05rem] leading-none">
+                                  👉
+                                </span>
+                                <span>{copy.meaningCard.openHereTitle}</span>
+                              </Link>
+                            </div>
+                          </div>
+                        ) : null}
+                      </article>
+                    ))}
                   </div>
                 </div>
+
               </div>
                 </article>
               </div>
 
-              <div className="reveal-ready lg:justify-self-end lg:pt-1 lg:w-full lg:max-w-[26rem] 2xl:max-w-[27rem]">
-                <article className="overflow-hidden rounded-[1.7rem] border border-[#b35d4c]/28 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,246,240,0.84))] shadow-[0_14px_30px_rgba(72,110,140,0.1)] lg:sticky lg:top-28">
+              <div className="reveal-ready lg:justify-self-center lg:pt-1 lg:w-full lg:max-w-[22.75rem] 2xl:max-w-[23.75rem]">
+                <article className="warm-hover-glow overflow-hidden rounded-[1.7rem] border border-[#b35d4c]/28 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,246,240,0.84))] shadow-[0_14px_30px_rgba(72,110,140,0.1)] lg:sticky lg:top-28">
               <a
                 href={introVideoUrl}
                 target="_blank"
@@ -306,9 +329,28 @@ const IntroSection: React.FC = () => {
                     <span>{copy.videoCard.cta}</span>
                   </a>
                 </div>
+                {locale !== 'de' ? (
+                  <div className="mt-6 rounded-[1.15rem] border border-[#b35d4c]/22 bg-[linear-gradient(135deg,rgba(255,249,245,0.98),rgba(255,255,255,0.9))] p-4 shadow-[0_12px_24px_rgba(72,110,140,0.08)]">
+                    <p className="text-[0.88rem] font-bold leading-6 text-[#8f5e4f]">
+                      {copy.meaningCard.openHereBody}
+                    </p>
+                    <div className="mt-3">
+                      <Link
+                        to={copy.meaningCard.openHereLink.to}
+                        className="inline-flex items-center justify-center gap-2 rounded-[0.9rem] border border-[#b35d4c]/28 bg-[rgba(255,255,255,0.96)] px-4 py-2.5 text-[0.75rem] font-semibold uppercase tracking-[0.1em] text-[#b56757] shadow-[0_10px_18px_rgba(72,110,140,0.06)] transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/42 hover:bg-[rgba(255,244,238,0.98)]"
+                      >
+                        <span aria-hidden="true" className="text-[1.05rem] leading-none">
+                          👉
+                        </span>
+                        <span>{copy.meaningCard.openHereTitle}</span>
+                      </Link>
+                    </div>
+                  </div>
+                ) : null}
               </div>
                 </article>
               </div>
+            </div>
             </div>
           </div>
         </div>

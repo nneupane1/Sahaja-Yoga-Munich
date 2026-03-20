@@ -172,14 +172,15 @@ export const topicPagesEn = {
         title: 'Kundalini is the resting power that brings the whole system to life',
         description: [
           'Kundalini is described as an inborn, indestructible energy resting, dormant and sleeping within the triangular sacrum bone. At the same time it is presented as the power of pure desire and as a maternal spiritual energy, not something imported from outside but the hidden source of spiritual unfolding already present within the person.',
-          'When it awakens, it rises through the central channel and nourishes the chakras. This makes not only stillness possible, but also a more refined awareness of one’s actual inner condition.',
-          'Its tone matters: Kundalini is presented as intelligent and gentle. It does not act violently, but in a way that allows the system to reorder itself naturally. In this view it heals, improves and blesses life by gradually freeing attention from crude entanglement with material pressures.'
+          'When it awakens, it rises through the central channel and nourishes the chakras. This ascent is described like a second birth: what has long been ripening unseen within the person comes into a new life of the spirit from Mooladhara to Sahasrara.',
+          'Its tone matters: Kundalini is presented as intelligent and gentle. It does not act violently, but in a way that allows the system to reorder itself naturally. Where it meets burdens in the centres, warmth may be felt; on the hands and fingertips coolness, warmth or tingling may appear as subtle feedback. In this view it heals, improves and blesses life by gradually freeing attention from crude entanglement with material pressures.'
         ],
         sideTitle: 'Key Characteristics',
         sideItems: [
           'Already present within every person',
           'Rises through the Sushumna and nourishes the centres',
-          'Its awakening has long been treated as a true goal of spiritual life'
+          'Its awakening has long been treated as a true goal of spiritual life',
+          'Its clearing is often felt directly in the hands and fingertips'
         ],
         note:
           'In this view Kundalini is neither metaphor nor suggestion, but the living force behind Self-Realization.'
@@ -193,13 +194,14 @@ export const topicPagesEn = {
         description: [
           'The left channel stands for emotion, desire and relation to the past. Its pure quality is joy; when disturbed it can appear as heaviness, guilt or emotional withdrawal.',
           'The right channel supplies action, planning and mental dynamism. In balance it is clear and effective, while overuse tends to produce tension, irritability or aggression.',
-          'The central channel is the way of equilibrium. It is where Kundalini rises and where attention stops oscillating between past and future.'
+          'The central channel is the way of equilibrium. It is where Kundalini rises and where attention stops oscillating between past and future. In meditation this balance is also said to become readable in the hands and fingertips.'
         ],
         sideTitle: 'Channel Qualities',
         sideItems: [
           'Ida: joy, feeling, memory, lunar quality',
           'Pingala: action, analysis, future, solar quality',
-          'Sushumna: centre, evolution, present awareness, peace'
+          'Sushumna: centre, evolution, present awareness, peace',
+          'Hands and fingertips mirror left, right and central tendencies'
         ],
         note:
           'The nadis make visible that spiritual balance is always also a balance of attention.'
@@ -213,13 +215,14 @@ export const topicPagesEn = {
         description: [
           'The seven main chakras lie along the spine and correspond with major nerve plexuses. Each one influences physical functions as well as a distinct inner quality.',
           'In this view, many disturbances in life can be read as imbalance in one or more centres. As Kundalini rises, the chakras are not forced but nourished back toward their natural potential.',
-          'That is why chakra knowledge here is not abstract symbolism. It is a precise language for understanding how personality, health and meditation interrelate.'
+          'That is why chakra knowledge here is not abstract symbolism. It is a precise language for understanding how personality, health and meditation interrelate. Because the centres are reflected in the hands and fingertips, warmth, coolness or tingling during meditation are treated as fine signs of inner purification.'
         ],
         sideTitle: 'Logic of Ascent',
         sideItems: [
           'Each chakra carries both a subtle quality and a bodily manifestation',
           'Void, Nabhi and Swadisthana work as an integrated group',
-          'From Mooladhara to Sahasrara, development is treated as nourishment rather than force'
+          'From Mooladhara to Sahasrara, development is treated as nourishment rather than force',
+          'The fingertips and hands are treated as a readable map of subtle condition'
         ],
         note:
           'The centres read like an inner map: from innocence and creativity through security, communication and forgiveness into integration.'
@@ -244,7 +247,7 @@ export const topicPagesEn = {
     intro:
       'Self-Realization is presented here as the true enabler of meditation. It begins with Kundalini, dormant and sleeping within the triangular sacrum bone as a maternal spiritual energy and the power of pure desire, and awakens from within to relieve attention from the constant pressure of thought, ego, conditioning and emotional overreaction, lifting it into a quieter and higher state of consciousness.',
     heroPanelText:
-      'The process is described in unusually concrete terms: as Kundalini rises through the central channel and pierces the chakras, it stretches the field of attention upward like a tent lifted by its pole. Once it moves beyond Agnya toward the Sahasrara, thoughtless awareness appears not as an idea but as an actual higher state of consciousness.',
+      'The process is described in unusually concrete terms: as Kundalini rises through the central channel and pierces the chakras, it stretches the field of attention upward like a tent lifted by its pole. This same movement is also compared to an inner birth: just as a baby ripens in the mother’s womb and is born, consciousness ripens through the ascent from Mooladhara to Sahasrara into a second birth. Where the energy meets negativity, warmth may arise, and in the hands and fingertips coolness, warmth or tingling are treated as subtle signs of this clearing.',
     heroTags: ['Self-Realization', 'Thoughtless Awareness', 'Daily Practice'],
     heroImage: redSunsetImg,
     heroImageAlt: 'Self realization visual',
@@ -341,7 +344,7 @@ export const topicPagesEn = {
         title: 'Self-Realization lifts attention into a higher plane of consciousness',
         description: [
           'Attention can only rise when it is no longer continuously overrun by thought, ego and superego. Self-Realization is the opening that makes such a shift possible.',
-          'As Kundalini rises through the central channel and pierces the chakras, the field of attention is stretched upward from within. It begins to separate from its habitual knot of thought, memory and immediate emotional reaction.',
+          'As Kundalini rises through the central channel and pierces the chakras, the field of attention is stretched upward from within. It begins to separate from its habitual knot of thought, memory and immediate emotional reaction. This ascent is treated as the spiritual equivalent of something growing inwardly and coming to birth.',
           'Self-Realization therefore appears not as a symbolic blessing, but as a living inner event through which meditation becomes experientially real. In this view, something long sought in the world’s spiritual traditions becomes a present possibility.'
         ],
         sideTitle: 'Core Ideas',
@@ -382,7 +385,7 @@ export const topicPagesEn = {
         description: [
           'After the first awakening, a simple daily rhythm is recommended: a quiet place, ideally morning and evening, often in short periods of around ten to twenty minutes.',
           'The sitting begins with relaxation and raising the inner energy. Instead of fighting thoughts, one lets them pass and allows the energy to do the deeper work.',
-          'Over time sensations on the palms or at the crown become clearer, inner perception refines itself, and collective meditation is said to accelerate and stabilise this process.'
+          'Over time sensations in the palms or fingertips become clearer: warmth, coolness or tingling are treated as subtle feedback about the inner state, and collective meditation is said to accelerate and stabilise this process.'
         ],
         sideTitle: 'Effects of Regular Practice',
         sideItems: [
