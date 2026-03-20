@@ -28,15 +28,15 @@ const IntroSection: React.FC = () => {
               {
                 lead: 'So',
                 term: 'Sahaja',
-                rest: 'bedeutet daher: mitgeboren oder von Natur aus vorhanden.'
+                rest: 'bedeutet daher: mitgeboren, von Natur aus vorhanden, schlicht, leicht oder spontan.'
               },
               {
                 term: 'Yoga',
-                rest: 'bedeutet in seinem eigentlichen Sinn Integration.'
+                rest: 'bedeutet in seinem tieferen Sinn Integration oder Vereinigung.'
               }
             ],
             intro:
-              'Im Sanskrit weisen diese Worte bereits auf die lebendige Philosophie dieses Weges hin: Was in uns mitgeboren ist, soll erwachen, sich integrieren und sich als bewusste Einheit mit dem universellen Selbst entfalten. Darum bedeutet Yoga in seiner tiefsten Essenz die Integration und Manifestation unseres noch unentfalteten Potenzials in das universelle Selbst und nicht bloß die heutige kommerzialisierte Verengung eines heiligen Wortes auf körperliche Dehnübungen, die höchstens einen Teil der Wahrheit berühren.',
+              'Im Sanskrit weisen diese Worte bereits auf die lebendige Philosophie dieses Weges hin: Was in uns mitgeboren ist, soll erwachen, sich integrieren und sich als bewusste Einheit mit dem universellen Selbst entfalten. Sahaja Yoga bedeutet daher die spontane Vereinigung unserer inneren mütterlichen Energie mit der allgegenwärtigen göttlichen Kraft, durch die der Mensch wieder in lebendige Verbindung mit seinem wahren Selbst tritt. Darum bedeutet Yoga in seiner tiefsten Essenz die Integration und Manifestation unseres noch unentfalteten Potenzials in das universelle Selbst und nicht bloß die heutige kommerzialisierte Verengung eines heiligen Wortes auf körperliche Dehnübungen, die höchstens einen Teil der Wahrheit berühren.',
             paragraphs: [
               'Im Zentrum steht das Erwachen der Kundalini, die im dreieckigen Kreuzbein ruht, still und schlafend wie eine mitgeborene innere Kraft. Wenn sie durch den zentralen Sushumna-Kanal aufsteigt, bringt sie die linke Ida- und die rechte Pingala-Seite ins Gleichgewicht und beginnt, die Chakren von innen her zu klären.',
               'Wenn diese Energie die Zentren durchdringt und schließlich das Sahasrara öffnet, beginnt das, was im eigentlichen Sinn Yoga genannt werden kann: die Integration unserer inneren Qualitäten. Das Licht des Geistes berührt das zentrale Nervensystem, und die Aufmerksamkeit findet in einen Zustand gedankenfreien Gewahrseins.',
@@ -101,15 +101,15 @@ const IntroSection: React.FC = () => {
               {
                 lead: 'So',
                 term: 'Sahaja',
-                rest: 'means: born with, or innate.'
+                rest: 'means: born with, innate, simple, easy or spontaneous.'
               },
               {
                 term: 'Yoga',
-                rest: 'in its deeper sense means integration.'
+                rest: 'in its deeper sense means integration or union.'
               }
             ],
             intro:
-              'In Sanskrit, these words already point to the living philosophy of the path: what is born within us is meant to awaken, integrate and flower into conscious union with the universal Self. Therefore Yoga, in its deepest essence, means the integration and manifestation of our still-untapped potential into the universal Self, not merely the modern commercial reduction of a sacred word to body-stretching exercise, which is only a partial truth.',
+              'In Sanskrit, these words already point to the living philosophy of the path: what is born within us is meant to awaken, integrate and flower into conscious union with the universal Self. Sahaja Yoga therefore means the spontaneous union of our inner motherly energy with the all-pervading divine power, through which human attention returns to a living connection with the true Self. Therefore Yoga, in its deepest essence, means the integration and manifestation of our still-untapped potential into the universal Self, not merely the modern commercial reduction of a sacred word to body-stretching exercise, which is only a partial truth.',
             paragraphs: [
               'At its heart lies the awakening of Kundalini, long dormant and sleeping within the triangular sacrum bone as an inborn inner energy. As it rises through the central Sushumna channel, it balances the left Ida and right Pingala channels and begins to clear the chakras from within.',
               'When this energy pierces the centres and finally opens the Sahasrara, real Yoga begins: the integration of our inner qualities. The light of the Spirit touches the central nervous system, and attention settles into the state of thoughtless awareness.',
@@ -168,9 +168,9 @@ const IntroSection: React.FC = () => {
         </div>
 
         <div className="mt-8">
-          <div className="warm-hover-glow rounded-[1.9rem] border border-[#b35d4c]/35 bg-[linear-gradient(180deg,rgba(255,255,255,0.94),rgba(255,246,240,0.88))] p-4 shadow-[0_20px_42px_rgba(72,110,140,0.14)] backdrop-blur-sm sm:p-5 xl:relative xl:left-[-1.5rem] xl:w-[calc(100%+3rem)] 2xl:left-[-2rem] 2xl:w-[calc(100%+4rem)]">
-            <div className="grid gap-6 xl:grid-cols-[minmax(0,1.68fr)_minmax(22rem,0.72fr)] xl:items-start 2xl:grid-cols-[minmax(0,1.78fr)_minmax(23rem,0.68fr)]">
-              <div className="reveal-ready xl:min-w-0">
+          <div className="warm-hover-glow rounded-[1.9rem] border border-[#b35d4c]/35 bg-[linear-gradient(180deg,rgba(255,255,255,0.94),rgba(255,246,240,0.88))] p-4 shadow-[0_20px_42px_rgba(72,110,140,0.14)] backdrop-blur-sm sm:p-5 lg:relative lg:left-[-1.5rem] lg:w-[calc(100%+3rem)] 2xl:left-[-2rem] 2xl:w-[calc(100%+4rem)]">
+            <div className="grid gap-6 lg:grid-cols-[minmax(0,1.68fr)_minmax(22rem,0.72fr)] 2xl:grid-cols-[minmax(0,1.78fr)_minmax(23rem,0.68fr)]">
+              <div className="reveal-ready lg:min-w-0">
                 <article className="rounded-[1.6rem] border border-[#b35d4c]/28 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,246,240,0.84))] px-6 py-6 text-left shadow-[0_14px_30px_rgba(72,110,140,0.1)] sm:px-8 sm:py-7">
               <div className="text-center">
                 <div className="inline-flex rounded-full border border-[#b35d4c]/24 bg-[rgba(255,248,243,0.9)] px-4 py-2 shadow-[0_10px_20px_rgba(72,110,140,0.06)]">
@@ -264,8 +264,8 @@ const IntroSection: React.FC = () => {
                 </article>
               </div>
 
-              <div className="reveal-ready xl:self-start xl:justify-self-end xl:pt-1 xl:w-full xl:max-w-[26rem] 2xl:max-w-[27rem]">
-                <article className="overflow-hidden rounded-[1.7rem] border border-[#b35d4c]/28 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,246,240,0.84))] shadow-[0_14px_30px_rgba(72,110,140,0.1)] xl:sticky xl:top-28">
+              <div className="reveal-ready lg:justify-self-end lg:pt-1 lg:w-full lg:max-w-[26rem] 2xl:max-w-[27rem]">
+                <article className="overflow-hidden rounded-[1.7rem] border border-[#b35d4c]/28 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,246,240,0.84))] shadow-[0_14px_30px_rgba(72,110,140,0.1)] lg:sticky lg:top-28">
               <a
                 href={introVideoUrl}
                 target="_blank"
