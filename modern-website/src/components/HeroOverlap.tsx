@@ -151,7 +151,7 @@ const HeroOverlap: React.FC = () => {
             src={kundaliniLogo}
             alt=""
             aria-hidden="true"
-            className={`absolute left-[48.15%] top-[18%] z-[4] w-[9.6rem] -translate-x-1/2 -translate-y-1/2 object-contain transition-all duration-700 ease-[cubic-bezier(0.18,0.9,0.2,1)] sm:w-[11.2rem] lg:w-[12.8rem] ${
+            className={`absolute left-[48.15%] top-[18%] z-[4] w-[9.6rem] -translate-x-1/2 -translate-y-1/2 object-contain transition-all duration-[16800ms] ease-[cubic-bezier(0.18,0.9,0.2,1)] sm:w-[11.2rem] lg:w-[12.8rem] ${
               showSunriseOverlay
                 ? 'scale-100 opacity-[0.98] blur-0'
                 : 'translate-y-6 scale-[0.86] opacity-0 blur-[2px]'
@@ -166,10 +166,10 @@ const HeroOverlap: React.FC = () => {
           <img
             src={kundaliniOverlay}
             alt={copy.imageAltKundalini}
-            className={`absolute left-[48.15%] top-[61%] z-[2] w-[23.75rem] -translate-x-1/2 -translate-y-1/2 object-contain transition-all duration-900 ease-[cubic-bezier(0.18,0.9,0.2,1)] sm:w-[27.55rem] lg:w-[31.35rem] ${
+            className={`absolute left-[48.15%] top-[61%] z-[2] w-[23.75rem] -translate-x-1/2 -translate-y-1/2 object-contain transition-all duration-[4200ms] ease-[cubic-bezier(0.18,0.9,0.2,1)] sm:w-[27.55rem] lg:w-[31.35rem] ${
               showSunriseOverlay
                 ? 'scale-100 opacity-[0.78] blur-0'
-                : 'translate-y-10 scale-[0.92] opacity-0 blur-[3px]'
+                : 'translate-y-4 scale-[0.96] opacity-0 blur-[2px]'
             }`}
             style={{
               filter: 'brightness(0.985) contrast(1.05) saturate(1.01)',
