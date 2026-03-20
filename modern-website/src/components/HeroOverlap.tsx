@@ -93,15 +93,15 @@ const HeroOverlap: React.FC = () => {
           className="overlap-image object-cover object-[center_18%] brightness-[1.01] contrast-[1.06] saturate-[1.03]"
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(207,223,234,0.04)_0%,rgba(219,232,239,0.08)_38%,rgba(244,241,235,0.4)_66%,rgba(248,244,239,0.82)_100%)]" />
-        <div className="layer-content">
-          <div className="flex max-w-xl flex-col items-end lg:-translate-y-[10%] lg:translate-x-[50%]">
-            <div className="relative max-w-md">
+        <div className="absolute inset-y-0 right-4 z-10 flex items-center sm:right-6 md:right-8 lg:right-[clamp(2rem,6vw,10rem)]">
+          <div className="w-full max-w-[22.5rem] sm:max-w-[24rem] lg:-translate-y-[10%]">
+            <div className="relative">
               <div className="pointer-events-none absolute -inset-5 rounded-[2rem] border border-[#e3a18b]/45 bg-[linear-gradient(145deg,rgba(255,250,246,0.16),rgba(244,232,220,0.08))] shadow-[0_24px_70px_rgba(132,89,71,0.18)]" />
               <div className="pointer-events-none absolute -left-4 -top-4 h-14 w-14 rounded-full border border-[#f0c3ae]/55 bg-[radial-gradient(circle_at_35%_35%,rgba(255,246,240,0.95),rgba(232,177,137,0.38)_58%,rgba(206,119,94,0.1)_100%)] blur-[1px]" />
               <div className="pointer-events-none absolute -bottom-5 -right-3 h-16 w-16 rounded-full border border-[#e9ab97]/45 bg-[radial-gradient(circle_at_40%_40%,rgba(255,249,243,0.92),rgba(225,166,127,0.34)_62%,rgba(199,118,90,0.1)_100%)] blur-[1px]" />
               <div className="pointer-events-none absolute left-4 top-5 h-3 w-3 rounded-full bg-[#f3d0bc]/90 shadow-[14px_3px_0_0_rgba(243,208,188,0.88),7px_13px_0_0_rgba(237,184,156,0.7)]" />
               <div className="pointer-events-none absolute bottom-6 right-5 h-3 w-3 rounded-full bg-[#f2c3aa]/90 shadow-[14px_3px_0_0_rgba(242,195,170,0.84),7px_13px_0_0_rgba(229,160,129,0.62)]" />
-              <div className="layer-pane relative flex max-w-md flex-col items-center border-[#e1a08c]/55 bg-[linear-gradient(145deg,rgba(255,252,249,0.22),rgba(252,243,236,0.1))] px-4 py-5 text-center shadow-[0_18px_45px_rgba(129,87,69,0.14)] backdrop-blur-[1.5px] sm:px-5 sm:py-6">
+              <div className="layer-pane relative flex w-full flex-col items-center border-[#e1a08c]/55 bg-[linear-gradient(145deg,rgba(255,252,249,0.22),rgba(252,243,236,0.1))] px-4 py-5 text-center shadow-[0_18px_45px_rgba(129,87,69,0.14)] backdrop-blur-[1.5px] sm:px-5 sm:py-6">
                 <span className="eyebrow border border-[#e1a08c]/35 bg-[rgba(255,250,246,0.55)] px-3 py-1.5 text-[0.62rem] text-[#b56757] shadow-[0_8px_18px_rgba(132,89,71,0.12)]">
                   {copy.heroTag}
                 </span>

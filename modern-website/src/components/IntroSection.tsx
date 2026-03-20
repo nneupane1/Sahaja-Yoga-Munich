@@ -28,7 +28,7 @@ const IntroSection: React.FC = () => {
               {
                 lead: 'So',
                 term: 'Sahaja',
-                rest: 'bedeutet daher: mitgeboren, von Natur aus vorhanden, schlicht, leicht oder spontan.'
+                rest: 'bedeutet daher: mitgeboren, von Natur aus vorhanden, schlicht, leicht oder\u00a0spontan.'
               },
               {
                 term: 'Yoga',
