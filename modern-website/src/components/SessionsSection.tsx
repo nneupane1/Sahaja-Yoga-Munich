@@ -157,8 +157,8 @@ const SessionsSection: React.FC = () => {
 
         <div className="card-soft warm-hover-glow mt-12 overflow-hidden p-6 sm:p-8 lg:p-10">
           <div className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-            <div className="flex flex-col gap-4">
-              <aside className="warm-hover-glow relative overflow-hidden rounded-[1.7rem] border border-[#d8a08d]/32 bg-[linear-gradient(180deg,rgba(255,255,255,0.76),rgba(255,245,239,0.48))] p-6 shadow-[0_20px_42px_rgba(179,93,76,0.08)] sm:p-7">
+            <div className="flex min-w-0 flex-col gap-4">
+              <aside className="warm-hover-glow relative min-w-0 overflow-hidden rounded-[1.7rem] border border-[#d8a08d]/32 bg-[linear-gradient(180deg,rgba(255,255,255,0.76),rgba(255,245,239,0.48))] p-6 shadow-[0_20px_42px_rgba(179,93,76,0.08)] sm:p-7">
                 <div className="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full bg-[radial-gradient(circle,rgba(214,125,92,0.14)_0%,rgba(214,125,92,0)_72%)]" />
                 <div className="pointer-events-none absolute -bottom-10 -left-10 h-32 w-32 rounded-full bg-[radial-gradient(circle,rgba(110,181,192,0.16)_0%,rgba(110,181,192,0)_72%)]" />
                 <p className="relative text-sm font-semibold uppercase tracking-[0.28em] text-[#b56757]">
@@ -175,7 +175,7 @@ const SessionsSection: React.FC = () => {
                   {copy.contactItems.map(item => (
                     <div
                       key={item.label}
-                      className={`warm-hover-glow rounded-[1.25rem] border border-[#d8a08d]/28 bg-[rgba(255,255,255,0.7)] px-4 py-4 shadow-[0_12px_24px_rgba(179,93,76,0.07)] ${
+                      className={`warm-hover-glow min-w-0 rounded-[1.25rem] border border-[#d8a08d]/28 bg-[rgba(255,255,255,0.7)] px-4 py-4 shadow-[0_12px_24px_rgba(179,93,76,0.07)] ${
                         item.wide ? 'sm:col-span-2' : ''
                       }`}
                     >
@@ -185,12 +185,12 @@ const SessionsSection: React.FC = () => {
                       {item.href ? (
                         <a
                           href={item.href}
-                          className="mt-2 block text-base leading-7 text-slate-700 transition hover:text-[#b56757] sm:text-[1.05rem]"
+                          className="mt-2 block break-words text-base leading-7 text-slate-700 transition hover:text-[#b56757] sm:text-[1.05rem]"
                         >
                           {item.value}
                         </a>
                       ) : (
-                        <p className="mt-2 text-base leading-7 text-slate-700 sm:text-[1.05rem]">
+                        <p className="mt-2 break-words text-base leading-7 text-slate-700 sm:text-[1.05rem]">
                           {item.value}
                         </p>
                       )}
@@ -203,8 +203,8 @@ const SessionsSection: React.FC = () => {
                 </div>
               </aside>
 
-              <div className="warm-hover-glow rounded-[1.25rem] border border-[#d8a08d]/26 bg-[linear-gradient(180deg,rgba(255,255,255,0.82),rgba(255,245,239,0.62))] px-4 py-4 shadow-[0_12px_24px_rgba(179,93,76,0.06)]">
-                <p className="text-[0.9rem] leading-6 text-slate-600">{copy.cityLinksLead}</p>
+              <div className="warm-hover-glow min-w-0 rounded-[1.25rem] border border-[#d8a08d]/26 bg-[linear-gradient(180deg,rgba(255,255,255,0.82),rgba(255,245,239,0.62))] px-4 py-4 shadow-[0_12px_24px_rgba(179,93,76,0.06)]">
+                <p className="break-words text-[0.9rem] leading-6 text-slate-600">{copy.cityLinksLead}</p>
                 <a
                   href="https://www.sahajayoga.de/kurse/"
                   target="_blank"
@@ -217,19 +217,19 @@ const SessionsSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="warm-hover-glow rounded-[1.7rem] border border-[#d8a08d]/28 bg-[linear-gradient(180deg,rgba(255,255,255,0.56),rgba(227,242,248,0.4))] p-6 shadow-[0_18px_36px_rgba(74,113,143,0.08)] sm:p-7">
+            <div className="warm-hover-glow min-w-0 rounded-[1.7rem] border border-[#d8a08d]/28 bg-[linear-gradient(180deg,rgba(255,255,255,0.56),rgba(227,242,248,0.4))] p-6 shadow-[0_18px_36px_rgba(74,113,143,0.08)] sm:p-7">
               <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#b56757]">
                 {copy.scheduleEyebrow}
               </p>
-              <div className="mt-3 flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
-                <h3 className="text-2xl leading-tight text-[#6c473d] sm:text-[2rem]">
+              <div className="mt-3 flex min-w-0 flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
+                <h3 className="min-w-0 text-xl leading-tight text-[#6c473d] sm:text-[2rem]">
                   {copy.scheduleTitle}
                 </h3>
                 <span className="inline-flex w-fit -translate-y-1 items-center rounded-full border border-[#d8a08d]/28 bg-[rgba(255,251,248,0.78)] px-3 py-1 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b56757]">
                   {copy.sessions.length} {locale === 'de' ? 'Termine pro Woche' : 'sessions per week'}
                 </span>
               </div>
-              <p className="mt-4 max-w-2xl text-[0.98rem] leading-7 text-slate-600">
+              <p className="mt-4 max-w-2xl break-words text-[0.98rem] leading-7 text-slate-600">
                 {copy.scheduleIntro}
               </p>
 
@@ -237,7 +237,7 @@ const SessionsSection: React.FC = () => {
                 {copy.sessions.map(session => (
                   <article
                     key={`${session.day}-${session.time}`}
-                    className="warm-hover-glow flex h-full flex-col rounded-[1.3rem] border border-[#d8a08d]/30 bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(255,244,238,0.66))] p-4 shadow-[0_14px_28px_rgba(179,93,76,0.08)]"
+                    className="warm-hover-glow flex min-w-0 h-full flex-col rounded-[1.3rem] border border-[#d8a08d]/30 bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(255,244,238,0.66))] p-4 shadow-[0_14px_28px_rgba(179,93,76,0.08)]"
                   >
                     <div className="flex flex-nowrap items-center gap-2 whitespace-nowrap">
                       <h4 className="text-[0.93rem] leading-tight text-[#b56757] sm:text-[0.98rem]">
@@ -247,7 +247,7 @@ const SessionsSection: React.FC = () => {
                         {session.time}
                       </span>
                     </div>
-                    <p className="mt-3 text-[0.94rem] leading-6 text-slate-700">
+                    <p className="mt-3 break-words text-[0.94rem] leading-6 text-slate-700">
                       {session.description}
                     </p>
                     {session.note && (

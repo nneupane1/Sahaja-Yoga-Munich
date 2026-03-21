@@ -362,7 +362,7 @@ const IntroSection: React.FC = () => {
               className="warm-hover-glow flex min-h-[18.5rem] h-full flex-col rounded-[1.45rem] border border-[#b35d4c]/35 bg-[rgba(255,255,255,0.9)] p-9 text-left shadow-[0_16px_36px_rgba(72,110,140,0.12)] backdrop-blur-sm lg:p-10"
             >
               <h3
-                className={`whitespace-nowrap tracking-[-0.01em] text-[#b56757] ${
+                className={`tracking-[-0.01em] text-[#b56757] sm:whitespace-nowrap ${
                   locale === 'de'
                     ? 'text-[1.14rem] sm:text-[1.22rem] lg:text-[1.34rem] xl:text-[1.42rem]'
                     : 'text-[1.04rem] sm:text-[1.12rem] lg:text-[1.2rem] xl:text-[1.3rem]'

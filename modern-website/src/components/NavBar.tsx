@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import shaktiYantram from '../assets/shaktiyantram-clean.png';
 import kundaliniIcon from '../assets/kundalini-clean.png';
 import { useLocale } from '../context/LocaleContext';
@@ -18,7 +18,10 @@ type NavItem = {
  * Sticky navigation bar with route and hash links.
  */
 const NavBar: React.FC = () => {
+  const location = useLocation();
   const { locale, setLocale } = useLocale();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileExpandedItem, setMobileExpandedItem] = useState<string | null>(null);
   const pages = locale === 'de' ? topicPages : topicPagesEn;
   const copy =
     locale === 'de'
@@ -92,9 +95,214 @@ const NavBar: React.FC = () => {
     { label: copy.contact, to: '/#contact', kind: 'button' }
   ];
 
+  useEffect(() => {
+    setMobileMenuOpen(false);
+    setMobileExpandedItem(null);
+  }, [location.pathname, location.hash, locale]);
+
+  useEffect(() => {
+    if (!mobileMenuOpen) {
+      return;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [mobileMenuOpen]);
+
+  const toggleMobileItem = (label: string) => {
+    setMobileExpandedItem(current => (current === label ? null : label));
+  };
+
   return (
     <nav className="sticky top-0 z-50 bg-[#bfe4f8]/95 shadow-[0_1px_6px_rgba(74,113,143,0.12)] backdrop-blur">
-      <div className="flex w-full items-center gap-9 px-4 py-[0.875rem] sm:px-6 lg:px-8">
+      <div className="xl:hidden">
+        <div className="flex items-center justify-between gap-3 px-4 py-3 sm:px-5">
+          <Link to="/" className="flex min-w-0 items-center gap-2.5">
+            <img
+              src={shaktiYantram}
+              alt="Shakti Yantram"
+              className="h-[3.15rem] w-[3.15rem] shrink-0 object-contain mix-blend-multiply drop-shadow-[0_8px_14px_rgba(179,93,76,0.14)]"
+            />
+            <span className="min-w-0 uppercase leading-none text-slate-800">
+              <span className="block truncate text-[0.92rem] font-bold tracking-[0.04em]">
+                Sahaja Yoga
+              </span>
+              <span className="mt-1 flex items-center gap-1.5 text-[0.92rem] font-bold tracking-[0.04em]">
+                <img
+                  src={kundaliniIcon}
+                  alt="Kundalini"
+                  className="h-[1.45rem] w-[1.45rem] shrink-0 object-contain opacity-100 contrast-125 saturate-125 drop-shadow-[0_8px_12px_rgba(179,93,76,0.18)]"
+                />
+                <span className="truncate">München</span>
+              </span>
+            </span>
+          </Link>
+
+          <div className="flex shrink-0 items-center gap-2">
+            <div className="flex items-center rounded-full border border-[#b35d4c]/20 bg-[rgba(255,250,246,0.92)] p-1 shadow-[0_8px_16px_rgba(72,110,140,0.08)]">
+              <button
+                type="button"
+                onClick={() => setLocale('de')}
+                aria-label="Deutsch"
+                className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1.5 text-[0.72rem] font-semibold transition ${
+                  locale === 'de'
+                    ? 'bg-[#c8715f] text-white shadow-[0_8px_14px_rgba(168,88,69,0.22)]'
+                    : 'text-[#b35d4c]'
+                }`}
+              >
+                <span aria-hidden="true">🇩🇪</span>
+                <span>DE</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setLocale('en')}
+                aria-label="English"
+                className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1.5 text-[0.72rem] font-semibold transition ${
+                  locale === 'en'
+                    ? 'bg-[#c8715f] text-white shadow-[0_8px_14px_rgba(168,88,69,0.22)]'
+                    : 'text-[#b35d4c]'
+                }`}
+              >
+                <span aria-hidden="true">🇬🇧</span>
+                <span>EN</span>
+              </button>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(current => !current)}
+              aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-expanded={mobileMenuOpen}
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#b35d4c]/20 bg-[rgba(255,250,246,0.92)] text-[#b35d4c] shadow-[0_8px_16px_rgba(72,110,140,0.08)] transition hover:border-[#b35d4c]/35 hover:bg-[rgba(255,244,238,0.98)]"
+            >
+              <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5">
+                {mobileMenuOpen ? (
+                  <path
+                    d="M6 6 18 18M18 6 6 18"
+                    stroke="currentColor"
+                    strokeWidth="1.9"
+                    strokeLinecap="round"
+                  />
+                ) : (
+                  <>
+                    <path
+                      d="M4.5 7.25h15"
+                      stroke="currentColor"
+                      strokeWidth="1.9"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M4.5 12h15"
+                      stroke="currentColor"
+                      strokeWidth="1.9"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M4.5 16.75h15"
+                      stroke="currentColor"
+                      strokeWidth="1.9"
+                      strokeLinecap="round"
+                    />
+                  </>
+                )}
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        {mobileMenuOpen && (
+          <div className="border-t border-[#b35d4c]/14 bg-[rgba(255,250,246,0.95)] px-4 pb-4 pt-3 shadow-[0_18px_40px_rgba(72,110,140,0.08)] backdrop-blur sm:px-5">
+            <div className="max-h-[calc(100vh-5rem)] overflow-y-auto pb-1">
+              <div className="grid gap-3">
+                {links.map(link => {
+                  const hasDropdown = Boolean(link.dropdown?.length);
+                  const isButton = link.kind === 'button';
+                  const isExpanded = mobileExpandedItem === link.label;
+
+                  if (!hasDropdown) {
+                    return (
+                      <Link
+                        key={link.label}
+                        to={link.to}
+                        className={`flex min-h-[3.55rem] items-center rounded-[1.25rem] border px-4 py-4 text-base font-semibold shadow-[0_10px_22px_rgba(72,110,140,0.06)] transition ${
+                          isButton
+                            ? 'border-[#c8715f]/40 bg-[#c8715f] text-white'
+                            : 'border-[#b35d4c]/18 bg-white/80 text-slate-800 hover:border-[#b35d4c]/32 hover:bg-[rgba(255,244,238,0.98)] hover:text-[#b35d4c]'
+                        }`}
+                      >
+                        {link.label}
+                      </Link>
+                    );
+                  }
+
+                  return (
+                    <div
+                      key={link.label}
+                      className="overflow-hidden rounded-[1.25rem] border border-[#b35d4c]/18 bg-white/80 shadow-[0_10px_22px_rgba(72,110,140,0.06)]"
+                    >
+                      <div className="flex items-center gap-3 px-4 py-3.5">
+                        <Link
+                          to={link.to}
+                          className="min-w-0 flex-1 text-base font-semibold text-slate-800 transition hover:text-[#b35d4c]"
+                        >
+                          {link.label}
+                        </Link>
+                        <button
+                          type="button"
+                          onClick={() => toggleMobileItem(link.label)}
+                          aria-label={`Toggle ${link.label}`}
+                          aria-expanded={isExpanded}
+                          className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#b35d4c]/18 bg-[rgba(255,250,246,0.94)] text-[#b35d4c] transition hover:border-[#b35d4c]/34 hover:bg-[rgba(255,244,238,0.98)]"
+                        >
+                          <svg
+                            viewBox="0 0 12 12"
+                            fill="none"
+                            className={`h-4 w-4 transition duration-300 ${isExpanded ? 'rotate-180' : ''}`}
+                          >
+                            <path
+                              d="M2.5 4.25 6 7.75 9.5 4.25"
+                              stroke="currentColor"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+
+                      <div
+                        className={`grid overflow-hidden transition-[grid-template-rows,opacity] duration-300 ${
+                          isExpanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                        }`}
+                      >
+                        <div className="overflow-hidden border-t border-[#b35d4c]/12 px-3 pb-3 pt-2">
+                          <div className="grid gap-2">
+                            {link.dropdown?.map(item => (
+                              <Link
+                                key={item.to}
+                                to={item.to}
+                                className="rounded-[1rem] border border-[#b35d4c]/12 bg-[rgba(255,250,246,0.72)] px-3.5 py-3 text-sm leading-6 text-slate-700 transition hover:border-[#b35d4c]/28 hover:bg-[rgba(255,244,238,0.98)] hover:text-[#b35d4c]"
+                              >
+                                {item.label}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <div className="hidden w-full items-center gap-9 px-4 py-[0.875rem] sm:px-6 lg:px-8 xl:flex">
         <div className="flex shrink-0 items-center">
           <Link
             to="/"

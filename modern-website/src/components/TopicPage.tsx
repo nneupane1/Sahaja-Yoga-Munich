@@ -44,8 +44,8 @@ const TopicPage: React.FC<TopicPageProps> = ({ page }) => {
 
   const heroImageClasses =
     page.heroImageMode === 'contain'
-      ? 'h-[31rem] w-full rounded-[1.6rem] object-contain p-5 sm:h-[35rem]'
-      : 'h-[31rem] w-full rounded-[1.6rem] object-cover object-center transition duration-700 group-hover:scale-[1.04] sm:h-[35rem]';
+      ? 'h-[20rem] w-full rounded-[1.6rem] object-contain p-4 sm:h-[24rem] sm:p-5 lg:h-[31rem] lg:p-5 xl:h-[35rem]'
+      : 'h-[20rem] w-full rounded-[1.6rem] object-cover object-center transition duration-700 group-hover:scale-[1.04] sm:h-[24rem] lg:h-[31rem] xl:h-[35rem]';
   const heroImageLeft = page.route === '/kundalini-energiesystem' ? false : page.route === '/kultur-des-geistes';
   const heroGridClassName = isKundaliniPage
     ? 'grid gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:items-start'
@@ -130,7 +130,7 @@ const TopicPage: React.FC<TopicPageProps> = ({ page }) => {
                     <img
                       src={page.heroImage}
                       alt={page.heroImageAlt}
-                      className="h-[37rem] w-full scale-[1.03] rounded-[1.85rem] object-contain sm:h-[38rem] sm:scale-[1.05]"
+                      className="h-[22rem] w-full scale-[1.02] rounded-[1.85rem] object-contain sm:h-[28rem] sm:scale-[1.03] lg:h-[37rem] lg:scale-[1.05] xl:h-[38rem]"
                     />
                   </div>
                   <div className="mx-4 mb-4 mt-4 rounded-[1.3rem] border border-[#b35d4c]/22 bg-[rgba(255,250,246,0.94)] px-5 py-4 text-center shadow-[0_14px_32px_rgba(72,110,140,0.1)] backdrop-blur">
@@ -166,17 +166,17 @@ const TopicPage: React.FC<TopicPageProps> = ({ page }) => {
                       </div>
 
                       {showFloatingHeroTags && page.heroTags[0] && (
-                        <div className="animate-float-soft absolute left-7 top-7 rounded-full border border-[#b35d4c]/28 bg-[rgba(255,250,246,0.92)] px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b35d4c] shadow-[0_16px_36px_rgba(72,110,140,0.12)]">
+                        <div className="animate-float-soft absolute left-7 top-7 hidden rounded-full border border-[#b35d4c]/28 bg-[rgba(255,250,246,0.92)] px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b35d4c] shadow-[0_16px_36px_rgba(72,110,140,0.12)] md:block">
                           {page.heroTags[0]}
                         </div>
                       )}
                       {showFloatingHeroTags && page.heroTags[1] && (
-                        <div className="animate-float-soft absolute right-7 top-16 rounded-full border border-[#b35d4c]/28 bg-[#fff7f3]/92 px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b35d4c] shadow-[0_16px_36px_rgba(72,110,140,0.12)] [animation-delay:1.2s]">
+                        <div className="animate-float-soft absolute right-7 top-16 hidden rounded-full border border-[#b35d4c]/28 bg-[#fff7f3]/92 px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b35d4c] shadow-[0_16px_36px_rgba(72,110,140,0.12)] [animation-delay:1.2s] md:block">
                           {page.heroTags[1]}
                         </div>
                       )}
                       {showFloatingHeroTags && page.heroTags[2] && (
-                        <div className="animate-float-soft absolute left-9 bottom-28 rounded-full border border-[#b35d4c]/28 bg-[rgba(255,250,246,0.92)] px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b35d4c] shadow-[0_16px_36px_rgba(72,110,140,0.12)] [animation-delay:2s]">
+                        <div className="animate-float-soft absolute left-9 bottom-28 hidden rounded-full border border-[#b35d4c]/28 bg-[rgba(255,250,246,0.92)] px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b35d4c] shadow-[0_16px_36px_rgba(72,110,140,0.12)] [animation-delay:2s] md:block">
                           {page.heroTags[2]}
                         </div>
                       )}

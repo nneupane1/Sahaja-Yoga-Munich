@@ -58,9 +58,9 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
   const heroImageClasses =
     article.heroImageMode === 'contain'
       ? isThoughtlessStillnessPage
-        ? 'h-[24rem] w-full rounded-[1.6rem] object-contain bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(225,243,255,0.92))] p-3 scale-[1.04] sm:h-[29rem]'
-        : 'h-[24rem] w-full rounded-[1.6rem] object-contain bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(225,243,255,0.92))] p-6 sm:h-[29rem]'
-      : 'h-[24rem] w-full rounded-[1.6rem] object-cover object-center transition duration-700 group-hover:scale-[1.04] sm:h-[29rem]';
+        ? 'h-[18rem] w-full rounded-[1.6rem] object-contain bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(225,243,255,0.92))] p-3 scale-[1.02] sm:h-[22rem] sm:scale-[1.03] lg:h-[29rem] lg:scale-[1.04]'
+        : 'h-[18rem] w-full rounded-[1.6rem] object-contain bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(225,243,255,0.92))] p-4 sm:h-[22rem] sm:p-5 lg:h-[29rem] lg:p-6'
+      : 'h-[20rem] w-full rounded-[1.6rem] object-cover object-center transition duration-700 group-hover:scale-[1.04] sm:h-[24rem] lg:h-[29rem]';
   const forceImageRight =
     article.route === '/kundalini-energiesystem/kanaele-und-balance' ||
     article.route === '/kundalini-energiesystem/kundalini' ||
@@ -169,12 +169,12 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
                 <img src={article.heroImage} alt={article.heroImageAlt} className={heroImageClasses} />
 
                 {!hideFloatingHeroTags && article.heroTags[0] && (
-                  <div className="animate-float-soft absolute left-7 top-7 rounded-full border border-[#b35d4c]/28 bg-[rgba(255,250,246,0.92)] px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b35d4c] shadow-[0_16px_36px_rgba(72,110,140,0.12)]">
+                  <div className="animate-float-soft absolute left-7 top-7 hidden rounded-full border border-[#b35d4c]/28 bg-[rgba(255,250,246,0.92)] px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b35d4c] shadow-[0_16px_36px_rgba(72,110,140,0.12)] md:block">
                     {article.heroTags[0]}
                   </div>
                 )}
                 {!hideFloatingHeroTags && article.heroTags[1] && (
-                  <div className="animate-float-soft absolute right-7 top-16 rounded-full border border-[#b35d4c]/28 bg-[#fff7f3]/92 px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b35d4c] shadow-[0_16px_36px_rgba(72,110,140,0.12)] [animation-delay:1.2s]">
+                  <div className="animate-float-soft absolute right-7 top-16 hidden rounded-full border border-[#b35d4c]/28 bg-[#fff7f3]/92 px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b35d4c] shadow-[0_16px_36px_rgba(72,110,140,0.12)] [animation-delay:1.2s] md:block">
                     {article.heroTags[1]}
                   </div>
                 )}

@@ -96,7 +96,7 @@ const HeroOverlap: React.FC = () => {
         <div className="absolute inset-y-0 right-4 z-10 flex items-center sm:right-6 md:right-8 lg:right-[clamp(2rem,6vw,10rem)]">
           <div className="w-full max-w-[22.5rem] sm:max-w-[24rem] lg:-translate-y-[10%]">
             <div className="relative">
-              <div className="pointer-events-none absolute -inset-5 rounded-[2rem] border border-[#e3a18b]/45 bg-[linear-gradient(145deg,rgba(255,250,246,0.16),rgba(244,232,220,0.08))] shadow-[0_24px_70px_rgba(132,89,71,0.18)]" />
+              <div className="pointer-events-none absolute inset-0 rounded-[2rem] border border-[#e3a18b]/45 bg-[linear-gradient(145deg,rgba(255,250,246,0.16),rgba(244,232,220,0.08))] shadow-[0_24px_70px_rgba(132,89,71,0.18)] sm:-inset-5" />
               <div className="pointer-events-none absolute -left-4 -top-4 h-14 w-14 rounded-full border border-[#f0c3ae]/55 bg-[radial-gradient(circle_at_35%_35%,rgba(255,246,240,0.95),rgba(232,177,137,0.38)_58%,rgba(206,119,94,0.1)_100%)] blur-[1px]" />
               <div className="pointer-events-none absolute -bottom-5 -right-3 h-16 w-16 rounded-full border border-[#e9ab97]/45 bg-[radial-gradient(circle_at_40%_40%,rgba(255,249,243,0.92),rgba(225,166,127,0.34)_62%,rgba(199,118,90,0.1)_100%)] blur-[1px]" />
               <div className="pointer-events-none absolute left-4 top-5 h-3 w-3 rounded-full bg-[#f3d0bc]/90 shadow-[14px_3px_0_0_rgba(243,208,188,0.88),7px_13px_0_0_rgba(237,184,156,0.7)]" />
