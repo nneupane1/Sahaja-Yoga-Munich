@@ -11,11 +11,14 @@ const IntroSection: React.FC = () => {
   const introVideoThumbnail = 'https://img.youtube.com/vi/JSFkSHNRfDU/hqdefault.jpg';
   const copy =
     locale === 'de'
-      ? {
+        ? {
           title: 'Was ist Sahaja Yoga?',
           meaningCard: {
             founder: 'Begründet von Shri Mataji Nirmala Devi',
             title: 'Saha + Ja + Yoga',
+            firstParagraphLabel: 'Kundalini und das innere Universum',
+            secondParagraphLabel: 'Die zweite Geburt des Bewusstseins',
+            thirdParagraphLabel: 'Wärme, Kühle und die innere Sprache',
             lines: [
               {
                 term: 'Saha',
@@ -92,6 +95,9 @@ const IntroSection: React.FC = () => {
           meaningCard: {
             founder: 'Founded by Shri Mataji Nirmala Devi',
             title: 'Saha + Ja + Yoga',
+            firstParagraphLabel: 'Kundalini and the Inner Universe',
+            secondParagraphLabel: 'The Second Birth of Consciousness',
+            thirdParagraphLabel: 'Heat, Coolness and the Inner Language',
             lines: [
               {
                 term: 'Saha',
@@ -223,14 +229,26 @@ const IntroSection: React.FC = () => {
 
                 <div className="mt-8 grid gap-6 lg:grid-cols-[1.26fr_0.74fr] xl:grid-cols-[1.3fr_0.7fr]">
                   <div className="space-y-4">
-                    {copy.meaningCard.paragraphs.slice(0, 2).map(paragraph => (
-                      <article
-                        key={paragraph}
-                        className="warm-hover-glow rounded-[1.3rem] border border-[#d8a08d]/30 bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(255,244,238,0.66))] p-4 shadow-[0_14px_28px_rgba(179,93,76,0.08)] sm:p-5"
-                      >
+                    {copy.meaningCard.paragraphs.slice(0, 2).map((paragraph, index) => {
+                      const paragraphLabel =
+                        index === 0
+                          ? copy.meaningCard.firstParagraphLabel
+                          : copy.meaningCard.secondParagraphLabel;
+
+                      return (
+                        <article
+                          key={paragraph}
+                          className="warm-hover-glow rounded-[1.3rem] border border-[#d8a08d]/30 bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(255,244,238,0.66))] p-4 shadow-[0_14px_28px_rgba(179,93,76,0.08)] sm:p-5"
+                        >
+                          <div className="mb-2 flex justify-center">
+                            <span className="inline-flex items-center rounded-full border border-[#b35d4c]/22 bg-[rgba(255,249,245,0.92)] px-3.5 py-[0.34rem] text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-[#b56757] shadow-[0_10px_18px_rgba(72,110,140,0.05)]">
+                              {paragraphLabel}
+                            </span>
+                          </div>
                         <p className="text-[1rem] leading-8 text-[#333333]">{paragraph}</p>
-                      </article>
-                    ))}
+                        </article>
+                      );
+                    })}
                   </div>
 
                   <div className="self-start justify-self-end w-full max-w-[21.5rem] space-y-4">
@@ -259,6 +277,13 @@ const IntroSection: React.FC = () => {
                         key={paragraph}
                         className="warm-hover-glow rounded-[1.3rem] border border-[#d8a08d]/30 bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(255,244,238,0.66))] p-4 shadow-[0_14px_28px_rgba(179,93,76,0.08)] sm:p-5"
                       >
+                        {index === 0 ? (
+                          <div className="mb-2 flex justify-center">
+                            <span className="inline-flex items-center rounded-full border border-[#b35d4c]/22 bg-[rgba(255,249,245,0.92)] px-3.5 py-[0.34rem] text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-[#b56757] shadow-[0_10px_18px_rgba(72,110,140,0.05)]">
+                              {copy.meaningCard.thirdParagraphLabel}
+                            </span>
+                          </div>
+                        ) : null}
                         <p className="text-[1rem] leading-8 text-[#333333]">{paragraph}</p>
                         {locale === 'de' && index === 0 ? (
                           <div className="mt-5 rounded-[1.15rem] border border-[#b35d4c]/22 bg-[linear-gradient(135deg,rgba(255,249,245,0.98),rgba(255,255,255,0.9))] p-4 shadow-[0_12px_24px_rgba(72,110,140,0.08)]">
