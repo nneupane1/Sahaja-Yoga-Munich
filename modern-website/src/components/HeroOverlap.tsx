@@ -105,7 +105,7 @@ const HeroOverlap: React.FC = () => {
                 <span className="eyebrow border border-[#e1a08c]/35 bg-[rgba(255,250,246,0.55)] px-3 py-1.5 text-[0.62rem] text-[#b56757] shadow-[0_8px_18px_rgba(132,89,71,0.12)]">
                   {copy.heroTag}
                 </span>
-                <h1 className="mt-4 text-[1.78rem] text-[#5a3a31] sm:text-[2.14rem]">
+                <h1 className="mt-4 text-[1.6rem] text-[#5a3a31] sm:text-[1.93rem]">
                   {copy.heroTitleLines.map((line) => (
                     <span key={line} className="block sm:whitespace-nowrap">
                       {line}
