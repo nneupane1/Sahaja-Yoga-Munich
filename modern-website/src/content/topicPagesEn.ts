@@ -33,7 +33,7 @@ export const topicPagesEn = {
     heroEyebrow: 'The Subtle System',
     title: 'Kundalini, Nadis & Chakras',
     intro:
-      'The subtle system is the fine network of Kundalini, channels and centres aligned with the nervous system. At the heart of it lies Kundalini as the power of pure desire, a maternal spiritual energy long dormant and sleeping within the triangular sacrum bone. Once awakened, what seemed abstract becomes perceptible in meditation, so that balance, blockage and subtle quality can be felt directly.',
+      'The subtle system is the fine network of Kundalini, channels and centres aligned with the nervous system. At the heart of it lies Kundalini as the power of pure desire, a maternal spiritual energy long dormant and sleeping in three and a half coils within the triangular sacrum bone. It is described as the same miraculous Divine force that allows the baby to grow in the mother’s womb and later remains encoded in the sacrum as Kundalini, the cosmic energy that forms an inner universe within the human being. Once awakened, what seemed abstract becomes perceptible in meditation, so that balance, blockage and subtle quality can be felt directly.',
     heroPanelText:
       'The system can be understood like a wheel: at the outer edge there is disturbance, at the centre there is peace. Sahaja Yoga draws attention toward that centre as Kundalini nourishes the middle channel and restores the chakras to a more natural state of harmony. Its awakening is presented here as the inner event toward which many religious and spiritual traditions have pointed in different language.',
     heroTags: ['Kundalini', 'Nadis', 'Chakras'],
@@ -171,7 +171,7 @@ export const topicPagesEn = {
         eyebrow: 'Inner Source',
         title: 'Kundalini is the resting power that brings the whole system to life',
         description: [
-          'Kundalini is described as an inborn, indestructible energy resting, dormant and sleeping within the triangular sacrum bone. At the same time it is presented as the power of pure desire and as a maternal spiritual energy, not something imported from outside but the hidden source of spiritual unfolding already present within the person.',
+          'Kundalini is described as an inborn, indestructible energy resting, dormant and sleeping in three and a half coils within the triangular sacrum bone. At the same time it is presented as the power of pure desire and as a maternal spiritual energy, not something imported from outside but as the continuation of that same Divine force which allows the baby to grow in the mother’s womb and later remains encoded in the sacrum as the cosmic source of inner unfolding.',
           'When it awakens, it rises through the central channel and nourishes the chakras. This ascent is described like a second birth: what has long been ripening unseen within the person comes into a new life of the spirit from Mooladhara to Sahasrara.',
           'Its tone matters: Kundalini is presented as intelligent and gentle. It does not act violently, but in a way that allows the system to reorder itself naturally. Where it meets burdens in the centres, warmth may be felt; on the hands and fingertips coolness, warmth or tingling may appear as subtle feedback. In this view it heals, improves and blesses life by gradually freeing attention from crude entanglement with material pressures.'
         ],
@@ -245,7 +245,7 @@ export const topicPagesEn = {
     heroEyebrow: 'Higher Consciousness',
     title: 'Self-Realization & Meditation',
     intro:
-      'Self-Realization is presented here as the true enabler of meditation. It begins with Kundalini, dormant and sleeping within the triangular sacrum bone as a maternal spiritual energy and the power of pure desire, and awakens from within to relieve attention from the constant pressure of thought, ego, conditioning and emotional overreaction, lifting it into a quieter and higher state of consciousness.',
+      'Self-Realization is presented here as the true enabler of meditation. It begins with Kundalini, dormant and sleeping in three and a half coils within the triangular sacrum bone as a maternal spiritual energy and the power of pure desire. This is understood as the same Divine force that once nourished the child in the mother’s womb and later remains encoded in the sacrum as the cosmic energy of inner awakening. When it awakens from within, it relieves attention from the constant pressure of thought, ego, conditioning and emotional overreaction, lifting it into a quieter and higher state of consciousness.',
     heroPanelText:
       'The process is described in unusually concrete terms: as Kundalini rises through the central channel and pierces the chakras, it stretches the field of attention upward like a tent lifted by its pole. This same movement is also compared to an inner birth: just as a baby ripens in the mother’s womb and is born, consciousness ripens through the ascent from Mooladhara to Sahasrara into a second birth. Where the energy meets negativity, warmth may arise, and in the hands and fingertips coolness, warmth or tingling are treated as subtle signs of this clearing.',
     heroTags: ['Self-Realization', 'Thoughtless Awareness', 'Daily Practice'],

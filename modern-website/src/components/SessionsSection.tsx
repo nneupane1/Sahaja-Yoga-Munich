@@ -21,7 +21,13 @@ const SessionsSection: React.FC = () => {
           contactIntro:
             'Neueinsteiger und erfahrene Meditierende sind gleichermaßen willkommen. Die Treffen finden in entspannter Atmosphäre statt und können ohne Vorkenntnisse besucht werden.',
           contactItems: [
-            { label: 'Adresse', value: 'Am Lilienberg 2a, 81669 München', wide: true },
+            {
+              label: 'Adresse',
+              value: 'Am Lilienberg 2a, 81669 München',
+              wide: true,
+              mapsHref:
+                'https://www.google.com/maps/search/?api=1&query=Am+Lilienberg+2a,+81669+M%C3%BCnchen'
+            },
             { label: 'Whatsapp / Mobil', value: '+49 176 941 696 65', href: 'tel:+4917694169665' },
             {
               label: 'E-Mail',
@@ -86,7 +92,13 @@ const SessionsSection: React.FC = () => {
           contactIntro:
             'Beginners and experienced meditators are equally welcome. The sessions are held in a relaxed atmosphere and can be joined without prior experience.',
           contactItems: [
-            { label: 'Address', value: 'Am Lilienberg 2a, 81669 Munich', wide: true },
+            {
+              label: 'Address',
+              value: 'Am Lilienberg 2a, 81669 Munich',
+              wide: true,
+              mapsHref:
+                'https://www.google.com/maps/search/?api=1&query=Am+Lilienberg+2a,+81669+M%C3%BCnchen'
+            },
             { label: 'WhatsApp / Mobile', value: '+49 176 941 696 65', href: 'tel:+4917694169665' },
             {
               label: 'Email',
@@ -189,6 +201,37 @@ const SessionsSection: React.FC = () => {
                         >
                           {item.value}
                         </a>
+                      ) : item.mapsHref ? (
+                        <div className="mt-2 flex items-start justify-between gap-3">
+                          <p className="min-w-0 break-words text-base leading-7 text-slate-700 sm:text-[1.05rem]">
+                            {item.value}
+                          </p>
+                          <a
+                            href={item.mapsHref}
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label={locale === 'de' ? 'Adresse in Google Maps öffnen' : 'Open address in Google Maps'}
+                            title={locale === 'de' ? 'In Google Maps öffnen' : 'Open in Google Maps'}
+                            className="mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#d8a08d]/32 bg-[rgba(255,250,246,0.94)] text-[#b56757] shadow-[0_10px_20px_rgba(179,93,76,0.08)] transition duration-300 hover:scale-110 hover:border-[#b35d4c]/45 hover:bg-[rgba(255,244,238,0.98)] hover:text-[#a75444]"
+                          >
+                            <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5">
+                              <path
+                                d="M12 20.25c3.75-4.15 5.62-7.19 5.62-9.12A5.62 5.62 0 1 0 6.38 11.13c0 1.93 1.87 4.97 5.62 9.12Z"
+                                stroke="currentColor"
+                                strokeWidth="1.6"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                              <circle
+                                cx="12"
+                                cy="11.1"
+                                r="1.9"
+                                stroke="currentColor"
+                                strokeWidth="1.6"
+                              />
+                            </svg>
+                          </a>
+                        </div>
                       ) : (
                         <p className="mt-2 break-words text-base leading-7 text-slate-700 sm:text-[1.05rem]">
                           {item.value}
