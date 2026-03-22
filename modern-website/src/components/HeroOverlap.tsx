@@ -12,6 +12,35 @@ const HeroOverlap: React.FC = () => {
   const { locale } = useLocale();
   const sectionRef = useRef<HTMLElement | null>(null);
   const [showSunriseOverlay, setShowSunriseOverlay] = useState(false);
+  const [sunriseAssetsReady, setSunriseAssetsReady] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    const warmImage = async (src: string) => {
+      const image = new Image();
+      image.decoding = 'async';
+      image.src = src;
+
+      if ('decode' in image) {
+        try {
+          await image.decode();
+        } catch {
+          // Safari can reject decode() for images that are already usable; ignore that.
+        }
+      }
+    };
+
+    Promise.all([sunriseImg, kundaliniOverlay, kundaliniLogo].map(warmImage)).finally(() => {
+      if (!cancelled) {
+        setSunriseAssetsReady(true);
+      }
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   useEffect(() => {
     let frame = 0;
@@ -25,7 +54,7 @@ const HeroOverlap: React.FC = () => {
       const rect = section.getBoundingClientRect();
       const viewportHeight = Math.max(window.innerHeight, 1);
       const progress = Math.min(Math.max(-rect.top / viewportHeight, 0), 2);
-      const nextVisible = progress >= 0.72 && rect.bottom > 0;
+      const nextVisible = sunriseAssetsReady && progress >= 0.72 && rect.bottom > 0;
 
       setShowSunriseOverlay(prev => (prev === nextVisible ? prev : nextVisible));
     };
@@ -44,7 +73,7 @@ const HeroOverlap: React.FC = () => {
       window.removeEventListener('scroll', requestVisibilityUpdate);
       window.removeEventListener('resize', requestVisibilityUpdate);
     };
-  }, []);
+  }, [sunriseAssetsReady]);
 
   const copy =
     locale === 'de'
@@ -137,6 +166,9 @@ const HeroOverlap: React.FC = () => {
         <img
           src={sunriseImg}
           alt={copy.imageAltSecondary}
+          fetchPriority="high"
+          loading="eager"
+          decoding="async"
           className="overlap-image object-cover object-[center_49%]"
         />
         <div
@@ -178,6 +210,9 @@ const HeroOverlap: React.FC = () => {
             src={kundaliniLogo}
             alt=""
             aria-hidden="true"
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
             className={`absolute left-[48.15%] top-[18%] z-[4] w-[9.6rem] -translate-x-1/2 -translate-y-1/2 object-contain transition-all duration-[16800ms] ease-[cubic-bezier(0.18,0.9,0.2,1)] sm:w-[11.2rem] lg:w-[12.8rem] ${
               showSunriseOverlay
                 ? 'scale-100 opacity-[0.98] blur-0'
@@ -193,6 +228,9 @@ const HeroOverlap: React.FC = () => {
           <img
             src={kundaliniOverlay}
             alt={copy.imageAltKundalini}
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
             className={`absolute left-[48.15%] top-[61%] z-[2] w-[23.75rem] -translate-x-1/2 -translate-y-1/2 object-contain transition-all duration-[4200ms] ease-[cubic-bezier(0.18,0.9,0.2,1)] sm:w-[27.55rem] lg:w-[31.35rem] ${
               showSunriseOverlay
                 ? 'scale-100 opacity-[0.78] blur-0'

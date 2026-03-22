@@ -364,11 +364,11 @@ const NavBar: React.FC = () => {
               aria-label={copy.brand}
               className="brand-link flex shrink-0 translate-y-[3px] items-center gap-3.5 whitespace-nowrap text-[1.16rem] font-bold text-slate-800 focus:outline-none focus-visible:outline-none"
             >
-              <span className="-my-[0.875rem] -translate-y-px flex shrink-0 items-center">
+              <span className="-my-[0.875rem] -translate-y-[4px] flex shrink-0 items-center">
                 <img
                   src={shaktiYantram}
                   alt="Shakti Yantram"
-                  className="animate-yantram-spin h-[5.05rem] w-[5.05rem] object-contain mix-blend-multiply drop-shadow-[0_8px_14px_rgba(179,93,76,0.14)]"
+                  className="animate-yantram-spin block h-[5.05rem] w-[5.05rem] origin-center object-contain mix-blend-multiply drop-shadow-[0_8px_14px_rgba(179,93,76,0.14)]"
                 />
               </span>
               <span className="animate-drift-x ml-1.5 translate-y-[2px] flex items-center gap-1 uppercase">
@@ -388,11 +388,11 @@ const NavBar: React.FC = () => {
               to="/"
               className="brand-link flex shrink-0 translate-y-[3px] items-center gap-3.5 whitespace-nowrap text-[1.16rem] font-bold text-slate-800 focus:outline-none focus-visible:outline-none"
             >
-              <span className="-my-[0.875rem] -translate-y-px flex shrink-0 items-center">
+              <span className="-my-[0.875rem] -translate-y-[4px] flex shrink-0 items-center">
                 <img
                   src={shaktiYantram}
                   alt="Shakti Yantram"
-                  className="animate-yantram-spin h-[5.05rem] w-[5.05rem] object-contain mix-blend-multiply drop-shadow-[0_8px_14px_rgba(179,93,76,0.14)]"
+                  className="animate-yantram-spin block h-[5.05rem] w-[5.05rem] origin-center object-contain mix-blend-multiply drop-shadow-[0_8px_14px_rgba(179,93,76,0.14)]"
                 />
               </span>
               <span className="animate-drift-x ml-1.5 translate-y-[2px] flex items-center gap-1 uppercase">
