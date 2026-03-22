@@ -13,10 +13,18 @@ const LocaleContext = createContext<LocaleContextValue | undefined>(undefined);
  * Stores the active site locale and persists it across refreshes.
  */
 export const LocaleProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
-  const [locale, setLocaleState] = useState<Locale>('de');
+  const [locale, setLocaleState] = useState<Locale>(() => {
+    if (typeof window === 'undefined') {
+      return 'de';
+    }
+
+    const stored = window.localStorage.getItem('locale');
+    return stored === 'en' || stored === 'de' ? stored : 'de';
+  });
 
   useEffect(() => {
     document.documentElement.lang = locale;
+    window.localStorage.setItem('locale', locale);
   }, [locale]);
 
   const value = useMemo(

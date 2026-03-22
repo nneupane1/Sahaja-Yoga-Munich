@@ -3,6 +3,7 @@ import { Link, Navigate, useLocation } from 'react-router-dom';
 import chakraImg from '../assets/chakra.png';
 import lotusImg from '../assets/lotus.png';
 import motherImg from '../assets/mother.jpg';
+import LegacyNewsletterFrame from '../components/LegacyNewsletterFrame';
 import NewsletterDivider from '../components/NewsletterDivider';
 import {
   getSanityNewsletter,
@@ -144,6 +145,10 @@ const NewsletterRoute: React.FC = () => {
           recommendedEyebrow: 'Empfehlungen',
           donationEyebrow: 'Unterstützung',
           source: 'Originalquelle öffnen',
+          legacyEyebrow: 'Vollständige Ausgabe',
+          legacyTitle: 'Inhalt aus der früheren Newsletter-Seite',
+          legacyIntro:
+            'Hier erscheint die vollständig importierte Ausgabe aus meditationmuenchen.org in einer ruhigeren, besser lesbaren Form innerhalb der neuen Website.',
           loading: 'Newsletter wird geladen …',
           readOriginal:
             'Diese Ausgabe wurde aus dem alten Bestand übernommen und zugleich als strukturierter Inhalt für die neue Website aufbereitet.'
@@ -158,6 +163,10 @@ const NewsletterRoute: React.FC = () => {
           recommendedEyebrow: 'Recommended links',
           donationEyebrow: 'Support',
           source: 'Open original source',
+          legacyEyebrow: 'Full imported issue',
+          legacyTitle: 'Content from the earlier newsletter page',
+          legacyIntro:
+            'Below, the complete imported issue from meditationmuenchen.org is rendered inside the new site in a calmer, more readable form.',
           loading: 'Loading newsletter …',
           readOriginal:
             'This issue was imported from the older site and reshaped into structured content for the new website.'
@@ -451,6 +460,48 @@ const NewsletterRoute: React.FC = () => {
             </article>
           </div>
         </section>
+      )}
+
+      {newsletter.legacyImportHtml && (
+        <>
+          <section className="pb-2">
+            <div className="section-shell">
+              <NewsletterDivider />
+            </div>
+          </section>
+
+          <section className="section-band pt-6">
+            <div className="section-shell">
+              <article className="newsletter-stage reveal-ready p-5 sm:p-7">
+                <div className="max-w-4xl">
+                  <span className="eyebrow">{copy.legacyEyebrow}</span>
+                  <h2 className="mt-4 text-4xl sm:text-5xl">{copy.legacyTitle}</h2>
+                  <p className="mt-5 text-[1rem] leading-8 text-slate-600">{copy.legacyIntro}</p>
+                </div>
+
+                <div className="mt-8 overflow-hidden rounded-[2rem] border border-[#b35d4c]/16 bg-[rgba(255,252,249,0.82)] p-2 shadow-[0_18px_40px_rgba(146,92,79,0.1)] sm:p-4">
+                  <LegacyNewsletterFrame
+                    title={newsletter.title}
+                    rawHtml={newsletter.legacyImportHtml}
+                  />
+                </div>
+
+                {newsletter.legacyImportSourceUrl && (
+                  <div className="mt-6 flex flex-wrap items-center gap-4">
+                    <a
+                      href={newsletter.legacyImportSourceUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center rounded-full border border-[#b35d4c]/30 bg-[rgba(255,250,246,0.96)] px-5 py-2.5 text-sm font-semibold text-[#b56757] transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/45 hover:bg-[rgba(255,244,238,0.98)]"
+                    >
+                      {copy.source}
+                    </a>
+                  </div>
+                )}
+              </article>
+            </div>
+          </section>
+        </>
       )}
     </main>
   );
