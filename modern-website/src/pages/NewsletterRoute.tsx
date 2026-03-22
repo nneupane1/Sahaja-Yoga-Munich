@@ -302,6 +302,11 @@ const NewsletterRoute: React.FC = () => {
                     <p className="max-w-xl text-[0.93rem] leading-7 text-slate-500">{copy.readOriginal}</p>
                   </div>
                 )}
+                {newsletter.scheduleNote && (
+                  <p className="mt-5 rounded-[1.35rem] border border-[#b35d4c]/14 bg-[rgba(255,250,246,0.7)] px-5 py-4 text-[0.95rem] leading-7 text-slate-600">
+                    {newsletter.scheduleNote}
+                  </p>
+                )}
               </div>
 
               <aside className="relative z-10 grid gap-4">
@@ -453,6 +458,11 @@ const NewsletterRoute: React.FC = () => {
                       {newsletter.regionalHeading ??
                         (locale === 'de' ? 'Verbindungen in Süd-Deutschland' : 'Regional connections')}
                     </h3>
+                    {newsletter.regionalIntro && (
+                      <p className="mt-4 text-[0.98rem] leading-8 text-slate-600">
+                        {newsletter.regionalIntro}
+                      </p>
+                    )}
                     <NewsletterLinks links={newsletter.regionalLinks} />
                   </article>
                 )}

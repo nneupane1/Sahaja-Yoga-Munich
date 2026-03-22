@@ -46,6 +46,7 @@ const issueProjection = `
     }
   },
   scheduleHeading,
+  scheduleNote,
   munichSchedule[]{
     day,
     time,
@@ -53,6 +54,7 @@ const issueProjection = `
     contact
   },
   regionalHeading,
+  regionalIntro,
   regionalLinks[]{
     label,
     url

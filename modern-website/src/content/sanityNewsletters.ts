@@ -40,8 +40,10 @@ export type Newsletter = {
   featuredHeading?: string;
   featuredCards: NewsletterCard[];
   scheduleHeading?: string;
+  scheduleNote?: string;
   munichSchedule: NewsletterScheduleItem[];
   regionalHeading?: string;
+  regionalIntro?: string;
   regionalLinks: NewsletterLink[];
   retrospectiveHeading?: string;
   retrospectiveCards: NewsletterCard[];
@@ -103,8 +105,10 @@ type SanityNewsletterRecord = {
   featuredHeading?: string;
   featuredCards?: SanityNewsletterCard[];
   scheduleHeading?: string;
+  scheduleNote?: string;
   munichSchedule?: SanityNewsletterScheduleItem[];
   regionalHeading?: string;
+  regionalIntro?: string;
   regionalLinks?: SanityNewsletterLink[];
   retrospectiveHeading?: string;
   retrospectiveCards?: SanityNewsletterCard[];
@@ -168,6 +172,7 @@ const newsletterIssueProjection = `
     }
   },
   scheduleHeading,
+  scheduleNote,
   munichSchedule[]{
     day,
     time,
@@ -175,6 +180,7 @@ const newsletterIssueProjection = `
     contact
   },
   regionalHeading,
+  regionalIntro,
   regionalLinks[]{
     label,
     url
@@ -338,11 +344,13 @@ const mapNewsletter = (record: SanityNewsletterRecord): Newsletter | null => {
     featuredCards:
       record.featuredCards?.map(mapCard).filter((card): card is NewsletterCard => Boolean(card)) ?? [],
     scheduleHeading: record.scheduleHeading?.trim() || undefined,
+    scheduleNote: record.scheduleNote?.trim() || undefined,
     munichSchedule:
       record.munichSchedule
         ?.map(mapScheduleItem)
         .filter((item): item is NewsletterScheduleItem => Boolean(item)) ?? [],
     regionalHeading: record.regionalHeading?.trim() || undefined,
+    regionalIntro: record.regionalIntro?.trim() || undefined,
     regionalLinks:
       record.regionalLinks?.map(mapLink).filter((link): link is NewsletterLink => Boolean(link)) ?? [],
     retrospectiveHeading: record.retrospectiveHeading?.trim() || undefined,

@@ -235,6 +235,12 @@ export const newsletterType = defineType({
       type: 'string'
     }),
     defineField({
+      name: 'scheduleNote',
+      title: 'Schedule note',
+      type: 'text',
+      rows: 4
+    }),
+    defineField({
       name: 'munichSchedule',
       title: 'Munich schedule',
       type: 'array',
@@ -244,6 +250,12 @@ export const newsletterType = defineType({
       name: 'regionalHeading',
       title: 'Regional heading',
       type: 'string'
+    }),
+    defineField({
+      name: 'regionalIntro',
+      title: 'Regional intro',
+      type: 'text',
+      rows: 4
     }),
     defineField({
       name: 'regionalLinks',

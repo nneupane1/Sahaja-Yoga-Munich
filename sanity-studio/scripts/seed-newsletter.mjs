@@ -162,6 +162,7 @@ const doc = {
     }
   ],
   scheduleHeading: 'Wöchentliche Meditationsabende im SY Zentrum München',
+  scheduleNote: 'Einstieg jederzeit möglich, alle Meditationskurse auf Spendenbasis.',
   munichSchedule: [
     {
       _type: 'newsletterScheduleItem',
@@ -209,12 +210,34 @@ const doc = {
     }
   ],
   regionalHeading: 'Wöchentliche Meditationsabende in Süd-Deutschland',
+  regionalIntro:
+    'Für mehr Infos und Anmeldungen auf Stadt klicken. Einstieg jederzeit möglich, alle Meditationskurse auf Spendenbasis. anmeldung@meditationmuenchen.org',
   regionalLinks: [
-    { _type: 'newsletterLink', _key: 'regensburg', label: 'Regensburg' },
+    {
+      _type: 'newsletterLink',
+      _key: 'regensburg',
+      label: 'Regensburg',
+      url: 'https://www.meetup.com/free-meditation-yoga-in-regensburg'
+    },
     { _type: 'newsletterLink', _key: 'nuernberg', label: 'Nürnberg' },
-    { _type: 'newsletterLink', _key: 'augsburg', label: 'Augsburg' },
-    { _type: 'newsletterLink', _key: 'stuttgart', label: 'Stuttgart' },
-    { _type: 'newsletterLink', _key: 'aalen-ulm', label: 'Aalen Ulm' }
+    {
+      _type: 'newsletterLink',
+      _key: 'augsburg',
+      label: 'Augsburg',
+      url: 'https://www.meetup.com/free-meditation-augsburg'
+    },
+    {
+      _type: 'newsletterLink',
+      _key: 'stuttgart',
+      label: 'Stuttgart',
+      url: 'https://www.meetup.com/meditation-yoga-kostenfrei'
+    },
+    {
+      _type: 'newsletterLink',
+      _key: 'aalen-ulm',
+      label: 'Aalen Ulm',
+      url: 'https://www.meetup.com/meditation-yoga-lernen-neu-ulm-kostenfrei'
+    }
   ],
   retrospectiveHeading: 'Veranstaltungsrückblicke',
   retrospectiveCards: [
@@ -402,6 +425,7 @@ const doc = {
   contactHeading: 'Sahaja Yoga Zentrum München',
   contactDetails: [
     'Am Lilienberg 2a, 81669 München',
+    'S-Bahn Rosenheimerplatz, gegenüber Gasteig',
     'Mobil & Whatsapp: 0176 94169665',
     'anmeldung@meditationmuenchen.org',
     'Einstieg jederzeit möglich, alle Meditationskurse auf Spendenbasis.'
