@@ -302,6 +302,28 @@ export const newsletterType = defineType({
       of: [defineArrayMember({ type: 'string' })]
     }),
     defineField({
+      name: 'contactHeading',
+      title: 'Contact heading',
+      type: 'string'
+    }),
+    defineField({
+      name: 'contactDetails',
+      title: 'Contact details',
+      type: 'array',
+      of: [defineArrayMember({ type: 'string' })]
+    }),
+    defineField({
+      name: 'footerNote',
+      title: 'Footer note',
+      type: 'string'
+    }),
+    defineField({
+      name: 'footerLinks',
+      title: 'Footer links',
+      type: 'array',
+      of: [defineArrayMember({ type: 'newsletterLink' })]
+    }),
+    defineField({
       name: 'sourceUrl',
       title: 'Source URL',
       type: 'url'

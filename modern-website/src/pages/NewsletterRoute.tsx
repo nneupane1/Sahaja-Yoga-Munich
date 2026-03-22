@@ -7,6 +7,7 @@ import LegacyNewsletterFrame from '../components/LegacyNewsletterFrame';
 import NewsletterDivider from '../components/NewsletterDivider';
 import {
   getSanityNewsletter,
+  getSanityNewsletterLegacyImport,
   type Newsletter,
   type NewsletterCard,
   type NewsletterLink
@@ -106,6 +107,9 @@ const NewsletterRoute: React.FC = () => {
   const [newsletter, setNewsletter] = useState<Newsletter | null>(null);
   const [isResolving, setIsResolving] = useState(true);
   const [showLegacyImport, setShowLegacyImport] = useState(false);
+  const [legacyImportHtml, setLegacyImportHtml] = useState<string | null>(null);
+  const [legacyImportSourceUrl, setLegacyImportSourceUrl] = useState<string | null>(null);
+  const [isLegacyResolving, setIsLegacyResolving] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -113,6 +117,9 @@ const NewsletterRoute: React.FC = () => {
     setIsResolving(true);
     setNewsletter(null);
     setShowLegacyImport(false);
+    setLegacyImportHtml(null);
+    setLegacyImportSourceUrl(null);
+    setIsLegacyResolving(false);
 
     getSanityNewsletter(locale, slug)
       .then(result => {
@@ -151,6 +158,7 @@ const NewsletterRoute: React.FC = () => {
           legacyTitle: 'Inhalt aus der früheren Newsletter-Seite',
           legacyIntro:
             'Hier erscheint die vollständig importierte Ausgabe aus meditationmuenchen.org in einer ruhigeren, besser lesbaren Form innerhalb der neuen Website.',
+          legacyLoading: 'Importierte Ausgabe wird geladen …',
           loading: 'Newsletter wird geladen …',
           readOriginal:
             'Diese Ausgabe wurde aus dem alten Bestand übernommen und zugleich als strukturierter Inhalt für die neue Website aufbereitet.',
@@ -171,6 +179,7 @@ const NewsletterRoute: React.FC = () => {
           legacyTitle: 'Content from the earlier newsletter page',
           legacyIntro:
             'Below, the complete imported issue from meditationmuenchen.org is rendered inside the new site in a calmer, more readable form.',
+          legacyLoading: 'Loading imported issue …',
           loading: 'Loading newsletter …',
           readOriginal:
             'This issue was imported from the older site and reshaped into structured content for the new website.',
@@ -186,7 +195,30 @@ const NewsletterRoute: React.FC = () => {
   const hasRetrospective = (newsletter?.retrospectiveCards.length ?? 0) > 0;
   const hasNews = (newsletter?.newsCards.length ?? 0) > 0;
   const hasRecommended = (newsletter?.recommendedLinks.length ?? 0) > 0;
-  const hasLegacyImport = Boolean(newsletter?.legacyImportHtml);
+  const hasLegacyImport = Boolean(newsletter?.hasLegacyImport || newsletter?.legacyImportSourceUrl);
+
+  const handleLegacyToggle = async () => {
+    if (showLegacyImport) {
+      setShowLegacyImport(false);
+      return;
+    }
+
+    setShowLegacyImport(true);
+
+    if (legacyImportHtml || !hasLegacyImport) {
+      return;
+    }
+
+    setIsLegacyResolving(true);
+
+    try {
+      const legacyImport = await getSanityNewsletterLegacyImport(locale, slug);
+      setLegacyImportHtml(legacyImport?.legacyImportHtml ?? null);
+      setLegacyImportSourceUrl(legacyImport?.legacyImportSourceUrl ?? null);
+    } finally {
+      setIsLegacyResolving(false);
+    }
+  };
 
   if (!slug) {
     return <Navigate to="/newsletter" replace />;
@@ -324,14 +356,14 @@ const NewsletterRoute: React.FC = () => {
                 <div className="flex flex-col gap-4 lg:items-end">
                   <button
                     type="button"
-                    onClick={() => setShowLegacyImport(current => !current)}
+                    onClick={handleLegacyToggle}
                     className="inline-flex items-center rounded-full border border-[#b35d4c]/30 bg-[rgba(255,250,246,0.96)] px-5 py-2.5 text-sm font-semibold text-[#b56757] transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/45 hover:bg-[rgba(255,244,238,0.98)]"
                   >
                     {showLegacyImport ? copy.legacyToggleHide : copy.legacyToggleShow}
                   </button>
-                  {newsletter.legacyImportSourceUrl && (
+                  {(legacyImportSourceUrl ?? newsletter.legacyImportSourceUrl) && (
                     <a
-                      href={newsletter.legacyImportSourceUrl}
+                      href={legacyImportSourceUrl ?? newsletter.legacyImportSourceUrl}
                       target="_blank"
                       rel="noreferrer"
                       className="text-sm font-semibold text-[#b56757] underline decoration-[#b35d4c]/35 underline-offset-4 transition hover:text-[#c8715f]"
@@ -342,11 +374,17 @@ const NewsletterRoute: React.FC = () => {
                 </div>
               </div>
 
-              {showLegacyImport && newsletter.legacyImportHtml && (
+              {showLegacyImport && isLegacyResolving && (
+                <div className="mt-8 rounded-[1.6rem] border border-[#b35d4c]/16 bg-[rgba(255,252,249,0.82)] px-5 py-4 text-slate-600">
+                  {copy.legacyLoading}
+                </div>
+              )}
+
+              {showLegacyImport && legacyImportHtml && (
                 <div className="mt-8 overflow-hidden rounded-[2rem] border border-[#b35d4c]/16 bg-[rgba(255,252,249,0.82)] p-2 shadow-[0_18px_40px_rgba(146,92,79,0.1)] sm:p-4">
                   <LegacyNewsletterFrame
                     title={newsletter.title}
-                    rawHtml={newsletter.legacyImportHtml}
+                    rawHtml={legacyImportHtml}
                   />
                 </div>
               )}
@@ -522,6 +560,60 @@ const NewsletterRoute: React.FC = () => {
                         {link.label}
                       </span>
                     )
+                  )}
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      )}
+
+      {!!newsletter.contactDetails.length && (
+        <section className="section-band pt-6">
+          <div className="section-shell">
+            <article className="newsletter-stage reveal-ready p-6 sm:p-8">
+              <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+                <div>
+                  <span className="eyebrow">
+                    {locale === 'de' ? 'Kontakt & Hinweise' : 'Contact & practical notes'}
+                  </span>
+                  <h2 className="mt-4 text-4xl sm:text-[2.6rem]">
+                    {newsletter.contactHeading ??
+                      (locale === 'de' ? 'Sahaja Yoga Zentrum München' : 'Sahaja Yoga Centre Munich')}
+                  </h2>
+                  {newsletter.footerNote && (
+                    <p className="mt-4 text-[0.98rem] leading-8 text-[#b56757]">{newsletter.footerNote}</p>
+                  )}
+                </div>
+                <div>
+                  <ul className="space-y-3 text-[0.98rem] leading-7 text-slate-600">
+                    {newsletter.contactDetails.map(item => (
+                      <li key={item} className="flex gap-3">
+                        <span className="mt-1.5 h-2 w-2 rounded-full bg-[#c8715f]" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  {!!newsletter.footerLinks.length && (
+                    <div className="mt-6 flex flex-wrap gap-3">
+                      {newsletter.footerLinks.map(link =>
+                        link.url ? (
+                          <a
+                            key={`${link.label}-${link.url}`}
+                            href={link.url}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="hover-chip"
+                          >
+                            {link.label}
+                          </a>
+                        ) : (
+                          <span key={link.label} className="hover-chip">
+                            {link.label}
+                          </span>
+                        )
+                      )}
+                    </div>
                   )}
                 </div>
               </div>

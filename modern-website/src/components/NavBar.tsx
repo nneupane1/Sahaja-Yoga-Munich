@@ -23,6 +23,7 @@ const NavBar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileExpandedItem, setMobileExpandedItem] = useState<string | null>(null);
   const pages = locale === 'de' ? topicPages : topicPagesEn;
+  const isHomeRoute = location.pathname === '/' && !location.hash;
   const copy =
     locale === 'de'
       ? {
@@ -121,29 +122,55 @@ const NavBar: React.FC = () => {
     <nav className="sticky top-0 z-50 bg-[#bfe4f8]/95 shadow-[0_1px_6px_rgba(74,113,143,0.12)] backdrop-blur">
       <div className="xl:hidden">
         <div className="flex items-center justify-between gap-3 px-4 py-3 sm:px-5">
-          <Link
-            to="/"
-            className="brand-link flex min-w-0 items-center gap-2.5 focus:outline-none focus-visible:outline-none"
-          >
-            <img
-              src={shaktiYantram}
-              alt="Shakti Yantram"
-              className="h-[3.15rem] w-[3.15rem] shrink-0 object-contain mix-blend-multiply drop-shadow-[0_8px_14px_rgba(179,93,76,0.14)]"
-            />
-            <span className="min-w-0 uppercase leading-none text-slate-800">
-              <span className="block truncate text-[0.92rem] font-bold tracking-[0.04em]">
-                Sahaja Yoga
+          {isHomeRoute ? (
+            <div
+              aria-label={copy.brand}
+              className="brand-link flex min-w-0 items-center gap-2.5 focus:outline-none focus-visible:outline-none"
+            >
+              <img
+                src={shaktiYantram}
+                alt="Shakti Yantram"
+                className="h-[3.15rem] w-[3.15rem] shrink-0 object-contain mix-blend-multiply drop-shadow-[0_8px_14px_rgba(179,93,76,0.14)]"
+              />
+              <span className="min-w-0 uppercase leading-none text-slate-800">
+                <span className="block truncate text-[0.92rem] font-bold tracking-[0.04em]">
+                  Sahaja Yoga
+                </span>
+                <span className="mt-1 flex items-center gap-1.5 text-[0.92rem] font-bold tracking-[0.04em]">
+                  <img
+                    src={kundaliniIcon}
+                    alt="Kundalini"
+                    className="h-[1.45rem] w-[1.45rem] shrink-0 object-contain opacity-100 contrast-125 saturate-125 drop-shadow-[0_8px_12px_rgba(179,93,76,0.18)]"
+                  />
+                  <span className="truncate">München</span>
+                </span>
               </span>
-              <span className="mt-1 flex items-center gap-1.5 text-[0.92rem] font-bold tracking-[0.04em]">
-                <img
-                  src={kundaliniIcon}
-                  alt="Kundalini"
-                  className="h-[1.45rem] w-[1.45rem] shrink-0 object-contain opacity-100 contrast-125 saturate-125 drop-shadow-[0_8px_12px_rgba(179,93,76,0.18)]"
-                />
-                <span className="truncate">München</span>
+            </div>
+          ) : (
+            <Link
+              to="/"
+              className="brand-link flex min-w-0 items-center gap-2.5 focus:outline-none focus-visible:outline-none"
+            >
+              <img
+                src={shaktiYantram}
+                alt="Shakti Yantram"
+                className="h-[3.15rem] w-[3.15rem] shrink-0 object-contain mix-blend-multiply drop-shadow-[0_8px_14px_rgba(179,93,76,0.14)]"
+              />
+              <span className="min-w-0 uppercase leading-none text-slate-800">
+                <span className="block truncate text-[0.92rem] font-bold tracking-[0.04em]">
+                  Sahaja Yoga
+                </span>
+                <span className="mt-1 flex items-center gap-1.5 text-[0.92rem] font-bold tracking-[0.04em]">
+                  <img
+                    src={kundaliniIcon}
+                    alt="Kundalini"
+                    className="h-[1.45rem] w-[1.45rem] shrink-0 object-contain opacity-100 contrast-125 saturate-125 drop-shadow-[0_8px_12px_rgba(179,93,76,0.18)]"
+                  />
+                  <span className="truncate">München</span>
+                </span>
               </span>
-            </span>
-          </Link>
+            </Link>
+          )}
 
           <div className="flex shrink-0 items-center gap-2">
             <div className="flex items-center rounded-full border border-[#b35d4c]/20 bg-[rgba(255,250,246,0.92)] p-1 shadow-[0_8px_16px_rgba(72,110,140,0.08)]">
@@ -307,29 +334,55 @@ const NavBar: React.FC = () => {
 
       <div className="hidden w-full items-center gap-9 px-4 py-[0.875rem] sm:px-6 lg:px-8 xl:flex">
         <div className="flex shrink-0 items-center">
-          <Link
-            to="/"
-            className="brand-link flex shrink-0 items-center gap-3.5 whitespace-nowrap text-[1.16rem] font-bold text-slate-800 focus:outline-none focus-visible:outline-none"
-          >
-            <span className="-my-[0.875rem] -translate-y-px flex shrink-0 items-center">
-              <img
-                src={shaktiYantram}
-                alt="Shakti Yantram"
-                className="animate-yantram-spin h-[5.05rem] w-[5.05rem] object-contain mix-blend-multiply drop-shadow-[0_8px_14px_rgba(179,93,76,0.14)]"
-              />
-            </span>
-            <span className="animate-drift-x ml-1.5 translate-y-[2px] flex items-center gap-1 uppercase">
-              <span>Sahaja Yoga</span>
-              <span className="-ml-6 relative inline-block h-0 w-[4.84rem] shrink-0 overflow-visible align-middle">
+          {isHomeRoute ? (
+            <div
+              aria-label={copy.brand}
+              className="brand-link flex shrink-0 items-center gap-3.5 whitespace-nowrap text-[1.16rem] font-bold text-slate-800 focus:outline-none focus-visible:outline-none"
+            >
+              <span className="-my-[0.875rem] -translate-y-px flex shrink-0 items-center">
                 <img
-                  src={kundaliniIcon}
-                  alt="Kundalini"
-                  className="absolute left-[-0.08rem] top-1/2 h-[4.37rem] w-[4.37rem] -translate-y-[60%] object-contain opacity-100 contrast-125 saturate-125 drop-shadow-[0_10px_18px_rgba(179,93,76,0.24)]"
+                  src={shaktiYantram}
+                  alt="Shakti Yantram"
+                  className="animate-yantram-spin h-[5.05rem] w-[5.05rem] object-contain mix-blend-multiply drop-shadow-[0_8px_14px_rgba(179,93,76,0.14)]"
                 />
               </span>
-              <span className="-ml-[1.95rem]">München</span>
-            </span>
-          </Link>
+              <span className="animate-drift-x ml-1.5 translate-y-[2px] flex items-center gap-1 uppercase">
+                <span>Sahaja Yoga</span>
+                <span className="-ml-6 relative inline-block h-0 w-[4.84rem] shrink-0 overflow-visible align-middle">
+                  <img
+                    src={kundaliniIcon}
+                    alt="Kundalini"
+                    className="absolute left-[-0.08rem] top-1/2 h-[4.37rem] w-[4.37rem] -translate-y-[60%] object-contain opacity-100 contrast-125 saturate-125 drop-shadow-[0_10px_18px_rgba(179,93,76,0.24)]"
+                  />
+                </span>
+                <span className="-ml-[1.95rem]">München</span>
+              </span>
+            </div>
+          ) : (
+            <Link
+              to="/"
+              className="brand-link flex shrink-0 items-center gap-3.5 whitespace-nowrap text-[1.16rem] font-bold text-slate-800 focus:outline-none focus-visible:outline-none"
+            >
+              <span className="-my-[0.875rem] -translate-y-px flex shrink-0 items-center">
+                <img
+                  src={shaktiYantram}
+                  alt="Shakti Yantram"
+                  className="animate-yantram-spin h-[5.05rem] w-[5.05rem] object-contain mix-blend-multiply drop-shadow-[0_8px_14px_rgba(179,93,76,0.14)]"
+                />
+              </span>
+              <span className="animate-drift-x ml-1.5 translate-y-[2px] flex items-center gap-1 uppercase">
+                <span>Sahaja Yoga</span>
+                <span className="-ml-6 relative inline-block h-0 w-[4.84rem] shrink-0 overflow-visible align-middle">
+                  <img
+                    src={kundaliniIcon}
+                    alt="Kundalini"
+                    className="absolute left-[-0.08rem] top-1/2 h-[4.37rem] w-[4.37rem] -translate-y-[60%] object-contain opacity-100 contrast-125 saturate-125 drop-shadow-[0_10px_18px_rgba(179,93,76,0.24)]"
+                  />
+                </span>
+                <span className="-ml-[1.95rem]">München</span>
+              </span>
+            </Link>
+          )}
         </div>
 
         <div className="ml-[5.175rem] overflow-visible">

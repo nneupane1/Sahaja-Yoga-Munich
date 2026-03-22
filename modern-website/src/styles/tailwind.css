@@ -224,10 +224,19 @@
     outline: none !important;
     box-shadow: none !important;
     -webkit-tap-highlight-color: transparent;
+    -webkit-focus-ring-color: transparent;
+    isolation: isolate;
   }
 
   .brand-link:focus,
   .brand-link:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .brand-link *,
+  .brand-link img,
+  .brand-link span {
     outline: none !important;
     box-shadow: none !important;
   }

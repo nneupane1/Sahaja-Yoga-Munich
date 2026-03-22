@@ -399,6 +399,34 @@ const doc = {
     'IBAN: DE16 5005 0201 0200 8413 60',
     'BIC: HELADEF1822'
   ],
+  contactHeading: 'Sahaja Yoga Zentrum München',
+  contactDetails: [
+    'Am Lilienberg 2a, 81669 München',
+    'Mobil & Whatsapp: 0176 94169665',
+    'anmeldung@meditationmuenchen.org',
+    'Einstieg jederzeit möglich, alle Meditationskurse auf Spendenbasis.'
+  ],
+  footerNote: 'Official Partner of UNESCO Body & Mind Wellness Club',
+  footerLinks: [
+    {
+      _type: 'newsletterLink',
+      _key: 'homepage-muenchen',
+      label: 'Homepage München',
+      url: 'https://www.meditationmuenchen.org/'
+    },
+    {
+      _type: 'newsletterLink',
+      _key: 'homepage-deutschland',
+      label: 'Homepage Deutschland',
+      url: 'https://www.sahajayoga.de/'
+    },
+    {
+      _type: 'newsletterLink',
+      _key: 'datenschutz',
+      label: 'Datenschutzerklärung',
+      url: 'https://www.meditationmuenchen.org/datenschutzerklaerung/'
+    }
+  ],
   sourceUrl,
   legacyImport: {
     _type: 'reference',

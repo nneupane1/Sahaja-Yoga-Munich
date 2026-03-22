@@ -52,7 +52,12 @@ export type Newsletter = {
   donationHeading?: string;
   donationBody?: string;
   donationDetails: string[];
+  contactHeading?: string;
+  contactDetails: string[];
+  footerNote?: string;
+  footerLinks: NewsletterLink[];
   sourceUrl?: string;
+  hasLegacyImport?: boolean;
   legacyImportHtml?: string;
   legacyImportPlainText?: string;
   legacyImportSourceUrl?: string;
@@ -110,7 +115,12 @@ type SanityNewsletterRecord = {
   donationHeading?: string;
   donationBody?: string;
   donationDetails?: string[];
+  contactHeading?: string;
+  contactDetails?: string[];
+  footerNote?: string;
+  footerLinks?: SanityNewsletterLink[];
   sourceUrl?: string;
+  hasLegacyImport?: boolean;
   legacyImportHtml?: string;
   legacyImportPlainText?: string;
   legacyImportSourceUrl?: string;
@@ -207,17 +217,39 @@ const newsletterIssueProjection = `
   donationHeading,
   donationBody,
   donationDetails,
+  contactHeading,
+  contactDetails,
+  footerNote,
+  footerLinks[]{
+    label,
+    url
+  },
   sourceUrl,
+  "hasLegacyImport": defined(legacyImport->_id),
+  "legacyImportSourceUrl": coalesce(legacyImport->sourceUrl, sourceUrl)
+`;
+
+const newsletterLegacyProjection = `
+  title,
+  "slug": slug.current,
   "legacyImportHtml": legacyImport->rawHtml,
   "legacyImportPlainText": legacyImport->plainText,
   "legacyImportSourceUrl": coalesce(legacyImport->sourceUrl, sourceUrl)
 `;
 
-const fetchNewsletterApi = async <T>(locale: Locale, slug?: string): Promise<T> => {
+const fetchNewsletterApi = async <T>(
+  locale: Locale,
+  slug?: string,
+  options?: { includeLegacy?: boolean }
+): Promise<T> => {
   const searchParams = new URLSearchParams({ locale });
 
   if (slug) {
     searchParams.set('slug', slug);
+  }
+
+  if (options?.includeLegacy) {
+    searchParams.set('includeLegacy', '1');
   }
 
   const response = await fetch(`/api/newsletters?${searchParams.toString()}`);
@@ -324,7 +356,27 @@ const mapNewsletter = (record: SanityNewsletterRecord): Newsletter | null => {
     donationHeading: record.donationHeading?.trim() || undefined,
     donationBody: record.donationBody?.trim() || undefined,
     donationDetails: record.donationDetails?.map(item => item.trim()).filter(Boolean) ?? [],
+    contactHeading: record.contactHeading?.trim() || undefined,
+    contactDetails: record.contactDetails?.map(item => item.trim()).filter(Boolean) ?? [],
+    footerNote: record.footerNote?.trim() || undefined,
+    footerLinks:
+      record.footerLinks?.map(mapLink).filter((link): link is NewsletterLink => Boolean(link)) ?? [],
     sourceUrl: record.sourceUrl?.trim() || undefined,
+    hasLegacyImport: Boolean(record.hasLegacyImport),
+    legacyImportHtml: record.legacyImportHtml?.trim() || undefined,
+    legacyImportPlainText: record.legacyImportPlainText?.trim() || undefined,
+    legacyImportSourceUrl: record.legacyImportSourceUrl?.trim() || undefined
+  };
+};
+
+const mapLegacyImport = (
+  record: SanityNewsletterRecord | null | undefined
+): Pick<Newsletter, 'legacyImportHtml' | 'legacyImportPlainText' | 'legacyImportSourceUrl'> | null => {
+  if (!record) {
+    return null;
+  }
+
+  return {
     legacyImportHtml: record.legacyImportHtml?.trim() || undefined,
     legacyImportPlainText: record.legacyImportPlainText?.trim() || undefined,
     legacyImportSourceUrl: record.legacyImportSourceUrl?.trim() || undefined
@@ -406,4 +458,45 @@ export const getSanityNewsletter = async (
   );
 
   return fallback.map(mapNewsletter).find(Boolean) ?? null;
+};
+
+export const getSanityNewsletterLegacyImport = async (
+  locale: Locale,
+  slug: string
+): Promise<Pick<Newsletter, 'legacyImportHtml' | 'legacyImportPlainText' | 'legacyImportSourceUrl'> | null> => {
+  if (typeof window !== 'undefined') {
+    try {
+      const apiRecords = await fetchNewsletterApi<SanityNewsletterRecord[]>(locale, slug, {
+        includeLegacy: true
+      });
+      const apiMatch = mapLegacyImport(apiRecords[0]);
+      if (apiMatch) {
+        return apiMatch;
+      }
+    } catch {
+      // Fall back to direct Sanity fetch in non-Vercel/local contexts.
+    }
+  }
+
+  if (!isSanityConfigured || !sanityClient) {
+    return null;
+  }
+
+  const localized = await sanityClient.fetch<SanityNewsletterRecord[]>(
+    `*[_type == "newsletter" && locale == $locale && slug.current == $slug]{${newsletterLegacyProjection}}`,
+    { locale, slug }
+  );
+
+  const localizedMatch = mapLegacyImport(localized[0]);
+
+  if (localizedMatch) {
+    return localizedMatch;
+  }
+
+  const fallback = await sanityClient.fetch<SanityNewsletterRecord[]>(
+    `*[_type == "newsletter" && slug.current == $slug]{${newsletterLegacyProjection}}`,
+    { slug }
+  );
+
+  return mapLegacyImport(fallback[0]);
 };

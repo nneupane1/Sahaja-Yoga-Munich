@@ -95,7 +95,21 @@ const issueProjection = `
   donationHeading,
   donationBody,
   donationDetails,
+  contactHeading,
+  contactDetails,
+  footerNote,
+  footerLinks[]{
+    label,
+    url
+  },
   sourceUrl,
+  "hasLegacyImport": defined(legacyImport->_id),
+  "legacyImportSourceUrl": coalesce(legacyImport->sourceUrl, sourceUrl)
+`;
+
+const legacyProjection = `
+  title,
+  "slug": slug.current,
   "legacyImportHtml": legacyImport->rawHtml,
   "legacyImportPlainText": legacyImport->plainText,
   "legacyImportSourceUrl": coalesce(legacyImport->sourceUrl, sourceUrl)
@@ -120,9 +134,30 @@ export default async function handler(req, res) {
   const url = new URL(req.url, 'http://localhost');
   const locale = url.searchParams.get('locale') || 'de';
   const slug = url.searchParams.get('slug');
+  const includeLegacy = url.searchParams.get('includeLegacy') === '1';
 
   try {
     if (slug) {
+      if (includeLegacy) {
+        const localizedLegacy = await client.fetch(
+          `*[_type == "newsletter" && locale == $locale && slug.current == $slug]{${legacyProjection}}`,
+          { locale, slug }
+        );
+
+        if (localizedLegacy?.length) {
+          res.status(200).json(localizedLegacy);
+          return;
+        }
+
+        const fallbackLegacy = await client.fetch(
+          `*[_type == "newsletter" && slug.current == $slug]{${legacyProjection}}`,
+          { slug }
+        );
+
+        res.status(200).json(fallbackLegacy ?? []);
+        return;
+      }
+
       const localized = await client.fetch(
         `*[_type == "newsletter" && locale == $locale && slug.current == $slug]{${issueProjection}}`,
         { locale, slug }
