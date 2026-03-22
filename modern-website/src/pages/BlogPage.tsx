@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import chakraImg from '../assets/chakra.png';
 import { getBlogArticles, getBlogArticle } from '../content/blogArticles';
+import { getSanityBlogArticles } from '../content/sanityBlog';
 import { useLocale } from '../context/LocaleContext';
 import useScrollReveal from '../hooks/useScrollReveal';
 
@@ -11,8 +12,37 @@ import useScrollReveal from '../hooks/useScrollReveal';
 const BlogPage: React.FC = () => {
   const { locale } = useLocale();
   useScrollReveal('.reveal-ready', 'reveal', 0.18);
-  const articles = getBlogArticles(locale);
-  const featuredArticle = getBlogArticle(locale, '/blog/stille-und-aufmerksamkeit');
+  const staticArticles = useMemo(() => getBlogArticles(locale), [locale]);
+  const staticFeaturedArticle = useMemo(
+    () => getBlogArticle(locale, '/blog/stille-und-aufmerksamkeit') ?? staticArticles[0],
+    [locale, staticArticles]
+  );
+  const [articles, setArticles] = useState(staticArticles);
+  const [featuredArticle, setFeaturedArticle] = useState(staticFeaturedArticle);
+
+  useEffect(() => {
+    setArticles(staticArticles);
+    setFeaturedArticle(staticFeaturedArticle);
+
+    let cancelled = false;
+
+    getSanityBlogArticles(locale)
+      .then(posts => {
+        if (cancelled || !posts?.length) {
+          return;
+        }
+
+        setArticles(posts);
+        setFeaturedArticle(posts[0]);
+      })
+      .catch(() => {
+        // Keep the static fallback when Sanity is not configured or has no content yet.
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [locale, staticArticles, staticFeaturedArticle]);
 
   const copy =
     locale === 'de'

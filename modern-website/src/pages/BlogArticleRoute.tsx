@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Link, Navigate, useLocation } from 'react-router-dom';
-import { getBlogArticle, getBlogArticles } from '../content/blogArticles';
+import { getBlogArticle } from '../content/blogArticles';
+import { getSanityBlogArticleBundle } from '../content/sanityBlog';
 import { useLocale } from '../context/LocaleContext';
 import useScrollReveal from '../hooks/useScrollReveal';
 
@@ -12,15 +13,65 @@ const BlogArticleRoute: React.FC = () => {
   const { locale } = useLocale();
   useScrollReveal('.reveal-ready', 'reveal', 0.18);
 
-  const article = getBlogArticle(locale, location.pathname);
+  const staticArticle = useMemo(() => getBlogArticle(locale, location.pathname), [locale, location.pathname]);
+  const staticRelatedArticles = useMemo(
+    () => staticArticle?.related.map(route => getBlogArticle(locale, route)).filter(Boolean) ?? [],
+    [locale, staticArticle]
+  );
+  const [article, setArticle] = useState(staticArticle);
+  const [relatedArticles, setRelatedArticles] = useState(staticRelatedArticles);
+  const [isResolving, setIsResolving] = useState(!staticArticle);
+
+  useEffect(() => {
+    setArticle(staticArticle);
+    setRelatedArticles(staticRelatedArticles);
+    setIsResolving(!staticArticle);
+
+    let cancelled = false;
+
+    getSanityBlogArticleBundle(locale, location.pathname)
+      .then(bundle => {
+        if (cancelled) {
+          return;
+        }
+
+        if (bundle) {
+          setArticle(bundle.article);
+          setRelatedArticles(bundle.relatedArticles);
+          setIsResolving(false);
+          return;
+        }
+
+        setIsResolving(false);
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setIsResolving(false);
+        }
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [locale, location.pathname, staticArticle, staticRelatedArticles]);
+
+  if (!article && isResolving) {
+    return (
+      <main className="overflow-hidden bg-[linear-gradient(180deg,#dff4ff_0%,#eef9ff_54%,#dff2ff_100%)]">
+        <section className="section-band pb-10">
+          <div className="section-shell">
+            <div className="card-soft p-8 text-slate-600">
+              {locale === 'de' ? 'Blogbeitrag wird geladen …' : 'Loading article …'}
+            </div>
+          </div>
+        </section>
+      </main>
+    );
+  }
 
   if (!article) {
     return <Navigate to="/blog" replace />;
   }
-
-  const relatedArticles = article.related
-    .map(route => getBlogArticle(locale, route))
-    .filter(Boolean);
 
   const copy =
     locale === 'de'
