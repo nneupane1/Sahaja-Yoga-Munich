@@ -121,7 +121,10 @@ const NavBar: React.FC = () => {
     <nav className="sticky top-0 z-50 bg-[#bfe4f8]/95 shadow-[0_1px_6px_rgba(74,113,143,0.12)] backdrop-blur">
       <div className="xl:hidden">
         <div className="flex items-center justify-between gap-3 px-4 py-3 sm:px-5">
-          <Link to="/" className="flex min-w-0 items-center gap-2.5">
+          <Link
+            to="/"
+            className="brand-link flex min-w-0 items-center gap-2.5 focus:outline-none focus-visible:outline-none"
+          >
             <img
               src={shaktiYantram}
               alt="Shakti Yantram"
@@ -306,7 +309,7 @@ const NavBar: React.FC = () => {
         <div className="flex shrink-0 items-center">
           <Link
             to="/"
-            className="flex shrink-0 items-center gap-3.5 whitespace-nowrap text-[1.16rem] font-bold text-slate-800"
+            className="brand-link flex shrink-0 items-center gap-3.5 whitespace-nowrap text-[1.16rem] font-bold text-slate-800 focus:outline-none focus-visible:outline-none"
           >
             <span className="-my-[0.875rem] -translate-y-px flex shrink-0 items-center">
               <img

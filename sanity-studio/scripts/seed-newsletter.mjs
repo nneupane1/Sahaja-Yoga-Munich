@@ -92,13 +92,13 @@ const doc = {
           _type: 'newsletterLink',
           _key: 'augusta-home',
           label: 'Offizielle Homepage',
-          url: 'https://augusta-spirit.de'
+          url: 'https://augusta-spirit.de/'
         },
         {
           _type: 'newsletterLink',
           _key: 'augusta-talks',
           label: 'Vorträge',
-          url: 'https://augusta-spirit.de'
+          url: 'https://augusta-spirit.de/vortraege-2023'
         }
       ]
     },
@@ -120,7 +120,7 @@ const doc = {
           _type: 'newsletterLink',
           _key: 'woy-home',
           label: 'Offizielle Homepage',
-          url: 'https://www.yogaworld.de'
+          url: 'https://yogaworld.de/messe/'
         }
       ]
     },
@@ -131,11 +131,12 @@ const doc = {
       title: 'Die Lange Nacht der Musik, München',
       subtitle: 'Im Sahaja-Yoga Zentrum München',
       body:
-        '"Where Sound sparks Magic" – Selten zu hören, entfaltet die 96 saitige Santur indische Klassik in betörender Form. Zeitlose Musik ohne Allüren, die das Herz berührt.',
+        'Wir sind wieder dabei! "Where Sound sparks Magic" – selten zu hören, entfaltet die 96-saitige Santur indische Klassik in betörender Form. Zeitlose Musik ohne Allüren, die das Herz berührt.',
       points: [
         '20:00 - 22:30h The Spirit of the Santur',
+        'Maestro Pt. Abhay Sopori (Santur), Daniel Brunner (Santur), Chanchal Singh (Tabla)',
         '22:45 – 01:00h Music of Joy - Indische devotionale Musik & Meditation',
-        'Mit Maestro Pt. Abhay Sopori, Daniel Brunner und Chanchal Singh'
+        'Im Sahaja-Yoga Zentrum München'
       ],
       imageUrl: imageUrls.langeNacht,
       links: [
@@ -144,6 +145,18 @@ const doc = {
           _key: 'lange-nacht-home',
           label: 'Offizielle Homepage',
           url: 'https://www.muenchner.de/musiknacht'
+        },
+        {
+          _type: 'newsletterLink',
+          _key: 'abhay-bio',
+          label: 'Biographie - Abhay Sopori',
+          url: 'https://europetour2026.my.canva.site/profile'
+        },
+        {
+          _type: 'newsletterLink',
+          _key: 'tour-page',
+          label: 'Tour Page 2026',
+          url: 'https://europetour2026.my.canva.site/'
         }
       ]
     }
@@ -211,8 +224,16 @@ const doc = {
       eyebrow: '19.12.2025',
       title: 'Musik & Meditation, SY Zentrum München',
       body:
-        'Am 19.12.2025 fand im SY Zentrum München wieder eine sehr gelungene Fusion aus Indischer klassischer Musik mit der authentischen, leicht zu erlernenden SY Meditation statt. Bei der angeleiteten Meditation zur Selbstverwirklichung wurde die Evolutionskraft Kundalini spontan erweckt und die virtuos gespielten Ragas unterstützten noch zusätzlich die Wirkung der Gedankenstille.\n\nDie Teilnehmer/innen wurden durch die Kombination aus Musik & Meditation tief in Ihren Herzen berührt und einige kündigten an, sich in der Erfahrung vertiefen zu wollen.',
-      imageUrl: imageUrls.musicMeditation
+        'Am 19.12.2025 fand im SY Zentrum München wieder eine sehr gelungene Fusion aus indischer klassischer Musik mit der authentischen, leicht zu erlernenden Sahaja-Yoga-Meditation statt. Bei der angeleiteten Meditation zur Selbstverwirklichung wurde die Evolutionskraft Kundalini spontan erweckt und die virtuos gespielten Ragas unterstützten zusätzlich die Wirkung der Gedankenstille.\n\nDie Teilnehmer/innen wurden durch die Kombination aus Musik & Meditation tief in ihren Herzen berührt und einige kündigten an, sich in der Erfahrung vertiefen zu wollen. Unsere Wertschätzung gebührt den jungen Künstlern und natürlich Shri Mataji als der Mutter der Kundalini-Energie.',
+      imageUrl: imageUrls.musicMeditation,
+      links: [
+        {
+          _type: 'newsletterLink',
+          _key: 'album-music',
+          label: 'Gesamtes Fotoalbum',
+          url: 'https://photos.app.goo.gl/Y49qA2kDJZmQ4YmK9'
+        }
+      ]
     },
     {
       _type: 'newsletterCard',
@@ -220,8 +241,16 @@ const doc = {
       eyebrow: '30.01.-01.02.2026',
       title: 'Gesundheitsmesse INTERSANA Messe Augsburg',
       body:
-        'Drei Tage lang war die Messe Augsburg das Zentrum für Inspiration, Information und Austausch. Und mitten drin der Sahaja Yoga Stand, der auch stets gut frequentiert war und uns die Gelegenheit bot, auf die positiven Gesundheitsaspekte von Meditation hinzuweisen.\n\nViele Besucher kamen dabei zum ersten mal mit ihrer eigenen Evolutionskraft Kundalini in Berührung, die alle Selbstheilkräfte aktivieren kann und zahlreiche Leute spürten sogar die heilsame Gedankenfreiheit und die stresslösende innere Stille.',
-      imageUrl: imageUrls.intersana
+        'Drei Tage lang war die Messe Augsburg das Zentrum für Inspiration, Information und Austausch. Der gemeinsame Messeverbund aus A\FAIR – Deine Augsburger Erlebnismesse, Immobilientage Augsburg, VOLT Future Mobility, CREATIVMESSE und der Gesundheitsmesse Intersana hat sich als modernes, starkes Veranstaltungsformat für die gesamte Region präsentiert.\n\nMitten drin war der Sahaja Yoga Stand, der stets gut frequentiert war und uns die Gelegenheit bot, auf die positiven Gesundheitsaspekte von Meditation hinzuweisen. Viele Besucher kamen dabei zum ersten Mal mit ihrer eigenen Evolutionskraft Kundalini in Berührung, und zahlreiche Leute spürten sogar die heilsame Gedankenfreiheit und die stresslösende innere Stille.',
+      imageUrl: imageUrls.intersana,
+      links: [
+        {
+          _type: 'newsletterLink',
+          _key: 'album-intersana',
+          label: 'Gesamtes Fotoalbum',
+          url: 'https://photos.app.goo.gl/HQdqKPXPuzzmUqZP7'
+        }
+      ]
     },
     {
       _type: 'newsletterCard',
@@ -229,8 +258,16 @@ const doc = {
       eyebrow: '20.-22.02.2026',
       title: 'Alternative Gesundheitsmesse ENERGETIKA, Bobingen bei Augsburg',
       body:
-        'Sahaja Yoga war von 20. bis 22. Februar 2026 zum ersten mal bei der Gesundheitsmesse Energetika in Bobingen bei Augsburg vertreten, präsentierte sich mit einem Info- & Meditationsstand und 2 Vorträgen mit geleiteten Meditationen.\n\nViele Besucher informierten sich und lernten Ihre eigene Kundalini-Energie kennen, durch die viele sogar die Verbindung mit ihrem höheren Selbst wahrnehmen konnten.',
-      imageUrl: imageUrls.energetika
+        'Sahaja Yoga war von 20. bis 22. Februar 2026 zum ersten Mal bei der Gesundheitsmesse Energetika in Bobingen bei Augsburg vertreten, präsentierte sich mit einem Info- & Meditationsstand und zwei Vorträgen mit geleiteten Meditationen.\n\nViele Besucher informierten sich und lernten ihre eigene Kundalini-Energie kennen, durch die viele sogar die Verbindung mit ihrem höheren Selbst wahrnehmen konnten. Einige kündigten an, sich bei den Folgeprogrammen mehr in dieser Meditationserfahrung vertiefen zu wollen.',
+      imageUrl: imageUrls.energetika,
+      links: [
+        {
+          _type: 'newsletterLink',
+          _key: 'album-energetika',
+          label: 'Gesamtes Fotoalbum',
+          url: 'https://photos.app.goo.gl/LJRQAY7T2288cEX17'
+        }
+      ]
     }
   ],
   newsHeading: 'Aktuelles & News',
@@ -241,14 +278,30 @@ const doc = {
       title:
         'Sahaja Yoga beteiligte sich am Diversity-Tag im Alten Rathaus München und erhält Anerkennungs-Brief der Landeshauptstadt',
       body:
-        'Am bevorstehenden 103. Geburtstag von Shri Mataji am 21. März 2026 hat die Stadt New Milford, New Jersey, USA offiziell den „Shri Mataji Nirmala Devi Day“ ausgerufen.',
+        'Sahaja Yoga beteiligte sich am Diversity-Tag im Alten Rathaus München und erhielt einen Anerkennungs-Brief der Landeshauptstadt. Begleitend dazu wurde auf die religiös-weltanschauliche Vielfältigkeit Münchens hingewiesen.',
       imageUrl: imageUrls.diversity,
       links: [
         {
           _type: 'newsletterLink',
           _key: 'broschuere',
           label: 'Broschüre: Die religiös-weltanschauliche Vielfältigkeit Münchens',
-          url: 'https://www.meditationmuenchen.org'
+          url: 'https://www.meditationmuenchen.org/wp-content/uploads/2026/01/Broschuere_Die-religioes-weltanschauliche-Vielfaeltigkeit-Muenchens.pdf'
+        }
+      ]
+    },
+    {
+      _type: 'newsletterCard',
+      _key: 'shri-mataji-day',
+      title: '„Shri Mataji Nirmala Devi Day“ in New Milford, New Jersey',
+      body:
+        'Am bevorstehenden 103. Geburtstag von Shri Mataji am 21. März 2026 hat die Stadt New Milford, New Jersey, USA offiziell den „Shri Mataji Nirmala Devi Day“ ausgerufen. Im alten Newsletter wurde dazu auch das Video der Ratssitzung verlinkt, in der dieser Tag ausgerufen wurde.',
+      imageUrl: imageUrls.cbc,
+      links: [
+        {
+          _type: 'newsletterLink',
+          _key: 'shri-day-video',
+          label: 'Video der Ratssitzung',
+          url: 'https://youtu.be/3n-k6ONuLAo?is=cy1zDWfP46o-4kVf'
         }
       ]
     },
@@ -264,7 +317,13 @@ const doc = {
           _type: 'newsletterLink',
           _key: 'cbc-watch',
           label: 'CBC News Clip',
-          url: 'https://www.youtube.com'
+          url: 'https://www.youtube.com/live/GY5y59BGSx0?t=1022s'
+        },
+        {
+          _type: 'newsletterLink',
+          _key: 'cbc-written',
+          label: 'CBC News - written report',
+          url: 'https://www.cbc.ca/news/canada/nova-scotia/devi-international-boarding-school-rural-nova-scotia-mill-village-9.7054467'
         }
       ]
     },
@@ -322,6 +381,12 @@ const doc = {
       _key: 'shrimatiji',
       label: 'Internetseite über Shri Mataji und Ihr Wirken',
       url: 'https://www.shrimataji.org'
+    },
+    {
+      _type: 'newsletterLink',
+      _key: 'videos-de',
+      label: 'VIDEOS von Shri Matajis Reden mit deutscher Übersetzung',
+      url: 'https://www.youtube.com/playlist?list=PL4837850DE9322E4C'
     }
   ],
   donationHeading: 'Sahaja Yoga Kultur e.V. ist ein GEMEINNÜTZIGER VEREIN',

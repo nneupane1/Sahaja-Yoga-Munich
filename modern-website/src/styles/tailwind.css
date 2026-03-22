@@ -220,6 +220,18 @@
       inset 0 1px 0 rgba(255, 255, 255, 0.7);
   }
 
+  .brand-link {
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .brand-link:focus,
+  .brand-link:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
   .card-soft,
   .interactive-card,
   .warm-hover-glow {
