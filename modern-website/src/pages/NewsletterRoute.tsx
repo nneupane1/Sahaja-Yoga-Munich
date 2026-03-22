@@ -1,5 +1,5 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { Link, Navigate, useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, Navigate, useParams } from 'react-router-dom';
 import chakraImg from '../assets/chakra.png';
 import lotusImg from '../assets/lotus.png';
 import motherImg from '../assets/mother.jpg';
@@ -98,11 +98,11 @@ const NewsletterContentCard: React.FC<{ card: NewsletterCard }> = ({ card }) => 
 );
 
 const NewsletterRoute: React.FC = () => {
-  const location = useLocation();
+  const { slug: routeSlug } = useParams<{ slug: string }>();
   const { locale } = useLocale();
   useScrollReveal('.reveal-ready', 'reveal', 0.18);
 
-  const slug = useMemo(() => location.pathname.replace(/^\/newsletter\//, '').trim(), [location.pathname]);
+  const slug = routeSlug?.trim() ?? '';
   const [newsletter, setNewsletter] = useState<Newsletter | null>(null);
   const [isResolving, setIsResolving] = useState(true);
 
