@@ -148,6 +148,22 @@ const newsletterIssueProjection = `
   "legacyImportSourceUrl": coalesce(legacyImport->sourceUrl, sourceUrl)
 `;
 
+const fetchNewsletterApi = async <T>(locale: Locale, slug?: string): Promise<T> => {
+  const searchParams = new URLSearchParams({ locale });
+
+  if (slug) {
+    searchParams.set('slug', slug);
+  }
+
+  const response = await fetch(`/api/newsletters?${searchParams.toString()}`);
+
+  if (!response.ok) {
+    throw new Error(`Newsletter API failed with ${response.status}`);
+  }
+
+  return response.json() as Promise<T>;
+};
+
 const mapLink = (link: SanityNewsletterLink): NewsletterLink | null => {
   const label = link.label?.trim();
 
@@ -261,6 +277,18 @@ const fetchMappedNewsletters = async (query: string, params: Record<string, unkn
 };
 
 export const getSanityNewsletters = async (locale: Locale): Promise<Newsletter[] | null> => {
+  if (typeof window !== 'undefined') {
+    try {
+      const apiRecords = await fetchNewsletterApi<SanityNewsletterRecord[]>(locale);
+      const apiMapped = apiRecords.map(mapNewsletter).filter((record): record is Newsletter => Boolean(record));
+      if (apiMapped.length) {
+        return apiMapped;
+      }
+    } catch {
+      // Fall back to direct Sanity fetch in non-Vercel/local contexts.
+    }
+  }
+
   const localized = await fetchMappedNewsletters(
     `*[_type == "newsletter" && locale == $locale] | order(publishedAt desc){${newsletterListProjection}}`,
     { locale }
@@ -280,6 +308,18 @@ export const getSanityNewsletter = async (
   locale: Locale,
   slug: string
 ): Promise<Newsletter | null> => {
+  if (typeof window !== 'undefined') {
+    try {
+      const apiRecords = await fetchNewsletterApi<SanityNewsletterRecord[]>(locale, slug);
+      const apiMatch = apiRecords.map(mapNewsletter).find(Boolean) ?? null;
+      if (apiMatch) {
+        return apiMatch;
+      }
+    } catch {
+      // Fall back to direct Sanity fetch in non-Vercel/local contexts.
+    }
+  }
+
   if (!isSanityConfigured || !sanityClient) {
     return null;
   }
