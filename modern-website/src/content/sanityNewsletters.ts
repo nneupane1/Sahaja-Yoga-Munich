@@ -1,5 +1,5 @@
 import type { Locale } from '../context/LocaleContext';
-import { getSanityImageUrl, isSanityConfigured, sanityClient } from '../lib/sanity';
+import { fetchSanityQuery, getSanityImageUrl, isSanityConfigured } from '../lib/sanity';
 
 export type NewsletterLink = {
   label: string;
@@ -307,11 +307,11 @@ const mapNewsletter = (record: SanityNewsletterRecord): Newsletter | null => {
 };
 
 const fetchMappedNewsletters = async (query: string, params: Record<string, unknown>) => {
-  if (!isSanityConfigured || !sanityClient) {
+  if (!isSanityConfigured) {
     return null;
   }
 
-  const records = await sanityClient.fetch<SanityNewsletterRecord[]>(query, params);
+  const records = await fetchSanityQuery<SanityNewsletterRecord[]>(query, params);
   const mapped = records.map(mapNewsletter).filter((record): record is Newsletter => Boolean(record));
   return mapped.length ? mapped : null;
 };
@@ -336,11 +336,11 @@ export const getSanityNewsletter = async (
   locale: Locale,
   slug: string
 ): Promise<Newsletter | null> => {
-  if (!isSanityConfigured || !sanityClient) {
+  if (!isSanityConfigured) {
     return null;
   }
 
-  const localized = await sanityClient.fetch<SanityNewsletterRecord[]>(
+  const localized = await fetchSanityQuery<SanityNewsletterRecord[]>(
     `*[_type == "newsletter" && locale == $locale && slug.current == $slug]{${newsletterIssueProjection}}`,
     { locale, slug }
   );
@@ -351,7 +351,7 @@ export const getSanityNewsletter = async (
     return localizedMatch;
   }
 
-  const fallback = await sanityClient.fetch<SanityNewsletterRecord[]>(
+  const fallback = await fetchSanityQuery<SanityNewsletterRecord[]>(
     `*[_type == "newsletter" && slug.current == $slug]{${newsletterIssueProjection}}`,
     { slug }
   );

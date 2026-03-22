@@ -26,3 +26,33 @@ export const getSanityImageUrl = (source: unknown, width = 1600) => {
 
   return builder.image(source).width(width).fit('max').auto('format').url();
 };
+
+export const fetchSanityQuery = async <T>(
+  query: string,
+  params: Record<string, unknown> = {}
+): Promise<T> => {
+  if (!projectId || !dataset) {
+    throw new Error('Sanity is not configured');
+  }
+
+  const response = await fetch(
+    `https://${projectId}.api.sanity.io/v${apiVersion}/data/query/${dataset}`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        query,
+        params
+      })
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error(`Sanity query failed with ${response.status}`);
+  }
+
+  const payload = (await response.json()) as { result: T };
+  return payload.result;
+};
