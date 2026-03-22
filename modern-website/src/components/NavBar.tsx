@@ -59,12 +59,37 @@ const NavBar: React.FC = () => {
     ...withArticleLabels(pages.kundalini.sections)
   ];
 
+  const selfRealizationDropdown = [
+    {
+      label: locale === 'de' ? 'Höheres Bewusstsein' : 'Higher Consciousness',
+      to: pages.selfRealization.route
+    },
+    ...withArticleLabels(pages.selfRealization.sections)
+  ];
+
+  const scienceDropdown = [
+    {
+      label: locale === 'de' ? 'Verifizierbare Erfahrung' : 'Verifiable Experience',
+      to: pages.science.route
+    },
+    ...withArticleLabels(pages.science.sections)
+  ];
+
+  const cultureDropdown = [
+    {
+      label: locale === 'de' ? 'Kreativität & Kollektivität' : 'Creativity & Collectivity',
+      to: pages.culture.route
+    },
+    ...withArticleLabels(pages.culture.sections)
+  ];
+
   const links: NavItem[] = [
     { label: copy.home, to: '/' },
     {
       label: copy.shriMataji,
       to: '/shri-mataji',
       dropdown: [
+        { label: locale === 'de' ? 'Gründerin' : 'Founder', to: '/shri-mataji' },
         { label: copy.shriDropdown[0], to: '/shri-mataji/biografie' },
         { label: copy.shriDropdown[1], to: '/shri-mataji/geistige-arbeit' },
         { label: copy.shriDropdown[2], to: '/shri-mataji/oeffentliche-programme' },
@@ -80,17 +105,17 @@ const NavBar: React.FC = () => {
     {
       label: pages.selfRealization.navLabel,
       to: pages.selfRealization.route,
-      dropdown: withArticleLabels(pages.selfRealization.sections)
+      dropdown: selfRealizationDropdown
     },
     {
       label: pages.science.navLabel,
       to: pages.science.route,
-      dropdown: withArticleLabels(pages.science.sections)
+      dropdown: scienceDropdown
     },
     {
       label: pages.culture.navLabel,
       to: pages.culture.route,
-      dropdown: withArticleLabels(pages.culture.sections)
+      dropdown: cultureDropdown
     },
     { label: copy.blog, to: '/blog' },
     { label: copy.contact, to: '/#contact', kind: 'button' }
