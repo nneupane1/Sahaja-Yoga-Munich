@@ -1,5 +1,5 @@
 import type { Locale } from '../context/LocaleContext';
-import { fetchSanityQuery, getSanityImageUrl, isSanityConfigured } from '../lib/sanity';
+import { getSanityImageUrl, isSanityConfigured, sanityClient } from '../lib/sanity';
 
 export type NewsletterLink = {
   label: string;
@@ -116,7 +116,20 @@ type SanityNewsletterRecord = {
   legacyImportSourceUrl?: string;
 };
 
-const newsletterProjection = `
+const newsletterListProjection = `
+  title,
+  "slug": slug.current,
+  locale,
+  issueLabel,
+  publishedAt,
+  introTitle,
+  introBody,
+  heroImage,
+  heroImageUrl,
+  "heroImageAlt": coalesce(heroImage.alt, title)
+`;
+
+const newsletterIssueProjection = `
   title,
   "slug": slug.current,
   locale,
@@ -129,76 +142,7 @@ const newsletterProjection = `
   heroImage,
   heroImageUrl,
   "heroImageAlt": coalesce(heroImage.alt, title),
-  featuredHeading,
-  featuredCards[]{
-    eyebrow,
-    title,
-    subtitle,
-    body,
-    points,
-    image,
-    imageUrl,
-    "imageAlt": coalesce(image.alt, title),
-    links[]{
-      label,
-      url
-    }
-  },
-  scheduleHeading,
-  munichSchedule[]{
-    day,
-    time,
-    description,
-    contact
-  },
-  regionalHeading,
-  regionalLinks[]{
-    label,
-    url
-  },
-  retrospectiveHeading,
-  retrospectiveCards[]{
-    eyebrow,
-    title,
-    subtitle,
-    body,
-    points,
-    image,
-    imageUrl,
-    "imageAlt": coalesce(image.alt, title),
-    links[]{
-      label,
-      url
-    }
-  },
-  newsHeading,
-  newsCards[]{
-    eyebrow,
-    title,
-    subtitle,
-    body,
-    points,
-    image,
-    imageUrl,
-    "imageAlt": coalesce(image.alt, title),
-    links[]{
-      label,
-      url
-    }
-  },
-  recommendedHeading,
-  recommendedLinks[]{
-    label,
-    url
-  },
-  donationHeading,
-  donationBody,
-  donationDetails,
-  sourceUrl
-`;
-
-const newsletterIssueProjection = `
-  ${newsletterProjection},
+  sourceUrl,
   "legacyImportHtml": legacyImport->rawHtml,
   "legacyImportPlainText": legacyImport->plainText,
   "legacyImportSourceUrl": coalesce(legacyImport->sourceUrl, sourceUrl)
@@ -307,18 +251,18 @@ const mapNewsletter = (record: SanityNewsletterRecord): Newsletter | null => {
 };
 
 const fetchMappedNewsletters = async (query: string, params: Record<string, unknown>) => {
-  if (!isSanityConfigured) {
+  if (!isSanityConfigured || !sanityClient) {
     return null;
   }
 
-  const records = await fetchSanityQuery<SanityNewsletterRecord[]>(query, params);
+  const records = await sanityClient.fetch<SanityNewsletterRecord[]>(query, params);
   const mapped = records.map(mapNewsletter).filter((record): record is Newsletter => Boolean(record));
   return mapped.length ? mapped : null;
 };
 
 export const getSanityNewsletters = async (locale: Locale): Promise<Newsletter[] | null> => {
   const localized = await fetchMappedNewsletters(
-    `*[_type == "newsletter" && locale == $locale] | order(publishedAt desc){${newsletterProjection}}`,
+    `*[_type == "newsletter" && locale == $locale] | order(publishedAt desc){${newsletterListProjection}}`,
     { locale }
   );
 
@@ -327,7 +271,7 @@ export const getSanityNewsletters = async (locale: Locale): Promise<Newsletter[]
   }
 
   return fetchMappedNewsletters(
-    `*[_type == "newsletter"] | order(publishedAt desc){${newsletterProjection}}`,
+    `*[_type == "newsletter"] | order(publishedAt desc){${newsletterListProjection}}`,
     {}
   );
 };
@@ -336,11 +280,11 @@ export const getSanityNewsletter = async (
   locale: Locale,
   slug: string
 ): Promise<Newsletter | null> => {
-  if (!isSanityConfigured) {
+  if (!isSanityConfigured || !sanityClient) {
     return null;
   }
 
-  const localized = await fetchSanityQuery<SanityNewsletterRecord[]>(
+  const localized = await sanityClient.fetch<SanityNewsletterRecord[]>(
     `*[_type == "newsletter" && locale == $locale && slug.current == $slug]{${newsletterIssueProjection}}`,
     { locale, slug }
   );
@@ -351,7 +295,7 @@ export const getSanityNewsletter = async (
     return localizedMatch;
   }
 
-  const fallback = await fetchSanityQuery<SanityNewsletterRecord[]>(
+  const fallback = await sanityClient.fetch<SanityNewsletterRecord[]>(
     `*[_type == "newsletter" && slug.current == $slug]{${newsletterIssueProjection}}`,
     { slug }
   );
