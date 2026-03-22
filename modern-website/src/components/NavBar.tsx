@@ -362,7 +362,7 @@ const NavBar: React.FC = () => {
           {isHomeRoute ? (
             <div
               aria-label={copy.brand}
-              className="brand-link flex shrink-0 items-center gap-3.5 whitespace-nowrap text-[1.16rem] font-bold text-slate-800 focus:outline-none focus-visible:outline-none"
+              className="brand-link flex shrink-0 translate-y-[3px] items-center gap-3.5 whitespace-nowrap text-[1.16rem] font-bold text-slate-800 focus:outline-none focus-visible:outline-none"
             >
               <span className="-my-[0.875rem] -translate-y-px flex shrink-0 items-center">
                 <img
@@ -380,13 +380,13 @@ const NavBar: React.FC = () => {
                     className="absolute left-[-0.08rem] top-1/2 h-[4.37rem] w-[4.37rem] -translate-y-[60%] object-contain opacity-100 contrast-125 saturate-125 drop-shadow-[0_10px_18px_rgba(179,93,76,0.24)]"
                   />
                 </span>
-                <span className="-ml-[1.95rem]">München</span>
+                <span className="-ml-[1.99rem]">München</span>
               </span>
             </div>
           ) : (
             <Link
               to="/"
-              className="brand-link flex shrink-0 items-center gap-3.5 whitespace-nowrap text-[1.16rem] font-bold text-slate-800 focus:outline-none focus-visible:outline-none"
+              className="brand-link flex shrink-0 translate-y-[3px] items-center gap-3.5 whitespace-nowrap text-[1.16rem] font-bold text-slate-800 focus:outline-none focus-visible:outline-none"
             >
               <span className="-my-[0.875rem] -translate-y-px flex shrink-0 items-center">
                 <img
@@ -404,7 +404,7 @@ const NavBar: React.FC = () => {
                     className="absolute left-[-0.08rem] top-1/2 h-[4.37rem] w-[4.37rem] -translate-y-[60%] object-contain opacity-100 contrast-125 saturate-125 drop-shadow-[0_10px_18px_rgba(179,93,76,0.24)]"
                   />
                 </span>
-                <span className="-ml-[1.95rem]">München</span>
+                <span className="-ml-[1.99rem]">München</span>
               </span>
             </Link>
           )}
