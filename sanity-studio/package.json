@@ -8,7 +8,9 @@
     "build": "sanity build",
     "deploy": "sanity deploy",
     "type-check": "tsc --noEmit",
-    "seed:blog": "node scripts/seed-blog.mjs"
+    "seed:blog": "node scripts/seed-blog.mjs",
+    "import:legacy-html": "node scripts/import-legacy-html.mjs",
+    "seed:newsletter": "node scripts/seed-newsletter.mjs"
   },
   "dependencies": {
     "@sanity/vision": "^5.17.1",

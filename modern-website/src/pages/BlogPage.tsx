@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import chakraImg from '../assets/chakra.png';
 import { getBlogArticles, getBlogArticle } from '../content/blogArticles';
 import { getSanityBlogArticles } from '../content/sanityBlog';
+import { getSanityNewsletters, type Newsletter } from '../content/sanityNewsletters';
 import { useLocale } from '../context/LocaleContext';
 import useScrollReveal from '../hooks/useScrollReveal';
 
@@ -19,6 +20,15 @@ const BlogPage: React.FC = () => {
   );
   const [articles, setArticles] = useState(staticArticles);
   const [featuredArticle, setFeaturedArticle] = useState(staticFeaturedArticle);
+  const [latestNewsletter, setLatestNewsletter] = useState<Newsletter | null>(null);
+
+  const trimNewsletterPreview = (text: string) => {
+    if (text.length <= 220) {
+      return text;
+    }
+
+    return `${text.slice(0, 217).trimEnd()}...`;
+  };
 
   useEffect(() => {
     setArticles(staticArticles);
@@ -37,6 +47,18 @@ const BlogPage: React.FC = () => {
       })
       .catch(() => {
         // Keep the static fallback when Sanity is not configured or has no content yet.
+      });
+
+    getSanityNewsletters(locale)
+      .then(newsletters => {
+        if (!cancelled) {
+          setLatestNewsletter(newsletters?.[0] ?? null);
+        }
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setLatestNewsletter(null);
+        }
       });
 
     return () => {
@@ -59,6 +81,12 @@ const BlogPage: React.FC = () => {
           noteTitle: 'Was diese Seite zusammenführt',
           noteBody:
             'Der Blog verbindet ruhige Einführung, vertiefende Lesestrecken und kommende Inhalte. Er eignet sich für Texte über Kundalini, Selbstverwirklichung, wissenschaftliche Perspektiven, kollektive Meditation und Hinweise auf besondere Programme.',
+          newsletterEyebrow: 'Newsletter',
+          newsletterTitle: 'Regelmäßige Rundbriefe, Programme und Rückblicke erhalten jetzt einen eigenen redaktionellen Raum.',
+          newsletterBody:
+            'Die bisherigen Newsletter können künftig als gestaltete Seiten erscheinen, statt in schwer lesbaren Altformaten zu bleiben. Neue Ausgaben lassen sich direkt aus dem Sanity Studio veröffentlichen.',
+          newsletterCta: 'Zum Newsletter-Archiv',
+          latestIssue: 'Neueste Ausgabe',
           featuredEyebrow: 'Empfohlener Einstieg',
           featuredTitle: 'Gedankenfreie Stille als praktische Erfahrung des gegenwärtigen Moments',
           featuredBody:
@@ -110,6 +138,12 @@ const BlogPage: React.FC = () => {
           noteTitle: 'What this page brings together',
           noteBody:
             'The blog combines calm introductions, deeper reading paths and future content. It is a natural home for writing on Kundalini, Self-Realization, scientific perspectives, collective meditation and programme updates.',
+          newsletterEyebrow: 'Newsletter',
+          newsletterTitle: 'Regular circulars, programme updates and retrospectives now have their own editorial space.',
+          newsletterBody:
+            'The old newsletters can now appear as designed pages instead of remaining trapped in harder-to-read legacy formats. New issues can be published directly from Sanity Studio.',
+          newsletterCta: 'Open newsletter archive',
+          latestIssue: 'Latest issue',
           featuredEyebrow: 'Featured entry',
           featuredTitle: 'Thoughtless awareness as a practical experience of the present moment',
           featuredBody:
@@ -190,6 +224,56 @@ const BlogPage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {latestNewsletter && (
+        <section className="section-band pt-0">
+          <div className="section-shell">
+            <article className="newsletter-stage reveal-ready overflow-hidden p-6 sm:p-8 lg:p-10">
+              <div className="grid gap-7 lg:grid-cols-[0.94fr_1.06fr] lg:items-center">
+                <div className="overflow-hidden rounded-[1.8rem] border border-[#b35d4c]/22 bg-white/70">
+                  <img
+                    src={latestNewsletter.heroImageUrl ?? chakraImg}
+                    alt={latestNewsletter.heroImageAlt}
+                    className="h-[24rem] w-full object-cover object-center"
+                  />
+                </div>
+
+                <div className="flex flex-col">
+                  <div className="flex flex-wrap gap-3">
+                    <span className="eyebrow">{copy.newsletterEyebrow}</span>
+                    <span className="eyebrow">
+                      {copy.latestIssue} {latestNewsletter.issueLabel}
+                    </span>
+                  </div>
+                  <h2 className="mt-5 max-w-2xl text-[2rem] leading-tight sm:text-[2.4rem]">
+                    {copy.newsletterTitle}
+                  </h2>
+                  <p className="mt-5 max-w-2xl text-[1.02rem] leading-8 text-slate-600">
+                    {copy.newsletterBody}
+                  </p>
+                  <div className="mt-6 rounded-[1.35rem] border border-[#b35d4c]/22 bg-[rgba(255,250,246,0.9)] px-5 py-4">
+                    <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b56757]">
+                      {latestNewsletter.title}
+                    </p>
+                    <p className="mt-3 text-[0.98rem] leading-7 text-slate-600">
+                      {trimNewsletterPreview(latestNewsletter.introBody.split('\n')[0])}
+                    </p>
+                  </div>
+
+                  <div className="mt-7">
+                    <Link
+                      to="/newsletter"
+                      className="inline-flex items-center rounded-full border border-[#b35d4c]/30 bg-[rgba(255,250,246,0.96)] px-5 py-2.5 text-sm font-semibold text-[#b56757] transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/45 hover:bg-[rgba(255,244,238,0.98)]"
+                    >
+                      {copy.newsletterCta}
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      )}
 
       <section id={locale === 'de' ? 'empfohlen' : 'featured'} className="section-band pt-4">
         <div className="section-shell">

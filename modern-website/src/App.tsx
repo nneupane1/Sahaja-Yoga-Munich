@@ -6,6 +6,8 @@ import ScrollToHash from './components/ScrollToHash';
 import HomePage from './pages/HomePage';
 import BlogPage from './pages/BlogPage';
 import BlogArticleRoute from './pages/BlogArticleRoute';
+import NewsletterPage from './pages/NewsletterPage';
+import NewsletterRoute from './pages/NewsletterRoute';
 import ShriMatajiPage from './pages/ShriMatajiPage';
 import KundaliniPage from './pages/KundaliniPage';
 import SelbstverwirklichungPage from './pages/SelbstverwirklichungPage';
@@ -25,6 +27,8 @@ const App: React.FC = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<BlogArticleRoute />} />
+        <Route path="/newsletter" element={<NewsletterPage />} />
+        <Route path="/newsletter/:slug" element={<NewsletterRoute />} />
         <Route path="/shri-mataji" element={<ShriMatajiPage />} />
         <Route path="/shri-mataji/biografie" element={<ShriMatajiPage />} />
         <Route path="/shri-mataji/geistige-arbeit" element={<ShriMatajiPage />} />
