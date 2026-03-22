@@ -142,6 +142,71 @@ const newsletterIssueProjection = `
   heroImage,
   heroImageUrl,
   "heroImageAlt": coalesce(heroImage.alt, title),
+  featuredHeading,
+  featuredCards[]{
+    eyebrow,
+    title,
+    subtitle,
+    body,
+    points,
+    image,
+    imageUrl,
+    "imageAlt": coalesce(image.alt, title),
+    links[]{
+      label,
+      url
+    }
+  },
+  scheduleHeading,
+  munichSchedule[]{
+    day,
+    time,
+    description,
+    contact
+  },
+  regionalHeading,
+  regionalLinks[]{
+    label,
+    url
+  },
+  retrospectiveHeading,
+  retrospectiveCards[]{
+    eyebrow,
+    title,
+    subtitle,
+    body,
+    points,
+    image,
+    imageUrl,
+    "imageAlt": coalesce(image.alt, title),
+    links[]{
+      label,
+      url
+    }
+  },
+  newsHeading,
+  newsCards[]{
+    eyebrow,
+    title,
+    subtitle,
+    body,
+    points,
+    image,
+    imageUrl,
+    "imageAlt": coalesce(image.alt, title),
+    links[]{
+      label,
+      url
+    }
+  },
+  recommendedHeading,
+  recommendedLinks[]{
+    label,
+    url
+  },
+  donationHeading,
+  donationBody,
+  donationDetails,
   sourceUrl,
   "legacyImportHtml": legacyImport->rawHtml,
   "legacyImportPlainText": legacyImport->plainText,

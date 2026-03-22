@@ -105,12 +105,14 @@ const NewsletterRoute: React.FC = () => {
   const slug = routeSlug?.trim() ?? '';
   const [newsletter, setNewsletter] = useState<Newsletter | null>(null);
   const [isResolving, setIsResolving] = useState(true);
+  const [showLegacyImport, setShowLegacyImport] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
 
     setIsResolving(true);
     setNewsletter(null);
+    setShowLegacyImport(false);
 
     getSanityNewsletter(locale, slug)
       .then(result => {
@@ -151,7 +153,9 @@ const NewsletterRoute: React.FC = () => {
             'Hier erscheint die vollständig importierte Ausgabe aus meditationmuenchen.org in einer ruhigeren, besser lesbaren Form innerhalb der neuen Website.',
           loading: 'Newsletter wird geladen …',
           readOriginal:
-            'Diese Ausgabe wurde aus dem alten Bestand übernommen und zugleich als strukturierter Inhalt für die neue Website aufbereitet.'
+            'Diese Ausgabe wurde aus dem alten Bestand übernommen und zugleich als strukturierter Inhalt für die neue Website aufbereitet.',
+          legacyToggleShow: 'Vollständige importierte Ausgabe anzeigen',
+          legacyToggleHide: 'Importierte Ausgabe wieder schließen'
         }
       : {
           back: 'Back to newsletter archive',
@@ -169,8 +173,20 @@ const NewsletterRoute: React.FC = () => {
             'Below, the complete imported issue from meditationmuenchen.org is rendered inside the new site in a calmer, more readable form.',
           loading: 'Loading newsletter …',
           readOriginal:
-            'This issue was imported from the older site and reshaped into structured content for the new website.'
+            'This issue was imported from the older site and reshaped into structured content for the new website.',
+          legacyToggleShow: 'Show full imported issue',
+          legacyToggleHide: 'Hide imported issue'
         };
+
+  const hasFeatured = newsletter?.featuredCards.length ? true : false;
+  const hasSchedule =
+    (newsletter?.munichSchedule.length ?? 0) > 0 ||
+    (newsletter?.regionalLinks.length ?? 0) > 0 ||
+    Boolean(newsletter?.donationHeading || newsletter?.donationBody || newsletter?.donationDetails.length);
+  const hasRetrospective = (newsletter?.retrospectiveCards.length ?? 0) > 0;
+  const hasNews = (newsletter?.newsCards.length ?? 0) > 0;
+  const hasRecommended = (newsletter?.recommendedLinks.length ?? 0) > 0;
+  const hasLegacyImport = Boolean(newsletter?.legacyImportHtml);
 
   if (!slug) {
     return <Navigate to="/newsletter" replace />;
@@ -293,7 +309,53 @@ const NewsletterRoute: React.FC = () => {
         </div>
       </section>
 
-      {!!newsletter.featuredCards.length && (
+      {hasLegacyImport && (
+        <section className="section-band pt-4">
+          <div className="section-shell">
+            <article className="newsletter-stage reveal-ready p-6 sm:p-8">
+              <div className="grid gap-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
+                <div>
+                  <span className="eyebrow">{copy.legacyEyebrow}</span>
+                  <h2 className="mt-4 text-4xl sm:text-5xl">{copy.legacyTitle}</h2>
+                  <p className="mt-5 max-w-3xl text-[1rem] leading-8 text-slate-600">
+                    {copy.legacyIntro}
+                  </p>
+                </div>
+                <div className="flex flex-col gap-4 lg:items-end">
+                  <button
+                    type="button"
+                    onClick={() => setShowLegacyImport(current => !current)}
+                    className="inline-flex items-center rounded-full border border-[#b35d4c]/30 bg-[rgba(255,250,246,0.96)] px-5 py-2.5 text-sm font-semibold text-[#b56757] transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/45 hover:bg-[rgba(255,244,238,0.98)]"
+                  >
+                    {showLegacyImport ? copy.legacyToggleHide : copy.legacyToggleShow}
+                  </button>
+                  {newsletter.legacyImportSourceUrl && (
+                    <a
+                      href={newsletter.legacyImportSourceUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-sm font-semibold text-[#b56757] underline decoration-[#b35d4c]/35 underline-offset-4 transition hover:text-[#c8715f]"
+                    >
+                      {copy.source}
+                    </a>
+                  )}
+                </div>
+              </div>
+
+              {showLegacyImport && newsletter.legacyImportHtml && (
+                <div className="mt-8 overflow-hidden rounded-[2rem] border border-[#b35d4c]/16 bg-[rgba(255,252,249,0.82)] p-2 shadow-[0_18px_40px_rgba(146,92,79,0.1)] sm:p-4">
+                  <LegacyNewsletterFrame
+                    title={newsletter.title}
+                    rawHtml={newsletter.legacyImportHtml}
+                  />
+                </div>
+              )}
+            </article>
+          </div>
+        </section>
+      )}
+
+      {hasFeatured && (
         <section className="section-band pt-4">
           <div className="section-shell">
             <div className="reveal-ready max-w-3xl">
@@ -311,76 +373,82 @@ const NewsletterRoute: React.FC = () => {
         </section>
       )}
 
-      <section className="section-band pt-6">
-        <div className="section-shell">
-          <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-            <article className="newsletter-stage reveal-ready p-6 sm:p-8">
-              <span className="eyebrow">{copy.scheduleEyebrow}</span>
-              <h2 className="mt-4 text-4xl sm:text-[2.6rem]">
-                {newsletter.scheduleHeading ?? copy.scheduleTitle}
-              </h2>
-              <div className="mt-7 grid gap-4 sm:grid-cols-2">
-                {newsletter.munichSchedule.map(item => (
-                  <div
-                    key={`${item.day}-${item.time ?? item.description}`}
-                    className="rounded-[1.35rem] border border-[#b35d4c]/18 bg-[rgba(255,250,246,0.86)] px-5 py-5 shadow-[0_14px_28px_rgba(146,92,79,0.08)]"
-                  >
-                    <div className="flex items-start justify-between gap-3">
-                      <h3 className="text-[1.2rem] leading-tight text-[#b56757]">{item.day}</h3>
-                      {item.time && (
-                        <span className="rounded-full border border-[#b35d4c]/18 bg-white/70 px-3 py-1 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-[#b56757]">
-                          {item.time}
-                        </span>
-                      )}
-                    </div>
-                    <p className="mt-4 text-[0.96rem] leading-7 text-slate-600">{item.description}</p>
-                    {item.contact && <p className="mt-4 text-sm leading-6 text-slate-500">{item.contact}</p>}
+      {hasSchedule && (
+        <section className="section-band pt-6">
+          <div className="section-shell">
+            <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+              {!!newsletter.munichSchedule.length && (
+                <article className="newsletter-stage reveal-ready p-6 sm:p-8">
+                  <span className="eyebrow">{copy.scheduleEyebrow}</span>
+                  <h2 className="mt-4 text-4xl sm:text-[2.6rem]">
+                    {newsletter.scheduleHeading ?? copy.scheduleTitle}
+                  </h2>
+                  <div className="mt-7 grid gap-4 sm:grid-cols-2">
+                    {newsletter.munichSchedule.map(item => (
+                      <div
+                        key={`${item.day}-${item.time ?? item.description}`}
+                        className="rounded-[1.35rem] border border-[#b35d4c]/18 bg-[rgba(255,250,246,0.86)] px-5 py-5 shadow-[0_14px_28px_rgba(146,92,79,0.08)]"
+                      >
+                        <div className="flex items-start justify-between gap-3">
+                          <h3 className="text-[1.2rem] leading-tight text-[#b56757]">{item.day}</h3>
+                          {item.time && (
+                            <span className="rounded-full border border-[#b35d4c]/18 bg-white/70 px-3 py-1 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-[#b56757]">
+                              {item.time}
+                            </span>
+                          )}
+                        </div>
+                        <p className="mt-4 text-[0.96rem] leading-7 text-slate-600">{item.description}</p>
+                        {item.contact && (
+                          <p className="mt-4 text-sm leading-6 text-slate-500">{item.contact}</p>
+                        )}
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </article>
-
-            <div className="grid gap-6">
-              <article className="newsletter-stage reveal-ready p-6 sm:p-7">
-                <span className="eyebrow">{newsletter.regionalHeading ?? copy.scheduleEyebrow}</span>
-                <h3 className="mt-4 text-[2rem] leading-tight text-[#b56757]">
-                  {newsletter.regionalHeading ??
-                    (locale === 'de' ? 'Verbindungen in Süd-Deutschland' : 'Regional connections')}
-                </h3>
-                <NewsletterLinks links={newsletter.regionalLinks} />
-              </article>
-
-              {(newsletter.donationHeading || newsletter.donationBody || newsletter.donationDetails.length > 0) && (
-                <article className="newsletter-stage reveal-ready p-6 sm:p-7">
-                  <span className="eyebrow">{copy.donationEyebrow}</span>
-                  <h3 className="mt-4 text-[1.9rem] leading-tight text-[#b56757]">
-                    {newsletter.donationHeading}
-                  </h3>
-                  {newsletter.donationBody && (
-                    <p className="mt-4 text-[0.98rem] leading-8 text-slate-600">
-                      {newsletter.donationBody}
-                    </p>
-                  )}
-                  {!!newsletter.donationDetails.length && (
-                    <ul className="mt-5 space-y-3 text-[0.96rem] leading-7 text-slate-600">
-                      {newsletter.donationDetails.map(item => (
-                        <li key={item} className="flex gap-3">
-                          <span className="mt-1.5 h-2 w-2 rounded-full bg-[#c8715f]" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
                 </article>
               )}
+
+              <div className="grid gap-6">
+                {!!newsletter.regionalLinks.length && (
+                  <article className="newsletter-stage reveal-ready p-6 sm:p-7">
+                    <span className="eyebrow">{newsletter.regionalHeading ?? copy.scheduleEyebrow}</span>
+                    <h3 className="mt-4 text-[2rem] leading-tight text-[#b56757]">
+                      {newsletter.regionalHeading ??
+                        (locale === 'de' ? 'Verbindungen in Süd-Deutschland' : 'Regional connections')}
+                    </h3>
+                    <NewsletterLinks links={newsletter.regionalLinks} />
+                  </article>
+                )}
+
+                {(newsletter.donationHeading || newsletter.donationBody || newsletter.donationDetails.length > 0) && (
+                  <article className="newsletter-stage reveal-ready p-6 sm:p-7">
+                    <span className="eyebrow">{copy.donationEyebrow}</span>
+                    <h3 className="mt-4 text-[1.9rem] leading-tight text-[#b56757]">
+                      {newsletter.donationHeading}
+                    </h3>
+                    {newsletter.donationBody && (
+                      <p className="mt-4 text-[0.98rem] leading-8 text-slate-600">
+                        {newsletter.donationBody}
+                      </p>
+                    )}
+                    {!!newsletter.donationDetails.length && (
+                      <ul className="mt-5 space-y-3 text-[0.96rem] leading-7 text-slate-600">
+                        {newsletter.donationDetails.map(item => (
+                          <li key={item} className="flex gap-3">
+                            <span className="mt-1.5 h-2 w-2 rounded-full bg-[#c8715f]" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </article>
+                )}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
-      {(newsletter.retrospectiveCards.length > 0 ||
-        newsletter.newsCards.length > 0 ||
-        newsletter.recommendedLinks.length > 0) && (
+      {(hasRetrospective || hasNews || hasRecommended) && (
         <section className="pb-2">
           <div className="section-shell">
             <NewsletterDivider />
@@ -388,7 +456,7 @@ const NewsletterRoute: React.FC = () => {
         </section>
       )}
 
-      {!!newsletter.retrospectiveCards.length && (
+      {hasRetrospective && (
         <section className="section-band pt-6">
           <div className="section-shell">
             <div className="reveal-ready max-w-3xl">
@@ -407,7 +475,7 @@ const NewsletterRoute: React.FC = () => {
         </section>
       )}
 
-      {!!newsletter.newsCards.length && (
+      {hasNews && (
         <section className="section-band pt-6">
           <div className="section-shell">
             <div className="reveal-ready max-w-3xl">
@@ -425,7 +493,7 @@ const NewsletterRoute: React.FC = () => {
         </section>
       )}
 
-      {!!newsletter.recommendedLinks.length && (
+      {hasRecommended && (
         <section className="section-band pt-6">
           <div className="section-shell">
             <article className="newsletter-stage reveal-ready p-6 sm:p-8">
@@ -462,47 +530,6 @@ const NewsletterRoute: React.FC = () => {
         </section>
       )}
 
-      {newsletter.legacyImportHtml && (
-        <>
-          <section className="pb-2">
-            <div className="section-shell">
-              <NewsletterDivider />
-            </div>
-          </section>
-
-          <section className="section-band pt-6">
-            <div className="section-shell">
-              <article className="newsletter-stage reveal-ready p-5 sm:p-7">
-                <div className="max-w-4xl">
-                  <span className="eyebrow">{copy.legacyEyebrow}</span>
-                  <h2 className="mt-4 text-4xl sm:text-5xl">{copy.legacyTitle}</h2>
-                  <p className="mt-5 text-[1rem] leading-8 text-slate-600">{copy.legacyIntro}</p>
-                </div>
-
-                <div className="mt-8 overflow-hidden rounded-[2rem] border border-[#b35d4c]/16 bg-[rgba(255,252,249,0.82)] p-2 shadow-[0_18px_40px_rgba(146,92,79,0.1)] sm:p-4">
-                  <LegacyNewsletterFrame
-                    title={newsletter.title}
-                    rawHtml={newsletter.legacyImportHtml}
-                  />
-                </div>
-
-                {newsletter.legacyImportSourceUrl && (
-                  <div className="mt-6 flex flex-wrap items-center gap-4">
-                    <a
-                      href={newsletter.legacyImportSourceUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center rounded-full border border-[#b35d4c]/30 bg-[rgba(255,250,246,0.96)] px-5 py-2.5 text-sm font-semibold text-[#b56757] transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/45 hover:bg-[rgba(255,244,238,0.98)]"
-                    >
-                      {copy.source}
-                    </a>
-                  </div>
-                )}
-              </article>
-            </div>
-          </section>
-        </>
-      )}
     </main>
   );
 };
