@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import chakraImg from '../assets/chakra.png';
 import lotusImg from '../assets/lotus.png';
 import motherImg from '../assets/mother1.jpg';
+import NewsletterDivider from '../components/NewsletterDivider';
 import { getSanityNewsletters, type Newsletter } from '../content/sanityNewsletters';
 import { useLocale } from '../context/LocaleContext';
 import useScrollReveal from '../hooks/useScrollReveal';
@@ -171,6 +172,12 @@ const NewsletterPage: React.FC = () => {
               </aside>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="pb-2">
+        <div className="section-shell">
+          <NewsletterDivider />
         </div>
       </section>
 

@@ -3,6 +3,7 @@ import { Link, Navigate, useLocation } from 'react-router-dom';
 import chakraImg from '../assets/chakra.png';
 import lotusImg from '../assets/lotus.png';
 import motherImg from '../assets/mother.jpg';
+import NewsletterDivider from '../components/NewsletterDivider';
 import {
   getSanityNewsletter,
   type Newsletter,
@@ -277,6 +278,12 @@ const NewsletterRoute: React.FC = () => {
         </div>
       </section>
 
+      <section className="pb-2">
+        <div className="section-shell">
+          <NewsletterDivider />
+        </div>
+      </section>
+
       {!!newsletter.featuredCards.length && (
         <section className="section-band pt-4">
           <div className="section-shell">
@@ -361,6 +368,16 @@ const NewsletterRoute: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {(newsletter.retrospectiveCards.length > 0 ||
+        newsletter.newsCards.length > 0 ||
+        newsletter.recommendedLinks.length > 0) && (
+        <section className="pb-2">
+          <div className="section-shell">
+            <NewsletterDivider />
+          </div>
+        </section>
+      )}
 
       {!!newsletter.retrospectiveCards.length && (
         <section className="section-band pt-6">

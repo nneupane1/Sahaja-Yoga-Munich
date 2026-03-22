@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useLocale } from '../context/LocaleContext';
 
 /**
@@ -10,11 +11,15 @@ const Footer: React.FC = () => {
     locale === 'de'
       ? {
           address: 'Sahaja Yoga Zentrum München, Am Lilienberg 2a, 81669 München',
-          note: 'Alle Treffen sind kostenfrei und für alle offen - Einstieg jederzeit möglich.'
+          note: 'Alle Treffen sind kostenfrei und für alle offen - Einstieg jederzeit möglich.',
+          newsletter: 'Newsletter-Archiv',
+          blog: 'Blog'
         }
       : {
           address: 'Sahaja Yoga Centre Munich, Am Lilienberg 2a, 81669 Munich',
-          note: 'All sessions are free of charge and open to everyone - you can join at any time.'
+          note: 'All sessions are free of charge and open to everyone - you can join at any time.',
+          newsletter: 'Newsletter archive',
+          blog: 'Blog'
         };
 
   return (
@@ -26,6 +31,15 @@ const Footer: React.FC = () => {
           <a href="mailto:anmeldung@meditationmuenchen.org">anmeldung@meditationmuenchen.org</a>
         </p>
         <p>{copy.note}</p>
+        <p className="flex flex-wrap items-center justify-center gap-3 text-sm text-[#b35d4c]">
+          <Link to="/newsletter" className="font-semibold transition hover:text-[#9c4b3d]">
+            {copy.newsletter}
+          </Link>
+          <span aria-hidden="true">·</span>
+          <Link to="/blog" className="font-semibold transition hover:text-[#9c4b3d]">
+            {copy.blog}
+          </Link>
+        </p>
         <p>© 2026 Sahaja Yoga Kultur e. V.</p>
       </div>
     </footer>
