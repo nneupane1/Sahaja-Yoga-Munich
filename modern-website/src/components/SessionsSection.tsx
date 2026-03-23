@@ -16,6 +16,7 @@ const SessionsSection: React.FC = () => {
             'Hier findest du die regelmäßigen Sahaja-Yoga-Treffen in München, den Veranstaltungsort und die schnellsten Kontaktwege auf einen Blick.',
           cityLinksLead:
             'Weitere Sahaja-Yoga-Meditationszentren in anderen Städten im ganzen Land findest du hier.',
+          cityLinksTitle: 'Meditationszentren deutschlandweit',
           cityLinksCta: 'Hier klicken',
           newsletterLead:
             'Öffne das Newsletter-Archiv mit Rundbriefen, Veranstaltungen, Rückblicken und redaktionellen Hinweisen aus München.',
@@ -91,6 +92,7 @@ const SessionsSection: React.FC = () => {
             'Here you can find our regular Sahaja Yoga meetings in Munich, the venue and the quickest ways to contact us.',
           cityLinksLead:
             'More Sahaja Yoga meditation centres in other cities across the country can be found here.',
+          cityLinksTitle: 'Meditation centres nationwide',
           cityLinksCta: 'Click here',
           newsletterLead:
             'Open the newsletter archive with circulars, events, retrospectives and editorial updates from Munich.',
@@ -166,17 +168,17 @@ const SessionsSection: React.FC = () => {
     >
       <div className="section-shell">
         <div id="community" aria-hidden="true" className="relative -top-24" />
-        <div className="max-w-4xl">
+        <div className="mx-auto max-w-4xl text-center">
           <div>
-            <span className="eyebrow">{copy.eyebrow}</span>
+            <span className="eyebrow !px-3 !py-1 !text-[0.62rem]">{copy.eyebrow}</span>
             <h2 className="mt-4 text-4xl sm:text-5xl">{copy.title}</h2>
-            <p className="mt-5 max-w-3xl text-base leading-8 text-[#334155] sm:text-lg">
+            <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-[#334155] sm:text-lg">
               {copy.intro}
             </p>
           </div>
         </div>
 
-        <div className="card-soft warm-hover-glow mt-12 overflow-hidden p-6 sm:p-8 lg:p-10">
+        <div className="card-soft warm-hover-glow mt-9 overflow-hidden p-6 sm:p-8 lg:p-10">
           <div className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
             <div className="flex min-w-0 flex-col gap-4">
               <aside className="warm-hover-glow relative min-w-0 overflow-hidden rounded-[1.7rem] border border-[#d8a08d]/32 bg-[linear-gradient(180deg,rgba(255,255,255,0.76),rgba(255,245,239,0.48))] p-6 shadow-[0_20px_42px_rgba(179,93,76,0.08)] sm:p-7">
@@ -254,45 +256,6 @@ const SessionsSection: React.FC = () => {
                   <p className="text-sm leading-6 text-slate-600">{copy.freeNote}</p>
                 </div>
               </aside>
-
-              <div className="grid gap-4 md:grid-cols-2">
-                <div className="warm-hover-glow flex min-h-[13rem] min-w-0 flex-col rounded-[1.25rem] border border-[#d8a08d]/26 bg-[linear-gradient(180deg,rgba(255,255,255,0.82),rgba(255,245,239,0.62))] px-4 py-4 shadow-[0_12px_24px_rgba(179,93,76,0.06)]">
-                  <p className="text-[0.82rem] font-semibold uppercase tracking-[0.22em] text-[#b56757]">
-                    {copy.cityLinksCta}
-                  </p>
-                  <p className="mt-2 flex-1 break-words text-[0.96rem] leading-6 text-slate-600">
-                    {copy.cityLinksLead}
-                  </p>
-                  <a
-                    href="https://www.sahajayoga.de/kurse/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-4 inline-flex w-fit items-center gap-2 rounded-full border border-[#d8a08d]/32 bg-[rgba(255,250,246,0.94)] px-4 py-2 text-sm font-semibold text-[#b56757] transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/45 hover:bg-[rgba(255,244,238,0.98)]"
-                  >
-                    <span aria-hidden="true">👉</span>
-                    <span>{copy.cityLinksCta}</span>
-                  </a>
-                </div>
-
-                <Link
-                  to="/newsletter"
-                  className="warm-hover-glow group flex min-h-[13rem] min-w-0 flex-col rounded-[1.25rem] border border-[#d8a08d]/26 bg-[linear-gradient(180deg,rgba(255,255,255,0.82),rgba(255,245,239,0.62))] px-4 py-4 shadow-[0_12px_24px_rgba(179,93,76,0.06)] transition duration-300 hover:-translate-y-0.5"
-                >
-                  <p className="text-[0.82rem] font-semibold uppercase tracking-[0.22em] text-[#b56757]">
-                    {copy.newsletterCta}
-                  </p>
-                  <h4 className="mt-2 text-[1.02rem] leading-6 text-[#6c473d]">
-                    {copy.newsletterTitle}
-                  </h4>
-                  <p className="mt-2 flex-1 break-words text-[0.96rem] leading-6 text-slate-600">
-                    {copy.newsletterLead}
-                  </p>
-                  <span className="mt-4 inline-flex w-fit items-center gap-2 rounded-full border border-[#d8a08d]/32 bg-[rgba(255,250,246,0.94)] px-4 py-2 text-sm font-semibold text-[#b56757] transition duration-300 group-hover:-translate-y-0.5 group-hover:border-[#b35d4c]/45 group-hover:bg-[rgba(255,244,238,0.98)]">
-                    <span aria-hidden="true">✦</span>
-                    <span>{copy.newsletterCta}</span>
-                  </span>
-                </Link>
-              </div>
             </div>
 
             <div className="warm-hover-glow min-w-0 rounded-[1.7rem] border border-[#d8a08d]/28 bg-[linear-gradient(180deg,rgba(255,255,255,0.56),rgba(227,242,248,0.4))] p-6 shadow-[0_18px_36px_rgba(74,113,143,0.08)] sm:p-7">
@@ -337,6 +300,36 @@ const SessionsSection: React.FC = () => {
                 ))}
               </div>
             </div>
+          </div>
+
+          <div className="mt-4 grid gap-4 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+            <div className="warm-hover-glow flex min-h-[7.1rem] min-w-0 flex-col justify-between rounded-[1.25rem] border border-[#d8a08d]/26 bg-[linear-gradient(180deg,rgba(255,255,255,0.82),rgba(255,245,239,0.62))] px-4 py-3.5 shadow-[0_12px_24px_rgba(179,93,76,0.06)]">
+              <p className="break-words text-[0.92rem] leading-5 text-slate-600">
+                {copy.cityLinksLead}
+              </p>
+              <a
+                href="https://www.sahajayoga.de/kurse/"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-3 inline-flex w-fit items-center gap-2 rounded-full border border-[#d8a08d]/32 bg-[rgba(255,250,246,0.94)] px-4 py-2 text-sm font-semibold text-[#b56757] transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/45 hover:bg-[rgba(255,244,238,0.98)]"
+              >
+                <span aria-hidden="true">👉</span>
+                <span>{copy.cityLinksCta}</span>
+              </a>
+            </div>
+
+            <Link
+              to="/newsletter"
+              className="warm-hover-glow group flex min-h-[7.1rem] min-w-0 flex-col justify-between rounded-[1.25rem] border border-[#d8a08d]/26 bg-[linear-gradient(180deg,rgba(255,255,255,0.82),rgba(255,245,239,0.62))] px-4 py-3.5 shadow-[0_12px_24px_rgba(179,93,76,0.06)] transition duration-300 hover:-translate-y-0.5"
+            >
+              <p className="break-words text-[0.92rem] leading-5 text-slate-600">
+                {copy.newsletterLead}
+              </p>
+              <span className="mt-3 inline-flex w-fit items-center gap-2 rounded-full border border-[#d8a08d]/32 bg-[rgba(255,250,246,0.94)] px-4 py-2 text-sm font-semibold text-[#b56757] transition duration-300 group-hover:-translate-y-0.5 group-hover:border-[#b35d4c]/45 group-hover:bg-[rgba(255,244,238,0.98)]">
+                <span aria-hidden="true">✦</span>
+                <span>{copy.newsletterCta}</span>
+              </span>
+            </Link>
           </div>
         </div>
       </div>

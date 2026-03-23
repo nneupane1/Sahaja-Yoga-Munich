@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import chakraImg from '../assets/chakra.png';
+import lotusImg from '../assets/lotus.png';
 import { getBlogArticles, getBlogArticle } from '../content/blogArticles';
 import { getSanityBlogArticles } from '../content/sanityBlog';
 import { getSanityNewsletters, type Newsletter } from '../content/sanityNewsletters';
@@ -184,7 +185,16 @@ const BlogPage: React.FC = () => {
         };
 
   return (
-    <main className="overflow-hidden bg-[linear-gradient(180deg,#dff4ff_0%,#eef9ff_54%,#dff2ff_100%)]">
+    <main className="relative overflow-hidden bg-[linear-gradient(180deg,#dff4ff_0%,#eef9ff_54%,#dff2ff_100%)]">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+        <img
+          src={lotusImg}
+          alt=""
+          className="absolute left-1/2 top-0 h-full w-[120rem] max-w-none -translate-x-1/2 object-cover object-center opacity-[0.06] mix-blend-multiply"
+        />
+      </div>
+
+      <div className="relative z-[1]">
       <section className="section-band pb-10">
         <div className="section-shell">
           <div className="grid gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-start">
@@ -389,6 +399,7 @@ const BlogPage: React.FC = () => {
           </div>
         </div>
       </section>
+      </div>
     </main>
   );
 };
