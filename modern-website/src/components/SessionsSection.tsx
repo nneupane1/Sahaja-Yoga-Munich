@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useLocale } from '../context/LocaleContext';
 
 /**
@@ -16,6 +17,10 @@ const SessionsSection: React.FC = () => {
           cityLinksLead:
             'Weitere Sahaja-Yoga-Meditationszentren in anderen Städten im ganzen Land findest du hier.',
           cityLinksCta: 'Hier klicken',
+          newsletterLead:
+            'Öffne das Newsletter-Archiv mit Rundbriefen, Veranstaltungen, Rückblicken und redaktionellen Hinweisen aus München.',
+          newsletterTitle: 'Zum Newsletter-Archiv',
+          newsletterCta: 'Newsletter',
           contactTitle: 'Vor Ort in München',
           contactHeadline: 'Ein offener Raum für ruhige, geführte Meditation',
           contactIntro:
@@ -87,6 +92,10 @@ const SessionsSection: React.FC = () => {
           cityLinksLead:
             'More Sahaja Yoga meditation centres in other cities across the country can be found here.',
           cityLinksCta: 'Click here',
+          newsletterLead:
+            'Open the newsletter archive with circulars, events, retrospectives and editorial updates from Munich.',
+          newsletterTitle: 'Open the newsletter archive',
+          newsletterCta: 'Newsletter',
           contactTitle: 'In Munich',
           contactHeadline: 'A welcoming space for calm, guided meditation',
           contactIntro:
@@ -246,17 +255,43 @@ const SessionsSection: React.FC = () => {
                 </div>
               </aside>
 
-              <div className="warm-hover-glow min-w-0 rounded-[1.25rem] border border-[#d8a08d]/26 bg-[linear-gradient(180deg,rgba(255,255,255,0.82),rgba(255,245,239,0.62))] px-4 py-4 shadow-[0_12px_24px_rgba(179,93,76,0.06)]">
-                <p className="break-words text-[0.9rem] leading-6 text-slate-600">{copy.cityLinksLead}</p>
-                <a
-                  href="https://www.sahajayoga.de/kurse/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-3 inline-flex items-center gap-2 rounded-full border border-[#d8a08d]/32 bg-[rgba(255,250,246,0.94)] px-4 py-2 text-sm font-semibold text-[#b56757] transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/45 hover:bg-[rgba(255,244,238,0.98)]"
+              <div className="grid gap-4 md:grid-cols-2">
+                <div className="warm-hover-glow flex min-h-[13rem] min-w-0 flex-col rounded-[1.25rem] border border-[#d8a08d]/26 bg-[linear-gradient(180deg,rgba(255,255,255,0.82),rgba(255,245,239,0.62))] px-4 py-4 shadow-[0_12px_24px_rgba(179,93,76,0.06)]">
+                  <p className="text-[0.82rem] font-semibold uppercase tracking-[0.22em] text-[#b56757]">
+                    {copy.cityLinksCta}
+                  </p>
+                  <p className="mt-2 flex-1 break-words text-[0.96rem] leading-6 text-slate-600">
+                    {copy.cityLinksLead}
+                  </p>
+                  <a
+                    href="https://www.sahajayoga.de/kurse/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-4 inline-flex w-fit items-center gap-2 rounded-full border border-[#d8a08d]/32 bg-[rgba(255,250,246,0.94)] px-4 py-2 text-sm font-semibold text-[#b56757] transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/45 hover:bg-[rgba(255,244,238,0.98)]"
+                  >
+                    <span aria-hidden="true">👉</span>
+                    <span>{copy.cityLinksCta}</span>
+                  </a>
+                </div>
+
+                <Link
+                  to="/newsletter"
+                  className="warm-hover-glow group flex min-h-[13rem] min-w-0 flex-col rounded-[1.25rem] border border-[#d8a08d]/26 bg-[linear-gradient(180deg,rgba(255,255,255,0.82),rgba(255,245,239,0.62))] px-4 py-4 shadow-[0_12px_24px_rgba(179,93,76,0.06)] transition duration-300 hover:-translate-y-0.5"
                 >
-                  <span aria-hidden="true">👉</span>
-                  <span>{copy.cityLinksCta}</span>
-                </a>
+                  <p className="text-[0.82rem] font-semibold uppercase tracking-[0.22em] text-[#b56757]">
+                    {copy.newsletterCta}
+                  </p>
+                  <h4 className="mt-2 text-[1.02rem] leading-6 text-[#6c473d]">
+                    {copy.newsletterTitle}
+                  </h4>
+                  <p className="mt-2 flex-1 break-words text-[0.96rem] leading-6 text-slate-600">
+                    {copy.newsletterLead}
+                  </p>
+                  <span className="mt-4 inline-flex w-fit items-center gap-2 rounded-full border border-[#d8a08d]/32 bg-[rgba(255,250,246,0.94)] px-4 py-2 text-sm font-semibold text-[#b56757] transition duration-300 group-hover:-translate-y-0.5 group-hover:border-[#b35d4c]/45 group-hover:bg-[rgba(255,244,238,0.98)]">
+                    <span aria-hidden="true">✦</span>
+                    <span>{copy.newsletterCta}</span>
+                  </span>
+                </Link>
               </div>
             </div>
 

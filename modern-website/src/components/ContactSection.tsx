@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useLocale } from '../context/LocaleContext';
 
 type ContactFormState = {
@@ -31,10 +30,6 @@ const ContactSection: React.FC = () => {
           sessionsCardTitle: 'Zu den Meditationszeiten in München',
           sessionsCardBody: 'Hier findest du alle regelmäßigen Treffen, Zeiten und den Veranstaltungsort.',
           sessionsCardCta: 'Hier klicken',
-          newsletterCardTitle: 'Zum Newsletter-Archiv',
-          newsletterCardBody:
-            'Öffne Rundbriefe, Veranstaltungen, Rückblicke und redaktionelle Hinweise aus München.',
-          newsletterCardCta: 'Newsletter',
           name: 'Name',
           email: 'E-Mail',
           subject: 'Betreff',
@@ -58,10 +53,6 @@ const ContactSection: React.FC = () => {
           sessionsCardTitle: 'See meditation times in Munich',
           sessionsCardBody: 'Open the full schedule, venue details and weekly meeting information.',
           sessionsCardCta: 'Click here',
-          newsletterCardTitle: 'Open the newsletter archive',
-          newsletterCardBody:
-            'Explore circulars, events, retrospectives and editorial updates from Munich.',
-          newsletterCardCta: 'Newsletter',
           name: 'Name',
           email: 'Email',
           subject: 'Subject',
@@ -120,7 +111,7 @@ const ContactSection: React.FC = () => {
           <p className="mt-5 text-lg leading-8 text-slate-600 sm:text-[1.28rem]">
             {copy.subtitle}
           </p>
-          <div className="mt-7 grid gap-4 sm:grid-cols-2">
+          <div className="mt-7">
             <a
               href="#sessions"
               className="card-soft warm-hover-glow group flex items-center justify-between gap-4 rounded-[1.5rem] px-5 py-4 text-left transition duration-300 hover:-translate-y-1 sm:px-6"
@@ -148,34 +139,6 @@ const ContactSection: React.FC = () => {
                 ↗
               </span>
             </a>
-
-            <Link
-              to="/newsletter"
-              className="card-soft warm-hover-glow group flex items-center justify-between gap-4 rounded-[1.5rem] px-5 py-4 text-left transition duration-300 hover:-translate-y-1 sm:px-6"
-            >
-              <div className="flex min-w-0 items-center gap-4">
-                <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#d8a08d]/34 bg-[rgba(255,247,241,0.96)] text-xl text-[#b35d4c] shadow-[0_10px_20px_rgba(146,92,79,0.08)]">
-                  ✦
-                </span>
-                <div className="min-w-0">
-                  <p className="text-[0.82rem] font-semibold uppercase tracking-[0.22em] text-[#b56757]">
-                    {copy.newsletterCardCta}
-                  </p>
-                  <h3 className="mt-1 text-xl leading-tight text-[#6c473d] sm:text-[1.3rem]">
-                    {copy.newsletterCardTitle}
-                  </h3>
-                  <p className="mt-1 text-sm leading-6 text-slate-600 sm:text-[0.95rem]">
-                    {copy.newsletterCardBody}
-                  </p>
-                </div>
-              </div>
-              <span
-                aria-hidden="true"
-                className="shrink-0 text-2xl text-[#b35d4c] transition duration-300 group-hover:translate-x-0.5"
-              >
-                ↗
-              </span>
-            </Link>
           </div>
         </div>
 
