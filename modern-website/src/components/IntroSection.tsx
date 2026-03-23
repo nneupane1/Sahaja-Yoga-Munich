@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLocale } from '../context/LocaleContext';
+import charlieImg from '../assets/charlie.png';
 
 /**
  * Introduction to the core ideas behind Sahaja Yoga.
@@ -264,10 +265,18 @@ const IntroSection: React.FC = () => {
                       </p>
                     </aside>
 
-                    <article className="warm-hover-glow rounded-[1.3rem] border border-[#d8a08d]/30 bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(255,244,238,0.66))] p-4 shadow-[0_14px_28px_rgba(179,93,76,0.08)]">
-                      <p className="text-[0.94rem] font-medium leading-7 text-[#8f5e4f]">
-                        {copy.meaningCard.freeSessionsNote}
-                      </p>
+                    <article className="warm-hover-glow overflow-hidden rounded-[1.3rem] border border-[#d8a08d]/30 bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(255,244,238,0.66))] p-3 shadow-[0_14px_28px_rgba(179,93,76,0.08)]">
+                      <div className="overflow-hidden rounded-[1rem] border border-[#d8a08d]/24 bg-[rgba(255,250,246,0.78)]">
+                        <img
+                          src={charlieImg}
+                          alt={
+                            locale === 'de'
+                              ? 'Darstellung des subtilen Systems'
+                              : 'Illustration of the subtle system'
+                          }
+                          className="h-full w-full rounded-[1rem] object-contain object-center"
+                        />
+                      </div>
                     </article>
                   </div>
 
@@ -285,7 +294,7 @@ const IntroSection: React.FC = () => {
                           </div>
                         ) : null}
                         <p className="text-[1rem] leading-8 text-[#333333]">{paragraph}</p>
-                        {index === 0 ? (
+                        {index === 1 ? (
                           <div className="mt-5 rounded-[1.15rem] border border-[#b35d4c]/22 bg-[linear-gradient(135deg,rgba(255,249,245,0.98),rgba(255,255,255,0.9))] p-4 shadow-[0_12px_24px_rgba(72,110,140,0.08)]">
                             <p className="text-[0.88rem] font-bold leading-6 text-[#8f5e4f]">
                               {copy.meaningCard.openHereBody}
