@@ -285,7 +285,7 @@ const IntroSection: React.FC = () => {
                           </div>
                         ) : null}
                         <p className="text-[1rem] leading-8 text-[#333333]">{paragraph}</p>
-                        {locale === 'de' && index === 0 ? (
+                        {index === 0 ? (
                           <div className="mt-5 rounded-[1.15rem] border border-[#b35d4c]/22 bg-[linear-gradient(135deg,rgba(255,249,245,0.98),rgba(255,255,255,0.9))] p-4 shadow-[0_12px_24px_rgba(72,110,140,0.08)]">
                             <p className="text-[0.88rem] font-bold leading-6 text-[#8f5e4f]">
                               {copy.meaningCard.openHereBody}
@@ -354,24 +354,6 @@ const IntroSection: React.FC = () => {
                     <span>{copy.videoCard.cta}</span>
                   </a>
                 </div>
-                {locale !== 'de' ? (
-                  <div className="mt-6 rounded-[1.15rem] border border-[#b35d4c]/22 bg-[linear-gradient(135deg,rgba(255,249,245,0.98),rgba(255,255,255,0.9))] p-4 shadow-[0_12px_24px_rgba(72,110,140,0.08)]">
-                    <p className="text-[0.88rem] font-bold leading-6 text-[#8f5e4f]">
-                      {copy.meaningCard.openHereBody}
-                    </p>
-                    <div className="mt-3">
-                      <Link
-                        to={copy.meaningCard.openHereLink.to}
-                        className="inline-flex items-center justify-center gap-2 rounded-[0.9rem] border border-[#b35d4c]/28 bg-[rgba(255,255,255,0.96)] px-4 py-2.5 text-[0.75rem] font-semibold uppercase tracking-[0.1em] text-[#b56757] shadow-[0_10px_18px_rgba(72,110,140,0.06)] transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/42 hover:bg-[rgba(255,244,238,0.98)]"
-                      >
-                        <span aria-hidden="true" className="text-[1.05rem] leading-none">
-                          👉
-                        </span>
-                        <span>{copy.meaningCard.openHereTitle}</span>
-                      </Link>
-                    </div>
-                  </div>
-                ) : null}
               </div>
                 </article>
               </div>
