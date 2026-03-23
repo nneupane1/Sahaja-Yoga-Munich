@@ -417,23 +417,70 @@ const BlogPage: React.FC = () => {
       {latestNewsletterIssue && (
         <section id="newsletter-latest" className="section-band pt-2">
           <div className="section-shell">
-            <div className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-              <div className="card-soft warm-hover-glow reveal-ready p-7 sm:p-8">
-                <span className="eyebrow">{copy.highlightsEyebrow}</span>
-                <h2 className="mt-4 text-4xl sm:text-[2.7rem]">{copy.latestIssueTitle}</h2>
-                <p className="mt-5 text-[1rem] leading-8 text-slate-600">{copy.latestIssueBody}</p>
-                <div className="mt-6 rounded-[1.3rem] border border-[#b35d4c]/18 bg-[rgba(255,250,246,0.9)] px-5 py-4">
-                  <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b56757]">
+            <article className="newsletter-stage reveal-ready overflow-hidden p-6 sm:p-8 lg:p-10">
+              <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+                <div className="overflow-hidden rounded-[1.8rem] border border-[#b35d4c]/20 bg-white/72">
+                  <img
+                    src={latestNewsletterIssue.heroImageUrl ?? motherImg}
+                    alt={latestNewsletterIssue.heroImageAlt}
+                    className="h-[22rem] w-full object-cover object-center"
+                  />
+                </div>
+
+                <div className="flex flex-col">
+                  <div className="flex flex-wrap gap-3">
+                    <span className="eyebrow">{copy.highlightsEyebrow}</span>
+                    <span className="eyebrow">
+                      {copy.issueLabel} {latestNewsletterIssue.issueLabel}
+                    </span>
+                    <span className="eyebrow">{latestNewsletterIssue.locale.toUpperCase()}</span>
+                  </div>
+                  <h2 className="mt-5 max-w-3xl text-[2.15rem] leading-tight sm:text-[2.7rem]">
                     {latestNewsletterIssue.title}
+                  </h2>
+                  {latestNewsletterIssue.introTitle && (
+                    <p className="mt-5 text-[0.8rem] font-semibold uppercase tracking-[0.2em] text-[#b56757]">
+                      {latestNewsletterIssue.introTitle}
+                    </p>
+                  )}
+                  <p className="mt-3 max-w-3xl whitespace-pre-line text-[1rem] leading-8 text-slate-600">
+                    {trimCardPreview(latestNewsletterIssue.introBody, 420)}
                   </p>
-                  <p className="mt-3 text-[0.98rem] leading-7 text-slate-600">
-                    {trimNewsletterPreview(latestNewsletterIssue.introBody.split('\n')[0])}
-                  </p>
+                  <div className="mt-6 rounded-[1.3rem] border border-[#b35d4c]/18 bg-[rgba(255,250,246,0.9)] px-5 py-4">
+                    <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b56757]">
+                      {copy.latestIssueEyebrow}
+                    </p>
+                    <p className="mt-3 text-[0.98rem] leading-7 text-slate-600">
+                      {copy.latestIssueBody}
+                    </p>
+                  </div>
+                  <div className="mt-7 flex flex-wrap gap-3">
+                    <Link
+                      to={latestNewsletterIssue.route}
+                      className="inline-flex items-center rounded-full border border-[#b35d4c]/30 bg-[rgba(255,250,246,0.96)] px-5 py-2.5 text-sm font-semibold text-[#b56757] transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/45 hover:bg-[rgba(255,244,238,0.98)]"
+                    >
+                      {copy.newsletterCta}
+                    </Link>
+                    <a
+                      href="#newsletter-archive"
+                      className="inline-flex items-center rounded-full border border-[#b35d4c]/20 bg-white/70 px-5 py-2.5 text-sm font-semibold text-slate-600 transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/35 hover:bg-[rgba(255,250,246,0.96)]"
+                    >
+                      {copy.newsletterArchiveCta}
+                    </a>
+                  </div>
                 </div>
               </div>
+            </article>
 
-              <div className="grid gap-6 xl:grid-cols-[1.08fr_0.92fr]">
-                <div className="grid gap-6 md:grid-cols-2">
+            {!!latestNewsletterHighlights.length && (
+              <div className="mt-8">
+                <div className="reveal-ready max-w-3xl">
+                  <span className="eyebrow">{copy.highlightsEyebrow}</span>
+                  <h3 className="mt-4 text-3xl sm:text-[2.25rem]">
+                    {latestNewsletterIssue.featuredHeading ?? copy.latestIssueTitle}
+                  </h3>
+                </div>
+                <div className="mt-6 grid gap-6 lg:grid-cols-2">
                   {latestNewsletterHighlights.map(card => (
                     <article
                       key={`${card.title}-${card.body.slice(0, 18)}`}
@@ -444,13 +491,13 @@ const BlogPage: React.FC = () => {
                           <img
                             src={card.imageUrl}
                             alt={card.imageAlt}
-                            className="h-[12rem] w-full object-cover object-center"
+                            className="h-[14rem] w-full object-cover object-center"
                           />
                         </div>
                       )}
                       <div className="mt-4">
                         {card.eyebrow && <span className="eyebrow">{card.eyebrow}</span>}
-                        <h3 className="mt-3 text-[1.35rem] leading-tight text-[#b56757]">
+                        <h3 className="mt-3 text-[1.45rem] leading-tight text-[#b56757]">
                           {card.title}
                         </h3>
                         {card.subtitle && (
@@ -459,97 +506,97 @@ const BlogPage: React.FC = () => {
                           </p>
                         )}
                         <p className="mt-4 text-[0.96rem] leading-7 text-slate-600">
-                          {trimCardPreview(card.body, 180)}
+                          {trimCardPreview(card.body, 220)}
                         </p>
                       </div>
                     </article>
                   ))}
                 </div>
-
-                <div className="grid gap-6">
-                  <article className="newsletter-stage reveal-ready p-6 sm:p-7">
-                    <span className="eyebrow">{copy.schedulePreviewEyebrow}</span>
-                    <h3 className="mt-4 text-[1.8rem] leading-tight text-[#b56757]">
-                      {copy.schedulePreviewTitle}
-                    </h3>
-                    {latestNewsletterIssue.scheduleNote && (
-                      <p className="mt-4 text-[0.96rem] leading-7 text-slate-600">
-                        {latestNewsletterIssue.scheduleNote}
-                      </p>
-                    )}
-                    {!!latestNewsletterSchedule.length && (
-                      <div className="mt-5 grid gap-4">
-                        {latestNewsletterSchedule.map(item => (
-                          <div
-                            key={`${item.day}-${item.time ?? item.description}`}
-                            className="rounded-[1.25rem] border border-[#b35d4c]/18 bg-[rgba(255,250,246,0.86)] px-4 py-4"
-                          >
-                            <div className="flex items-start justify-between gap-3">
-                              <h4 className="text-[1.08rem] leading-tight text-[#b56757]">{item.day}</h4>
-                              {item.time && <span className="eyebrow">{item.time}</span>}
-                            </div>
-                            <p className="mt-3 text-[0.94rem] leading-7 text-slate-600">
-                              {item.description}
-                            </p>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                    {!!latestNewsletterRegionalLinks.length && (
-                      <div className="mt-5 flex flex-wrap gap-3">
-                        {latestNewsletterRegionalLinks.map(link => (
-                          <a
-                            key={`${link.label}-${link.url ?? 'nolink'}`}
-                            href={link.url}
-                            target={link.url ? '_blank' : undefined}
-                            rel={link.url ? 'noreferrer' : undefined}
-                            className="hover-chip"
-                          >
-                            {link.label}
-                          </a>
-                        ))}
-                      </div>
-                    )}
-                  </article>
-
-                  <article className="card-soft warm-hover-glow reveal-ready p-6 sm:p-7">
-                    <span className="eyebrow">{copy.storyPreviewEyebrow}</span>
-                    <h3 className="mt-4 text-[1.8rem] leading-tight text-[#b56757]">
-                      {copy.storyPreviewTitle}
-                    </h3>
-                    {latestNewsletterStory && (
-                      <>
-                        <p className="mt-4 text-[1.18rem] leading-tight text-slate-700">
-                          {latestNewsletterStory.title}
-                        </p>
-                        <p className="mt-4 text-[0.96rem] leading-7 text-slate-600">
-                          {trimCardPreview(latestNewsletterStory.body, 260)}
-                        </p>
-                      </>
-                    )}
-                    {!!latestNewsletterRecommendedLinks.length && (
-                      <div className="mt-5">
-                        <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b56757]">
-                          {copy.linksPreviewTitle}
-                        </p>
-                        <div className="mt-3 flex flex-wrap gap-3">
-                          {latestNewsletterRecommendedLinks.map(link => (
-                            <a
-                              key={`${link.label}-${link.url ?? 'nolink'}`}
-                              href={link.url}
-                              target={link.url ? '_blank' : undefined}
-                              rel={link.url ? 'noreferrer' : undefined}
-                              className="hover-chip"
-                            >
-                              {link.label}
-                            </a>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                  </article>
-                </div>
               </div>
+            )}
+
+            <div className="mt-8 grid gap-6 lg:grid-cols-[1.02fr_0.98fr]">
+              <article className="newsletter-stage reveal-ready p-6 sm:p-7">
+                <span className="eyebrow">{copy.schedulePreviewEyebrow}</span>
+                <h3 className="mt-4 text-[1.95rem] leading-tight text-[#b56757]">
+                  {copy.schedulePreviewTitle}
+                </h3>
+                {latestNewsletterIssue.scheduleNote && (
+                  <p className="mt-4 text-[0.96rem] leading-7 text-slate-600">
+                    {latestNewsletterIssue.scheduleNote}
+                  </p>
+                )}
+                {!!latestNewsletterSchedule.length && (
+                  <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                    {latestNewsletterSchedule.map(item => (
+                      <div
+                        key={`${item.day}-${item.time ?? item.description}`}
+                        className="rounded-[1.25rem] border border-[#b35d4c]/18 bg-[rgba(255,250,246,0.86)] px-4 py-4"
+                      >
+                        <div className="flex items-start justify-between gap-3">
+                          <h4 className="text-[1.08rem] leading-tight text-[#b56757]">{item.day}</h4>
+                          {item.time && <span className="eyebrow">{item.time}</span>}
+                        </div>
+                        <p className="mt-3 text-[0.94rem] leading-7 text-slate-600">
+                          {item.description}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {!!latestNewsletterRegionalLinks.length && (
+                  <div className="mt-5 flex flex-wrap gap-3">
+                    {latestNewsletterRegionalLinks.map(link => (
+                      <a
+                        key={`${link.label}-${link.url ?? 'nolink'}`}
+                        href={link.url}
+                        target={link.url ? '_blank' : undefined}
+                        rel={link.url ? 'noreferrer' : undefined}
+                        className="hover-chip"
+                      >
+                        {link.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </article>
+
+              <article className="card-soft warm-hover-glow reveal-ready p-6 sm:p-7">
+                <span className="eyebrow">{copy.storyPreviewEyebrow}</span>
+                <h3 className="mt-4 text-[1.95rem] leading-tight text-[#b56757]">
+                  {copy.storyPreviewTitle}
+                </h3>
+                {latestNewsletterStory && (
+                  <>
+                    <p className="mt-4 text-[1.18rem] leading-tight text-slate-700">
+                      {latestNewsletterStory.title}
+                    </p>
+                    <p className="mt-4 text-[0.96rem] leading-7 text-slate-600">
+                      {trimCardPreview(latestNewsletterStory.body, 340)}
+                    </p>
+                  </>
+                )}
+                {!!latestNewsletterRecommendedLinks.length && (
+                  <div className="mt-5">
+                    <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b56757]">
+                      {copy.linksPreviewTitle}
+                    </p>
+                    <div className="mt-3 flex flex-wrap gap-3">
+                      {latestNewsletterRecommendedLinks.map(link => (
+                        <a
+                          key={`${link.label}-${link.url ?? 'nolink'}`}
+                          href={link.url}
+                          target={link.url ? '_blank' : undefined}
+                          rel={link.url ? 'noreferrer' : undefined}
+                          className="hover-chip"
+                        >
+                          {link.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </article>
             </div>
           </div>
         </section>
