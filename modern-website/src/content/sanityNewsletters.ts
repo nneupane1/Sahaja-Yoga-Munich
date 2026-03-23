@@ -328,7 +328,7 @@ const mapNewsletter = (record: SanityNewsletterRecord): Newsletter | null => {
   }
 
   return {
-    route: `/newsletter/${slug}`,
+    route: `/blog/newsletter/${slug}`,
     title,
     slug,
     locale: record.locale === 'en' ? 'en' : 'de',

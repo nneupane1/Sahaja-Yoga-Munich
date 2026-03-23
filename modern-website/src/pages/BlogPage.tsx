@@ -1,6 +1,9 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import chakraImg from '../assets/chakra.png';
+import lotusImg from '../assets/lotus.png';
+import motherImg from '../assets/mother1.jpg';
+import NewsletterDivider from '../components/NewsletterDivider';
 import { getBlogArticles, getBlogArticle } from '../content/blogArticles';
 import { getSanityBlogArticles } from '../content/sanityBlog';
 import { getSanityNewsletters, type Newsletter } from '../content/sanityNewsletters';
@@ -20,7 +23,8 @@ const BlogPage: React.FC = () => {
   );
   const [articles, setArticles] = useState(staticArticles);
   const [featuredArticle, setFeaturedArticle] = useState(staticFeaturedArticle);
-  const [latestNewsletter, setLatestNewsletter] = useState<Newsletter | null>(null);
+  const [newsletters, setNewsletters] = useState<Newsletter[]>([]);
+  const [isNewslettersLoading, setIsNewslettersLoading] = useState(true);
 
   const trimNewsletterPreview = (text: string) => {
     if (text.length <= 220) {
@@ -30,9 +34,25 @@ const BlogPage: React.FC = () => {
     return `${text.slice(0, 217).trimEnd()}...`;
   };
 
+  const formatNewsletterDate = (value: string) => {
+    const date = new Date(value);
+
+    if (Number.isNaN(date.getTime())) {
+      return value;
+    }
+
+    return new Intl.DateTimeFormat(locale === 'de' ? 'de-DE' : 'en-GB', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    }).format(date);
+  };
+
   useEffect(() => {
     setArticles(staticArticles);
     setFeaturedArticle(staticFeaturedArticle);
+    setNewsletters([]);
+    setIsNewslettersLoading(true);
 
     let cancelled = false;
 
@@ -52,12 +72,14 @@ const BlogPage: React.FC = () => {
     getSanityNewsletters(locale)
       .then(newsletters => {
         if (!cancelled) {
-          setLatestNewsletter(newsletters?.[0] ?? null);
+          setNewsletters(newsletters ?? []);
+          setIsNewslettersLoading(false);
         }
       })
       .catch(() => {
         if (!cancelled) {
-          setLatestNewsletter(null);
+          setNewsletters([]);
+          setIsNewslettersLoading(false);
         }
       });
 
@@ -65,6 +87,8 @@ const BlogPage: React.FC = () => {
       cancelled = true;
     };
   }, [locale, staticArticles, staticFeaturedArticle]);
+
+  const latestNewsletter = newsletters[0] ?? null;
 
   const copy =
     locale === 'de'
@@ -74,6 +98,7 @@ const BlogPage: React.FC = () => {
           heroIntro:
             'Hier werden längere Texte, praktische Vertiefungen, Impulse aus der Meditation und Hinweise auf neue Entwicklungen in München gebündelt. So bekommt der Blog einen klaren Platz im Gesamtauftritt statt nur ein leerer Menüpunkt zu bleiben.',
           sectionLinks: [
+            { href: '#newsletter-archive', label: 'Newsletter & Archiv' },
             { href: '#empfohlen', label: 'Empfohlener Einstieg' },
             { href: '#beitraege', label: 'Beiträge' },
             { href: '#themen', label: 'Weitere Themen' }
@@ -82,11 +107,22 @@ const BlogPage: React.FC = () => {
           noteBody:
             'Der Blog verbindet ruhige Einführung, vertiefende Lesestrecken und kommende Inhalte. Er eignet sich für Texte über Kundalini, Selbstverwirklichung, wissenschaftliche Perspektiven, kollektive Meditation und Hinweise auf besondere Programme.',
           newsletterEyebrow: 'Newsletter',
-          newsletterTitle: 'Regelmäßige Rundbriefe, Programme und Rückblicke erhalten jetzt einen eigenen redaktionellen Raum.',
+          newsletterTitle:
+            'Newsletter, Programme und Rundbriefe bleiben nun sichtbar im Blog selbst statt in einem separaten Seitenzweig.',
           newsletterBody:
-            'Die bisherigen Newsletter können künftig als gestaltete Seiten erscheinen, statt in schwer lesbaren Altformaten zu bleiben. Neue Ausgaben lassen sich direkt aus dem Sanity Studio veröffentlichen.',
-          newsletterCta: 'Zum Newsletter-Archiv',
+            'So entsteht ein gemeinsamer redaktioneller Raum: tiefere Artikel, regelmäßige Rundbriefe, Veranstaltungsankündigungen und Archiv-Ausgaben erscheinen zusammen an einem Ort. Neue Ausgaben lassen sich direkt aus dem Sanity Studio veröffentlichen und bleiben dauerhaft lesbar im Blog verankert.',
+          newsletterCta: 'Zum Newsletter-Bereich',
           latestIssue: 'Neueste Ausgabe',
+          archiveEyebrow: 'Newsletter-Archiv',
+          archiveTitle: 'Rundbriefe, Veranstaltungen und Archiv-Ausgaben gehören jetzt sichtbar zum Blog.',
+          archiveIntro:
+            'Jede Ausgabe bleibt als gestaltete Seite erhalten, kann später erweitert werden und bleibt dennoch Teil derselben redaktionellen Umgebung wie die übrigen Blog-Beiträge.',
+          archiveNoteTitle: 'Warum diese Form besser ist',
+          archiveNoteBody:
+            'Statt Newsletter in einem abgetrennten Bereich oder in schwer lesbarem Alt-HTML zu verstecken, erscheinen sie hier als ruhige, kuratierte Ausgaben mit Archivcharakter und klarem Bezug zur restlichen Website.',
+          issueLabel: 'Ausgabe',
+          openIssue: 'Ausgabe öffnen',
+          noNewsletterItems: 'Es wurden noch keine Newsletter veröffentlicht.',
           featuredEyebrow: 'Empfohlener Einstieg',
           featuredTitle: 'Gedankenfreie Stille als praktische Erfahrung des gegenwärtigen Moments',
           featuredBody:
@@ -131,6 +167,7 @@ const BlogPage: React.FC = () => {
           heroIntro:
             'This page gathers longer-form writing, practical reflections, meditative insights and updates from Munich in one clear place. The blog now has a proper destination in the site instead of remaining an empty navigation item.',
           sectionLinks: [
+            { href: '#newsletter-archive', label: 'Newsletter & archive' },
             { href: '#featured', label: 'Featured entry' },
             { href: '#articles', label: 'Articles' },
             { href: '#themes', label: 'Further themes' }
@@ -139,11 +176,22 @@ const BlogPage: React.FC = () => {
           noteBody:
             'The blog combines calm introductions, deeper reading paths and future content. It is a natural home for writing on Kundalini, Self-Realization, scientific perspectives, collective meditation and programme updates.',
           newsletterEyebrow: 'Newsletter',
-          newsletterTitle: 'Regular circulars, programme updates and retrospectives now have their own editorial space.',
+          newsletterTitle:
+            'Newsletters, programme updates and circulars now stay visible inside the blog itself instead of living in a separate branch.',
           newsletterBody:
-            'The old newsletters can now appear as designed pages instead of remaining trapped in harder-to-read legacy formats. New issues can be published directly from Sanity Studio.',
-          newsletterCta: 'Open newsletter archive',
+            'That creates one coherent editorial space: long-form articles, regular circulars, event announcements and archived issues all remain visible together. New issues can be published directly from Sanity Studio and remain permanently anchored inside the blog.',
+          newsletterCta: 'Open newsletter section',
           latestIssue: 'Latest issue',
+          archiveEyebrow: 'Newsletter archive',
+          archiveTitle: 'Circulars, event notes and archive issues now live openly inside the blog.',
+          archiveIntro:
+            'Each issue remains available as a designed page, can be extended later and still belongs to the same editorial environment as the rest of the blog.',
+          archiveNoteTitle: 'Why this structure works better',
+          archiveNoteBody:
+            'Instead of hiding newsletters in a separate area or leaving them trapped in legacy HTML, they now appear here as curated editorial issues with a proper archive and a clear relationship to the rest of the site.',
+          issueLabel: 'Issue',
+          openIssue: 'Open issue',
+          noNewsletterItems: 'No newsletters have been published yet.',
           featuredEyebrow: 'Featured entry',
           featuredTitle: 'Thoughtless awareness as a practical experience of the present moment',
           featuredBody:
@@ -262,7 +310,7 @@ const BlogPage: React.FC = () => {
 
                   <div className="mt-7">
                     <Link
-                      to="/newsletter"
+                      to="/blog#newsletter-archive"
                       className="inline-flex items-center rounded-full border border-[#b35d4c]/30 bg-[rgba(255,250,246,0.96)] px-5 py-2.5 text-sm font-semibold text-[#b56757] transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/45 hover:bg-[rgba(255,244,238,0.98)]"
                     >
                       {copy.newsletterCta}
@@ -274,6 +322,148 @@ const BlogPage: React.FC = () => {
           </div>
         </section>
       )}
+
+      <section className="pb-2">
+        <div className="section-shell">
+          <NewsletterDivider />
+        </div>
+      </section>
+
+      <section id="newsletter-archive" className="section-band pt-4">
+        <div className="section-shell">
+          <div className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+            <div className="card-soft warm-hover-glow reveal-ready p-7 sm:p-8">
+              <span className="eyebrow">{copy.archiveEyebrow}</span>
+              <h2 className="mt-4 text-4xl sm:text-[2.7rem]">{copy.archiveTitle}</h2>
+              <p className="mt-5 text-[1rem] leading-8 text-slate-600">{copy.archiveIntro}</p>
+              <div className="mt-6 rounded-[1.3rem] border border-[#b35d4c]/18 bg-[rgba(255,250,246,0.9)] px-5 py-4">
+                <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b56757]">
+                  {copy.archiveNoteTitle}
+                </p>
+                <p className="mt-3 text-[0.98rem] leading-7 text-slate-600">
+                  {copy.archiveNoteBody}
+                </p>
+              </div>
+            </div>
+
+            <article className="newsletter-stage reveal-ready overflow-hidden p-5 sm:p-6">
+              <img
+                src={lotusImg}
+                alt=""
+                aria-hidden="true"
+                className="pointer-events-none absolute -right-6 -top-6 w-24 rotate-[14deg] opacity-[0.1] mix-blend-multiply"
+              />
+              <div className="grid gap-5 sm:grid-cols-[0.9fr_1.1fr] sm:items-start">
+                <div className="overflow-hidden rounded-[1.5rem] border border-[#b35d4c]/20 bg-white/70">
+                  <img
+                    src={latestNewsletter?.heroImageUrl ?? motherImg}
+                    alt={latestNewsletter?.heroImageAlt ?? (locale === 'de' ? 'Newsletter' : 'Newsletter')}
+                    className="h-[14rem] w-full object-cover object-center"
+                  />
+                </div>
+
+                <div className="relative z-10 flex h-full flex-col">
+                  {latestNewsletter ? (
+                    <>
+                      <div className="flex flex-wrap gap-2">
+                        <span className="eyebrow">
+                          {copy.issueLabel} {latestNewsletter.issueLabel}
+                        </span>
+                        <span className="eyebrow">{latestNewsletter.locale.toUpperCase()}</span>
+                      </div>
+                      <h3 className="mt-4 text-[1.55rem] leading-tight text-[#b56757]">
+                        {latestNewsletter.title}
+                      </h3>
+                      <p className="mt-3 text-[0.98rem] leading-7 text-slate-600">
+                        {latestNewsletter.introTitle ? `${latestNewsletter.introTitle}. ` : ''}
+                        {latestNewsletter.introBody.split('\n')[0]}
+                      </p>
+                      <div className="mt-5 flex items-center justify-between gap-3">
+                        <p className="text-sm text-slate-500">
+                          {formatNewsletterDate(latestNewsletter.publishedAt)}
+                        </p>
+                        <Link
+                          to={latestNewsletter.route}
+                          className="inline-flex items-center text-sm font-semibold text-[#b56757] transition duration-300 hover:translate-x-1"
+                        >
+                          {copy.openIssue} <span className="ml-2">→</span>
+                        </Link>
+                      </div>
+                    </>
+                  ) : (
+                    <p className="text-[0.98rem] leading-7 text-slate-600">{copy.noNewsletterItems}</p>
+                  )}
+                </div>
+              </div>
+            </article>
+          </div>
+
+          {isNewslettersLoading ? (
+            <div className="mt-8 card-soft p-7 text-slate-600">
+              {locale === 'de' ? 'Newsletter werden geladen …' : 'Loading newsletters …'}
+            </div>
+          ) : newsletters.length ? (
+            <div className="mt-9 grid gap-6 lg:grid-cols-2">
+              {newsletters.map((newsletter, index) => (
+                <article
+                  key={newsletter.slug}
+                  className="newsletter-stage reveal-ready overflow-hidden p-5 sm:p-6"
+                >
+                  <img
+                    src={index % 2 === 0 ? lotusImg : chakraImg}
+                    alt=""
+                    aria-hidden="true"
+                    className={`pointer-events-none absolute opacity-[0.1] mix-blend-multiply ${
+                      index % 2 === 0
+                        ? '-right-6 -top-6 w-24 rotate-[14deg]'
+                        : '-left-8 bottom-0 w-24 -rotate-[18deg]'
+                    }`}
+                  />
+
+                  <div className="grid gap-5 sm:grid-cols-[0.9fr_1.1fr] sm:items-start">
+                    <div className="overflow-hidden rounded-[1.5rem] border border-[#b35d4c]/20 bg-white/70">
+                      <img
+                        src={newsletter.heroImageUrl ?? motherImg}
+                        alt={newsletter.heroImageAlt}
+                        className="h-[14rem] w-full object-cover object-center"
+                      />
+                    </div>
+
+                    <div className="relative z-10 flex h-full flex-col">
+                      <div className="flex flex-wrap gap-2">
+                        <span className="eyebrow">
+                          {copy.issueLabel} {newsletter.issueLabel}
+                        </span>
+                        <span className="eyebrow">{newsletter.locale.toUpperCase()}</span>
+                      </div>
+                      <h3 className="mt-4 text-[1.55rem] leading-tight text-[#b56757]">
+                        {newsletter.title}
+                      </h3>
+                      <p className="mt-3 text-[0.98rem] leading-7 text-slate-600">
+                        {newsletter.introTitle ? `${newsletter.introTitle}. ` : ''}
+                        {newsletter.introBody.split('\n')[0]}
+                      </p>
+                      <div className="mt-5 flex items-center justify-between gap-3">
+                        <p className="text-sm text-slate-500">
+                          {formatNewsletterDate(newsletter.publishedAt)}
+                        </p>
+                        <Link
+                          to={newsletter.route}
+                          className="inline-flex items-center text-sm font-semibold text-[#b56757] transition duration-300 hover:translate-x-1"
+                        >
+                          {copy.openIssue} <span className="ml-2">→</span>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <div className="mt-8 card-soft p-7 text-slate-600">{copy.noNewsletterItems}</div>
+          )}
+        </div>
+      </section>
 
       <section id={locale === 'de' ? 'empfohlen' : 'featured'} className="section-band pt-4">
         <div className="section-shell">

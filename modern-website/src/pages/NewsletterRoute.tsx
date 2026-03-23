@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, Navigate, useParams } from 'react-router-dom';
+import { Link, Navigate, useLocation, useParams } from 'react-router-dom';
 import chakraImg from '../assets/chakra.png';
 import lotusImg from '../assets/lotus.png';
 import motherImg from '../assets/mother.jpg';
@@ -100,10 +100,12 @@ const NewsletterContentCard: React.FC<{ card: NewsletterCard }> = ({ card }) => 
 
 const NewsletterRoute: React.FC = () => {
   const { slug: routeSlug } = useParams<{ slug: string }>();
+  const location = useLocation();
   const { locale } = useLocale();
   useScrollReveal('.reveal-ready', 'reveal', 0.18);
 
   const slug = routeSlug?.trim() ?? '';
+  const canonicalRoute = slug ? `/blog/newsletter/${slug}` : '/blog#newsletter-archive';
   const [newsletter, setNewsletter] = useState<Newsletter | null>(null);
   const [isResolving, setIsResolving] = useState(true);
   const [showLegacyImport, setShowLegacyImport] = useState(false);
@@ -221,7 +223,11 @@ const NewsletterRoute: React.FC = () => {
   };
 
   if (!slug) {
-    return <Navigate to="/newsletter" replace />;
+    return <Navigate to="/blog#newsletter-archive" replace />;
+  }
+
+  if (location.pathname.startsWith('/newsletter/')) {
+    return <Navigate to={canonicalRoute} replace />;
   }
 
   if (isResolving) {
@@ -237,7 +243,7 @@ const NewsletterRoute: React.FC = () => {
   }
 
   if (!newsletter) {
-    return <Navigate to="/newsletter" replace />;
+    return <Navigate to="/blog#newsletter-archive" replace />;
   }
 
   return (
@@ -246,7 +252,7 @@ const NewsletterRoute: React.FC = () => {
         <div className="section-shell">
           <div className="reveal-ready">
             <Link
-              to="/newsletter"
+              to="/blog#newsletter-archive"
               className="inline-flex items-center text-sm font-semibold text-[#b56757] transition duration-300 hover:-translate-x-1"
             >
               ← {copy.back}
