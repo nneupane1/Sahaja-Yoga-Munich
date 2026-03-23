@@ -6,7 +6,11 @@ import motherImg from '../assets/mother1.jpg';
 import NewsletterDivider from '../components/NewsletterDivider';
 import { getBlogArticles, getBlogArticle } from '../content/blogArticles';
 import { getSanityBlogArticles } from '../content/sanityBlog';
-import { getSanityNewsletters, type Newsletter } from '../content/sanityNewsletters';
+import {
+  getSanityNewsletter,
+  getSanityNewsletters,
+  type Newsletter
+} from '../content/sanityNewsletters';
 import { useLocale } from '../context/LocaleContext';
 import useScrollReveal from '../hooks/useScrollReveal';
 
@@ -25,6 +29,7 @@ const BlogPage: React.FC = () => {
   const [featuredArticle, setFeaturedArticle] = useState(staticFeaturedArticle);
   const [newsletters, setNewsletters] = useState<Newsletter[]>([]);
   const [isNewslettersLoading, setIsNewslettersLoading] = useState(true);
+  const [latestNewsletterIssue, setLatestNewsletterIssue] = useState<Newsletter | null>(null);
 
   const trimNewsletterPreview = (text: string) => {
     if (text.length <= 220) {
@@ -32,6 +37,14 @@ const BlogPage: React.FC = () => {
     }
 
     return `${text.slice(0, 217).trimEnd()}...`;
+  };
+
+  const trimCardPreview = (text: string, maxLength = 200) => {
+    if (text.length <= maxLength) {
+      return text;
+    }
+
+    return `${text.slice(0, maxLength - 3).trimEnd()}...`;
   };
 
   const formatNewsletterDate = (value: string) => {
@@ -53,6 +66,7 @@ const BlogPage: React.FC = () => {
     setFeaturedArticle(staticFeaturedArticle);
     setNewsletters([]);
     setIsNewslettersLoading(true);
+    setLatestNewsletterIssue(null);
 
     let cancelled = false;
 
@@ -72,14 +86,34 @@ const BlogPage: React.FC = () => {
     getSanityNewsletters(locale)
       .then(newsletters => {
         if (!cancelled) {
-          setNewsletters(newsletters ?? []);
+          const resolvedNewsletters = newsletters ?? [];
+          setNewsletters(resolvedNewsletters);
           setIsNewslettersLoading(false);
+
+          const newestIssue = resolvedNewsletters[0];
+
+          if (!newestIssue) {
+            return;
+          }
+
+          getSanityNewsletter(locale, newestIssue.slug)
+            .then(issue => {
+              if (!cancelled) {
+                setLatestNewsletterIssue(issue ?? newestIssue);
+              }
+            })
+            .catch(() => {
+              if (!cancelled) {
+                setLatestNewsletterIssue(newestIssue);
+              }
+            });
         }
       })
       .catch(() => {
         if (!cancelled) {
           setNewsletters([]);
           setIsNewslettersLoading(false);
+          setLatestNewsletterIssue(null);
         }
       });
 
@@ -89,6 +123,14 @@ const BlogPage: React.FC = () => {
   }, [locale, staticArticles, staticFeaturedArticle]);
 
   const latestNewsletter = newsletters[0] ?? null;
+  const latestVisibleNewsletter = latestNewsletterIssue ?? latestNewsletter;
+  const latestNewsletterHighlights = latestNewsletterIssue?.featuredCards.slice(0, 2) ?? [];
+  const latestNewsletterStory =
+    latestNewsletterIssue?.retrospectiveCards[0] ?? latestNewsletterIssue?.newsCards[0] ?? null;
+  const latestNewsletterSchedule = latestNewsletterIssue?.munichSchedule.slice(0, 2) ?? [];
+  const latestNewsletterRegionalLinks = latestNewsletterIssue?.regionalLinks.slice(0, 4) ?? [];
+  const latestNewsletterRecommendedLinks =
+    latestNewsletterIssue?.recommendedLinks.slice(0, 4) ?? [];
 
   const copy =
     locale === 'de'
@@ -111,8 +153,19 @@ const BlogPage: React.FC = () => {
             'Newsletter, Programme und Rundbriefe bleiben nun sichtbar im Blog selbst statt in einem separaten Seitenzweig.',
           newsletterBody:
             'So entsteht ein gemeinsamer redaktioneller Raum: tiefere Artikel, regelmäßige Rundbriefe, Veranstaltungsankündigungen und Archiv-Ausgaben erscheinen zusammen an einem Ort. Neue Ausgaben lassen sich direkt aus dem Sanity Studio veröffentlichen und bleiben dauerhaft lesbar im Blog verankert.',
-          newsletterCta: 'Zum Newsletter-Bereich',
+          newsletterCta: 'Neueste Ausgabe öffnen',
+          newsletterArchiveCta: 'Zum Archiv springen',
           latestIssue: 'Neueste Ausgabe',
+          latestIssueEyebrow: 'Aktuelle Ausgabe im Blick',
+          latestIssueTitle: 'Die neueste Ausgabe erscheint hier nicht nur als Link, sondern als editorial hervorgehobener Auftakt.',
+          latestIssueBody:
+            'So werden zentrale Themen der Ausgabe sofort sichtbar: kommende Programme, regelmäßige Meditationszeiten, regionale Hinweise und ausgewählte Rückblicke. Der vollständige Rundbrief bleibt mit einem Klick erreichbar.',
+          highlightsEyebrow: 'Aus der neuesten Ausgabe',
+          schedulePreviewEyebrow: 'Zeiten & Region',
+          schedulePreviewTitle: 'Ein direkter Blick auf Zeiten, Orte und regionale Hinweise.',
+          storyPreviewEyebrow: 'Ausgabe im Detail',
+          storyPreviewTitle: 'Eine konkrete Geschichte oder ein Rückblick bleibt sofort sichtbar.',
+          linksPreviewTitle: 'Wichtige Links aus der Ausgabe',
           archiveEyebrow: 'Newsletter-Archiv',
           archiveTitle: 'Rundbriefe, Veranstaltungen und Archiv-Ausgaben gehören jetzt sichtbar zum Blog.',
           archiveIntro:
@@ -180,8 +233,19 @@ const BlogPage: React.FC = () => {
             'Newsletters, programme updates and circulars now stay visible inside the blog itself instead of living in a separate branch.',
           newsletterBody:
             'That creates one coherent editorial space: long-form articles, regular circulars, event announcements and archived issues all remain visible together. New issues can be published directly from Sanity Studio and remain permanently anchored inside the blog.',
-          newsletterCta: 'Open newsletter section',
+          newsletterCta: 'Open latest issue',
+          newsletterArchiveCta: 'Jump to archive',
           latestIssue: 'Latest issue',
+          latestIssueEyebrow: 'Latest issue in view',
+          latestIssueTitle: 'The newest issue now appears here as an editorial feature, not just as a buried link.',
+          latestIssueBody:
+            'That keeps the most current newsletter immediately visible: upcoming programmes, regular meditation timings, regional links and selected reports can all be sensed at a glance. The full circular remains one click away.',
+          highlightsEyebrow: 'From the latest issue',
+          schedulePreviewEyebrow: 'Times & region',
+          schedulePreviewTitle: 'A direct view of timings, places and regional links.',
+          storyPreviewEyebrow: 'From the issue itself',
+          storyPreviewTitle: 'One concrete story or retrospective remains visible straight away.',
+          linksPreviewTitle: 'Key links from the issue',
           archiveEyebrow: 'Newsletter archive',
           archiveTitle: 'Circulars, event notes and archive issues now live openly inside the blog.',
           archiveIntro:
@@ -280,8 +344,8 @@ const BlogPage: React.FC = () => {
               <div className="grid gap-7 lg:grid-cols-[0.94fr_1.06fr] lg:items-center">
                 <div className="overflow-hidden rounded-[1.8rem] border border-[#b35d4c]/22 bg-white/70">
                   <img
-                    src={latestNewsletter.heroImageUrl ?? chakraImg}
-                    alt={latestNewsletter.heroImageAlt}
+                    src={latestVisibleNewsletter?.heroImageUrl ?? chakraImg}
+                    alt={latestVisibleNewsletter?.heroImageAlt ?? (locale === 'de' ? 'Newsletter' : 'Newsletter')}
                     className="h-[24rem] w-full object-cover object-center"
                   />
                 </div>
@@ -290,7 +354,7 @@ const BlogPage: React.FC = () => {
                   <div className="flex flex-wrap gap-3">
                     <span className="eyebrow">{copy.newsletterEyebrow}</span>
                     <span className="eyebrow">
-                      {copy.latestIssue} {latestNewsletter.issueLabel}
+                      {copy.latestIssue} {latestVisibleNewsletter?.issueLabel ?? latestNewsletter.issueLabel}
                     </span>
                   </div>
                   <h2 className="mt-5 max-w-2xl text-[2rem] leading-tight sm:text-[2.4rem]">
@@ -301,24 +365,171 @@ const BlogPage: React.FC = () => {
                   </p>
                   <div className="mt-6 rounded-[1.35rem] border border-[#b35d4c]/22 bg-[rgba(255,250,246,0.9)] px-5 py-4">
                     <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b56757]">
-                      {latestNewsletter.title}
+                      {copy.latestIssueEyebrow}
                     </p>
                     <p className="mt-3 text-[0.98rem] leading-7 text-slate-600">
-                      {trimNewsletterPreview(latestNewsletter.introBody.split('\n')[0])}
+                      {copy.latestIssueBody}
                     </p>
                   </div>
 
-                  <div className="mt-7">
+                  <div className="mt-7 flex flex-wrap gap-3">
                     <Link
-                      to="/blog#newsletter-archive"
+                      to={latestVisibleNewsletter?.route ?? latestNewsletter.route}
                       className="inline-flex items-center rounded-full border border-[#b35d4c]/30 bg-[rgba(255,250,246,0.96)] px-5 py-2.5 text-sm font-semibold text-[#b56757] transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/45 hover:bg-[rgba(255,244,238,0.98)]"
                     >
                       {copy.newsletterCta}
                     </Link>
+                    <a
+                      href="#newsletter-archive"
+                      className="inline-flex items-center rounded-full border border-[#b35d4c]/20 bg-white/70 px-5 py-2.5 text-sm font-semibold text-slate-600 transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/35 hover:bg-[rgba(255,250,246,0.96)]"
+                    >
+                      {copy.newsletterArchiveCta}
+                    </a>
                   </div>
                 </div>
               </div>
             </article>
+          </div>
+        </section>
+      )}
+
+      {latestNewsletterIssue && (
+        <section id="newsletter-latest" className="section-band pt-2">
+          <div className="section-shell">
+            <div className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+              <div className="card-soft warm-hover-glow reveal-ready p-7 sm:p-8">
+                <span className="eyebrow">{copy.highlightsEyebrow}</span>
+                <h2 className="mt-4 text-4xl sm:text-[2.7rem]">{copy.latestIssueTitle}</h2>
+                <p className="mt-5 text-[1rem] leading-8 text-slate-600">{copy.latestIssueBody}</p>
+                <div className="mt-6 rounded-[1.3rem] border border-[#b35d4c]/18 bg-[rgba(255,250,246,0.9)] px-5 py-4">
+                  <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b56757]">
+                    {latestNewsletterIssue.title}
+                  </p>
+                  <p className="mt-3 text-[0.98rem] leading-7 text-slate-600">
+                    {trimNewsletterPreview(latestNewsletterIssue.introBody.split('\n')[0])}
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid gap-6 xl:grid-cols-[1.08fr_0.92fr]">
+                <div className="grid gap-6 md:grid-cols-2">
+                  {latestNewsletterHighlights.map(card => (
+                    <article
+                      key={`${card.title}-${card.body.slice(0, 18)}`}
+                      className="newsletter-stage reveal-ready overflow-hidden p-5 sm:p-6"
+                    >
+                      {card.imageUrl && (
+                        <div className="overflow-hidden rounded-[1.4rem] border border-[#b35d4c]/18 bg-white/70">
+                          <img
+                            src={card.imageUrl}
+                            alt={card.imageAlt}
+                            className="h-[12rem] w-full object-cover object-center"
+                          />
+                        </div>
+                      )}
+                      <div className="mt-4">
+                        {card.eyebrow && <span className="eyebrow">{card.eyebrow}</span>}
+                        <h3 className="mt-3 text-[1.35rem] leading-tight text-[#b56757]">
+                          {card.title}
+                        </h3>
+                        {card.subtitle && (
+                          <p className="mt-2 text-[0.82rem] font-semibold uppercase tracking-[0.16em] text-slate-500">
+                            {card.subtitle}
+                          </p>
+                        )}
+                        <p className="mt-4 text-[0.96rem] leading-7 text-slate-600">
+                          {trimCardPreview(card.body, 180)}
+                        </p>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+
+                <div className="grid gap-6">
+                  <article className="newsletter-stage reveal-ready p-6 sm:p-7">
+                    <span className="eyebrow">{copy.schedulePreviewEyebrow}</span>
+                    <h3 className="mt-4 text-[1.8rem] leading-tight text-[#b56757]">
+                      {copy.schedulePreviewTitle}
+                    </h3>
+                    {latestNewsletterIssue.scheduleNote && (
+                      <p className="mt-4 text-[0.96rem] leading-7 text-slate-600">
+                        {latestNewsletterIssue.scheduleNote}
+                      </p>
+                    )}
+                    {!!latestNewsletterSchedule.length && (
+                      <div className="mt-5 grid gap-4">
+                        {latestNewsletterSchedule.map(item => (
+                          <div
+                            key={`${item.day}-${item.time ?? item.description}`}
+                            className="rounded-[1.25rem] border border-[#b35d4c]/18 bg-[rgba(255,250,246,0.86)] px-4 py-4"
+                          >
+                            <div className="flex items-start justify-between gap-3">
+                              <h4 className="text-[1.08rem] leading-tight text-[#b56757]">{item.day}</h4>
+                              {item.time && <span className="eyebrow">{item.time}</span>}
+                            </div>
+                            <p className="mt-3 text-[0.94rem] leading-7 text-slate-600">
+                              {item.description}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                    {!!latestNewsletterRegionalLinks.length && (
+                      <div className="mt-5 flex flex-wrap gap-3">
+                        {latestNewsletterRegionalLinks.map(link => (
+                          <a
+                            key={`${link.label}-${link.url ?? 'nolink'}`}
+                            href={link.url}
+                            target={link.url ? '_blank' : undefined}
+                            rel={link.url ? 'noreferrer' : undefined}
+                            className="hover-chip"
+                          >
+                            {link.label}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </article>
+
+                  <article className="card-soft warm-hover-glow reveal-ready p-6 sm:p-7">
+                    <span className="eyebrow">{copy.storyPreviewEyebrow}</span>
+                    <h3 className="mt-4 text-[1.8rem] leading-tight text-[#b56757]">
+                      {copy.storyPreviewTitle}
+                    </h3>
+                    {latestNewsletterStory && (
+                      <>
+                        <p className="mt-4 text-[1.18rem] leading-tight text-slate-700">
+                          {latestNewsletterStory.title}
+                        </p>
+                        <p className="mt-4 text-[0.96rem] leading-7 text-slate-600">
+                          {trimCardPreview(latestNewsletterStory.body, 260)}
+                        </p>
+                      </>
+                    )}
+                    {!!latestNewsletterRecommendedLinks.length && (
+                      <div className="mt-5">
+                        <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b56757]">
+                          {copy.linksPreviewTitle}
+                        </p>
+                        <div className="mt-3 flex flex-wrap gap-3">
+                          {latestNewsletterRecommendedLinks.map(link => (
+                            <a
+                              key={`${link.label}-${link.url ?? 'nolink'}`}
+                              href={link.url}
+                              target={link.url ? '_blank' : undefined}
+                              rel={link.url ? 'noreferrer' : undefined}
+                              className="hover-chip"
+                            >
+                              {link.label}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </article>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       )}
@@ -462,6 +673,12 @@ const BlogPage: React.FC = () => {
           ) : (
             <div className="mt-8 card-soft p-7 text-slate-600">{copy.noNewsletterItems}</div>
           )}
+        </div>
+      </section>
+
+      <section className="pb-2">
+        <div className="section-shell">
+          <NewsletterDivider />
         </div>
       </section>
 
