@@ -148,6 +148,8 @@ const BlogPage: React.FC = () => {
           noteTitle: 'Was diese Seite zusammenführt',
           noteBody:
             'Der Blog verbindet ruhige Einführung, vertiefende Lesestrecken und kommende Inhalte. Er eignet sich für Texte über Kundalini, Selbstverwirklichung, wissenschaftliche Perspektiven, kollektive Meditation und Hinweise auf besondere Programme.',
+          heroLatestNewsletterCta: 'Neueste Newsletter-Ausgabe öffnen',
+          heroArchiveCta: 'Zum Newsletter-Archiv',
           newsletterEyebrow: 'Newsletter',
           newsletterTitle:
             'Newsletter, Programme und Rundbriefe bleiben nun sichtbar im Blog selbst statt in einem separaten Seitenzweig.',
@@ -228,6 +230,8 @@ const BlogPage: React.FC = () => {
           noteTitle: 'What this page brings together',
           noteBody:
             'The blog combines calm introductions, deeper reading paths and future content. It is a natural home for writing on Kundalini, Self-Realization, scientific perspectives, collective meditation and programme updates.',
+          heroLatestNewsletterCta: 'Open latest newsletter issue',
+          heroArchiveCta: 'Open newsletter archive',
           newsletterEyebrow: 'Newsletter',
           newsletterTitle:
             'Newsletters, programme updates and circulars now stay visible inside the blog itself instead of living in a separate branch.',
@@ -316,6 +320,23 @@ const BlogPage: React.FC = () => {
                   </a>
                 ))}
               </div>
+
+              {latestVisibleNewsletter && (
+                <div className="mt-7 flex flex-wrap gap-3">
+                  <Link
+                    to={latestVisibleNewsletter.route}
+                    className="inline-flex items-center rounded-full border border-[#b35d4c]/30 bg-[rgba(255,250,246,0.96)] px-5 py-2.5 text-sm font-semibold text-[#b56757] transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/45 hover:bg-[rgba(255,244,238,0.98)]"
+                  >
+                    {copy.heroLatestNewsletterCta}
+                  </Link>
+                  <a
+                    href="#newsletter-archive"
+                    className="inline-flex items-center rounded-full border border-[#b35d4c]/20 bg-white/70 px-5 py-2.5 text-sm font-semibold text-slate-600 transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/35 hover:bg-[rgba(255,250,246,0.96)]"
+                  >
+                    {copy.heroArchiveCta}
+                  </a>
+                </div>
+              )}
             </div>
 
             <aside className="card-soft warm-hover-glow reveal-ready overflow-hidden p-4 sm:p-5">
