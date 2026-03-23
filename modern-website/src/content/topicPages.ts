@@ -1,11 +1,11 @@
 import chakraChartImg from '../assets/sahajayogade/das-subtile-system-grafik.jpg';
 import kundaliniEnergyImg from '../assets/sahajayogade/Central-Channel-SY-929x1024.png';
-import tendenciesImg from '../assets/sahajaonline/tendencies.jpg';
-import selfRealizationImg from '../assets/sahajaonline/Sahaja-and-self-realization.jpg';
-import thoughtlessImg from '../assets/sahajaonline/thoughtless-awareness-and-selfcare.jpg';
-import improvedPerceptionImg from '../assets/sahajaonline/Improved-perception.jpg';
-import collectiveMeditationImg from '../assets/sahajaonline/What-is-Collective-Meditation.jpg';
-import tenetsImg from '../assets/sahajaonline/The-10-Defining-Tenets-of-Spirituality-scaled.jpg';
+import tendenciesImg from '../assets/bee.png';
+import selfRealizationImg from '../assets/ShriMataji.jpg';
+import thoughtlessImg from '../assets/lotus.png';
+import improvedPerceptionImg from '../assets/universe.avif';
+import collectiveMeditationImg from '../assets/village.jpg';
+import tenetsImg from '../assets/mother3.png';
 import redSunsetImg from '../assets/redsunset.jpeg';
 import universeImg from '../assets/universe.avif';
 import beeImg from '../assets/bee.png';
@@ -24,6 +24,14 @@ import anahatImg from '../assets/sahajayogade/Bildschirmfoto-2022-03-25-um-08.59
 import vishuddhiImg from '../assets/sahajayogade/Bildschirmfoto-2022-03-25-um-09.00.53.png';
 import agnyaImg from '../assets/sahajayogade/chakras-inside-img-07-600x338-1.jpg';
 import sahasraraImg from '../assets/sahajayogade/chakras-inside-img-08-600x338-1.jpg';
+import mooladharaHoverImg from '../assets/m.png';
+import swadisthanaHoverImg from '../assets/swad.png';
+import nabhiHoverImg from '../assets/nabh.png';
+import voidHoverImg from '../assets/voi.png';
+import heartHoverImg from '../assets/anahat.png';
+import vishuddiHoverImg from '../assets/vis.png';
+import agnyaHoverImg from '../assets/ajna.png';
+import sahasraraHoverImg from '../assets/sahasr.png';
 
 export type TopicSection = {
   id: string;
@@ -44,6 +52,10 @@ export type TopicShowcase = {
   image: string;
   alt: string;
   imageMode?: 'cover' | 'contain';
+  hoverBackgroundImage?: string;
+  hoverBackgroundImageMode?: 'cover' | 'contain';
+  hoverBackgroundFrameClassName?: string;
+  hoverBackgroundImageClassName?: string;
 };
 
 export type TopicProcessItem = {
@@ -58,6 +70,10 @@ export type TopicGalleryItem = {
   description: string;
   image: string;
   alt: string;
+  hoverBackgroundImage?: string;
+  hoverBackgroundImageMode?: 'cover' | 'contain';
+  hoverBackgroundFrameClassName?: string;
+  hoverBackgroundImageClassName?: string;
 };
 
 export type TopicPageData = {
@@ -147,7 +163,12 @@ export const topicPages = {
           description:
             'Der Mondkanal trägt Wünsche, Erinnerungen und emotionale Tiefe. In seinem reinen Zustand schenkt er Freude, Mitgefühl und Sanftheit.',
           image: leftChannelImg,
-          alt: 'Darstellung des linken Kanals'
+          alt: 'Darstellung des linken Kanals',
+          hoverBackgroundImage: leftChannelImg,
+          hoverBackgroundImageMode: 'contain',
+          hoverBackgroundFrameClassName:
+            'bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(226,243,255,0.92))] p-1',
+          hoverBackgroundImageClassName: 'scale-[0.99] group-hover:scale-[1.02]'
         },
         {
           title: 'Rechter Kanal',
@@ -155,7 +176,12 @@ export const topicPages = {
           description:
             'Der Sonnenkanal versorgt Handlung, Planung und mentale Leistung. Im Gleichgewicht wirkt er dynamisch, klar und konstruktiv statt getrieben.',
           image: rightChannelImg,
-          alt: 'Darstellung des rechten Kanals'
+          alt: 'Darstellung des rechten Kanals',
+          hoverBackgroundImage: rightChannelImg,
+          hoverBackgroundImageMode: 'contain',
+          hoverBackgroundFrameClassName:
+            'bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(226,243,255,0.92))] p-1',
+          hoverBackgroundImageClassName: 'scale-[0.99] group-hover:scale-[1.02]'
         },
         {
           title: 'Zentraler Kanal',
@@ -163,7 +189,12 @@ export const topicPages = {
           description:
             'Durch die Mitte steigt die Kundalini auf. Hier hört die Aufmerksamkeit auf, zwischen Vergangenheit und Zukunft zu pendeln, und findet gegenwärtigen Frieden.',
           image: kundaliniEnergyImg,
-          alt: 'Darstellung des zentralen Kanals'
+          alt: 'Darstellung des zentralen Kanals',
+          hoverBackgroundImage: kundaliniEnergyImg,
+          hoverBackgroundImageMode: 'contain',
+          hoverBackgroundFrameClassName:
+            'bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(226,243,255,0.92))] p-1',
+          hoverBackgroundImageClassName: 'scale-[0.99] group-hover:scale-[1.02]'
         }
       ]
     },
@@ -179,7 +210,12 @@ export const topicPages = {
           description:
             'Das Fundament des Systems. Es schützt angeborene Würde, kindliche Lauterkeit und die Harmonie mit der Natur; körperlich ist es mit Fortpflanzungs- und Ausscheidungssystem verbunden.',
           image: mooladharaImg,
-          alt: 'Mooladhara-Chakra'
+          alt: 'Mooladhara-Chakra',
+          hoverBackgroundImage: mooladharaHoverImg,
+          hoverBackgroundImageMode: 'contain',
+          hoverBackgroundFrameClassName:
+            'bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(226,243,255,0.92))] p-1',
+          hoverBackgroundImageClassName: 'scale-[0.99] group-hover:scale-[1.02]'
         },
         {
           title: 'Swadisthana',
@@ -187,7 +223,12 @@ export const topicPages = {
           description:
             'Dieses Zentrum versorgt Denken und Handeln mit Energie. In Balance werden Kreativität, Schönheitssinn, klares Begreifen und ungestörte Aufmerksamkeit lebendig.',
           image: swadisthanImg,
-          alt: 'Swadisthana-Chakra'
+          alt: 'Swadisthana-Chakra',
+          hoverBackgroundImage: swadisthanaHoverImg,
+          hoverBackgroundImageMode: 'contain',
+          hoverBackgroundFrameClassName:
+            'bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(226,243,255,0.92))] p-1',
+          hoverBackgroundImageClassName: 'scale-[0.99] group-hover:scale-[1.02]'
         },
         {
           title: 'Nabhi',
@@ -195,7 +236,12 @@ export const topicPages = {
           description:
             'Nabhi ordnet Verdauung, Stoffwechsel und das Verhältnis zu materiellen Bedürfnissen. Es unterstützt Zufriedenheit, Rechtschaffenheit, familiäre Stabilität und Freude.',
           image: nabhiImg,
-          alt: 'Nabhi-Chakra'
+          alt: 'Nabhi-Chakra',
+          hoverBackgroundImage: nabhiHoverImg,
+          hoverBackgroundImageMode: 'contain',
+          hoverBackgroundFrameClassName:
+            'bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(226,243,255,0.92))] p-1',
+          hoverBackgroundImageClassName: 'scale-[0.99] group-hover:scale-[1.02]'
         },
         {
           title: 'Void',
@@ -203,7 +249,12 @@ export const topicPages = {
           description:
             'Die Leere steht für den Raum zwischen den Zentren, in dem unerleuchtetes Wissen in echtes Verständnis verwandelt wird. Hier reifen Selbstführung, Geduld und spiritische Ernsthaftigkeit.',
           image: voidImg,
-          alt: 'Void-Bereich des subtilen Systems'
+          alt: 'Void-Bereich des subtilen Systems',
+          hoverBackgroundImage: voidHoverImg,
+          hoverBackgroundImageMode: 'contain',
+          hoverBackgroundFrameClassName:
+            'bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(226,243,255,0.92))] p-1',
+          hoverBackgroundImageClassName: 'scale-[0.99] group-hover:scale-[1.02]'
         },
         {
           title: 'Herz',
@@ -211,7 +262,12 @@ export const topicPages = {
           description:
             'Das Herz öffnet bedingungslose Liebe, Vertrauen und innere Sicherheit. Körperlich stützt es Herz, Lunge, Brustraum und jene Kräfte, die den Organismus schützen.',
           image: anahatImg,
-          alt: 'Herz-Chakra'
+          alt: 'Herz-Chakra',
+          hoverBackgroundImage: heartHoverImg,
+          hoverBackgroundImageMode: 'contain',
+          hoverBackgroundFrameClassName:
+            'bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(226,243,255,0.92))] p-1',
+          hoverBackgroundImageClassName: 'scale-[0.99] group-hover:scale-[1.02]'
         },
         {
           title: 'Vishuddi',
@@ -219,7 +275,12 @@ export const topicPages = {
           description:
             'Dieses Zentrum verfeinert Sprache, Humor, Respekt und Beziehungskompetenz. Es hilft, Spannungen zu entschärfen, ohne Würde oder Verbundenheit zu verlieren.',
           image: vishuddhiImg,
-          alt: 'Vishuddi-Chakra'
+          alt: 'Vishuddi-Chakra',
+          hoverBackgroundImage: vishuddiHoverImg,
+          hoverBackgroundImageMode: 'contain',
+          hoverBackgroundFrameClassName:
+            'bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(226,243,255,0.92))] p-1',
+          hoverBackgroundImageClassName: 'scale-[0.99] group-hover:scale-[1.02]'
         },
         {
           title: 'Agnya',
@@ -227,7 +288,12 @@ export const topicPages = {
           description:
             'Agnya ist das Tor zur gedankenfreien Stille. Es bringt Ego und Konditionierungen ins Gleichgewicht und wird frei, wenn echte Vergebung möglich wird.',
           image: agnyaImg,
-          alt: 'Agnya-Chakra'
+          alt: 'Agnya-Chakra',
+          hoverBackgroundImage: agnyaHoverImg,
+          hoverBackgroundImageMode: 'contain',
+          hoverBackgroundFrameClassName:
+            'bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(226,243,255,0.92))] p-1',
+          hoverBackgroundImageClassName: 'scale-[0.99] group-hover:scale-[1.02]'
         },
         {
           title: 'Sahasrara',
@@ -235,7 +301,12 @@ export const topicPages = {
           description:
             'Im höchsten Zentrum verbinden sich alle Aspekte des Systems. Hier wird die Beziehung zur allgegenwärtigen Kraft als Einheit, Sinn und umfassende Integration erfahren.',
           image: sahasraraImg,
-          alt: 'Sahasrara-Chakra'
+          alt: 'Sahasrara-Chakra',
+          hoverBackgroundImage: sahasraraHoverImg,
+          hoverBackgroundImageMode: 'contain',
+          hoverBackgroundFrameClassName:
+            'bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(226,243,255,0.92))] p-1',
+          hoverBackgroundImageClassName: 'scale-[0.99] group-hover:scale-[1.02]'
         }
       ]
     },

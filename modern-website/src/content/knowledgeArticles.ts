@@ -1,10 +1,10 @@
 import type { Locale } from '../context/LocaleContext';
-import tendenciesImg from '../assets/sahajaonline/tendencies.jpg';
-import selfRealizationImg from '../assets/sahajaonline/Sahaja-and-self-realization.jpg';
-import thoughtlessImg from '../assets/sahajaonline/thoughtless-awareness-and-selfcare.jpg';
-import improvedPerceptionImg from '../assets/sahajaonline/Improved-perception.jpg';
-import collectiveMeditationImg from '../assets/sahajaonline/What-is-Collective-Meditation.jpg';
-import tenetsImg from '../assets/sahajaonline/The-10-Defining-Tenets-of-Spirituality-scaled.jpg';
+import tendenciesImg from '../assets/bee.png';
+import selfRealizationImg from '../assets/ShriMataji.jpg';
+import thoughtlessImg from '../assets/lotus.png';
+import improvedPerceptionImg from '../assets/universe.avif';
+import collectiveMeditationImg from '../assets/village.jpg';
+import tenetsImg from '../assets/mother3.png';
 import kundaliniGif from '../assets/kundalini.gif';
 import kundaliniFireImg from '../assets/kundalinifire.png';
 import beeImg from '../assets/bee.png';

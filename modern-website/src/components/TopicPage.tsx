@@ -125,13 +125,15 @@ const TopicPage: React.FC<TopicPageProps> = ({ page }) => {
                   </div>
                 </div>
 
-                <div className="rounded-[2rem] border border-[#b35d4c]/20 bg-white/72 p-2 shadow-[0_24px_56px_rgba(72,110,140,0.14)] sm:p-3">
+                <div className="rounded-[2rem] border border-[#b35d4c]/20 bg-white/72 p-1 shadow-[0_24px_56px_rgba(72,110,140,0.14)] sm:p-1.5">
                   <div className="relative overflow-hidden rounded-[1.85rem] border border-white/55 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(220,242,255,0.94))] shadow-[inset_0_1px_0_rgba(255,255,255,0.72)]">
-                    <img
-                      src={page.heroImage}
-                      alt={page.heroImageAlt}
-                      className="h-[22rem] w-full scale-[1.02] rounded-[1.85rem] object-contain sm:h-[28rem] sm:scale-[1.03] lg:h-[37rem] lg:scale-[1.05] xl:h-[38rem]"
-                    />
+                    <div className="overflow-hidden rounded-[1.72rem]">
+                      <img
+                        src={page.heroImage}
+                        alt={page.heroImageAlt}
+                        className="h-[22rem] w-full scale-[1.08] rounded-[1.72rem] object-contain sm:h-[28rem] sm:scale-[1.1] lg:h-[37rem] lg:scale-[1.12] xl:h-[38rem]"
+                      />
+                    </div>
                   </div>
                   <div className="mx-4 mb-4 mt-4 rounded-[1.3rem] border border-[#b35d4c]/22 bg-[rgba(255,250,246,0.94)] px-5 py-4 text-center shadow-[0_14px_32px_rgba(72,110,140,0.1)] backdrop-blur">
                     <p className="text-sm leading-6 text-slate-700 sm:text-[0.95rem]">
@@ -318,36 +320,99 @@ const TopicPage: React.FC<TopicPageProps> = ({ page }) => {
             </div>
 
             <div className={`grid lg:grid-cols-3 ${isSciencePage ? 'mt-10 gap-5' : 'mt-12 gap-6'}`}>
-              {page.showcases.items.map(item => (
-                <article
-                  key={item.title}
-                  className="interactive-card reveal-ready group flex h-full flex-col overflow-hidden"
-                >
-                  <div className="relative h-64 overflow-hidden rounded-t-[1.5rem] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.96),rgba(224,243,255,0.94))] p-4">
-                    <img
-                      src={item.image}
-                      alt={item.alt}
-                      className={`h-full w-full transition duration-700 group-hover:scale-[1.04] ${
-                        item.imageMode === 'cover'
-                          ? 'rounded-[1.1rem] object-cover object-center'
-                          : 'object-contain'
-                      }`}
-                    />
-                    {item.imageMode === 'cover' && (
-                      <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_18%,rgba(18,46,76,0.42)_100%)] opacity-0 transition duration-500 group-hover:opacity-100" />
+              {page.showcases.items.map(item => {
+                const usesFlipHover = Boolean(item.hoverBackgroundImage);
+
+                return (
+                  <article
+                    key={item.title}
+                    className={`interactive-card reveal-ready group ${
+                      usesFlipHover
+                        ? 'relative isolate min-h-[25rem] overflow-hidden [perspective:1600px] hover:z-20'
+                        : 'flex h-full flex-col overflow-hidden'
+                    }`}
+                  >
+                    {usesFlipHover ? (
+                      <div className="relative h-full min-h-[25rem] transform-gpu">
+                        <div className="relative h-full min-h-[25rem] transform-gpu [transform-style:preserve-3d] [transform:rotateY(0deg)] transition duration-700 [will-change:transform] group-hover:[transform:rotateY(180deg)]">
+                          <div className="absolute inset-0 flex h-full flex-col overflow-hidden rounded-[1.5rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,248,244,0.88))] transform-gpu [-webkit-backface-visibility:hidden] [backface-visibility:hidden]">
+                            <div className="relative h-64 overflow-hidden rounded-t-[1.5rem] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.96),rgba(224,243,255,0.94))] p-4">
+                              <img
+                                src={item.image}
+                                alt={item.alt}
+                                className={`h-full w-full transition duration-700 group-hover:scale-[1.04] ${
+                                  item.imageMode === 'cover'
+                                    ? 'rounded-[1.1rem] object-cover object-center'
+                                    : 'rounded-[1.1rem] object-contain'
+                                }`}
+                              />
+                              {item.imageMode === 'cover' && (
+                                <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_18%,rgba(18,46,76,0.42)_100%)] opacity-0 transition duration-500 group-hover:opacity-100" />
+                              )}
+                              <span className="absolute left-5 top-5 rounded-full border border-[#b35d4c]/28 bg-[rgba(255,250,246,0.92)] px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b35d4c] shadow-[0_10px_24px_rgba(72,110,140,0.12)]">
+                                {item.label}
+                              </span>
+                            </div>
+                            <div className="p-6">
+                              <h3 className="text-balance text-2xl text-slate-800 transition duration-300 group-hover:translate-x-1">
+                                {item.title}
+                              </h3>
+                              <p className="mt-3 flex-1 leading-8 text-slate-700">{item.description}</p>
+                            </div>
+                          </div>
+
+                          <div className="absolute inset-0 overflow-hidden rounded-[1.5rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,248,244,0.88))] transform-gpu [-webkit-backface-visibility:hidden] [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                            <div
+                              className={`absolute inset-0 ${
+                                item.hoverBackgroundFrameClassName ?? ''
+                              }`}
+                            >
+                              <img
+                                src={item.hoverBackgroundImage}
+                                alt=""
+                                aria-hidden="true"
+                                className={`h-full w-full ${
+                                  item.hoverBackgroundImageMode === 'contain'
+                                    ? 'object-contain'
+                                    : 'object-cover object-center'
+                                } transition duration-700 ${
+                                  item.hoverBackgroundImageClassName ?? 'scale-[0.92] group-hover:scale-[0.96]'
+                                }`}
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      <>
+                        <div className="relative h-64 overflow-hidden rounded-t-[1.5rem] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.96),rgba(224,243,255,0.94))] p-4">
+                          <img
+                            src={item.image}
+                            alt={item.alt}
+                            className={`h-full w-full transition duration-700 group-hover:scale-[1.04] ${
+                              item.imageMode === 'cover'
+                                ? 'rounded-[1.1rem] object-cover object-center'
+                                : 'rounded-[1.1rem] object-contain'
+                            }`}
+                          />
+                          {item.imageMode === 'cover' && (
+                            <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_18%,rgba(18,46,76,0.42)_100%)] opacity-0 transition duration-500 group-hover:opacity-100" />
+                          )}
+                          <span className="absolute left-5 top-5 rounded-full border border-[#b35d4c]/28 bg-[rgba(255,250,246,0.92)] px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b35d4c] shadow-[0_10px_24px_rgba(72,110,140,0.12)]">
+                            {item.label}
+                          </span>
+                        </div>
+                        <div className="p-6">
+                          <h3 className="text-balance text-2xl text-slate-800 transition duration-300 group-hover:translate-x-1">
+                            {item.title}
+                          </h3>
+                          <p className="mt-3 flex-1 leading-8 text-slate-700">{item.description}</p>
+                        </div>
+                      </>
                     )}
-                    <span className="absolute left-5 top-5 rounded-full border border-[#b35d4c]/28 bg-[rgba(255,250,246,0.92)] px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b35d4c] shadow-[0_10px_24px_rgba(72,110,140,0.12)]">
-                      {item.label}
-                    </span>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-balance text-2xl text-slate-800 transition duration-300 group-hover:translate-x-1">
-                      {item.title}
-                    </h3>
-                    <p className="mt-3 flex-1 leading-8 text-slate-700">{item.description}</p>
-                  </div>
-                </article>
-              ))}
+                  </article>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -392,7 +457,7 @@ const TopicPage: React.FC<TopicPageProps> = ({ page }) => {
 
       {page.gallery && (
         <section className="section-band bg-[#d7eefc]">
-          <div className="section-shell">
+          <div className={isKundaliniPage ? 'section-shell max-w-[82rem]' : 'section-shell'}>
             <div className="reveal-ready mx-auto max-w-4xl text-center">
               <span className="eyebrow">
                 {page.gallery.eyebrow}
@@ -401,28 +466,82 @@ const TopicPage: React.FC<TopicPageProps> = ({ page }) => {
               <p className="mt-5 text-lg leading-8 text-slate-700">{page.gallery.description}</p>
             </div>
 
-            <div className="mt-12 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
-              {page.gallery.items.map(item => (
-                <article
-                  key={item.title}
-                  className="interactive-card reveal-ready group flex h-full flex-col overflow-hidden"
-                >
-                  <div className="relative h-56 overflow-hidden rounded-t-[1.5rem] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(226,243,255,0.92))] p-4">
-                    <img
-                      src={item.image}
-                      alt={item.alt}
-                      className="h-full w-full object-contain transition duration-700 group-hover:scale-[1.08]"
-                    />
-                  </div>
-                  <div className="flex flex-1 flex-col p-6">
-                    <h3 className="text-balance text-2xl text-slate-800">{item.title}</h3>
-                    <p className="mt-2 text-sm font-semibold uppercase tracking-[0.18em] text-[#b35d4c]">
-                      {item.subtitle}
-                    </p>
-                    <p className="mt-3 flex-1 leading-8 text-slate-700">{item.description}</p>
-                  </div>
-                </article>
-              ))}
+            <div className={`mt-12 grid sm:grid-cols-2 xl:grid-cols-4 ${isKundaliniPage ? 'gap-6' : 'gap-5'}`}>
+              {page.gallery.items.map(item => {
+                const usesFlipHover = Boolean(item.hoverBackgroundImage);
+
+                return (
+                  <article
+                    key={item.title}
+                    className={`interactive-card reveal-ready group relative ${
+                      usesFlipHover
+                        ? 'isolate min-h-[31rem] overflow-hidden [perspective:1600px] hover:z-20'
+                        : 'flex h-full flex-col overflow-hidden'
+                    }`}
+                  >
+                    {usesFlipHover ? (
+                      <div className="relative h-full min-h-[31rem] transform-gpu">
+                        <div className="relative h-full min-h-[31rem] transform-gpu [transform-style:preserve-3d] [transform:rotateY(0deg)] transition duration-700 [will-change:transform] group-hover:[transform:rotateY(180deg)]">
+                        <div className="absolute inset-0 flex h-full flex-col overflow-hidden rounded-[1.5rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,248,244,0.88))] transform-gpu [-webkit-backface-visibility:hidden] [backface-visibility:hidden]">
+                          <div className="relative h-56 overflow-hidden rounded-t-[1.5rem] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(226,243,255,0.92))] p-4">
+                            <img
+                              src={item.image}
+                              alt={item.alt}
+                              className="h-full w-full rounded-[1.1rem] object-contain transition duration-700 group-hover:scale-[1.08]"
+                            />
+                          </div>
+                          <div className="relative flex flex-1 flex-col p-6">
+                            <h3 className="text-balance text-2xl text-slate-800">{item.title}</h3>
+                            <p className="mt-2 text-sm font-semibold uppercase tracking-[0.18em] text-[#b35d4c]">
+                              {item.subtitle}
+                            </p>
+                            <p className="mt-3 flex-1 leading-8 text-slate-700">{item.description}</p>
+                          </div>
+                        </div>
+
+                        <div className="absolute inset-0 overflow-hidden rounded-[1.5rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,248,244,0.88))] transform-gpu [-webkit-backface-visibility:hidden] [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                          <div
+                            className={`absolute inset-0 ${
+                              item.hoverBackgroundFrameClassName ?? ''
+                            }`}
+                          >
+                            <img
+                              src={item.hoverBackgroundImage}
+                              alt=""
+                              aria-hidden="true"
+                              className={`h-full w-full ${
+                                item.hoverBackgroundImageMode === 'contain'
+                                  ? 'object-contain'
+                                  : 'object-cover object-center'
+                              } transition duration-700 ${
+                                item.hoverBackgroundImageClassName ?? 'scale-[0.92] group-hover:scale-[0.96]'
+                              }`}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                    ) : (
+                      <>
+                        <div className="relative h-56 overflow-hidden rounded-t-[1.5rem] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(226,243,255,0.92))] p-4">
+                          <img
+                            src={item.image}
+                            alt={item.alt}
+                            className="h-full w-full rounded-[1.1rem] object-contain transition duration-700 group-hover:scale-[1.08]"
+                          />
+                        </div>
+                        <div className="relative flex flex-1 flex-col p-6">
+                          <h3 className="text-balance text-2xl text-slate-800">{item.title}</h3>
+                          <p className="mt-2 text-sm font-semibold uppercase tracking-[0.18em] text-[#b35d4c]">
+                            {item.subtitle}
+                          </p>
+                          <p className="mt-3 flex-1 leading-8 text-slate-700">{item.description}</p>
+                        </div>
+                      </>
+                    )}
+                  </article>
+                );
+              })}
             </div>
           </div>
         </section>

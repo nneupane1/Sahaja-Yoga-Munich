@@ -483,8 +483,8 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
                       alt={item.alt}
                       className={`h-full w-full transition duration-700 group-hover:scale-[1.06] ${
                         item.imageMode === 'contain'
-                          ? 'object-contain'
-                          : 'object-cover object-center'
+                          ? 'rounded-[1.1rem] object-contain'
+                          : 'rounded-[1.1rem] object-cover object-center'
                       }`}
                     />
                   </div>
@@ -538,10 +538,10 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
                         alt={item.heroImageAlt}
                         className={`w-full rounded-[1rem] transition duration-700 group-hover:scale-[1.04] ${
                           useContainPlaceholder
-                            ? 'h-52 object-contain p-3'
+                            ? 'h-52 rounded-[1rem] object-contain p-3'
                             : (usePlaceholderRelatedImages ? 'cover' : item.heroImageMode) === 'contain'
-                              ? 'h-52 object-contain'
-                              : 'h-52 object-cover object-center'
+                              ? 'h-52 rounded-[1rem] object-contain'
+                              : 'h-52 rounded-[1rem] object-cover object-center'
                         }`}
                       />
                     </div>
