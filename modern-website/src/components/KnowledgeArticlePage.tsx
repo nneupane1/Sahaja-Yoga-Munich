@@ -55,12 +55,25 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
         };
 
   const isThoughtlessStillnessPage = article.route === '/selbstverwirklichung-meditation/gedankenfreie-stille';
+  const isChannelsBalancePage = article.route === '/kundalini-energiesystem/kanaele-und-balance';
+  const isKundaliniArticlePage = article.route === '/kundalini-energiesystem/kundalini';
+  const useBalancedKundaliniHero = isChannelsBalancePage || isKundaliniArticlePage;
   const heroImageClasses =
     article.heroImageMode === 'contain'
       ? isThoughtlessStillnessPage
         ? 'h-[18rem] w-full rounded-[1.6rem] object-contain bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(225,243,255,0.92))] p-3 scale-[1.02] sm:h-[22rem] sm:scale-[1.03] lg:h-[29rem] lg:scale-[1.04]'
+        : isChannelsBalancePage
+          ? 'h-[20rem] w-full rounded-[1.6rem] object-contain p-1 scale-[1.08] sm:h-[24rem] sm:p-1.5 sm:scale-[1.09] lg:h-[29rem] lg:p-2 lg:scale-[1.1]'
+        : isKundaliniArticlePage
+          ? 'h-[20rem] w-full rounded-[1.6rem] object-contain p-1 scale-[1.06] sm:h-[24rem] sm:p-1.5 sm:scale-[1.07] lg:h-[29rem] lg:p-2 lg:scale-[1.08]'
         : 'h-[18rem] w-full rounded-[1.6rem] object-contain bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(225,243,255,0.92))] p-4 sm:h-[22rem] sm:p-5 lg:h-[29rem] lg:p-6'
       : 'h-[20rem] w-full rounded-[1.6rem] object-cover object-center transition duration-700 group-hover:scale-[1.04] sm:h-[24rem] lg:h-[29rem]';
+  const heroImageSurfaceClassName =
+    article.heroImageMode === 'contain'
+      ? useBalancedKundaliniHero
+        ? 'rounded-[1.72rem] overflow-hidden bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(255,246,238,0.96))]'
+        : 'rounded-[1.6rem]'
+      : 'rounded-[1.6rem]';
   const forceImageRight =
     article.route === '/kundalini-energiesystem/kanaele-und-balance' ||
     article.route === '/kundalini-energiesystem/kundalini' ||
@@ -74,10 +87,12 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
     article.route === '/kundalini-energiesystem/chakren-und-qualitaeten' ||
     article.route === '/kundalini-energiesystem/kundalini';
   const hideFloatingHeroTags =
+    useBalancedKundaliniHero ||
     article.route === '/selbstverwirklichung-meditation/selbstverwirklichung' ||
     article.route === '/selbstverwirklichung-meditation/gedankenfreie-stille' ||
     article.route === '/selbstverwirklichung-meditation/meditationspraxis';
   const showCaptionBelowHeroImage =
+    useBalancedKundaliniHero ||
     article.route === '/selbstverwirklichung-meditation/selbstverwirklichung' ||
     article.route === '/selbstverwirklichung-meditation/meditationspraxis' ||
     article.route === '/selbstverwirklichung-meditation/gedankenfreie-stille';
@@ -91,9 +106,11 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
     article.route === '/selbstverwirklichung-meditation/gedankenfreie-stille' ||
     article.route === '/selbstverwirklichung-meditation/meditationspraxis';
   const heroGridClassName = 'grid gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:items-start';
-  const heroPanelPositionClassName = heroImageLeft
-    ? 'relative z-10 slide-ready-right lg:mt-8'
-    : 'relative z-10 slide-ready-left lg:mt-8 lg:order-1';
+  const heroPanelPositionClassName = useBalancedKundaliniHero
+    ? 'relative z-10 slide-ready-left lg:order-1'
+    : heroImageLeft
+      ? 'relative z-10 slide-ready-right lg:mt-8'
+      : 'relative z-10 slide-ready-left lg:mt-8 lg:order-1';
   const heroEyebrowClassName = isCompactCenteredHero
     ? 'inline-flex items-center rounded-full border border-[#b35d4c]/28 bg-[rgba(255,250,246,0.94)] px-3 py-1.5 text-[0.56rem] font-semibold uppercase tracking-[0.18em] text-[#b35d4c] shadow-[0_12px_28px_rgba(146,92,79,0.08)]'
     : 'eyebrow';
@@ -166,7 +183,9 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
               />
               <div className="group relative mx-auto max-w-[42rem] overflow-hidden rounded-[2.3rem] border border-[#b35d4c]/26 bg-white/75 p-4 shadow-[0_28px_70px_rgba(72,110,140,0.18)] backdrop-blur transition duration-500 hover:-translate-y-1 hover:shadow-[0_34px_80px_rgba(72,110,140,0.24)]">
                 <div className="pointer-events-none absolute inset-0 translate-x-[-120%] bg-[linear-gradient(120deg,transparent_22%,rgba(255,255,255,0.4)_45%,transparent_72%)] opacity-0 transition duration-700 group-hover:translate-x-[120%] group-hover:opacity-100" />
-                <img src={article.heroImage} alt={article.heroImageAlt} className={heroImageClasses} />
+                <div className={heroImageSurfaceClassName}>
+                  <img src={article.heroImage} alt={article.heroImageAlt} className={heroImageClasses} />
+                </div>
 
                 {!hideFloatingHeroTags && article.heroTags[0] && (
                   <div className="animate-float-soft absolute left-7 top-7 hidden rounded-full border border-[#b35d4c]/28 bg-[rgba(255,250,246,0.92)] px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b35d4c] shadow-[0_16px_36px_rgba(72,110,140,0.12)] md:block">

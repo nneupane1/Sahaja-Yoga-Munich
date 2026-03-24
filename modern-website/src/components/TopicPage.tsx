@@ -68,6 +68,10 @@ const TopicPage: React.FC<TopicPageProps> = ({ page }) => {
       ? 'slide-ready-right lg:mt-8'
       : 'slide-ready-left lg:mt-8 lg:order-1';
   const sectionBandClassName = isSciencePage ? 'py-12 sm:py-14' : 'section-band';
+  const kundaliniHeroCardClassName =
+    'mx-auto w-full max-w-[24.75rem] rounded-[2rem] border border-[#b35d4c]/20 bg-white/72 p-2 shadow-[0_24px_56px_rgba(72,110,140,0.14)] sm:max-w-[25.5rem] sm:p-3 lg:max-w-[26.5rem] xl:max-w-[27rem]';
+  const kundaliniHeroImageClassName =
+    'h-[22rem] w-full rounded-[1.55rem] object-cover object-center sm:h-[28rem] lg:h-[37rem] xl:h-[38rem]';
 
   return (
     <main className="overflow-hidden bg-[linear-gradient(180deg,#dff4ff_0%,#eff9ff_48%,#dff2ff_100%)]">
@@ -90,7 +94,7 @@ const TopicPage: React.FC<TopicPageProps> = ({ page }) => {
             <article className="interactive-card reveal-ready group relative overflow-hidden rounded-[2.35rem] p-3 sm:p-4">
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(236,248,255,0.93)_100%)]" />
               <div className="absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,#87c3e3,#c8715f)] opacity-80 transition duration-500 group-hover:h-2" />
-              <div className="relative grid gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+              <div className="relative grid gap-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
                 <div className="rounded-[2rem] border border-[#b35d4c]/20 bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(255,248,243,0.9)_100%)] p-8 shadow-[0_18px_40px_rgba(72,110,140,0.1)] sm:p-10">
                   <div className="max-w-3xl space-y-8">
                     <span className={heroEyebrowClassName}>
@@ -125,13 +129,13 @@ const TopicPage: React.FC<TopicPageProps> = ({ page }) => {
                   </div>
                 </div>
 
-                <div className="rounded-[2rem] border border-[#b35d4c]/20 bg-white/72 p-1 shadow-[0_24px_56px_rgba(72,110,140,0.14)] sm:p-1.5">
-                  <div className="relative overflow-hidden rounded-[1.85rem] border border-white/55 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(220,242,255,0.94))] shadow-[inset_0_1px_0_rgba(255,255,255,0.72)]">
-                    <div className="overflow-hidden rounded-[1.72rem]">
+                <div className={kundaliniHeroCardClassName}>
+                  <div className="relative overflow-hidden rounded-[1.85rem] border border-white/55 bg-[rgba(255,248,242,0.96)] shadow-[inset_0_1px_0_rgba(255,255,255,0.72)]">
+                    <div className="overflow-hidden rounded-[1.55rem]">
                       <img
                         src={page.heroImage}
                         alt={page.heroImageAlt}
-                        className="h-[22rem] w-full scale-[1.08] rounded-[1.72rem] object-contain sm:h-[28rem] sm:scale-[1.1] lg:h-[37rem] lg:scale-[1.12] xl:h-[38rem]"
+                        className={kundaliniHeroImageClassName}
                       />
                     </div>
                   </div>
