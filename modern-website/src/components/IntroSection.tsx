@@ -270,7 +270,7 @@ const IntroSection: React.FC = () => {
                       <div className="relative h-full min-h-[20.5rem] transform-gpu">
                         <div className="relative h-full min-h-[20.5rem] transform-gpu [transform-style:preserve-3d] [transform:rotateY(0deg)] transition duration-0 [will-change:transform] group-hover:[transform:rotateY(180deg)]">
                           <div className="absolute inset-0 overflow-hidden rounded-[1rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,248,244,0.88))] transform-gpu [-webkit-backface-visibility:hidden] [backface-visibility:hidden]">
-                            <div className="absolute inset-0 rounded-[1rem] border border-[#d8a08d]/24 bg-[rgba(255,250,246,0.78)] p-1">
+                            <div className="absolute inset-0 rounded-[1rem] border border-[#d8a08d]/24 bg-[rgba(255,250,246,0.78)] p-[3px]">
                               <img
                                 src={charlieImg}
                                 alt={
@@ -278,7 +278,7 @@ const IntroSection: React.FC = () => {
                                     ? 'Darstellung des subtilen Systems'
                                     : 'Illustration of the subtle system'
                                 }
-                                className="h-full w-full rounded-[0.9rem] object-contain object-center"
+                                className="h-full w-full rounded-[0.9rem] object-contain object-center scale-[1.015]"
                               />
                             </div>
                           </div>
