@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLocale } from '../context/LocaleContext';
-import charlieImg from '../assets/charlie.png';
+import kundaliniGif from '../assets/kundalini.gif';
 import kundImg from '../assets/kund.png';
 
 /**
@@ -270,15 +270,15 @@ const IntroSection: React.FC = () => {
                       <div className="relative h-full transform-gpu">
                         <div className="relative h-full transform-gpu [transform-style:preserve-3d] [transform:rotateY(0deg)] transition-none [will-change:transform] group-hover:[transform:rotateY(180deg)]">
                           <div className="absolute inset-0 overflow-hidden rounded-[1.16rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,248,244,0.88))] transform-gpu [-webkit-backface-visibility:hidden] [backface-visibility:hidden]">
-                            <div className="absolute inset-0 rounded-[1.16rem] border border-[#d8a08d]/24 bg-[rgba(255,250,246,0.78)] p-0">
+                            <div className="absolute inset-0 flex items-center justify-center rounded-[1.16rem] border border-[#d8a08d]/24 bg-[#f6edb8] p-0">
                               <img
-                                src={charlieImg}
+                                src={kundaliniGif}
                                 alt={
                                   locale === 'de'
-                                    ? 'Darstellung des subtilen Systems'
-                                    : 'Illustration of the subtle system'
+                                    ? 'Kundalini-Darstellung'
+                                    : 'Kundalini illustration'
                                 }
-                                className="h-full w-full rounded-[1.14rem] object-fill"
+                                className="h-full w-full rounded-[1.14rem] object-contain scale-[1.06]"
                               />
                             </div>
                           </div>
