@@ -140,14 +140,35 @@ const BlogPage: React.FC = () => {
           heroIntro:
             'Hier werden längere Texte, praktische Vertiefungen, Impulse aus der Meditation und Hinweise auf neue Entwicklungen in München gebündelt. So bekommt der Blog einen klaren Platz im Gesamtauftritt statt nur ein leerer Menüpunkt zu bleiben.',
           sectionLinks: [
-            { href: '#newsletter-archive', label: 'Newsletter & Archiv' },
+            { href: '#newsletter-latest', label: 'Neueste Ausgabe' },
+            { href: '#newsletter-archive', label: 'Newsletter-Archiv' },
             { href: '#empfohlen', label: 'Empfohlener Einstieg' },
-            { href: '#beitraege', label: 'Beiträge' },
-            { href: '#themen', label: 'Weitere Themen' }
+            { href: '#beitraege', label: 'Artikel' },
+            { href: '#themen', label: 'Themenfelder' }
           ],
           noteTitle: 'Was diese Seite zusammenführt',
           noteBody:
             'Der Blog verbindet ruhige Einführung, vertiefende Lesestrecken und kommende Inhalte. Er eignet sich für Texte über Kundalini, Selbstverwirklichung, wissenschaftliche Perspektiven, kollektive Meditation und Hinweise auf besondere Programme.',
+          accessEyebrow: 'Schneller Zugang',
+          accessTitle: 'Newsletter, Archiv und Artikel sind hier als klar getrennte Bereiche sofort erreichbar.',
+          accessBody:
+            'Die neueste Ausgabe steht ganz oben, das Archiv bleibt direkt daneben sichtbar, und die vertiefenden Artikel beginnen als eigener redaktioneller Strom darunter.',
+          accessLatestTitle: 'Neueste Newsletter-Ausgabe',
+          accessLatestBody:
+            'Öffnet die aktuellste veröffentlichte Ausgabe sofort als gestaltete Rundbrief-Seite.',
+          accessArchiveTitle: 'Newsletter-Archiv',
+          accessArchiveBody:
+            'Alle bisherigen Rundbriefe bleiben dauerhaft gesammelt und direkt zugänglich.',
+          accessArticlesTitle: 'Artikel',
+          accessArticlesBody:
+            'Vertiefende Texte zu Meditation, Aufmerksamkeit, Kundalini und alltäglicher Praxis.',
+          accessThemesTitle: 'Themen & Journal',
+          accessThemesBody:
+            'Ein eigener Bereich für weitere redaktionelle Richtungen, Erfahrungsräume und kommende Formate.',
+          accessOpenLatest: 'Neueste öffnen',
+          accessOpenArchive: 'Archiv öffnen',
+          accessOpenArticles: 'Zu den Artikeln',
+          accessOpenThemes: 'Zu den Themen',
           heroLatestNewsletterCta: 'Neueste Newsletter-Ausgabe öffnen',
           heroArchiveCta: 'Zum Newsletter-Archiv',
           newsletterEyebrow: 'Newsletter',
@@ -222,14 +243,35 @@ const BlogPage: React.FC = () => {
           heroIntro:
             'This page gathers longer-form writing, practical reflections, meditative insights and updates from Munich in one clear place. The blog now has a proper destination in the site instead of remaining an empty navigation item.',
           sectionLinks: [
-            { href: '#newsletter-archive', label: 'Newsletter & archive' },
+            { href: '#newsletter-latest', label: 'Latest issue' },
+            { href: '#newsletter-archive', label: 'Newsletter archive' },
             { href: '#featured', label: 'Featured entry' },
             { href: '#articles', label: 'Articles' },
-            { href: '#themes', label: 'Further themes' }
+            { href: '#themes', label: 'Themes' }
           ],
           noteTitle: 'What this page brings together',
           noteBody:
             'The blog combines calm introductions, deeper reading paths and future content. It is a natural home for writing on Kundalini, Self-Realization, scientific perspectives, collective meditation and programme updates.',
+          accessEyebrow: 'Quick access',
+          accessTitle: 'Newsletters, archive and articles now sit here as clearly separated editorial streams.',
+          accessBody:
+            'The latest issue is immediately visible, the archive stays right beside it, and the article stream begins below without being hidden behind secondary navigation.',
+          accessLatestTitle: 'Latest newsletter issue',
+          accessLatestBody:
+            'Open the newest published issue immediately as a designed editorial page.',
+          accessArchiveTitle: 'Newsletter archive',
+          accessArchiveBody:
+            'All earlier circulars remain permanently visible and easy to reopen.',
+          accessArticlesTitle: 'Articles',
+          accessArticlesBody:
+            'Long-form writing on meditation, attention, Kundalini and lived practice.',
+          accessThemesTitle: 'Themes & journal',
+          accessThemesBody:
+            'A dedicated area for broader editorial directions, experience-based writing and future formats.',
+          accessOpenLatest: 'Open latest',
+          accessOpenArchive: 'Open archive',
+          accessOpenArticles: 'Go to articles',
+          accessOpenThemes: 'Go to themes',
           heroLatestNewsletterCta: 'Open latest newsletter issue',
           heroArchiveCta: 'Open newsletter archive',
           newsletterEyebrow: 'Newsletter',
@@ -339,80 +381,108 @@ const BlogPage: React.FC = () => {
               )}
             </div>
 
-            <aside className="card-soft warm-hover-glow reveal-ready overflow-hidden p-4 sm:p-5">
-              <div className="overflow-hidden rounded-[1.5rem] border border-[#b35d4c]/22 bg-white/70">
-                <img
-                  src={chakraImg}
-                  alt={locale === 'de' ? 'Chakra-Symbol' : 'Chakra symbol'}
-                  className="h-[18rem] w-full object-cover object-center"
-                />
-              </div>
-              <div className="mt-4 rounded-[1.35rem] border border-[#b35d4c]/22 bg-[rgba(255,250,246,0.9)] px-5 py-4">
-                <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b56757]">
-                  {copy.noteTitle}
-                </p>
-                <p className="mt-3 text-[0.98rem] leading-7 text-slate-600">{copy.noteBody}</p>
+            <aside className="card-soft warm-hover-glow reveal-ready overflow-hidden p-5 sm:p-6">
+              <span className="eyebrow">{copy.accessEyebrow}</span>
+              <h2 className="mt-4 text-[1.85rem] leading-tight text-slate-800 sm:text-[2.15rem]">
+                {copy.accessTitle}
+              </h2>
+              <p className="mt-4 text-[0.98rem] leading-7 text-slate-600">{copy.accessBody}</p>
+
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                <article className="rounded-[1.35rem] border border-[#b35d4c]/22 bg-[rgba(255,250,246,0.9)] px-5 py-5">
+                  <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b56757]">
+                    {copy.latestIssue}
+                  </p>
+                  <h3 className="mt-3 text-[1.22rem] leading-tight text-[#b56757]">
+                    {copy.accessLatestTitle}
+                  </h3>
+                  <p className="mt-3 text-[0.95rem] leading-7 text-slate-600">
+                    {copy.accessLatestBody}
+                  </p>
+                  {latestVisibleNewsletter && (
+                    <>
+                      <p className="mt-4 text-sm text-slate-500">
+                        {latestVisibleNewsletter.title} · {latestVisibleNewsletter.issueLabel}
+                      </p>
+                      <div className="mt-4">
+                        <Link
+                          to={latestVisibleNewsletter.route}
+                          className="inline-flex items-center text-sm font-semibold text-[#b56757] transition duration-300 hover:translate-x-1"
+                        >
+                          {copy.accessOpenLatest} <span className="ml-2">→</span>
+                        </Link>
+                      </div>
+                    </>
+                  )}
+                </article>
+
+                <article className="rounded-[1.35rem] border border-[#b35d4c]/22 bg-[rgba(255,250,246,0.9)] px-5 py-5">
+                  <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b56757]">
+                    {copy.archiveEyebrow}
+                  </p>
+                  <h3 className="mt-3 text-[1.22rem] leading-tight text-[#b56757]">
+                    {copy.accessArchiveTitle}
+                  </h3>
+                  <p className="mt-3 text-[0.95rem] leading-7 text-slate-600">
+                    {copy.accessArchiveBody}
+                  </p>
+                  <p className="mt-4 text-sm text-slate-500">
+                    {newsletters.length} {locale === 'de' ? 'veröffentlichte Ausgaben' : 'published issues'}
+                  </p>
+                  <div className="mt-4">
+                    <a
+                      href="#newsletter-archive"
+                      className="inline-flex items-center text-sm font-semibold text-[#b56757] transition duration-300 hover:translate-x-1"
+                    >
+                      {copy.accessOpenArchive} <span className="ml-2">→</span>
+                    </a>
+                  </div>
+                </article>
+
+                <article className="rounded-[1.35rem] border border-[#b35d4c]/22 bg-[rgba(255,250,246,0.9)] px-5 py-5">
+                  <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b56757]">
+                    {copy.entriesEyebrow}
+                  </p>
+                  <h3 className="mt-3 text-[1.22rem] leading-tight text-[#b56757]">
+                    {copy.accessArticlesTitle}
+                  </h3>
+                  <p className="mt-3 text-[0.95rem] leading-7 text-slate-600">
+                    {copy.accessArticlesBody}
+                  </p>
+                  <div className="mt-4">
+                    <a
+                      href={`#${locale === 'de' ? 'beitraege' : 'articles'}`}
+                      className="inline-flex items-center text-sm font-semibold text-[#b56757] transition duration-300 hover:translate-x-1"
+                    >
+                      {copy.accessOpenArticles} <span className="ml-2">→</span>
+                    </a>
+                  </div>
+                </article>
+
+                <article className="rounded-[1.35rem] border border-[#b35d4c]/22 bg-[rgba(255,250,246,0.9)] px-5 py-5">
+                  <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b56757]">
+                    {copy.themesEyebrow}
+                  </p>
+                  <h3 className="mt-3 text-[1.22rem] leading-tight text-[#b56757]">
+                    {copy.accessThemesTitle}
+                  </h3>
+                  <p className="mt-3 text-[0.95rem] leading-7 text-slate-600">
+                    {copy.accessThemesBody}
+                  </p>
+                  <div className="mt-4">
+                    <a
+                      href="#themes"
+                      className="inline-flex items-center text-sm font-semibold text-[#b56757] transition duration-300 hover:translate-x-1"
+                    >
+                      {copy.accessOpenThemes} <span className="ml-2">→</span>
+                    </a>
+                  </div>
+                </article>
               </div>
             </aside>
           </div>
         </div>
       </section>
-
-      {latestNewsletter && (
-        <section className="section-band pt-0">
-          <div className="section-shell">
-            <article className="newsletter-stage reveal-ready overflow-hidden p-6 sm:p-8 lg:p-10">
-              <div className="grid gap-7 lg:grid-cols-[0.94fr_1.06fr] lg:items-center">
-                <div className="overflow-hidden rounded-[1.8rem] border border-[#b35d4c]/22 bg-white/70">
-                  <img
-                    src={latestVisibleNewsletter?.heroImageUrl ?? chakraImg}
-                    alt={latestVisibleNewsletter?.heroImageAlt ?? (locale === 'de' ? 'Newsletter' : 'Newsletter')}
-                    className="h-[24rem] w-full object-cover object-center"
-                  />
-                </div>
-
-                <div className="flex flex-col">
-                  <div className="flex flex-wrap gap-3">
-                    <span className="eyebrow">{copy.newsletterEyebrow}</span>
-                    <span className="eyebrow">
-                      {copy.latestIssue} {latestVisibleNewsletter?.issueLabel ?? latestNewsletter.issueLabel}
-                    </span>
-                  </div>
-                  <h2 className="mt-5 max-w-2xl text-[2rem] leading-tight sm:text-[2.4rem]">
-                    {copy.newsletterTitle}
-                  </h2>
-                  <p className="mt-5 max-w-2xl text-[1.02rem] leading-8 text-slate-600">
-                    {copy.newsletterBody}
-                  </p>
-                  <div className="mt-6 rounded-[1.35rem] border border-[#b35d4c]/22 bg-[rgba(255,250,246,0.9)] px-5 py-4">
-                    <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#b56757]">
-                      {copy.latestIssueEyebrow}
-                    </p>
-                    <p className="mt-3 text-[0.98rem] leading-7 text-slate-600">
-                      {copy.latestIssueBody}
-                    </p>
-                  </div>
-
-                  <div className="mt-7 flex flex-wrap gap-3">
-                    <Link
-                      to={latestVisibleNewsletter?.route ?? latestNewsletter.route}
-                      className="inline-flex items-center rounded-full border border-[#b35d4c]/30 bg-[rgba(255,250,246,0.96)] px-5 py-2.5 text-sm font-semibold text-[#b56757] transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/45 hover:bg-[rgba(255,244,238,0.98)]"
-                    >
-                      {copy.newsletterCta}
-                    </Link>
-                    <a
-                      href="#newsletter-archive"
-                      className="inline-flex items-center rounded-full border border-[#b35d4c]/20 bg-white/70 px-5 py-2.5 text-sm font-semibold text-slate-600 transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/35 hover:bg-[rgba(255,250,246,0.96)]"
-                    >
-                      {copy.newsletterArchiveCta}
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </div>
-        </section>
-      )}
 
       {latestNewsletterIssue && (
         <section id="newsletter-latest" className="section-band pt-2">
