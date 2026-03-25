@@ -268,7 +268,7 @@ const IntroSection: React.FC = () => {
 
                     <article className="warm-hover-glow group relative isolate h-[22rem] overflow-hidden rounded-[1.3rem] border border-[#d8a08d]/30 bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(255,244,238,0.66))] p-[1px] shadow-[0_14px_28px_rgba(179,93,76,0.08)] [perspective:1600px]">
                       <div className="relative h-full transform-gpu">
-                        <div className="relative h-full transform-gpu [transform-style:preserve-3d] [transform:rotateY(0deg)] transition duration-0 [will-change:transform] group-hover:[transform:rotateY(180deg)]">
+                        <div className="relative h-full transform-gpu [transform-style:preserve-3d] [transform:rotateY(0deg)] transition-none [will-change:transform] group-hover:[transform:rotateY(180deg)]">
                           <div className="absolute inset-0 overflow-hidden rounded-[1.16rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,248,244,0.88))] transform-gpu [-webkit-backface-visibility:hidden] [backface-visibility:hidden]">
                             <div className="absolute inset-0 rounded-[1.16rem] border border-[#d8a08d]/24 bg-[rgba(255,250,246,0.78)] p-0">
                               <img
@@ -278,18 +278,18 @@ const IntroSection: React.FC = () => {
                                     ? 'Darstellung des subtilen Systems'
                                     : 'Illustration of the subtle system'
                                 }
-                                className="h-full w-full translate-y-[1.8%] rounded-[1.14rem] object-contain object-bottom scale-[1.075]"
+                                className="h-full w-full rounded-[1.14rem] object-fill"
                               />
                             </div>
                           </div>
 
                           <div className="absolute inset-0 overflow-hidden rounded-[1.16rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,248,244,0.88))] transform-gpu [-webkit-backface-visibility:hidden] [backface-visibility:hidden] [transform:rotateY(180deg)]">
-                            <div className="absolute inset-0 rounded-[1.16rem] border border-[#d8a08d]/24 bg-[rgba(255,250,246,0.78)] p-0">
+                            <div className="absolute inset-0 flex items-center justify-center rounded-[1.16rem] border border-[#d8a08d]/24 bg-[rgba(255,250,246,0.78)] p-0">
                               <img
                                 src={kundImg}
                                 alt=""
                                 aria-hidden="true"
-                                className="h-full w-full rounded-[1.14rem] object-contain object-center scale-[1.035] transition duration-0 group-hover:scale-[1.035]"
+                                className="h-auto w-full max-w-full rounded-[1.14rem] object-contain transition-none"
                               />
                             </div>
                           </div>
