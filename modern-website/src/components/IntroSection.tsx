@@ -278,7 +278,7 @@ const IntroSection: React.FC = () => {
                                     ? 'Darstellung des subtilen Systems'
                                     : 'Illustration of the subtle system'
                                 }
-                                className="h-full w-full rounded-[1.08rem] object-contain object-top scale-[1.045]"
+                                className="h-full w-full rounded-[1.12rem] object-contain object-bottom scale-[1.065]"
                               />
                             </div>
                           </div>
@@ -289,7 +289,7 @@ const IntroSection: React.FC = () => {
                                 src={kundImg}
                                 alt=""
                                 aria-hidden="true"
-                                className="h-full w-full rounded-[1.08rem] object-contain object-top scale-[1.03] transition duration-0 group-hover:scale-[1.04]"
+                                className="h-full w-full rounded-[1.12rem] object-contain object-center scale-[1.08] transition duration-0 group-hover:scale-[1.08]"
                               />
                             </div>
                           </div>
