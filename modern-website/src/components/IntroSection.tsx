@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLocale } from '../context/LocaleContext';
+import charlieImg from '../assets/charlie.png';
 import kundaliniGif from '../assets/kundalini.gif';
 import kundImg from '../assets/kund.png';
 
@@ -286,14 +287,24 @@ const IntroSection: React.FC = () => {
                           <div className="absolute inset-0 overflow-hidden rounded-[1.16rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,248,244,0.88))] transform-gpu [-webkit-backface-visibility:hidden] [backface-visibility:hidden] [transform:rotateY(180deg)]">
                             <div className="absolute inset-0 flex items-center justify-center rounded-[1.16rem] border border-[#d8a08d]/24 bg-[rgba(255,250,246,0.78)] p-0">
                               <img
-                                src={kundImg}
+                                src={charlieImg}
                                 alt=""
                                 aria-hidden="true"
-                                className="h-auto w-full max-w-full rounded-[1.14rem] object-contain transition-none"
+                                className="h-full w-full rounded-[1.14rem] object-fill"
                               />
                             </div>
                           </div>
                         </div>
+                      </div>
+                    </article>
+
+                    <article className="warm-hover-glow rounded-[1.3rem] border border-[#d8a08d]/30 bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(255,244,238,0.66))] p-4 shadow-[0_14px_28px_rgba(179,93,76,0.08)] sm:p-5">
+                      <div className="flex h-[11rem] items-center justify-center overflow-hidden rounded-[1.16rem] border border-[#d8a08d]/24 bg-[rgba(255,250,246,0.78)]">
+                        <img
+                          src={kundImg}
+                          alt={locale === 'de' ? 'Kundalini-Symbolik' : 'Kundalini symbolism'}
+                          className="h-auto max-h-full w-[70%] object-contain"
+                        />
                       </div>
                     </article>
                   </div>
