@@ -143,6 +143,12 @@ const BlogPage: React.FC = () => {
           heroTitle: 'Neuester Newsletter, Archiv und Artikel an einem Ort.',
           heroIntro:
             'Die aktuelle Newsletter-Ausgabe aus München steht hier sofort im Mittelpunkt. Darunter bleiben Archiv, Artikel und weitere redaktionelle Richtungen direkt erreichbar, ohne dass die eigentlichen Inhalte hinter bloßen Teasern verschwinden.',
+          spotlightEyebrow: 'Direkter Newsletter-Zugang',
+          spotlightTitle: 'Die aus meditationmuenchen.org übernommene Ausgabe ist hier direkt vollständig erreichbar.',
+          spotlightBody:
+            'Wenn du sofort den eigentlichen Newsletter mit Texten, Bildern, Ankündigungen und Rückblicken öffnen willst, klicke direkt hier. Das Archiv bleibt daneben dauerhaft sichtbar.',
+          spotlightLatestCta: 'Vollständige Ausgabe öffnen',
+          spotlightArchiveCta: 'Zum Newsletter-Archiv',
           sectionLinks: [
             { href: '#newsletter-latest', label: 'Neueste Ausgabe' },
             { href: '#newsletter-archive', label: 'Newsletter-Archiv' },
@@ -234,6 +240,12 @@ const BlogPage: React.FC = () => {
           heroTitle: 'Latest newsletter, archive and articles in one place.',
           heroIntro:
             'The current Munich newsletter issue now sits immediately at the top. Below it, the archive, articles and broader editorial directions remain easy to reach without hiding the real content behind abstract access cards.',
+          spotlightEyebrow: 'Direct newsletter access',
+          spotlightTitle: 'The issue imported from meditationmuenchen.org is fully reachable here right away.',
+          spotlightBody:
+            'If you want to open the actual newsletter with its writing, images, event notes and retrospectives immediately, click here first. The archive remains visible right beside it.',
+          spotlightLatestCta: 'Open full issue',
+          spotlightArchiveCta: 'Open newsletter archive',
           sectionLinks: [
             { href: '#newsletter-latest', label: 'Latest issue' },
             { href: '#newsletter-archive', label: 'Newsletter archive' },
@@ -331,6 +343,53 @@ const BlogPage: React.FC = () => {
             <p className="mt-6 max-w-3xl text-[1.04rem] leading-8 text-slate-600 sm:text-[1.08rem]">
               {copy.heroIntro}
             </p>
+
+            {latestVisibleNewsletter && (
+              <article className="newsletter-stage reveal-ready mt-8 overflow-hidden p-6 sm:p-7">
+                <div className="grid gap-5 lg:grid-cols-[1.25fr_0.75fr] lg:items-center">
+                  <div>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="eyebrow">{copy.spotlightEyebrow}</span>
+                      <span className="eyebrow">
+                        {copy.issueLabel} {latestVisibleNewsletter.issueLabel}
+                      </span>
+                    </div>
+                    <h2 className="mt-4 text-[1.8rem] leading-tight text-slate-800 sm:text-[2.15rem]">
+                      {copy.spotlightTitle}
+                    </h2>
+                    <p className="mt-4 max-w-3xl text-[0.98rem] leading-7 text-slate-600">
+                      {copy.spotlightBody}
+                    </p>
+                    <div className="mt-5 flex flex-wrap gap-3">
+                      <Link
+                        to={latestVisibleNewsletter.route}
+                        className="inline-flex items-center rounded-full border border-[#b35d4c]/30 bg-[rgba(255,250,246,0.98)] px-5 py-2.5 text-sm font-semibold text-[#b56757] transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/45 hover:bg-[rgba(255,244,238,0.98)]"
+                      >
+                        {copy.spotlightLatestCta}
+                      </Link>
+                      <a
+                        href="#newsletter-archive"
+                        className="inline-flex items-center rounded-full border border-[#b35d4c]/20 bg-white/75 px-5 py-2.5 text-sm font-semibold text-slate-600 transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/35 hover:bg-[rgba(255,250,246,0.96)]"
+                      >
+                        {copy.spotlightArchiveCta}
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="rounded-[1.35rem] border border-[#b35d4c]/18 bg-[rgba(255,250,246,0.84)] px-5 py-5 text-left">
+                    <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#b56757]">
+                      {latestVisibleNewsletter.title}
+                    </p>
+                    <p className="mt-3 text-sm leading-6 text-slate-500">
+                      {formatNewsletterDate(latestVisibleNewsletter.publishedAt)}
+                    </p>
+                    <p className="mt-4 text-[0.95rem] leading-7 text-slate-600">
+                      {trimCardPreview(latestNewsletterIntroLine, 210)}
+                    </p>
+                  </div>
+                </div>
+              </article>
+            )}
 
             <div className="mt-7 flex flex-wrap gap-3">
               {copy.sectionLinks.map(link => (
