@@ -62,10 +62,15 @@ const NewsletterPage: React.FC = () => {
           title: 'Neueste Ausgabe und Archiv der Münchner Rundbriefe.',
           intro:
             'Hier gibt es einen echten Einstiegspunkt für die via Sanity gepflegten Newsletter. Die neueste Ausgabe steht sofort im Mittelpunkt, und darunter bleiben frühere Ausgaben dauerhaft sichtbar und direkt klickbar.',
+          primaryCardEyebrow: 'Hier direkt öffnen',
+          primaryCardTitle: 'Die aktuelle Newsletter-Ausgabe ist hier sofort klickbar.',
+          primaryCardBody:
+            'Diese Karte führt unmittelbar zur vollständigen Ausgabe mit den aus meditationmuenchen.org übernommenen Texten, Bildern, Ankündigungen und Rückblicken.',
           latestEyebrow: 'Neueste Ausgabe',
           latestBody:
             'Diese Ausgabe enthält die eigentlichen Texte, Bilder, Ankündigungen und Rückblicke, die aus meditationmuenchen.org übernommen und in Sanity weiter gepflegt werden.',
           openLatest: 'Vollständige Ausgabe öffnen',
+          openLatestNamed: 'Newsletter 01-2026 öffnen',
           archiveEyebrow: 'Historisches Archiv',
           archiveTitle: 'Frühere Ausgaben bleiben hier gesammelt und unmittelbar erreichbar.',
           archiveBody:
@@ -80,10 +85,15 @@ const NewsletterPage: React.FC = () => {
           title: 'Latest issue and archive of the Munich circulars.',
           intro:
             'This is now a real entry page for the Sanity-managed newsletters. The latest issue is foregrounded immediately, and earlier issues remain permanently visible and directly clickable below it.',
+          primaryCardEyebrow: 'Open here directly',
+          primaryCardTitle: 'The current newsletter issue is immediately clickable here.',
+          primaryCardBody:
+            'This card goes straight to the full issue with the writing, images, event notes and retrospectives imported from meditationmuenchen.org.',
           latestEyebrow: 'Latest issue',
           latestBody:
             'This issue contains the actual writing, images, event notes and retrospectives imported from meditationmuenchen.org and maintained further in Sanity.',
           openLatest: 'Open full issue',
+          openLatestNamed: 'Open newsletter 01-2026',
           archiveEyebrow: 'Historical archive',
           archiveTitle: 'Earlier issues remain collected here and directly reachable.',
           archiveBody:
@@ -115,20 +125,51 @@ const NewsletterPage: React.FC = () => {
             </p>
 
             {latestNewsletter && (
-              <div className="mt-7 flex flex-wrap gap-3">
-                <Link
-                  to={latestNewsletter.route}
-                  className="inline-flex items-center rounded-full border border-[#b35d4c]/30 bg-[rgba(255,250,246,0.98)] px-5 py-2.5 text-sm font-semibold text-[#b56757] transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/45 hover:bg-[rgba(255,244,238,0.98)]"
-                >
-                  {copy.openLatest}
-                </Link>
-                <a
-                  href="#newsletter-history"
-                  className="inline-flex items-center rounded-full border border-[#b35d4c]/20 bg-white/75 px-5 py-2.5 text-sm font-semibold text-slate-600 transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/35 hover:bg-[rgba(255,250,246,0.96)]"
-                >
-                  {copy.archiveEyebrow}
-                </a>
-              </div>
+              <article className="newsletter-stage reveal-ready mt-8 overflow-hidden p-6 sm:p-7">
+                <div className="grid gap-5 lg:grid-cols-[1.18fr_0.82fr] lg:items-center">
+                  <div>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="eyebrow">{copy.primaryCardEyebrow}</span>
+                      <span className="eyebrow">
+                        {copy.issueLabel} {latestNewsletter.issueLabel}
+                      </span>
+                    </div>
+                    <h2 className="mt-4 text-[1.75rem] leading-tight text-slate-800 sm:text-[2.1rem]">
+                      {copy.primaryCardTitle}
+                    </h2>
+                    <p className="mt-4 max-w-3xl text-[0.98rem] leading-7 text-slate-600">
+                      {copy.primaryCardBody}
+                    </p>
+                    <div className="mt-6 flex flex-wrap gap-3">
+                      <Link
+                        to={latestNewsletter.route}
+                        className="inline-flex items-center rounded-full border border-[#b35d4c]/30 bg-[rgba(255,250,246,0.98)] px-5 py-2.5 text-sm font-semibold text-[#b56757] transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/45 hover:bg-[rgba(255,244,238,0.98)]"
+                      >
+                        {copy.openLatestNamed}
+                      </Link>
+                      <a
+                        href="#newsletter-history"
+                        className="inline-flex items-center rounded-full border border-[#b35d4c]/20 bg-white/75 px-5 py-2.5 text-sm font-semibold text-slate-600 transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/35 hover:bg-[rgba(255,250,246,0.96)]"
+                      >
+                        {copy.archiveEyebrow}
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="rounded-[1.35rem] border border-[#b35d4c]/18 bg-[rgba(255,250,246,0.84)] px-5 py-5 text-left">
+                    <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#b56757]">
+                      {latestNewsletter.title}
+                    </p>
+                    <p className="mt-3 text-sm leading-6 text-slate-500">
+                      {formatNewsletterDate(latestNewsletter.publishedAt, locale)}
+                    </p>
+                    <p className="mt-4 text-[0.95rem] leading-7 text-slate-600">
+                      {latestNewsletter.introTitle ? `${latestNewsletter.introTitle}. ` : ''}
+                      {latestNewsletter.introBody.split('\n')[0]}
+                    </p>
+                  </div>
+                </div>
+              </article>
             )}
           </div>
 
