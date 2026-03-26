@@ -113,6 +113,23 @@ const NewsletterPage: React.FC = () => {
             <p className="mt-6 max-w-3xl text-[1.02rem] leading-8 text-slate-600 sm:text-[1.08rem]">
               {copy.intro}
             </p>
+
+            {latestNewsletter && (
+              <div className="mt-7 flex flex-wrap gap-3">
+                <Link
+                  to={latestNewsletter.route}
+                  className="inline-flex items-center rounded-full border border-[#b35d4c]/30 bg-[rgba(255,250,246,0.98)] px-5 py-2.5 text-sm font-semibold text-[#b56757] transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/45 hover:bg-[rgba(255,244,238,0.98)]"
+                >
+                  {copy.openLatest}
+                </Link>
+                <a
+                  href="#newsletter-history"
+                  className="inline-flex items-center rounded-full border border-[#b35d4c]/20 bg-white/75 px-5 py-2.5 text-sm font-semibold text-slate-600 transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/35 hover:bg-[rgba(255,250,246,0.96)]"
+                >
+                  {copy.archiveEyebrow}
+                </a>
+              </div>
+            )}
           </div>
 
           {isLoading ? (
@@ -184,7 +201,7 @@ const NewsletterPage: React.FC = () => {
         </div>
       </section>
 
-      <section className="section-band pt-6">
+      <section id="newsletter-history" className="section-band pt-6">
         <div className="section-shell">
           <div className="reveal-ready max-w-4xl">
             <span className="eyebrow">{copy.archiveEyebrow}</span>
