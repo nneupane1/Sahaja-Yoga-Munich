@@ -143,6 +143,11 @@ const BlogPage: React.FC = () => {
           heroTitle: 'Neuester Newsletter, Archiv und Artikel an einem Ort.',
           heroIntro:
             'Die aktuelle Newsletter-Ausgabe aus München steht hier sofort im Mittelpunkt. Darunter bleiben Archiv, Artikel und weitere redaktionelle Richtungen direkt erreichbar, ohne dass die eigentlichen Inhalte hinter bloßen Teasern verschwinden.',
+          directCardEyebrow: 'Direkt zur Ausgabe',
+          directCardTitle: 'Klicke hier, um sofort die neueste Newsletter-Ausgabe zu öffnen.',
+          directCardBody:
+            'Diese große Karte führt unmittelbar zur vollständigen Sanity-Ausgabe mit den aus meditationmuenchen.org übernommenen Texten, Bildern, Ankündigungen und Rückblicken.',
+          directCardCta: 'Newsletter 01-2026 öffnen',
           spotlightEyebrow: 'Direkter Newsletter-Zugang',
           spotlightTitle: 'Die aus meditationmuenchen.org übernommene Ausgabe ist hier direkt vollständig erreichbar.',
           spotlightBody:
@@ -240,6 +245,11 @@ const BlogPage: React.FC = () => {
           heroTitle: 'Latest newsletter, archive and articles in one place.',
           heroIntro:
             'The current Munich newsletter issue now sits immediately at the top. Below it, the archive, articles and broader editorial directions remain easy to reach without hiding the real content behind abstract access cards.',
+          directCardEyebrow: 'Direct issue access',
+          directCardTitle: 'Click here to open the latest newsletter issue immediately.',
+          directCardBody:
+            'This large card goes straight to the full Sanity issue with the writing, images, event notes and retrospectives imported from meditationmuenchen.org.',
+          directCardCta: 'Open newsletter 01-2026',
           spotlightEyebrow: 'Direct newsletter access',
           spotlightTitle: 'The issue imported from meditationmuenchen.org is fully reachable here right away.',
           spotlightBody:
@@ -343,6 +353,42 @@ const BlogPage: React.FC = () => {
             <p className="mt-6 max-w-3xl text-[1.04rem] leading-8 text-slate-600 sm:text-[1.08rem]">
               {copy.heroIntro}
             </p>
+
+            {latestVisibleNewsletter && (
+              <Link
+                to={latestVisibleNewsletter.route}
+                className="newsletter-stage reveal-ready mt-8 block overflow-hidden p-6 transition duration-300 hover:-translate-y-1 sm:p-8"
+              >
+                <div className="grid gap-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
+                  <div>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="eyebrow">{copy.directCardEyebrow}</span>
+                      <span className="eyebrow">
+                        {copy.issueLabel} {latestVisibleNewsletter.issueLabel}
+                      </span>
+                    </div>
+                    <h2 className="mt-4 text-[2rem] leading-tight text-slate-800 sm:text-[2.45rem]">
+                      {copy.directCardTitle}
+                    </h2>
+                    <p className="mt-4 max-w-3xl text-[0.98rem] leading-7 text-slate-600">
+                      {copy.directCardBody}
+                    </p>
+                    <div className="mt-6 inline-flex items-center rounded-full border border-[#b35d4c]/30 bg-[rgba(255,250,246,0.98)] px-5 py-2.5 text-sm font-semibold text-[#b56757]">
+                      {copy.directCardCta}
+                      <span className="ml-2">→</span>
+                    </div>
+                  </div>
+
+                  <div className="overflow-hidden rounded-[1.7rem] border border-[#b35d4c]/18 bg-white/72 shadow-[0_20px_42px_rgba(146,92,79,0.14)]">
+                    <img
+                      src={latestVisibleNewsletter.heroImageUrl ?? motherImg}
+                      alt={latestVisibleNewsletter.heroImageAlt}
+                      className="h-[18rem] w-full object-cover object-center"
+                    />
+                  </div>
+                </div>
+              </Link>
+            )}
 
             {latestVisibleNewsletter && (
               <article className="newsletter-stage reveal-ready mt-8 overflow-hidden p-6 sm:p-7">
