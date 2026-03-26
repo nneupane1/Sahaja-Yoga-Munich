@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import motherImg from '../assets/mother1.jpg';
-import lotusImg from '../assets/lotus.png';
 import NewsletterDivider from '../components/NewsletterDivider';
 import { getSanityNewsletters, type Newsletter } from '../content/sanityNewsletters';
 import { useLocale } from '../context/LocaleContext';
@@ -179,12 +178,6 @@ const NewsletterPage: React.FC = () => {
             </article>
           ) : latestNewsletter ? (
             <article className="newsletter-stage reveal-ready mt-8 overflow-hidden p-6 sm:p-8 lg:p-10">
-              <img
-                src={lotusImg}
-                alt=""
-                aria-hidden="true"
-                className="pointer-events-none absolute -right-8 top-6 hidden w-36 rotate-[18deg] opacity-[0.1] mix-blend-multiply lg:block"
-              />
               <div className="grid gap-8 lg:grid-cols-[1.04fr_0.96fr] lg:items-center">
                 <div className="overflow-hidden rounded-[1.9rem] border border-[#b35d4c]/18 bg-white/72 shadow-[0_22px_48px_rgba(146,92,79,0.14)]">
                   <img

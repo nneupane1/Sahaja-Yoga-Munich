@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, Navigate, useLocation, useParams } from 'react-router-dom';
 import chakraImg from '../assets/chakra.png';
-import lotusImg from '../assets/lotus.png';
 import motherImg from '../assets/mother.jpg';
 import LegacyNewsletterFrame from '../components/LegacyNewsletterFrame';
 import NewsletterDivider from '../components/NewsletterDivider';
@@ -260,18 +259,6 @@ const NewsletterRoute: React.FC = () => {
           </div>
 
           <article className="newsletter-stage reveal-ready mt-6 overflow-hidden px-6 py-8 sm:px-8 sm:py-10 lg:px-10">
-            <img
-              src={lotusImg}
-              alt=""
-              aria-hidden="true"
-              className="pointer-events-none absolute -left-10 top-10 hidden w-32 opacity-[0.14] mix-blend-multiply sm:block"
-            />
-            <img
-              src={lotusImg}
-              alt=""
-              aria-hidden="true"
-              className="pointer-events-none absolute -right-8 bottom-4 hidden w-40 rotate-[16deg] opacity-[0.11] mix-blend-multiply lg:block"
-            />
             <div className="grid gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-start">
               <div className="relative z-10">
                 <div className="flex flex-wrap gap-3">

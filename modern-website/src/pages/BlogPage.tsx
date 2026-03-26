@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import chakraImg from '../assets/chakra.png';
-import lotusImg from '../assets/lotus.png';
 import motherImg from '../assets/mother1.jpg';
 import NewsletterDivider from '../components/NewsletterDivider';
 import { getBlogArticles, getBlogArticle } from '../content/blogArticles';
@@ -763,17 +762,6 @@ const BlogPage: React.FC = () => {
                   key={newsletter.slug}
                   className="newsletter-stage reveal-ready overflow-hidden p-5 sm:p-6"
                 >
-                  <img
-                    src={index % 2 === 0 ? lotusImg : chakraImg}
-                    alt=""
-                    aria-hidden="true"
-                    className={`pointer-events-none absolute opacity-[0.1] mix-blend-multiply ${
-                      index % 2 === 0
-                        ? '-right-6 -top-6 w-24 rotate-[14deg]'
-                        : '-left-8 bottom-0 w-24 -rotate-[18deg]'
-                    }`}
-                  />
-
                   <div className="grid gap-5 sm:grid-cols-[0.9fr_1.1fr] sm:items-start">
                     <div className="overflow-hidden rounded-[1.5rem] border border-[#b35d4c]/20 bg-white/70">
                       <img
