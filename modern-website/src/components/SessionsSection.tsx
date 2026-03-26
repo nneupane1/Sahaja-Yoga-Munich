@@ -319,7 +319,7 @@ const SessionsSection: React.FC = () => {
             </div>
 
             <Link
-              to="/blog#newsletter-archive"
+              to="/blog/newsletter"
               className="warm-hover-glow group flex min-h-[7.1rem] min-w-0 flex-col justify-between rounded-[1.25rem] border border-[#d8a08d]/26 bg-[linear-gradient(180deg,rgba(255,255,255,0.82),rgba(255,245,239,0.62))] px-4 py-3.5 shadow-[0_12px_24px_rgba(179,93,76,0.06)] transition duration-300 hover:-translate-y-0.5"
             >
               <p className="break-words text-[0.92rem] leading-5 text-slate-600">

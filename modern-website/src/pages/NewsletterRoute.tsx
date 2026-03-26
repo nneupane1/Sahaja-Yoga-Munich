@@ -105,7 +105,7 @@ const NewsletterRoute: React.FC = () => {
   useScrollReveal('.reveal-ready', 'reveal', 0.18);
 
   const slug = routeSlug?.trim() ?? '';
-  const canonicalRoute = slug ? `/blog/newsletter/${slug}` : '/blog#newsletter-archive';
+  const canonicalRoute = slug ? `/blog/newsletter/${slug}` : '/blog/newsletter';
   const [newsletter, setNewsletter] = useState<Newsletter | null>(null);
   const [isResolving, setIsResolving] = useState(true);
   const [showLegacyImport, setShowLegacyImport] = useState(false);
@@ -147,7 +147,7 @@ const NewsletterRoute: React.FC = () => {
   const copy =
     locale === 'de'
       ? {
-          back: 'Zum Newsletter-Archiv',
+          back: 'Zur Newsletter-Übersicht',
           featuredEyebrow: 'Im Mittelpunkt',
           scheduleEyebrow: 'München & Region',
           scheduleTitle: 'Regelmäßige Meditationszeiten und regionale Hinweise',
@@ -168,7 +168,7 @@ const NewsletterRoute: React.FC = () => {
           legacyToggleHide: 'Importierte Ausgabe wieder schließen'
         }
       : {
-          back: 'Back to newsletter archive',
+          back: 'Back to newsletter overview',
           featuredEyebrow: 'Highlights',
           scheduleEyebrow: 'Munich & region',
           scheduleTitle: 'Regular meditation timings and regional connections',
@@ -223,7 +223,7 @@ const NewsletterRoute: React.FC = () => {
   };
 
   if (!slug) {
-    return <Navigate to="/blog#newsletter-archive" replace />;
+    return <Navigate to="/blog/newsletter" replace />;
   }
 
   if (location.pathname.startsWith('/newsletter/')) {
@@ -243,7 +243,7 @@ const NewsletterRoute: React.FC = () => {
   }
 
   if (!newsletter) {
-    return <Navigate to="/blog#newsletter-archive" replace />;
+    return <Navigate to="/blog/newsletter" replace />;
   }
 
   return (
@@ -252,7 +252,7 @@ const NewsletterRoute: React.FC = () => {
         <div className="section-shell">
           <div className="reveal-ready">
             <Link
-              to="/blog#newsletter-archive"
+              to="/blog/newsletter"
               className="inline-flex items-center text-sm font-semibold text-[#b56757] transition duration-300 hover:-translate-x-1"
             >
               ← {copy.back}

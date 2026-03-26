@@ -151,7 +151,7 @@ const BlogPage: React.FC = () => {
           spotlightArchiveCta: 'Zum Newsletter-Archiv',
           sectionLinks: [
             { href: '#newsletter-latest', label: 'Neueste Ausgabe' },
-            { href: '#newsletter-archive', label: 'Newsletter-Archiv' },
+            { href: '/blog/newsletter', label: 'Newsletter-Archiv' },
             { href: '#empfohlen', label: 'Empfohlener Einstieg' },
             { href: '#beitraege', label: 'Artikel' },
             { href: '#themen', label: 'Themenfelder' }
@@ -248,7 +248,7 @@ const BlogPage: React.FC = () => {
           spotlightArchiveCta: 'Open newsletter archive',
           sectionLinks: [
             { href: '#newsletter-latest', label: 'Latest issue' },
-            { href: '#newsletter-archive', label: 'Newsletter archive' },
+            { href: '/blog/newsletter', label: 'Newsletter archive' },
             { href: '#featured', label: 'Featured entry' },
             { href: '#articles', label: 'Articles' },
             { href: '#themes', label: 'Themes' }
@@ -367,12 +367,12 @@ const BlogPage: React.FC = () => {
                       >
                         {copy.spotlightLatestCta}
                       </Link>
-                      <a
-                        href="#newsletter-archive"
+                      <Link
+                        to="/blog/newsletter"
                         className="inline-flex items-center rounded-full border border-[#b35d4c]/20 bg-white/75 px-5 py-2.5 text-sm font-semibold text-slate-600 transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/35 hover:bg-[rgba(255,250,246,0.96)]"
                       >
                         {copy.spotlightArchiveCta}
-                      </a>
+                      </Link>
                     </div>
                   </div>
 
@@ -449,12 +449,12 @@ const BlogPage: React.FC = () => {
                       >
                         {copy.topOpenLatest}
                       </Link>
-                      <a
-                        href="#newsletter-archive"
+                      <Link
+                        to="/blog/newsletter"
                         className="inline-flex items-center rounded-full border border-[#b35d4c]/20 bg-white/70 px-5 py-2.5 text-sm font-semibold text-slate-600 transition duration-300 hover:-translate-y-0.5 hover:border-[#b35d4c]/35 hover:bg-[rgba(255,250,246,0.96)]"
                       >
                         {copy.topOpenArchive}
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -493,12 +493,12 @@ const BlogPage: React.FC = () => {
                   </div>
                 )}
                 <div className="mt-5">
-                  <a
-                    href="#newsletter-archive"
+                  <Link
+                    to="/blog/newsletter"
                     className="inline-flex items-center text-sm font-semibold text-[#b56757] transition duration-300 hover:translate-x-1"
                   >
                     {copy.topOpenArchive} <span className="ml-2">→</span>
-                  </a>
+                  </Link>
                 </div>
               </article>
 

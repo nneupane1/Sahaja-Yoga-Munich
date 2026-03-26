@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
         <p>{copy.note}</p>
         <p className="flex flex-wrap items-center justify-center gap-3 text-sm text-[#b35d4c]">
           <Link
-            to="/blog#newsletter-archive"
+            to="/blog/newsletter"
             className="font-semibold transition hover:text-[#9c4b3d]"
           >
             {copy.newsletter}
