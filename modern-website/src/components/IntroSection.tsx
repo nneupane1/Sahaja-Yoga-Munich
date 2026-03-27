@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useLocale } from '../context/LocaleContext';
 import charlieImg from '../assets/charlie.png';
 import kundaliniGif from '../assets/kundalini.gif';
-import kundImg from '../assets/kund.png';
+import kundImg from '../assets/kundserpent.png';
 import sproutImg from '../assets/sprout.png';
 
 /**
