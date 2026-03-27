@@ -333,11 +333,13 @@ const IntroSection: React.FC = () => {
 
                           <div className="absolute inset-0 overflow-hidden rounded-[1.16rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,244,238,0.78))] transform-gpu [-webkit-backface-visibility:hidden] [backface-visibility:hidden] [transform:rotateY(180deg)]">
                             <div className="flex h-full items-center justify-center overflow-hidden rounded-[1.16rem] border border-[#d8a08d]/24 bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,244,238,0.78))] p-2.5">
-                              <img
-                                src={spinalCordImg}
-                                alt={locale === 'de' ? 'Darstellung des Rückenmarks' : 'Spinal cord illustration'}
-                                className="h-full w-full rounded-[0.98rem] object-contain"
-                              />
+                              <div className="h-full w-full overflow-hidden rounded-[1.12rem]">
+                                <img
+                                  src={spinalCordImg}
+                                  alt={locale === 'de' ? 'Darstellung des Rückenmarks' : 'Spinal cord illustration'}
+                                  className="h-full w-full rounded-[1.12rem] object-contain"
+                                />
+                              </div>
                             </div>
                           </div>
                         </div>
