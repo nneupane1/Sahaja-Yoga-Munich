@@ -322,7 +322,7 @@ const IntroSection: React.FC = () => {
                         <img
                           src={kundImg}
                           alt={locale === 'de' ? 'Kundalini-Symbolik' : 'Kundalini symbolism'}
-                          className="h-[96%] max-w-[72%] rounded-[0.98rem] object-contain"
+                          className="h-[82%] max-w-[72%] rounded-[0.98rem] object-contain"
                         />
                       </div>
                     </article>
