@@ -318,11 +318,11 @@ const IntroSection: React.FC = () => {
                     </article>
 
                     <article className="warm-hover-glow rounded-[1.3rem] border border-[#d8a08d]/30 bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(255,244,238,0.66))] p-3 shadow-[0_14px_28px_rgba(179,93,76,0.08)] sm:p-3.5">
-                      <div className="flex h-[10.6rem] items-start justify-center overflow-hidden rounded-[1.16rem] border border-[#d8a08d]/24 bg-[rgba(255,250,246,0.78)] pt-3 sm:h-[10.9rem] sm:pt-3.5">
+                      <div className="flex h-[18.1rem] items-start justify-center overflow-hidden rounded-[1.16rem] border border-[#d8a08d]/24 bg-[rgba(255,250,246,0.78)] pt-3 sm:h-[18.6rem] sm:pt-3.5">
                         <img
                           src={kundImg}
                           alt={locale === 'de' ? 'Kundalini-Symbolik' : 'Kundalini symbolism'}
-                          className="h-[93%] max-w-[59%] rounded-[0.98rem] object-contain"
+                          className="h-[96%] max-w-[72%] rounded-[0.98rem] object-contain"
                         />
                       </div>
                     </article>
