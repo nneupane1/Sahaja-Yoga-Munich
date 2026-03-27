@@ -4,7 +4,7 @@ import { useLocale } from '../context/LocaleContext';
 import charlieImg from '../assets/charlie.png';
 import kundaliniGif from '../assets/kundalini.gif';
 import kundImg from '../assets/kundserpent.png';
-import spinalCordImg from '../assets/spinal cord.png';
+import spinalCordImg from '../assets/spine.png';
 import sproutImg from '../assets/sprout.png';
 
 /**
