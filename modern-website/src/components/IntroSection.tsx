@@ -4,6 +4,7 @@ import { useLocale } from '../context/LocaleContext';
 import charlieImg from '../assets/charlie.png';
 import kundaliniGif from '../assets/kundalini.gif';
 import kundImg from '../assets/kundserpent.png';
+import spinalCordImg from '../assets/spinal cord.png';
 import sproutImg from '../assets/sprout.png';
 
 /**
@@ -317,13 +318,29 @@ const IntroSection: React.FC = () => {
                       </div>
                     </article>
 
-                    <article className="warm-hover-glow rounded-[1.3rem] border border-[#d8a08d]/30 bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(255,244,238,0.66))] p-3 shadow-[0_14px_28px_rgba(179,93,76,0.08)] sm:p-3.5">
-                      <div className="flex h-[15.9rem] items-start justify-center overflow-hidden rounded-[1.16rem] border border-[#d8a08d]/24 bg-[rgba(255,250,246,0.78)] pt-3 sm:h-[16.3rem] sm:pt-3.5">
-                        <img
-                          src={kundImg}
-                          alt={locale === 'de' ? 'Kundalini-Symbolik' : 'Kundalini symbolism'}
-                          className="h-[82%] max-w-[72%] rounded-[0.98rem] object-contain"
-                        />
+                    <article className="warm-hover-glow group relative isolate overflow-hidden rounded-[1.3rem] border border-[#d8a08d]/30 bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(255,244,238,0.66))] p-3 shadow-[0_14px_28px_rgba(179,93,76,0.08)] [perspective:1600px] sm:p-3.5">
+                      <div className="relative h-[15.9rem] transform-gpu sm:h-[16.3rem]">
+                        <div className="relative h-full transform-gpu [transform-style:preserve-3d] [transform:rotateY(0deg)] transition-none [will-change:transform] group-hover:[transform:rotateY(180deg)]">
+                          <div className="absolute inset-0 overflow-hidden rounded-[1.16rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,244,238,0.78))] transform-gpu [-webkit-backface-visibility:hidden] [backface-visibility:hidden]">
+                            <div className="flex h-full items-start justify-center overflow-hidden rounded-[1.16rem] border border-[#d8a08d]/24 bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,244,238,0.78))] pt-3 sm:pt-3.5">
+                              <img
+                                src={kundImg}
+                                alt={locale === 'de' ? 'Kundalini-Symbolik' : 'Kundalini symbolism'}
+                                className="h-[82%] max-w-[72%] rounded-[0.98rem] object-contain"
+                              />
+                            </div>
+                          </div>
+
+                          <div className="absolute inset-0 overflow-hidden rounded-[1.16rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,244,238,0.78))] transform-gpu [-webkit-backface-visibility:hidden] [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                            <div className="flex h-full items-center justify-center overflow-hidden rounded-[1.16rem] border border-[#d8a08d]/24 bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,244,238,0.78))] p-2.5">
+                              <img
+                                src={spinalCordImg}
+                                alt={locale === 'de' ? 'Darstellung des Rückenmarks' : 'Spinal cord illustration'}
+                                className="h-full w-full rounded-[0.98rem] object-contain"
+                              />
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </article>
                   </div>
