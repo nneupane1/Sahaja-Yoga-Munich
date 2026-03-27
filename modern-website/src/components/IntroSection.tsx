@@ -4,6 +4,7 @@ import { useLocale } from '../context/LocaleContext';
 import charlieImg from '../assets/charlie.png';
 import kundaliniGif from '../assets/kundalini.gif';
 import kundImg from '../assets/kund.png';
+import sproutImg from '../assets/sprout.png';
 
 /**
  * Introduction to the core ideas behind Sahaja Yoga.
@@ -255,17 +256,35 @@ const IntroSection: React.FC = () => {
                   </div>
 
                   <div className="self-start justify-self-end w-full max-w-[21.5rem] space-y-4">
-                    <aside className="warm-hover-glow rounded-[1.3rem] border border-[#d8a08d]/30 bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(255,244,238,0.66))] p-4 shadow-[0_14px_28px_rgba(179,93,76,0.08)] sm:p-5">
-                      <p className="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-[#b56757]">
-                        {copy.meaningCard.reflectionTitle}
-                      </p>
-                      <p className="mt-3 text-[0.94rem] leading-7 text-[#333333]">
-                        {copy.meaningCard.reflectionBody}
-                      </p>
-                      <p className="mt-3 text-[0.9rem] leading-6 text-[#8f5e4f]">
-                        {copy.meaningCard.reflectionNote}
-                      </p>
-                    </aside>
+                    <article className="warm-hover-glow group relative isolate min-h-[14.2rem] overflow-hidden rounded-[1.3rem] border border-[#d8a08d]/30 bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(255,244,238,0.66))] p-[1px] shadow-[0_14px_28px_rgba(179,93,76,0.08)] [perspective:1600px]">
+                      <div className="relative h-full min-h-[14.1rem] transform-gpu">
+                        <div className="relative h-full min-h-[14.1rem] transform-gpu [transform-style:preserve-3d] [transform:rotateY(0deg)] transition-none [will-change:transform] group-hover:[transform:rotateY(180deg)]">
+                          <div className="absolute inset-0 overflow-hidden rounded-[1.16rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,248,244,0.88))] transform-gpu [-webkit-backface-visibility:hidden] [backface-visibility:hidden]">
+                            <div className="h-full rounded-[1.16rem] p-4 sm:p-5">
+                              <p className="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-[#b56757]">
+                                {copy.meaningCard.reflectionTitle}
+                              </p>
+                              <p className="mt-3 text-[0.94rem] leading-7 text-[#333333]">
+                                {copy.meaningCard.reflectionBody}
+                              </p>
+                              <p className="mt-3 text-[0.9rem] leading-6 text-[#8f5e4f]">
+                                {copy.meaningCard.reflectionNote}
+                              </p>
+                            </div>
+                          </div>
+
+                          <div className="absolute inset-0 overflow-hidden rounded-[1.16rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,248,244,0.88))] transform-gpu [-webkit-backface-visibility:hidden] [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                            <div className="absolute inset-0 flex items-center justify-center rounded-[1.16rem] border border-[#d8a08d]/24 bg-[rgba(255,250,246,0.82)] p-0">
+                              <img
+                                src={sproutImg}
+                                alt={locale === 'de' ? 'Keimender Spross' : 'Sprouting seedling'}
+                                className="h-full w-full rounded-[1.14rem] object-cover"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
 
                     <article className="warm-hover-glow group relative isolate h-[22rem] overflow-hidden rounded-[1.3rem] border border-[#d8a08d]/30 bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(255,244,238,0.66))] p-[1px] shadow-[0_14px_28px_rgba(179,93,76,0.08)] [perspective:1600px]">
                       <div className="relative h-full transform-gpu">
