@@ -357,61 +357,61 @@ const NavBar: React.FC = () => {
         )}
       </div>
 
-      <div className="hidden w-full items-center gap-9 px-4 py-[0.875rem] sm:px-6 lg:px-8 xl:flex">
+      <div className="hidden w-full items-center gap-4 px-3 py-3 sm:px-5 lg:px-6 xl:flex min-[1500px]:gap-9 min-[1500px]:px-4 min-[1500px]:py-[0.875rem] min-[1500px]:sm:px-6 min-[1500px]:lg:px-8">
         <div className="flex shrink-0 items-center">
           {isHomeRoute ? (
             <div
               aria-label={copy.brand}
-              className="brand-link flex shrink-0 translate-y-[3px] items-center gap-3.5 whitespace-nowrap text-[1.16rem] font-bold text-slate-800 focus:outline-none focus-visible:outline-none"
+              className="brand-link flex shrink-0 translate-y-[2px] items-center gap-2.5 whitespace-nowrap text-[0.98rem] font-bold text-slate-800 focus:outline-none focus-visible:outline-none min-[1500px]:translate-y-[3px] min-[1500px]:gap-3.5 min-[1500px]:text-[1.16rem]"
             >
-              <span className="-my-[0.875rem] -translate-y-[4px] flex shrink-0 items-center">
+              <span className="-my-[0.55rem] -translate-y-[2px] flex shrink-0 items-center min-[1500px]:-my-[0.875rem] min-[1500px]:-translate-y-[4px]">
                 <img
                   src={shaktiYantram}
                   alt="Shakti Yantram"
-                  className="animate-yantram-spin block h-[5.05rem] w-[5.05rem] origin-center object-contain mix-blend-multiply drop-shadow-[0_8px_14px_rgba(179,93,76,0.14)]"
+                  className="animate-yantram-spin block h-[4.2rem] w-[4.2rem] origin-center object-contain mix-blend-multiply drop-shadow-[0_8px_14px_rgba(179,93,76,0.14)] min-[1500px]:h-[5.05rem] min-[1500px]:w-[5.05rem]"
                 />
               </span>
-              <span className="animate-drift-x ml-1.5 translate-y-[2px] flex items-center gap-1 uppercase">
+              <span className="animate-drift-x ml-0.5 translate-y-[1px] flex items-center gap-0.5 uppercase min-[1500px]:ml-1.5 min-[1500px]:translate-y-[2px] min-[1500px]:gap-1">
                 <span>Sahaja Yoga</span>
-                <span className="-ml-6 relative inline-block h-0 w-[4.84rem] shrink-0 overflow-visible align-middle">
+                <span className="-ml-3 relative inline-block h-0 w-[3.75rem] shrink-0 overflow-visible align-middle min-[1500px]:-ml-6 min-[1500px]:w-[4.84rem]">
                   <img
                     src={kundaliniIcon}
                     alt="Kundalini"
-                    className="absolute left-[-0.08rem] top-1/2 h-[4.37rem] w-[4.37rem] -translate-y-[60%] object-contain opacity-100 contrast-125 saturate-125 drop-shadow-[0_10px_18px_rgba(179,93,76,0.24)]"
+                    className="absolute left-[-0.04rem] top-1/2 h-[3.45rem] w-[3.45rem] -translate-y-[60%] object-contain opacity-100 contrast-125 saturate-125 drop-shadow-[0_10px_18px_rgba(179,93,76,0.24)] min-[1500px]:left-[-0.08rem] min-[1500px]:h-[4.37rem] min-[1500px]:w-[4.37rem]"
                   />
                 </span>
-                <span className="-ml-[1.99rem]">München</span>
+                <span className="-ml-[1.4rem] min-[1500px]:-ml-[1.99rem]">München</span>
               </span>
             </div>
           ) : (
             <Link
               to="/"
-              className="brand-link flex shrink-0 translate-y-[3px] items-center gap-3.5 whitespace-nowrap text-[1.16rem] font-bold text-slate-800 focus:outline-none focus-visible:outline-none"
+              className="brand-link flex shrink-0 translate-y-[2px] items-center gap-2.5 whitespace-nowrap text-[0.98rem] font-bold text-slate-800 focus:outline-none focus-visible:outline-none min-[1500px]:translate-y-[3px] min-[1500px]:gap-3.5 min-[1500px]:text-[1.16rem]"
             >
-              <span className="-my-[0.875rem] -translate-y-[4px] flex shrink-0 items-center">
+              <span className="-my-[0.55rem] -translate-y-[2px] flex shrink-0 items-center min-[1500px]:-my-[0.875rem] min-[1500px]:-translate-y-[4px]">
                 <img
                   src={shaktiYantram}
                   alt="Shakti Yantram"
-                  className="animate-yantram-spin block h-[5.05rem] w-[5.05rem] origin-center object-contain mix-blend-multiply drop-shadow-[0_8px_14px_rgba(179,93,76,0.14)]"
+                  className="animate-yantram-spin block h-[4.2rem] w-[4.2rem] origin-center object-contain mix-blend-multiply drop-shadow-[0_8px_14px_rgba(179,93,76,0.14)] min-[1500px]:h-[5.05rem] min-[1500px]:w-[5.05rem]"
                 />
               </span>
-              <span className="animate-drift-x ml-1.5 translate-y-[2px] flex items-center gap-1 uppercase">
+              <span className="animate-drift-x ml-0.5 translate-y-[1px] flex items-center gap-0.5 uppercase min-[1500px]:ml-1.5 min-[1500px]:translate-y-[2px] min-[1500px]:gap-1">
                 <span>Sahaja Yoga</span>
-                <span className="-ml-6 relative inline-block h-0 w-[4.84rem] shrink-0 overflow-visible align-middle">
+                <span className="-ml-3 relative inline-block h-0 w-[3.75rem] shrink-0 overflow-visible align-middle min-[1500px]:-ml-6 min-[1500px]:w-[4.84rem]">
                   <img
                     src={kundaliniIcon}
                     alt="Kundalini"
-                    className="absolute left-[-0.08rem] top-1/2 h-[4.37rem] w-[4.37rem] -translate-y-[60%] object-contain opacity-100 contrast-125 saturate-125 drop-shadow-[0_10px_18px_rgba(179,93,76,0.24)]"
+                    className="absolute left-[-0.04rem] top-1/2 h-[3.45rem] w-[3.45rem] -translate-y-[60%] object-contain opacity-100 contrast-125 saturate-125 drop-shadow-[0_10px_18px_rgba(179,93,76,0.24)] min-[1500px]:left-[-0.08rem] min-[1500px]:h-[4.37rem] min-[1500px]:w-[4.37rem]"
                   />
                 </span>
-                <span className="-ml-[1.99rem]">München</span>
+                <span className="-ml-[1.4rem] min-[1500px]:-ml-[1.99rem]">München</span>
               </span>
             </Link>
           )}
         </div>
 
-        <div className="ml-[5.175rem] overflow-visible">
-          <div className="flex shrink-0 items-center gap-[1.45rem] whitespace-nowrap text-[0.97rem] font-normal text-slate-800">
+        <div className="ml-3 overflow-visible min-[1500px]:ml-[5.175rem]">
+          <div className="flex shrink-0 items-center gap-2.5 text-[0.83rem] font-normal text-slate-800 min-[1450px]:gap-3 min-[1450px]:text-[0.86rem] min-[1500px]:gap-[1.45rem] min-[1500px]:whitespace-nowrap min-[1500px]:text-[0.97rem]">
             {links.map(link => {
               const hasDropdown = Boolean(link.dropdown?.length);
               const isButton = link.kind === 'button';
@@ -457,13 +457,15 @@ const NavBar: React.FC = () => {
                           }transform-gpu flex-col items-center justify-center rounded-[1rem] ${
                             isCompressedGapItem ? 'px-[0.3125rem] ' : 'px-[0.5625rem] '
                           }py-1 text-center leading-[1.15] transition duration-200 hover:z-[70] hover:scale-[1.05] hover:bg-[rgba(215,121,93,0.11)] hover:font-bold hover:text-[#d7795d] ${
-                            isReducedSizeItem ? 'text-[0.91rem] ' : ''
+                            isReducedSizeItem ? 'text-[0.82rem] min-[1450px]:text-[0.86rem] min-[1500px]:text-[0.91rem] ' : ''
                           }${
                             isHome ? 'text-[#b35d4c] font-medium' : ''
                           }`
                     }
                   >
-                    <span className="whitespace-nowrap">{link.label}</span>
+                    <span className="max-w-[6.75rem] text-center leading-[1.14] min-[1500px]:max-w-none min-[1500px]:whitespace-nowrap">
+                      {link.label}
+                    </span>
                     {showCaret && (
                       <span
                         aria-hidden="true"
@@ -483,13 +485,13 @@ const NavBar: React.FC = () => {
                   </Link>
 
                   {hasDropdown && (
-                    <div className="pointer-events-none absolute left-1/2 top-full z-50 hidden min-w-[16rem] -translate-x-1/2 pt-4 group-hover:block group-hover:pointer-events-auto group-focus-within:block group-focus-within:pointer-events-auto">
+                    <div className="pointer-events-none absolute left-1/2 top-full z-50 hidden min-w-[13rem] -translate-x-1/2 pt-4 group-hover:block group-hover:pointer-events-auto group-focus-within:block group-focus-within:pointer-events-auto min-[1500px]:min-w-[16rem]">
                       <div className="rounded-[1.4rem] border border-[#b35d4c]/24 bg-[rgba(255,241,233,0.82)] p-3 shadow-[0_20px_50px_rgba(74,113,143,0.16)] backdrop-blur">
                         {link.dropdown?.map(item => (
                           <Link
                             key={item.to}
                             to={item.to}
-                            className="relative flex min-h-[3.15rem] items-center rounded-xl px-4 py-3 text-sm leading-snug text-slate-700 transition duration-200 hover:z-[70] hover:scale-[1.04] hover:bg-[rgba(215,121,93,0.11)] hover:font-bold hover:text-[#d7795d]"
+                            className="relative flex min-h-[3.15rem] items-center rounded-xl px-4 py-3 text-[0.84rem] leading-snug text-slate-700 transition duration-200 hover:z-[70] hover:scale-[1.04] hover:bg-[rgba(215,121,93,0.11)] hover:font-bold hover:text-[#d7795d] min-[1500px]:text-sm"
                           >
                             {item.label}
                           </Link>
@@ -501,7 +503,7 @@ const NavBar: React.FC = () => {
               );
             })}
 
-            <div className="-ml-3 flex translate-x-[4px] translate-y-[9px] items-center gap-1">
+            <div className="ml-0 flex translate-x-0 translate-y-[7px] items-center gap-1 min-[1500px]:-ml-3 min-[1500px]:translate-x-[4px] min-[1500px]:translate-y-[9px]">
               <div className="group relative flex flex-col items-center gap-px">
                 <button
                   type="button"

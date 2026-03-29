@@ -197,9 +197,9 @@ const IntroSection: React.FC = () => {
         </div>
 
         <div className="mt-8">
-          <div className="lg:relative lg:left-1/2 lg:w-[min(80vw,90rem)] lg:max-w-none lg:-translate-x-1/2">
+          <div className="lg:relative lg:left-1/2 lg:w-[min(88vw,84rem)] lg:max-w-none lg:-translate-x-1/2 min-[1500px]:w-[min(80vw,90rem)]">
             <div className="w-full rounded-[1.9rem] border border-[#b35d4c]/35 bg-[linear-gradient(180deg,rgba(255,255,255,0.94),rgba(255,246,240,0.88))] p-4 shadow-[0_20px_42px_rgba(72,110,140,0.14)] backdrop-blur-sm sm:p-5 lg:px-6 xl:px-7">
-            <div className="grid gap-5 lg:grid-cols-[minmax(0,2.02fr)_minmax(21rem,0.58fr)] xl:gap-6 2xl:grid-cols-[minmax(0,2.12fr)_minmax(21.75rem,0.54fr)]">
+            <div className="grid gap-5 lg:grid-cols-[minmax(0,1.92fr)_minmax(18.75rem,0.68fr)] xl:gap-6 min-[1500px]:grid-cols-[minmax(0,2.02fr)_minmax(21rem,0.58fr)] 2xl:grid-cols-[minmax(0,2.12fr)_minmax(21.75rem,0.54fr)]">
               <div className="reveal-ready lg:min-w-0">
                 <article className="warm-hover-glow rounded-[1.6rem] border border-[#b35d4c]/28 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,246,240,0.84))] px-6 py-6 text-left shadow-[0_14px_30px_rgba(72,110,140,0.1)] sm:px-8 sm:py-7">
               <div className="text-center">
