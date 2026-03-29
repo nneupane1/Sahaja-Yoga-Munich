@@ -331,13 +331,7 @@ const IntroSection: React.FC = () => {
                     </article>
 
                     <article className="warm-hover-glow group relative isolate overflow-hidden rounded-[1.3rem] border border-[#d8a08d]/30 bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(255,244,238,0.66))] p-3 shadow-[0_14px_28px_rgba(179,93,76,0.08)] [perspective:1600px] sm:p-3.5">
-                      <div
-                        className={`relative transform-gpu ${
-                          locale === 'de'
-                            ? 'h-[18.8rem] sm:h-[19.2rem]'
-                            : 'h-[15.9rem] sm:h-[16.3rem]'
-                        }`}
-                      >
+                      <div className="relative h-[15.9rem] transform-gpu sm:h-[16.3rem]">
                         <div className="relative h-full transform-gpu [transform-style:preserve-3d] [transform:rotateY(0deg)] transition-none [will-change:transform] group-hover:[transform:rotateY(180deg)]">
                           <div className="absolute inset-0 overflow-hidden rounded-[1.16rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,244,238,0.78))] transform-gpu [-webkit-backface-visibility:hidden] [backface-visibility:hidden]">
                             <div className="flex h-full items-start justify-center overflow-hidden rounded-[1.16rem] border border-[#d8a08d]/24 bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,244,238,0.78))] pt-3 sm:pt-3.5">
