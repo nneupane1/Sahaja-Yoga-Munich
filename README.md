@@ -2,122 +2,242 @@
 
 Bilingual website and Sanity CMS workspace for Sahaja Yoga Munich.
 
-This repository currently contains two separate applications:
+This repository contains the public website, the Sanity Studio that powers editorial content, and the integration layer between both. The frontend is already connected to Sanity for blog posts and newsletters, while several knowledge and homepage areas still live directly in TypeScript.
 
-- `modern-website`: the public React + Vite frontend
-- `sanity-studio`: the Sanity Studio used to manage blog and newsletter content
+## Table of Contents
 
-## Current State
+- [Overview](#overview)
+- [Repository At A Glance](#repository-at-a-glance)
+- [Current Stack](#current-stack)
+- [Architecture](#architecture)
+- [Content Sources Today](#content-sources-today)
+- [Main Routes](#main-routes)
+- [Sanity Studio](#sanity-studio)
+- [Environment Variables](#environment-variables)
+- [Local Development](#local-development)
+- [Useful Commands](#useful-commands)
+- [Build And Deployment](#build-and-deployment)
+- [Editorial Workflow](#editorial-workflow)
+- [Known Gaps And Next Steps](#known-gaps-and-next-steps)
 
-The project is no longer "frontend only". Sanity is already part of the repository and is used for editorial content.
+## Overview
 
-What is in place today:
+This project is no longer just a static frontend prototype. It is now a two-app repository with:
 
-- German and English frontend with a locale switch
-- dedicated routes for the homepage, Shri Mataji, knowledge hubs, articles, blog, and newsletter archive
-- Sanity-backed blog posts
-- Sanity-backed newsletter issues
-- legacy newsletter HTML import support for archived issues
-- Vercel-compatible API route for newsletter fetching
+- a public React + Vite website in `modern-website`
+- a Sanity Studio in `sanity-studio`
+- live Sanity-backed blog content
+- live Sanity-backed newsletter archive pages
+- legacy newsletter HTML import support for older issues
 
-What is still local in code:
+At the same time, a meaningful part of the site still remains code-driven:
 
 - homepage section copy
-- knowledge hub content
+- Shri Mataji page content
+- knowledge hubs
 - knowledge article content
-- static blog fallback content used when Sanity is not configured
+- static fallback blog content
 
-## Repository Layout
+That hybrid setup is important to understand: some parts of the editorial experience are already CMS-based, while other parts still require a code change and redeploy.
+
+## Repository At A Glance
+
+| App | Location | Purpose | Default Local URL |
+| --- | --- | --- | --- |
+| Public website | `modern-website/` | Visitor-facing site built with React, TypeScript, and Vite | `http://localhost:5173` |
+| Content studio | `sanity-studio/` | Sanity Studio used to edit blog posts, newsletters, and imported legacy HTML | `http://localhost:3333` |
+
+Important repository locations:
+
+| Path | Role |
+| --- | --- |
+| `modern-website/src/App.tsx` | Central route registration for the public site |
+| `modern-website/src/lib/sanity.ts` | Frontend Sanity client setup |
+| `modern-website/src/content/sanityBlog.ts` | Sanity blog queries and mapping |
+| `modern-website/src/content/sanityNewsletters.ts` | Sanity newsletter queries and mapping |
+| `modern-website/api/newsletters.js` | Server-side newsletter endpoint used by the website |
+| `modern-website/src/content/blogArticles.ts` | Local static fallback blog articles |
+| `modern-website/src/content/topicPages.ts` | German knowledge hub content |
+| `modern-website/src/content/topicPagesEn.ts` | English knowledge hub content |
+| `modern-website/src/content/knowledgeArticles.ts` | Knowledge article content |
+| `sanity-studio/schemaTypes/` | Sanity schema definitions |
+| `sanity-studio/scripts/seed-blog.mjs` | Seeds blog content into Sanity from local TypeScript |
+| `sanity-studio/scripts/seed-newsletter.mjs` | Seeds the current structured newsletter issue |
+| `sanity-studio/scripts/import-legacy-html.mjs` | Imports raw legacy newsletter HTML into Sanity |
+
+## Current Stack
+
+### Frontend
+
+| Layer | Technology |
+| --- | --- |
+| UI | React 18 |
+| Language | TypeScript |
+| Build tool | Vite |
+| Routing | React Router |
+| Styling | Tailwind CSS |
+| Content backend | `@sanity/client` |
+| Visual effects | `three` and `vanta` |
+| Deployment target | Vercel |
+
+### CMS
+
+| Layer | Technology |
+| --- | --- |
+| Studio | Sanity Studio 5 |
+| Language | TypeScript |
+| Runtime | React 19 |
+| Plugins | Structure Tool and Vision Tool |
+
+This is not a monorepo workspace with a root package manager setup. Dependencies are installed separately inside each app.
+
+## Architecture
 
 ```text
-Sahaja-Yoga-Munich/
-├── modern-website/   # Public website (React, TypeScript, Vite)
-└── sanity-studio/    # Content studio (Sanity Studio)
+Editors
+  |
+  v
+sanity-studio
+  |
+  v
+Sanity dataset
+  | \
+  |  \__ legacyHtmlPage imports for archived newsletters
+  |
+  +--> modern-website/src/content/sanityBlog.ts
+  |
+  +--> modern-website/src/content/sanityNewsletters.ts
+           |
+           +--> /api/newsletters on Vercel or local dev
+           |
+           +--> direct Sanity fallback fetch when API is unavailable
+
+Visitors
+  |
+  v
+modern-website
+  |
+  +--> local TypeScript content for knowledge + homepage sections
+  |
+  +--> Sanity blog posts
+  |
+  +--> Sanity newsletters and imported legacy issues
 ```
 
-Important frontend locations:
+There are two key integration patterns in the frontend today:
 
-- `modern-website/src/App.tsx`: route registration
-- `modern-website/src/content/blogArticles.ts`: local fallback blog content
-- `modern-website/src/content/topicPages.ts`: German topic hub content
-- `modern-website/src/content/topicPagesEn.ts`: English topic hub content
-- `modern-website/src/content/knowledgeArticles.ts`: knowledge article content
-- `modern-website/src/content/sanityBlog.ts`: Sanity blog queries
-- `modern-website/src/content/sanityNewsletters.ts`: Sanity newsletter queries
-- `modern-website/api/newsletters.js`: server-side newsletter API used by the frontend
-- `modern-website/src/lib/sanity.ts`: Sanity client setup
+1. Blog content is fetched directly from Sanity in the browser when Sanity is configured.
+2. Newsletter content prefers the `/api/newsletters` endpoint and falls back to direct Sanity queries when needed.
 
-Important studio locations:
+## Content Sources Today
 
-- `sanity-studio/sanity.config.ts`: Studio configuration
-- `sanity-studio/schemaTypes/`: Sanity schemas
-- `sanity-studio/scripts/seed-blog.mjs`: imports local blog content into Sanity
-- `sanity-studio/scripts/seed-newsletter.mjs`: seeds the current newsletter issue
-- `sanity-studio/scripts/import-legacy-html.mjs`: imports raw legacy HTML into Sanity
+| Site Area | Primary Source | Fallback | Notes |
+| --- | --- | --- | --- |
+| Homepage sections | Local React components | None | Text lives directly in components such as intro and session sections |
+| Shri Mataji section | Local page/component code | None | Static in the repo |
+| Knowledge hubs | `src/content/topicPages.ts` and `src/content/topicPagesEn.ts` | None | Still code-managed |
+| Knowledge article routes | `src/content/knowledgeArticles.ts` | None | Still code-managed |
+| Blog listing | Sanity `post` documents | Local `blogArticles.ts` | Uses Sanity when configured |
+| Blog article routes | Sanity `post` documents | Local `blogArticles.ts` | Local fallback keeps the blog usable without CMS |
+| Newsletter archive | Sanity `newsletter` documents | None | Loaded through API first, then direct Sanity fetch |
+| Newsletter detail pages | Sanity `newsletter` documents | None | Structured content with optional imported legacy HTML |
+| Legacy newsletter embeds | Sanity `legacyHtmlPage` documents | None | Used for older imported issues |
 
-## Tech Stack
+## Main Routes
 
-Frontend:
+The public website currently exposes these route families:
 
-- React 18
-- TypeScript
-- Vite
-- React Router
-- Tailwind CSS
-- `@sanity/client`
-- `three` + `vanta`
-- Vercel deployment config
+| Route | Purpose | Content Source |
+| --- | --- | --- |
+| `/` | Homepage | Local code content |
+| `/blog` | Blog landing page | Local layout + Sanity/local blog data + Sanity newsletters |
+| `/blog/:slug` | Individual blog post | Sanity `post` or local fallback |
+| `/blog/newsletter` | Newsletter archive landing page | Sanity `newsletter` |
+| `/blog/newsletter/:slug` | Newsletter issue detail page | Sanity `newsletter` plus optional legacy import |
+| `/newsletter` | Legacy-compatible redirect | Redirects to `/blog/newsletter` |
+| `/newsletter/:slug` | Legacy-compatible redirect | Redirects to `/blog/newsletter/:slug` |
+| `/shri-mataji` | Shri Mataji section | Local code content |
+| `/shri-mataji/*` | Subroutes under the Shri Mataji area | Local code content |
+| `/kundalini-energiesystem` | Knowledge hub | Local code content |
+| `/selbstverwirklichung-meditation` | Knowledge hub | Local code content |
+| `/wissenschaft-spiritualitaet` | Knowledge hub | Local code content |
+| `/kultur-des-geistes` | Knowledge hub | Local code content |
+| `/:hub/:article` | Knowledge article route | Local code content |
 
-CMS:
+## Sanity Studio
 
-- Sanity Studio 5
-- React 19
-- TypeScript
+The Sanity Studio already exists in this repository and is not just a future idea.
 
-## Content Architecture
+### Current schemas
 
-### Frontend behavior
+| Schema | Purpose |
+| --- | --- |
+| `post` | Blog article content with sections, hero image, author, category, locale, and related posts |
+| `author` | Blog author records |
+| `category` | Blog categories |
+| `newsletter` | Structured newsletter issues with hero, sections, schedule, links, and archive references |
+| `legacyHtmlPage` | Raw imported HTML from the older site, used for archived newsletter issues |
+| `siteSettings` | Basic site-level editable settings |
 
-- `/blog` and `/blog/:slug` use Sanity content when `VITE_SANITY_PROJECT_ID` and `VITE_SANITY_DATASET` are configured.
-- If Sanity is unavailable, blog pages fall back to `modern-website/src/content/blogArticles.ts`.
-- `/blog/newsletter` and `/blog/newsletter/:slug` load newsletter issues from Sanity.
-- Newsletter detail pages can also expose imported legacy HTML through the newsletter archive flow.
-- `/newsletter` and `/newsletter/:slug` redirect to the canonical `/blog/newsletter` routes.
+### Current Studio scripts
 
-### Sanity schemas
+| Script | What it does |
+| --- | --- |
+| `npm run seed:blog` | Reads `modern-website/src/content/blogArticles.ts` and seeds blog posts, categories, author, and site settings into Sanity |
+| `npm run seed:newsletter` | Seeds the structured newsletter issue currently represented in the repo |
+| `npm run import:legacy-html -- "<url>" "<slug>" "<title>"` | Imports a legacy HTML page into `legacyHtmlPage` |
 
-The Studio currently defines:
+### Important note
 
-- `post`: blog articles
-- `author`: blog author records
-- `category`: blog categories
-- `newsletter`: structured newsletter issues
-- `legacyHtmlPage`: imported newsletter or page HTML from the older website
-- `siteSettings`: basic site-wide editable fields
+`siteSettings` exists in Sanity, but the frontend does not currently read it. That means it is prepared for future use but is not yet part of the live rendering path.
 
-### Current editorial split
+## Environment Variables
 
-Use Sanity for:
+### Frontend: `modern-website/.env.local`
 
-- blog posts
-- newsletter issues
-- archived imported newsletter HTML
+Use `modern-website/.env.example` as the starting point.
 
-Use local TypeScript content for:
+| Variable | Required | Purpose |
+| --- | --- | --- |
+| `VITE_SITE_URL` | Recommended | Canonical website URL used for deployment-related configuration |
+| `VITE_SANITY_PROJECT_ID` | Required for Sanity features | Sanity project ID |
+| `VITE_SANITY_DATASET` | Required for Sanity features | Sanity dataset, usually `production` |
+| `VITE_SANITY_API_VERSION` | Recommended | Sanity API version used by the frontend and API route |
+| `VITE_SANITY_USE_CDN` | Optional | Enables CDN-backed reads when set to `true` |
 
-- knowledge hubs
-- knowledge article pages
-- several homepage and section-level texts
+Example:
 
-## Getting Started
+```bash
+VITE_SITE_URL=http://localhost:5173
+VITE_SANITY_PROJECT_ID=your_project_id
+VITE_SANITY_DATASET=production
+VITE_SANITY_API_VERSION=2026-03-22
+VITE_SANITY_USE_CDN=true
+```
 
-### Prerequisites
+### Studio: `sanity-studio/.env.local`
 
-- recent Node.js LTS
-- npm
-- optional: Sanity account and CLI login if you want to seed or deploy Studio content
+Use `sanity-studio/.env.example` as the starting point.
 
-This repository is not configured as a root workspace. Install dependencies separately in each app.
+| Variable | Required | Purpose |
+| --- | --- | --- |
+| `SANITY_STUDIO_PROJECT_ID` | Yes | Sanity project ID |
+| `SANITY_STUDIO_DATASET` | Yes | Dataset name |
+| `SANITY_STUDIO_HOSTNAME` | Optional for deploys | Target Studio hostname |
+
+Example:
+
+```bash
+SANITY_STUDIO_PROJECT_ID=your_project_id
+SANITY_STUDIO_DATASET=production
+SANITY_STUDIO_HOSTNAME=sahaja-yoga-muenchen
+```
+
+### Server-side note
+
+The newsletter API route in `modern-website/api/newsletters.js` also reads the `VITE_SANITY_*` variables on the server. In practice, those values must be configured in the deployment environment as well, not just in local browser builds.
+
+## Local Development
 
 ### 1. Install dependencies
 
@@ -129,59 +249,36 @@ cd ../sanity-studio
 npm install
 ```
 
-### 2. Configure environment variables
+### 2. Configure local environment files
 
-Frontend example: `modern-website/.env.example`
+Create:
 
-Create `modern-website/.env.local`:
+- `modern-website/.env.local`
+- `sanity-studio/.env.local`
 
-```bash
-VITE_SITE_URL=http://localhost:5173
-VITE_SANITY_PROJECT_ID=your_project_id
-VITE_SANITY_DATASET=production
-VITE_SANITY_API_VERSION=2026-03-22
-VITE_SANITY_USE_CDN=true
-```
+using the examples shown above.
 
-Studio example: `sanity-studio/.env.example`
-
-Create `sanity-studio/.env.local`:
-
-```bash
-SANITY_STUDIO_PROJECT_ID=your_project_id
-SANITY_STUDIO_DATASET=production
-SANITY_STUDIO_HOSTNAME=sahaja-yoga-muenchen
-```
-
-Notes:
-
-- the frontend can run without Sanity, but the blog will fall back to local static content
-- the newsletter archive depends on Sanity content
-- the Vercel API route in `modern-website/api/newsletters.js` also reads the `VITE_SANITY_*` variables on the server
-
-### 3. Run the apps locally
-
-Frontend:
+### 3. Start the public website
 
 ```bash
 cd modern-website
 npm run dev
 ```
 
-Default URL:
+Vite usually starts on:
 
 ```text
 http://localhost:5173
 ```
 
-Studio:
+### 4. Start the Sanity Studio
 
 ```bash
 cd sanity-studio
 npm run dev
 ```
 
-Default URL:
+Studio usually starts on:
 
 ```text
 http://localhost:3333
@@ -191,88 +288,105 @@ http://localhost:3333
 
 ### `modern-website`
 
-```bash
-npm run dev
-npm run build
-npm run preview
-npm run type-check
-npm run lint
-npm run format
-```
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the Vite development server |
+| `npm run build` | Type-check and build the frontend |
+| `npm run preview` | Preview the production build locally |
+| `npm run type-check` | Run TypeScript without emitting files |
+| `npm run lint` | Current lightweight check, implemented as TypeScript validation |
+| `npm run format` | Format frontend source files with Prettier |
 
 ### `sanity-studio`
 
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the Studio locally |
+| `npm run build` | Build the Studio |
+| `npm run deploy` | Deploy the Studio |
+| `npm run type-check` | Run TypeScript checks |
+| `npm run seed:blog` | Seed blog content from the local frontend content file |
+| `npm run seed:newsletter` | Seed the current newsletter issue |
+| `npm run import:legacy-html -- "<url>" "<slug>" "<title>"` | Import archived HTML into Sanity |
+
+## Build And Deployment
+
+### Frontend
+
+Build locally:
+
 ```bash
-npm run dev
+cd modern-website
 npm run build
-npm run deploy
-npm run type-check
-npm run seed:blog
-npm run seed:newsletter
-npm run import:legacy-html -- "<source_url>" "<slug>" "<title>"
 ```
 
-## Sanity Seeding And Import
-
-### Seed blog content
-
-`npm run seed:blog` reads the local fallback blog content from `modern-website/src/content/blogArticles.ts` and creates:
-
-- author
-- categories
-- posts
-- site settings
-
-### Seed newsletter content
-
-`npm run seed:newsletter` creates the structured newsletter issue currently represented in the repo.
-
-### Import legacy HTML
-
-`npm run import:legacy-html -- "<source_url>" "<slug>" "<title>"` fetches raw HTML from the old site and stores it as a `legacyHtmlPage` document that can be linked from a newsletter issue.
-
-### Authentication requirement
-
-The seed and import scripts expect a Sanity auth token in:
-
-```text
-~/.config/sanity/config.json
-```
-
-Run `sanity login` first if you want to use those scripts.
-
-## Deployment
-
-The public website is configured for Vercel in `modern-website/vercel.json`.
+The frontend is configured for Vercel in `modern-website/vercel.json`.
 
 Current Vercel behavior:
 
 - build command: `npm run build`
+- install command: `npm install`
 - output directory: `dist`
 - SPA rewrites route non-asset requests to `index.html`
-- `/api/newsletters` is treated as a server endpoint with `Cache-Control: no-store`
+- `/api/newsletters` is treated as a dynamic endpoint with `Cache-Control: no-store`
 - static assets receive long-lived immutable caching
 
-Recommended deployment setup:
+### Studio
 
-- deploy `modern-website` as the frontend project
-- configure `VITE_SITE_URL`
-- configure the same `VITE_SANITY_*` values in the Vercel environment
-- build and deploy `sanity-studio` separately when Studio hosting is needed
+Build locally:
 
-## Key Routes
+```bash
+cd sanity-studio
+npm run build
+```
 
-- `/`: homepage
-- `/blog`: blog landing page
-- `/blog/:slug`: blog article route
-- `/blog/newsletter`: newsletter archive
-- `/blog/newsletter/:slug`: newsletter issue
-- `/shri-mataji`: Shri Mataji section
-- `/:hub/:article`: knowledge article route
+Deploy:
 
-## Known Limits
+```bash
+cd sanity-studio
+npm run deploy
+```
 
-- knowledge hubs are still code-driven rather than CMS-driven
-- site settings exist in Studio, but the frontend does not currently read them
-- the repo has two separate apps instead of a single workspace
-- newsletter content is Sanity-based, so a missing Sanity configuration leaves that area empty
+## Editorial Workflow
+
+### Blog posts
+
+There are two ways blog content exists today:
+
+- primary live mode: create and publish `post` documents in Sanity
+- fallback mode: keep local articles in `modern-website/src/content/blogArticles.ts`
+
+That means the blog still has resilience during local development or in environments where Sanity is not fully configured.
+
+### Newsletter issues
+
+Newsletter issues are intended to be editorially managed through Sanity.
+
+Typical flow:
+
+1. create or update a `newsletter` document in the Studio
+2. publish it
+3. the frontend archive and issue route pick it up
+4. if there is older HTML from the previous site, import it into `legacyHtmlPage`
+5. connect that legacy document through the newsletter's `legacyImport` reference
+
+### Legacy migration
+
+The repository already includes the tooling to preserve older newsletter issues without losing their original HTML source. That is useful when a structured editorial model is being introduced gradually rather than replacing older material all at once.
+
+## Known Gaps And Next Steps
+
+The current architecture is solid, but there are still some unfinished areas:
+
+- knowledge hubs are still hardcoded in TypeScript
+- knowledge articles are still hardcoded in TypeScript
+- several homepage sections are still component-owned text rather than CMS-managed content
+- `siteSettings` exists in Sanity but is not consumed by the frontend
+- the repository is split into two apps rather than a single root workspace
+- newsletter pages depend on Sanity content and do not currently have a local static fallback like the blog does
+
+The cleanest next improvements would be:
+
+1. move selected homepage and knowledge content into Sanity only when the editorial need is real
+2. connect `siteSettings` to the live frontend
+3. keep the current hybrid approach for stability rather than forcing all content into the CMS at once
