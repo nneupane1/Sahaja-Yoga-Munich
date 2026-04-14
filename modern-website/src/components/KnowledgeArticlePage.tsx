@@ -485,13 +485,9 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
             </div>
 
             <div className={detailsGridClassName}>
-              {article.details.items.map(item => (
-                <article
-                  key={`${item.title}-${item.subtitle}`}
-                  className={`interactive-card reveal-ready group flex h-full flex-col overflow-hidden ${
-                    useSquareMeditationDetails ? 'lg:h-[32rem]' : ''
-                  }`}
-                >
+              {article.details.items.map(item => {
+                const usesFlipHover = Boolean(item.hoverBackgroundImage);
+                const detailImage = (
                   <div
                     className={`relative overflow-hidden rounded-t-[1.5rem] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.96),rgba(224,243,255,0.92))] p-4 ${
                       useSquareMeditationDetails ? 'h-40' : 'h-52'
@@ -507,6 +503,8 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
                       }`}
                     />
                   </div>
+                );
+                const detailCopy = (
                   <div className={`flex flex-1 flex-col space-y-3 ${useSquareMeditationDetails ? 'p-5' : 'p-6'}`}>
                     <span className="text-xs font-semibold uppercase tracking-[0.24em] text-[#b35d4c]">
                       {item.subtitle}
@@ -521,8 +519,50 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
                       </p>
                     )}
                   </div>
-                </article>
-              ))}
+                );
+
+                return (
+                  <article
+                    key={`${item.title}-${item.subtitle}`}
+                    className={`interactive-card reveal-ready group ${
+                      usesFlipHover
+                        ? 'relative h-full overflow-hidden [perspective:1600px] hover:z-20'
+                        : `flex h-full flex-col overflow-hidden ${useSquareMeditationDetails ? 'lg:h-[32rem]' : ''}`
+                    }`}
+                  >
+                    {usesFlipHover ? (
+                      <div className="relative h-full transform-gpu [transform-style:preserve-3d] [transform:rotateY(0deg)] transition duration-700 [will-change:transform] group-hover:[transform:rotateY(180deg)]">
+                        <div className="flex h-full flex-col overflow-hidden rounded-[1.5rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,248,244,0.88))] transform-gpu [-webkit-backface-visibility:hidden] [backface-visibility:hidden]">
+                          {detailImage}
+                          {detailCopy}
+                        </div>
+
+                        <div className="absolute inset-0 overflow-hidden rounded-[1.5rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,248,244,0.88))] transform-gpu [-webkit-backface-visibility:hidden] [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                          <div className={`absolute inset-0 ${item.hoverBackgroundFrameClassName ?? ''}`}>
+                            <img
+                              src={item.hoverBackgroundImage}
+                              alt=""
+                              aria-hidden="true"
+                              className={`h-full w-full ${
+                                item.hoverBackgroundImageMode === 'contain'
+                                  ? 'object-contain'
+                                  : 'object-cover object-center'
+                              } transition duration-700 ${
+                                item.hoverBackgroundImageClassName ?? 'scale-[0.92] group-hover:scale-[0.96]'
+                              }`}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      <>
+                        {detailImage}
+                        {detailCopy}
+                      </>
+                    )}
+                  </article>
+                );
+              })}
             </div>
           </div>
         </section>

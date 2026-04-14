@@ -29,6 +29,14 @@ import heartDeImg from '../assets/sahajayogade/Bildschirmfoto-2022-03-25-um-08.5
 import vishuddiDeImg from '../assets/sahajayogade/Bildschirmfoto-2022-03-25-um-09.00.53.png';
 import agnyaDeImg from '../assets/sahajayogade/chakras-inside-img-07-600x338-1.jpg';
 import sahasraraDeImg from '../assets/sahajayogade/chakras-inside-img-08-600x338-1.jpg';
+import mooladharaHoverImg from '../assets/m.png';
+import swadisthanaHoverImg from '../assets/swad.png';
+import nabhiHoverImg from '../assets/nabh.png';
+import voidHoverImg from '../assets/voi.png';
+import heartHoverImg from '../assets/anahat.png';
+import vishuddiHoverImg from '../assets/vis.png';
+import agnyaHoverImg from '../assets/ajna.png';
+import sahasraraHoverImg from '../assets/sahasr.png';
 
 export type KnowledgeArticleBlock = {
   title: string;
@@ -44,6 +52,10 @@ export type KnowledgeArticleDetailCard = {
   image: string;
   alt: string;
   imageMode?: 'cover' | 'contain';
+  hoverBackgroundImage?: string;
+  hoverBackgroundImageMode?: 'cover' | 'contain';
+  hoverBackgroundFrameClassName?: string;
+  hoverBackgroundImageClassName?: string;
 };
 
 export type KnowledgeArticle = {
@@ -68,6 +80,14 @@ export type KnowledgeArticle = {
   blocks: KnowledgeArticleBlock[];
   related: string[];
 };
+
+const chakraFlipHover = (hoverBackgroundImage: string) => ({
+  hoverBackgroundImage,
+  hoverBackgroundImageMode: 'contain' as const,
+  hoverBackgroundFrameClassName:
+    'bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(226,243,255,0.92))] p-1',
+  hoverBackgroundImageClassName: 'scale-[0.99] group-hover:scale-[1.02]'
+});
 
 const articlesDe: Record<string, KnowledgeArticle> = {
   '/kundalini-energiesystem/kundalini': {
@@ -298,7 +318,8 @@ const articlesDe: Record<string, KnowledgeArticle> = {
           note: 'Physische Entsprechung: Fortpflanzungs- und Ausscheidungssystem, Sexualorgane.',
           image: mooladharaDeImg,
           alt: 'Mooladhara',
-          imageMode: 'contain'
+          imageMode: 'contain',
+          ...chakraFlipHover(mooladharaHoverImg)
         },
         {
           title: 'Swadisthana',
@@ -308,7 +329,8 @@ const articlesDe: Record<string, KnowledgeArticle> = {
           note: 'Physische Entsprechung: Magen, Darm, untere Leber, Gallenblase und Milz.',
           image: swadisthanaDeImg,
           alt: 'Swadisthana',
-          imageMode: 'contain'
+          imageMode: 'contain',
+          ...chakraFlipHover(swadisthanaHoverImg)
         },
         {
           title: 'Nabhi',
@@ -318,7 +340,8 @@ const articlesDe: Record<string, KnowledgeArticle> = {
           note: 'Physische Entsprechung: Magen, Eingeweide, obere Leber, Gallenblase und Milz.',
           image: nabhiDeImg,
           alt: 'Nabhi',
-          imageMode: 'contain'
+          imageMode: 'contain',
+          ...chakraFlipHover(nabhiHoverImg)
         },
         {
           title: 'Void',
@@ -328,7 +351,8 @@ const articlesDe: Record<string, KnowledgeArticle> = {
           note: 'Der Void bildet mit Nabhi und Swadisthana eine integrierte Gruppe des inneren Wachstums.',
           image: voidDeImg,
           alt: 'Void',
-          imageMode: 'contain'
+          imageMode: 'contain',
+          ...chakraFlipHover(voidHoverImg)
         },
         {
           title: 'Herz',
@@ -338,7 +362,8 @@ const articlesDe: Record<string, KnowledgeArticle> = {
           note: 'Physische Entsprechung: Herz, Lunge, Brustraum, Atmung und Thymusdrüse.',
           image: heartDeImg,
           alt: 'Herz-Chakra',
-          imageMode: 'contain'
+          imageMode: 'contain',
+          ...chakraFlipHover(heartHoverImg)
         },
         {
           title: 'Vishuddi',
@@ -348,7 +373,8 @@ const articlesDe: Record<string, KnowledgeArticle> = {
           note: 'Physische Entsprechung: Hals, Arme, Mund, Zunge, Zähne, Nase und Gesicht.',
           image: vishuddiDeImg,
           alt: 'Vishuddi-Chakra',
-          imageMode: 'contain'
+          imageMode: 'contain',
+          ...chakraFlipHover(vishuddiHoverImg)
         },
         {
           title: 'Agnya',
@@ -358,7 +384,8 @@ const articlesDe: Record<string, KnowledgeArticle> = {
           note: 'Physische Entsprechung: Sehen, Hören, Denken, Hypophyse und Zirbeldrüse.',
           image: agnyaDeImg,
           alt: 'Agnya-Chakra',
-          imageMode: 'contain'
+          imageMode: 'contain',
+          ...chakraFlipHover(agnyaHoverImg)
         },
         {
           title: 'Sahasrara',
@@ -368,7 +395,8 @@ const articlesDe: Record<string, KnowledgeArticle> = {
           note: 'Physische Entsprechung: Gehirn.',
           image: sahasraraDeImg,
           alt: 'Sahasrara-Chakra',
-          imageMode: 'contain'
+          imageMode: 'contain',
+          ...chakraFlipHover(sahasraraHoverImg)
         }
       ]
     },
@@ -1230,7 +1258,8 @@ const articlesEn: Record<string, KnowledgeArticle> = {
           note: 'Physical correspondence: reproductive and excretory systems, sexual organs.',
           image: mooladharaDeImg,
           alt: 'Mooladhara',
-          imageMode: 'contain'
+          imageMode: 'contain',
+          ...chakraFlipHover(mooladharaHoverImg)
         },
         {
           title: 'Swadisthana',
@@ -1240,7 +1269,8 @@ const articlesEn: Record<string, KnowledgeArticle> = {
           note: 'Physical correspondence: stomach, intestines, lower liver, gall bladder and spleen.',
           image: swadisthanaDeImg,
           alt: 'Swadisthana',
-          imageMode: 'contain'
+          imageMode: 'contain',
+          ...chakraFlipHover(swadisthanaHoverImg)
         },
         {
           title: 'Nabhi',
@@ -1250,7 +1280,8 @@ const articlesEn: Record<string, KnowledgeArticle> = {
           note: 'Physical correspondence: stomach, intestines, upper liver, gall bladder and spleen.',
           image: nabhiDeImg,
           alt: 'Nabhi',
-          imageMode: 'contain'
+          imageMode: 'contain',
+          ...chakraFlipHover(nabhiHoverImg)
         },
         {
           title: 'Void',
@@ -1260,7 +1291,8 @@ const articlesEn: Record<string, KnowledgeArticle> = {
           note: 'The Void works together with Nabhi and Swadisthana as an integrated group of growth.',
           image: voidDeImg,
           alt: 'Void',
-          imageMode: 'contain'
+          imageMode: 'contain',
+          ...chakraFlipHover(voidHoverImg)
         },
         {
           title: 'Heart',
@@ -1270,7 +1302,8 @@ const articlesEn: Record<string, KnowledgeArticle> = {
           note: 'Physical correspondence: heart, lungs, chest, breathing and thymus gland.',
           image: heartDeImg,
           alt: 'Heart chakra',
-          imageMode: 'contain'
+          imageMode: 'contain',
+          ...chakraFlipHover(heartHoverImg)
         },
         {
           title: 'Vishuddi',
@@ -1280,7 +1313,8 @@ const articlesEn: Record<string, KnowledgeArticle> = {
           note: 'Physical correspondence: throat, arms, mouth, tongue, teeth, nose and face.',
           image: vishuddiDeImg,
           alt: 'Vishuddi chakra',
-          imageMode: 'contain'
+          imageMode: 'contain',
+          ...chakraFlipHover(vishuddiHoverImg)
         },
         {
           title: 'Agnya',
@@ -1290,7 +1324,8 @@ const articlesEn: Record<string, KnowledgeArticle> = {
           note: 'Physical correspondence: seeing, hearing, thinking, pituitary and pineal glands.',
           image: agnyaDeImg,
           alt: 'Agnya chakra',
-          imageMode: 'contain'
+          imageMode: 'contain',
+          ...chakraFlipHover(agnyaHoverImg)
         },
         {
           title: 'Sahasrara',
@@ -1300,7 +1335,8 @@ const articlesEn: Record<string, KnowledgeArticle> = {
           note: 'Physical correspondence: brain.',
           image: sahasraraDeImg,
           alt: 'Sahasrara chakra',
-          imageMode: 'contain'
+          imageMode: 'contain',
+          ...chakraFlipHover(sahasraraHoverImg)
         }
       ]
     },

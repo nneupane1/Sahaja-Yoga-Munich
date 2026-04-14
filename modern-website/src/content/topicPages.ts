@@ -1,4 +1,5 @@
 import chakraChartImg from '../assets/sahajayogade/das-subtile-system-grafik.jpg';
+import channelsDiagramImg from '../assets/sahajayogade/Channels-for-SY-website-de-2048x977-2-1024x489.png';
 import kundaliniEnergyImg from '../assets/sahajayogade/Central-Channel-SY-929x1024.png';
 import tendenciesImg from '../assets/bee.png';
 import selfRealizationImg from '../assets/ShriMataji.jpg';
@@ -16,22 +17,6 @@ import mother1Img from '../assets/mother1.jpg';
 import mother3Img from '../assets/mother3.png';
 import leftChannelImg from '../assets/sahajayogade/nadis-inside-img-002.jpg';
 import rightChannelImg from '../assets/sahajayogade/nadis-inside-img-00003.jpg';
-import mooladharaImg from '../assets/sahajayogade/chakras-inside-img-01-600x338-1.jpg';
-import swadisthanImg from '../assets/sahajayogade/chakras-inside-img-02-600x338-1.jpg';
-import nabhiImg from '../assets/sahajayogade/chakras-inside-img-03-600x338-1.jpg';
-import voidImg from '../assets/sahajayogade/Void.png';
-import anahatImg from '../assets/sahajayogade/Bildschirmfoto-2022-03-25-um-08.59.55.png';
-import vishuddhiImg from '../assets/sahajayogade/Bildschirmfoto-2022-03-25-um-09.00.53.png';
-import agnyaImg from '../assets/sahajayogade/chakras-inside-img-07-600x338-1.jpg';
-import sahasraraImg from '../assets/sahajayogade/chakras-inside-img-08-600x338-1.jpg';
-import mooladharaHoverImg from '../assets/m.png';
-import swadisthanaHoverImg from '../assets/swad.png';
-import nabhiHoverImg from '../assets/nabh.png';
-import voidHoverImg from '../assets/voi.png';
-import heartHoverImg from '../assets/anahat.png';
-import vishuddiHoverImg from '../assets/vis.png';
-import agnyaHoverImg from '../assets/ajna.png';
-import sahasraraHoverImg from '../assets/sahasr.png';
 
 export type TopicSection = {
   id: string;
@@ -199,114 +184,42 @@ export const topicPages = {
       ]
     },
     gallery: {
-      eyebrow: 'Die Zentren des Systems',
-      title: 'Sieben Hauptchakren und der Raum des Void im Überblick',
+      eyebrow: 'Lesart des subtilen Systems',
+      title: 'Wie diese innere Landkarte auf der Seite gelesen wird',
       description:
-        'Jedes Zentrum hat eine subtile Qualität und zugleich eine körperliche Entsprechung. Wenn ein Chakra gestört ist, spürt man das oft im Verhalten, in Beziehungen oder in der Physiologie; wenn es genährt wird, zeigt sich dieselbe Qualität als Stärke.',
+        'Anstelle einer zweiten Chakra-Liste ordnet dieser Abschnitt die Seite selbst: Ursprung, Bewegungsrichtung, Balance und Vertiefung bleiben als ein zusammenhängendes System lesbar.',
       items: [
         {
-          title: 'Mooladhara',
-          subtitle: 'Unschuld, Weisheit, Richtung',
+          title: 'Architektur statt Begriffliste',
+          subtitle: 'Ein Systemzusammenhang',
           description:
-            'Das Fundament des Systems. Es schützt angeborene Würde, kindliche Lauterkeit und die Harmonie mit der Natur; körperlich ist es mit Fortpflanzungs- und Ausscheidungssystem verbunden.',
-          image: mooladharaImg,
-          alt: 'Mooladhara-Chakra',
-          hoverBackgroundImage: mooladharaHoverImg,
-          hoverBackgroundImageMode: 'contain',
-          hoverBackgroundFrameClassName:
-            'bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(226,243,255,0.92))] p-1',
-          hoverBackgroundImageClassName: 'scale-[0.99] group-hover:scale-[1.02]'
+            'Der Überblick führt die Begriffe nicht noch einmal einzeln aus. Er zeigt, warum Quelle, Kanäle, Zentren und Rückmeldung nur zusammen Sinn ergeben und wie die Detailseiten daran anschließen.',
+          image: chakraChartImg,
+          alt: 'Darstellung des subtilen Systems'
         },
         {
-          title: 'Swadisthana',
-          subtitle: 'Kreativität, Spontanität, Aufmerksamkeit',
+          title: 'Bewegungsrichtung der Aufmerksamkeit',
+          subtitle: 'Von außen nach innen',
           description:
-            'Dieses Zentrum versorgt Denken und Handeln mit Energie. In Balance werden Kreativität, Schönheitssinn, klares Begreifen und ungestörte Aufmerksamkeit lebendig.',
-          image: swadisthanImg,
-          alt: 'Swadisthana-Chakra',
-          hoverBackgroundImage: swadisthanaHoverImg,
-          hoverBackgroundImageMode: 'contain',
-          hoverBackgroundFrameClassName:
-            'bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(226,243,255,0.92))] p-1',
-          hoverBackgroundImageClassName: 'scale-[0.99] group-hover:scale-[1.02]'
+            'Die Landkarte ordnet Erfahrung danach, ob Aufmerksamkeit zerstreut, einseitig oder gesammelt wirkt. Dadurch wird Meditation als Neuordnung der Wahrnehmung verständlich, nicht als bloße Entspannung.',
+          image: kundaliniEnergyImg,
+          alt: 'Zentraler Kanal als Richtung der Aufmerksamkeit'
         },
         {
-          title: 'Nabhi',
-          subtitle: 'Zufriedenheit, Fürsorge, Frieden',
+          title: 'Balance als Diagnoseebene',
+          subtitle: 'Links, rechts und Mitte',
           description:
-            'Nabhi ordnet Verdauung, Stoffwechsel und das Verhältnis zu materiellen Bedürfnissen. Es unterstützt Zufriedenheit, Rechtschaffenheit, familiäre Stabilität und Freude.',
-          image: nabhiImg,
-          alt: 'Nabhi-Chakra',
-          hoverBackgroundImage: nabhiHoverImg,
-          hoverBackgroundImageMode: 'contain',
-          hoverBackgroundFrameClassName:
-            'bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(226,243,255,0.92))] p-1',
-          hoverBackgroundImageClassName: 'scale-[0.99] group-hover:scale-[1.02]'
+            'Statt einzelne Symptome zu sammeln, liest die Seite Gegensätze als Kräfteverhältnis: Rückzug und Überaktivität, Schwere und Druck, Zerstreuung und Mitte. So bleibt der Überblick praktisch, ohne die Kanal-Seite zu wiederholen.',
+          image: channelsDiagramImg,
+          alt: 'Kanäle des subtilen Systems'
         },
         {
-          title: 'Void',
-          subtitle: 'Selbstdisziplin, Würde, Wahrheitssuche',
+          title: 'Vom Überblick zur Vertiefung',
+          subtitle: 'Eine Navigationskarte',
           description:
-            'Die Leere steht für den Raum zwischen den Zentren, in dem unerleuchtetes Wissen in echtes Verständnis verwandelt wird. Hier reifen Selbstführung, Geduld und spiritische Ernsthaftigkeit.',
-          image: voidImg,
-          alt: 'Void-Bereich des subtilen Systems',
-          hoverBackgroundImage: voidHoverImg,
-          hoverBackgroundImageMode: 'contain',
-          hoverBackgroundFrameClassName:
-            'bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(226,243,255,0.92))] p-1',
-          hoverBackgroundImageClassName: 'scale-[0.99] group-hover:scale-[1.02]'
-        },
-        {
-          title: 'Herz',
-          subtitle: 'Liebe, Mitgefühl, Sicherheit',
-          description:
-            'Das Herz öffnet bedingungslose Liebe, Vertrauen und innere Sicherheit. Körperlich stützt es Herz, Lunge, Brustraum und jene Kräfte, die den Organismus schützen.',
-          image: anahatImg,
-          alt: 'Herz-Chakra',
-          hoverBackgroundImage: heartHoverImg,
-          hoverBackgroundImageMode: 'contain',
-          hoverBackgroundFrameClassName:
-            'bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(226,243,255,0.92))] p-1',
-          hoverBackgroundImageClassName: 'scale-[0.99] group-hover:scale-[1.02]'
-        },
-        {
-          title: 'Vishuddi',
-          subtitle: 'Kommunikation, Diplomatie, Gemeinschaft',
-          description:
-            'Dieses Zentrum verfeinert Sprache, Humor, Respekt und Beziehungskompetenz. Es hilft, Spannungen zu entschärfen, ohne Würde oder Verbundenheit zu verlieren.',
-          image: vishuddhiImg,
-          alt: 'Vishuddi-Chakra',
-          hoverBackgroundImage: vishuddiHoverImg,
-          hoverBackgroundImageMode: 'contain',
-          hoverBackgroundFrameClassName:
-            'bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(226,243,255,0.92))] p-1',
-          hoverBackgroundImageClassName: 'scale-[0.99] group-hover:scale-[1.02]'
-        },
-        {
-          title: 'Agnya',
-          subtitle: 'Vergebung, Stille, innere Weite',
-          description:
-            'Agnya ist das Tor zur gedankenfreien Stille. Es bringt Ego und Konditionierungen ins Gleichgewicht und wird frei, wenn echte Vergebung möglich wird.',
-          image: agnyaImg,
-          alt: 'Agnya-Chakra',
-          hoverBackgroundImage: agnyaHoverImg,
-          hoverBackgroundImageMode: 'contain',
-          hoverBackgroundFrameClassName:
-            'bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(226,243,255,0.92))] p-1',
-          hoverBackgroundImageClassName: 'scale-[0.99] group-hover:scale-[1.02]'
-        },
-        {
-          title: 'Sahasrara',
-          subtitle: 'Integration, Einheit, Verbundenheit',
-          description:
-            'Im höchsten Zentrum verbinden sich alle Aspekte des Systems. Hier wird die Beziehung zur allgegenwärtigen Kraft als Einheit, Sinn und umfassende Integration erfahren.',
-          image: sahasraraImg,
-          alt: 'Sahasrara-Chakra',
-          hoverBackgroundImage: sahasraraHoverImg,
-          hoverBackgroundImageMode: 'contain',
-          hoverBackgroundFrameClassName:
-            'bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(226,243,255,0.92))] p-1',
-          hoverBackgroundImageClassName: 'scale-[0.99] group-hover:scale-[1.02]'
+            'Jeder Einstieg auf dieser Seite hat eine eigene Aufgabe: Kundalini erklärt den inneren Ursprung, Kanäle & Gleichgewicht die Bewegungsrichtung, Chakren & Qualitäten die Zentren im Detail.',
+          image: leftChannelImg,
+          alt: 'Seitlicher Kanal des subtilen Systems'
         }
       ]
     },
