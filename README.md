@@ -11,20 +11,21 @@ There is no root `package.json` and no npm workspace setup. Install, run, build,
 
 ## Contents
 
-- [System Overview](#system-overview)
-- [Repository Layout](#repository-layout)
-- [Runtime Architecture](#runtime-architecture)
-- [Frontend App](#frontend-app)
-- [Sanity Studio](#sanity-studio)
-- [Content Ownership](#content-ownership)
-- [Environment Variables](#environment-variables)
-- [Local Development](#local-development)
-- [Data Flows](#data-flows)
-- [Routes](#routes)
-- [Build And Deployment](#build-and-deployment)
-- [Operational Notes](#operational-notes)
-- [Known Technical Gaps](#known-technical-gaps)
+- [System Overview](#root-system-overview)
+- [Repository Layout](#root-repository-layout)
+- [Runtime Architecture](#root-runtime-architecture)
+- [Frontend App](#root-frontend-app)
+- [Sanity Studio](#root-sanity-studio)
+- [Content Ownership](#root-content-ownership)
+- [Environment Variables](#root-environment-variables)
+- [Local Development](#root-local-development)
+- [Data Flows](#root-data-flows)
+- [Routes](#root-routes)
+- [Build And Deployment](#root-build-and-deployment)
+- [Operational Notes](#root-operational-notes)
+- [Known Technical Gaps](#root-known-technical-gaps)
 
+<a id="root-system-overview"></a>
 ## System Overview
 
 The project is a hybrid static/CMS website.
@@ -45,6 +46,7 @@ The Sanity Studio defines the editorial data model and provides scripts to seed 
 | Frontend deployment target | Vercel, with project root set to `modern-website` |
 | Studio deployment | Sanity hosted Studio through `sanity deploy` |
 
+<a id="root-repository-layout"></a>
 ## Repository Layout
 
 ```text
@@ -92,6 +94,7 @@ Important files:
 | `sanity-studio/scripts/seed-newsletter.mjs` | Seeds the structured newsletter issue currently represented in the repository |
 | `sanity-studio/scripts/import-legacy-html.mjs` | Imports a legacy HTML page into Sanity as `legacyHtmlPage` |
 
+<a id="root-runtime-architecture"></a>
 ## Runtime Architecture
 
 ```text
@@ -134,6 +137,7 @@ The frontend intentionally has two content paths:
 - Local content is imported at build time and bundled with the app.
 - CMS content is fetched at runtime in the browser or through the Vercel API route.
 
+<a id="root-frontend-app"></a>
 ## Frontend App
 
 See [`modern-website/README.md`](modern-website/README.md) for frontend-specific details.
@@ -189,6 +193,7 @@ It initializes from `window.localStorage.getItem('locale')`, defaults to `de`, w
 
 If project ID or dataset is missing, `isSanityConfigured` is `false` and CMS fetch helpers return `null` or keep local fallback data.
 
+<a id="root-sanity-studio"></a>
 ## Sanity Studio
 
 See [`sanity-studio/README.md`](sanity-studio/README.md) for Studio-specific details.
@@ -235,6 +240,7 @@ Run these from `sanity-studio/`.
 
 The CLI config includes a deployment `appId`.
 
+<a id="root-content-ownership"></a>
 ## Content Ownership
 
 | Site area | Current source | Runtime fallback | Notes |
@@ -249,6 +255,7 @@ The CLI config includes a deployment `appId`.
 | Newsletter issue routes | Sanity `newsletter` documents | Redirect to archive when unresolved | Can load linked legacy HTML on demand |
 | Legacy newsletter HTML | Sanity `legacyHtmlPage` referenced by `newsletter.legacyImport` | Hidden if missing | Raw HTML is stripped of scripts/noscripts before iframe rendering |
 
+<a id="root-environment-variables"></a>
 ## Environment Variables
 
 ### Frontend: `modern-website/.env.local`
@@ -297,6 +304,7 @@ SANITY_STUDIO_HOSTNAME=sahaja-yoga-muenchen
 
 `modern-website/api/newsletters.js` runs server-side on Vercel and reads the same `VITE_SANITY_*` names from `process.env`. Configure those variables in the Vercel project environment as well as in local `.env.local`.
 
+<a id="root-local-development"></a>
 ## Local Development
 
 ### 1. Install Dependencies
@@ -356,6 +364,7 @@ Because the browser can read Sanity directly, the Sanity project must allow the 
 - the deployed Vercel domain
 - any production custom domain
 
+<a id="root-data-flows"></a>
 ## Data Flows
 
 ### Blog List
@@ -454,6 +463,7 @@ User clicks "show full imported issue"
 
 `LegacyNewsletterFrame` removes `<script>` and `<noscript>` blocks from imported HTML, extracts the `<body>` content when present, injects a local CSS wrapper, and renders the result in an iframe using `srcDoc`. It uses `postMessage` from inside the iframe to update the iframe height.
 
+<a id="root-routes"></a>
 ## Routes
 
 | Route | Component | Content source |
@@ -479,6 +489,7 @@ User clicks "show full imported issue"
 
 Route ordering matters: `/blog/newsletter` and `/blog/newsletter/:slug` are registered before `/blog/:slug`.
 
+<a id="root-build-and-deployment"></a>
 ## Build And Deployment
 
 ### Frontend Build
@@ -534,6 +545,7 @@ npm run deploy
 
 Studio deployment reads `SANITY_STUDIO_PROJECT_ID`, `SANITY_STUDIO_DATASET`, and `SANITY_STUDIO_HOSTNAME`.
 
+<a id="root-operational-notes"></a>
 ## Operational Notes
 
 ### Seeding Blog Content
@@ -592,6 +604,7 @@ The script:
 
 The Studio scripts do not read a `SANITY_AUTH_TOKEN` environment variable. They read the Sanity CLI auth token from `~/.config/sanity/config.json`. Log in with the Sanity CLI before running seed or import scripts.
 
+<a id="root-known-technical-gaps"></a>
 ## Known Technical Gaps
 
 - The repository has two separate Node apps, not a single workspace.

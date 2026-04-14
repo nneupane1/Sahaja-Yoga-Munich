@@ -8,17 +8,18 @@ For the full repository overview, see the root [`README.md`](../README.md).
 
 ## Contents
 
-- [Stack](#stack)
-- [Configuration](#configuration)
-- [Project Structure](#project-structure)
-- [Schemas](#schemas)
-- [Environment Variables](#environment-variables)
-- [Local Development](#local-development)
-- [Scripts](#scripts)
-- [Seed And Import Details](#seed-and-import-details)
-- [Frontend Integration Contract](#frontend-integration-contract)
-- [Operational Notes](#operational-notes)
+- [Stack](#studio-stack)
+- [Configuration](#studio-configuration)
+- [Project Structure](#studio-project-structure)
+- [Schemas](#studio-schemas)
+- [Environment Variables](#studio-environment-variables)
+- [Local Development](#studio-local-development)
+- [Scripts](#studio-scripts)
+- [Seed And Import Details](#studio-seed-and-import-details)
+- [Frontend Integration Contract](#studio-frontend-integration-contract)
+- [Operational Notes](#studio-operational-notes)
 
+<a id="studio-stack"></a>
 ## Stack
 
 | Layer | Package / tool |
@@ -30,6 +31,7 @@ For the full repository overview, see the root [`README.md`](../README.md).
 | Styling runtime | `styled-components` |
 | Content API client in scripts | `@sanity/client` |
 
+<a id="studio-configuration"></a>
 ## Configuration
 
 `sanity.config.ts` configures the Studio UI:
@@ -52,6 +54,7 @@ For the full repository overview, see the root [`README.md`](../README.md).
 | `studioHost` | `SANITY_STUDIO_HOSTNAME` or `sahaja-yoga-muenchen` |
 | `deployment.appId` | Checked-in app ID |
 
+<a id="studio-project-structure"></a>
 ## Project Structure
 
 ```text
@@ -75,6 +78,7 @@ sanity-studio/
 `-- tsconfig.json
 ```
 
+<a id="studio-schemas"></a>
 ## Schemas
 
 All schema types are registered in `schemaTypes/index.ts`.
@@ -292,6 +296,7 @@ Fields:
 
 The seed script creates this document, but the frontend does not currently read it.
 
+<a id="studio-environment-variables"></a>
 ## Environment Variables
 
 Create `sanity-studio/.env.local`.
@@ -316,6 +321,7 @@ The seed/import scripts also require the Sanity CLI auth token at:
 
 They do not currently read a separate `SANITY_AUTH_TOKEN` environment variable.
 
+<a id="studio-local-development"></a>
 ## Local Development
 
 Install dependencies:
@@ -348,6 +354,7 @@ Deploy Studio:
 npm run deploy
 ```
 
+<a id="studio-scripts"></a>
 ## Scripts
 
 | Command | Purpose |
@@ -360,6 +367,7 @@ npm run deploy
 | `npm run seed:newsletter` | Seed the current structured newsletter issue |
 | `npm run import:legacy-html -- "<url>" "<slug>" "<title>"` | Import a legacy HTML page |
 
+<a id="studio-seed-and-import-details"></a>
 ## Seed And Import Details
 
 ### `seed-blog.mjs`
@@ -438,6 +446,7 @@ The script:
 
 The script is currently tailored to newsletter migration rather than being a fully generic importer.
 
+<a id="studio-frontend-integration-contract"></a>
 ## Frontend Integration Contract
 
 The frontend reads these Sanity document types:
@@ -473,6 +482,7 @@ Required frontend-rendered newsletter fields:
 - `introBody`
 - `publishedAt`
 
+<a id="studio-operational-notes"></a>
 ## Operational Notes
 
 - Use `npm run type-check` before changing schemas or scripts.

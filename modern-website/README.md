@@ -8,20 +8,21 @@ For the full repository overview, including the Sanity Studio, see the root [`RE
 
 ## Contents
 
-- [Stack](#stack)
-- [App Structure](#app-structure)
-- [Runtime Boot](#runtime-boot)
-- [Routing](#routing)
-- [Locale State](#locale-state)
-- [Content Model](#content-model)
-- [Sanity Integration](#sanity-integration)
-- [Newsletter API](#newsletter-api)
-- [Legacy Newsletter Rendering](#legacy-newsletter-rendering)
-- [Environment Variables](#environment-variables)
-- [Local Development](#local-development)
-- [Build And Deployment](#build-and-deployment)
-- [Maintenance Notes](#maintenance-notes)
+- [Stack](#frontend-stack)
+- [App Structure](#frontend-app-structure)
+- [Runtime Boot](#frontend-runtime-boot)
+- [Routing](#frontend-routing)
+- [Locale State](#frontend-locale-state)
+- [Content Model](#frontend-content-model)
+- [Sanity Integration](#frontend-sanity-integration)
+- [Newsletter API](#frontend-newsletter-api)
+- [Legacy Newsletter Rendering](#frontend-legacy-newsletter-rendering)
+- [Environment Variables](#frontend-environment-variables)
+- [Local Development](#frontend-local-development)
+- [Build And Deployment](#frontend-build-and-deployment)
+- [Maintenance Notes](#frontend-maintenance-notes)
 
+<a id="frontend-stack"></a>
 ## Stack
 
 | Layer | Package / tool |
@@ -38,6 +39,7 @@ For the full repository overview, including the Sanity Studio, see the root [`RE
 
 This is not a Next.js app. Routing is handled in the browser and Vercel rewrites app routes to `index.html`.
 
+<a id="frontend-app-structure"></a>
 ## App Structure
 
 ```text
@@ -80,6 +82,7 @@ Key files:
 | `api/newsletters.js` | Vercel serverless endpoint for newsletter reads |
 | `vercel.json` | Vercel build, rewrite, cache, and security header config |
 
+<a id="frontend-runtime-boot"></a>
 ## Runtime Boot
 
 `src/main.tsx` renders:
@@ -100,6 +103,7 @@ React.StrictMode
 
 The global stylesheet is `src/styles/tailwind.css`. Tailwind scans `index.html` and `src/**/*.{js,ts,jsx,tsx}`.
 
+<a id="frontend-routing"></a>
 ## Routing
 
 Route definitions live in `src/App.tsx`.
@@ -127,6 +131,7 @@ Route definitions live in `src/App.tsx`.
 
 Route ordering is intentional. Newsletter routes are registered before `/blog/:slug`, so `/blog/newsletter` is not treated as a blog article slug.
 
+<a id="frontend-locale-state"></a>
 ## Locale State
 
 The locale context supports:
@@ -141,6 +146,7 @@ Behavior:
 - `document.documentElement.lang` is updated whenever the locale changes
 - content modules receive the locale and return German or English data when available
 
+<a id="frontend-content-model"></a>
 ## Content Model
 
 The frontend currently uses a hybrid content model.
@@ -159,6 +165,7 @@ The frontend currently uses a hybrid content model.
 
 This means CMS setup is required for newsletters, while the blog remains usable locally through static fallback articles.
 
+<a id="frontend-sanity-integration"></a>
 ## Sanity Integration
 
 ### Client Setup
@@ -246,6 +253,7 @@ A newsletter must include these fields to render:
 
 Cards, links, schedules, donation fields, contact fields, and legacy imports are optional.
 
+<a id="frontend-newsletter-api"></a>
 ## Newsletter API
 
 `api/newsletters.js` is a Vercel serverless function. It uses `@sanity/client` server-side and reads:
@@ -280,6 +288,7 @@ Examples:
 
 The Vercel config sets `Cache-Control: no-store` for `/api/*`.
 
+<a id="frontend-legacy-newsletter-rendering"></a>
 ## Legacy Newsletter Rendering
 
 Imported legacy newsletter HTML is stored in Sanity as `legacyHtmlPage.rawHtml` and linked from `newsletter.legacyImport`.
@@ -296,6 +305,7 @@ The detail page loads legacy HTML only after the user opens the imported issue v
 
 This renderer is a compatibility layer for archived newsletter content. It is not a general-purpose HTML sanitizer.
 
+<a id="frontend-environment-variables"></a>
 ## Environment Variables
 
 Create `modern-website/.env.local`.
@@ -320,6 +330,7 @@ The newsletter API route also needs the `VITE_SANITY_*` values in the deployment
 
 The checked-in `.env.example` includes `VITE_SITE_URL`, `VITE_GA_ID`, and `VITE_API_URL` placeholders. The current app code does not use them.
 
+<a id="frontend-local-development"></a>
 ## Local Development
 
 Install dependencies:
@@ -356,6 +367,7 @@ If the local Vite server does not serve `/api/newsletters`, newsletter fetching 
 - the Sanity browser env vars are present
 - Sanity CORS allows `http://localhost:5173`
 
+<a id="frontend-build-and-deployment"></a>
 ## Build And Deployment
 
 Build:
@@ -400,6 +412,7 @@ VITE_SANITY_API_VERSION
 
 Also configure Sanity CORS for the deployed domain.
 
+<a id="frontend-maintenance-notes"></a>
 ## Maintenance Notes
 
 - There is no frontend test runner configured.
