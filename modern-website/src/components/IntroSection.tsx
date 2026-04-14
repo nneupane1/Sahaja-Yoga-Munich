@@ -217,11 +217,15 @@ const IntroSection: React.FC = () => {
                 <div className="w-full space-y-3 border-y border-[#b35d4c]/18 py-4">
                   <div className="grid overflow-hidden rounded-[1.05rem] border border-[#b35d4c]/20 bg-[rgba(255,250,246,0.72)] sm:grid-cols-2">
                     <p className="px-4 py-3 text-left text-[1.08rem] leading-8 text-slate-700 sm:px-5 sm:text-[1.14rem]">
-                      <span className="font-bold text-[#b56757]">{copy.meaningCard.lines[0].term}</span>
+                      <span className="font-bold text-[#b56757]" translate="no">
+                        {copy.meaningCard.lines[0].term}
+                      </span>
                       <span className="ml-1">{copy.meaningCard.lines[0].rest}</span>
                     </p>
                     <p className="border-t-2 border-[#d9a38f]/65 px-4 py-3 text-left text-[1.08rem] leading-8 text-slate-700 sm:border-l-2 sm:border-t-0 sm:px-5 sm:text-[1.14rem]">
-                      <span className="font-bold text-[#b56757]">{copy.meaningCard.lines[1].term}</span>
+                      <span className="font-bold text-[#b56757]" translate="no">
+                        {copy.meaningCard.lines[1].term}
+                      </span>
                       <span className="ml-1">{copy.meaningCard.lines[1].rest}</span>
                     </p>
                   </div>
@@ -230,11 +234,15 @@ const IntroSection: React.FC = () => {
                       {copy.meaningCard.lines[2].lead ? (
                         <span className="mr-1">{copy.meaningCard.lines[2].lead}</span>
                       ) : null}
-                      <span className="font-bold text-[#b56757]">{copy.meaningCard.lines[2].term}</span>
+                      <span className="font-bold text-[#b56757]" translate="no">
+                        {copy.meaningCard.lines[2].term}
+                      </span>
                       <span className="ml-1">{copy.meaningCard.lines[2].rest}</span>
                     </p>
                     <p className="border-t-2 border-[#d9a38f]/65 px-4 py-3 text-left text-[1.08rem] leading-8 text-slate-700 sm:border-l-2 sm:border-t-0 sm:px-5 sm:text-[1.14rem]">
-                      <span className="font-bold text-[#b56757]">{copy.meaningCard.lines[3].term}</span>
+                      <span className="font-bold text-[#b56757]" translate="no">
+                        {copy.meaningCard.lines[3].term}
+                      </span>
                       <span className="ml-1">{copy.meaningCard.lines[3].rest}</span>
                     </p>
                   </div>
