@@ -1,250 +1,304 @@
-# Sahaja Yoga München Website
+# Sahaja Yoga München Frontend
 
-A bilingual React + TypeScript + Vite website for Sahaja Yoga München, with a custom visual system, dedicated knowledge pages, a blog area, a newsletter archive, and a live integration path into Sanity.
+Technical guide for the public website in `modern-website/`.
 
-This README focuses on the frontend app. For the full repository overview, including the Studio workspace, see the root [`README.md`](../README.md).
+This app is a Vite React single-page application. It combines local TypeScript content with runtime Sanity data for blog posts and newsletters.
 
-## Table of Contents
+For the full repository overview, including the Sanity Studio, see the root [`README.md`](../README.md).
 
-- [Overview](#overview)
-- [Current Stack](#current-stack)
-- [Project Structure](#project-structure)
-- [Architecture](#architecture)
-- [Main Routes](#main-routes)
-- [How Content Works Today](#how-content-works-today)
-- [Blog And Newsletter Architecture](#blog-and-newsletter-architecture)
-- [Sanity In This Frontend](#sanity-in-this-frontend)
+## Contents
+
+- [Stack](#stack)
+- [App Structure](#app-structure)
+- [Runtime Boot](#runtime-boot)
+- [Routing](#routing)
+- [Locale State](#locale-state)
+- [Content Model](#content-model)
+- [Sanity Integration](#sanity-integration)
+- [Newsletter API](#newsletter-api)
+- [Legacy Newsletter Rendering](#legacy-newsletter-rendering)
 - [Environment Variables](#environment-variables)
 - [Local Development](#local-development)
-- [Build And Preview](#build-and-preview)
-- [Deployment Notes](#deployment-notes)
-- [Notes For The Next Integration Pass](#notes-for-the-next-integration-pass)
+- [Build And Deployment](#build-and-deployment)
+- [Maintenance Notes](#maintenance-notes)
 
-## Overview
+## Stack
 
-This project is the live public frontend for the Sahaja Yoga München website.
-
-It currently includes:
-
-- a German/English language switch
-- a custom homepage with layered hero sections
-- a dedicated Shri Mataji area
-- dedicated knowledge hubs and article pages
-- a dedicated blog landing page
-- dedicated blog article routes
-- a newsletter archive and newsletter detail pages
-- a visual system built around sky-blue gradients and warm reddish-orange accents
-
-The frontend is no longer only "prepared" for Sanity. It already consumes Sanity content for:
-
-- blog posts
-- newsletter archive pages
-- newsletter issue detail pages
-- imported legacy newsletter HTML
-
-Other site areas are still driven by local TypeScript content and React components.
-
-## Current Stack
-
-| Layer | Technology |
+| Layer | Package / tool |
 | --- | --- |
-| UI | React 18 |
+| UI runtime | React 18 |
 | Language | TypeScript |
-| Build tool | Vite |
-| Routing | React Router |
-| Styling | Tailwind CSS |
-| CMS integration | `@sanity/client`, `@sanity/image-url` |
-| Motion / visuals | `three`, `vanta` |
+| Build tool | Vite 4 |
+| Router | React Router 7 |
+| Styles | Tailwind CSS 3 plus shared CSS utilities |
+| CMS client | `@sanity/client` |
+| Sanity image URLs | `@sanity/image-url` |
+| Visual effects | `three`, `vanta` |
 | Deployment target | Vercel |
 
-This is not a Next.js app. It is a Vite-based React frontend.
+This is not a Next.js app. Routing is handled in the browser and Vercel rewrites app routes to `index.html`.
 
-## Project Structure
-
-Key frontend folders and files:
-
-| Path | Purpose |
-| --- | --- |
-| `src/components/` | Reusable sections, layout blocks, newsletter helpers, and UI pieces |
-| `src/pages/` | Route-level page components |
-| `src/content/` | Local structured content plus Sanity mapping/query modules |
-| `src/context/LocaleContext.tsx` | German/English locale state |
-| `src/lib/sanity.ts` | Sanity client setup and image helpers |
-| `src/styles/tailwind.css` | Tailwind entry file plus shared custom utility styling |
-| `src/App.tsx` | Main route registration |
-| `api/newsletters.js` | Server endpoint for newsletter fetching |
-| `vercel.json` | Vercel build, header, caching, and SPA rewrite configuration |
-
-### Content-related files
-
-| Path | Role |
-| --- | --- |
-| `src/content/blogArticles.ts` | Static fallback blog content |
-| `src/content/sanityBlog.ts` | Sanity-backed blog query layer |
-| `src/content/sanityNewsletters.ts` | Sanity-backed newsletter query layer |
-| `src/content/topicPages.ts` | German knowledge hub content |
-| `src/content/topicPagesEn.ts` | English knowledge hub content |
-| `src/content/knowledgeArticles.ts` | Knowledge article content |
-
-## Architecture
+## App Structure
 
 ```text
-modern-website
-  |
-  +--> local TypeScript content
-  |      - knowledge hubs
-  |      - knowledge articles
-  |      - several homepage sections
-  |      - static fallback blog posts
-  |
-  +--> Sanity client integration
-  |      - blog listing and article routes
-  |      - newsletter content mapping
-  |
-  +--> /api/newsletters
-         - preferred newsletter fetch path in browser
-         - server-side access to Sanity
-         - fallback to direct Sanity fetch when needed
+modern-website/
+|-- api/
+|   `-- newsletters.js
+|-- src/
+|   |-- App.tsx
+|   |-- main.tsx
+|   |-- assets/
+|   |-- components/
+|   |-- content/
+|   |-- context/
+|   |-- hooks/
+|   |-- lib/
+|   |-- pages/
+|   `-- styles/
+|-- index.html
+|-- package.json
+|-- tailwind.config.cjs
+|-- vite.config.ts
+`-- vercel.json
 ```
 
-That means the frontend is intentionally hybrid:
+Key files:
 
-- stable static content remains local where that is simplest
-- editorially active sections are already Sanity-backed
+| File | Purpose |
+| --- | --- |
+| `src/main.tsx` | Mounts React, router, locale provider, and global CSS |
+| `src/App.tsx` | Central route table and app shell |
+| `src/context/LocaleContext.tsx` | `de`/`en` locale persistence |
+| `src/lib/sanity.ts` | Sanity browser client, image URL helper, and fetch helper |
+| `src/content/blogArticles.ts` | Static fallback blog article data |
+| `src/content/sanityBlog.ts` | Sanity blog fetch and mapping layer |
+| `src/content/sanityNewsletters.ts` | Newsletter fetch, mapping, and fallback logic |
+| `src/content/topicPages.ts` | German knowledge hub data |
+| `src/content/topicPagesEn.ts` | English knowledge hub data |
+| `src/content/knowledgeArticles.ts` | Local knowledge article data |
+| `src/components/LegacyNewsletterFrame.tsx` | Iframe renderer for imported legacy newsletter HTML |
+| `api/newsletters.js` | Vercel serverless endpoint for newsletter reads |
+| `vercel.json` | Vercel build, rewrite, cache, and security header config |
 
-## Main Routes
+## Runtime Boot
 
-Important route families currently registered in the app:
+`src/main.tsx` renders:
 
-| Route | Purpose | Source |
+```text
+React.StrictMode
+  BrowserRouter
+    LocaleProvider
+      App
+```
+
+`src/App.tsx` wraps every route with:
+
+- `ScrollToHash`
+- `NavBar`
+- React Router `Routes`
+- `Footer`
+
+The global stylesheet is `src/styles/tailwind.css`. Tailwind scans `index.html` and `src/**/*.{js,ts,jsx,tsx}`.
+
+## Routing
+
+Route definitions live in `src/App.tsx`.
+
+| Route | Component | Source |
 | --- | --- | --- |
-| `/` | Homepage | Local component content |
-| `/blog` | Blog and newsletter editorial landing page | Mixed local layout + Sanity/local data |
-| `/blog/:slug` | Individual blog article | Sanity `post` or local fallback |
-| `/blog/newsletter` | Newsletter archive page | Sanity `newsletter` |
-| `/blog/newsletter/:slug` | Individual newsletter issue | Sanity `newsletter` with optional legacy HTML import |
-| `/newsletter` | Legacy path | Redirect target for newsletter archive |
-| `/newsletter/:slug` | Legacy path | Redirect target for newsletter issue |
-| `/shri-mataji` | Shri Mataji page | Local code content |
-| `/shri-mataji/biografie` | Shri Mataji section route | Local code content |
-| `/shri-mataji/geistige-arbeit` | Shri Mataji section route | Local code content |
-| `/shri-mataji/oeffentliche-programme` | Shri Mataji section route | Local code content |
-| `/shri-mataji/zeitleiste` | Shri Mataji section route | Local code content |
-| `/shri-mataji/vermaechtnis` | Shri Mataji section route | Local code content |
-| `/kundalini-energiesystem` | Knowledge hub | Local content |
-| `/selbstverwirklichung-meditation` | Knowledge hub | Local content |
-| `/wissenschaft-spiritualitaet` | Knowledge hub | Local content |
-| `/kultur-des-geistes` | Knowledge hub | Local content |
-| `/:hub/:article` | Knowledge article route | Local content |
+| `/` | `HomePage` | Local components and assets |
+| `/blog` | `BlogPage` | Local layout, Sanity/local blog data, Sanity newsletter data |
+| `/blog/newsletter` | `NewsletterPage` | Sanity newsletters |
+| `/blog/newsletter/:slug` | `NewsletterRoute` | Sanity newsletter detail and optional legacy import |
+| `/blog/:slug` | `BlogArticleRoute` | Sanity post or local fallback |
+| `/newsletter` | `NewsletterPage` | Legacy-compatible archive path |
+| `/newsletter/:slug` | `NewsletterRoute` | Redirects to `/blog/newsletter/:slug` |
+| `/shri-mataji` | `ShriMatajiPage` | Local code |
+| `/shri-mataji/biografie` | `ShriMatajiPage` | Local code |
+| `/shri-mataji/geistige-arbeit` | `ShriMatajiPage` | Local code |
+| `/shri-mataji/oeffentliche-programme` | `ShriMatajiPage` | Local code |
+| `/shri-mataji/zeitleiste` | `ShriMatajiPage` | Local code |
+| `/shri-mataji/vermaechtnis` | `ShriMatajiPage` | Local code |
+| `/kundalini-energiesystem` | `KundaliniPage` | Local topic content |
+| `/selbstverwirklichung-meditation` | `SelbstverwirklichungPage` | Local topic content |
+| `/wissenschaft-spiritualitaet` | `WissenschaftPage` | Local topic content |
+| `/kultur-des-geistes` | `KulturPage` | Local topic content |
+| `/:hub/:article` | `KnowledgeArticleRoute` | Local knowledge article content |
 
-## How Content Works Today
+Route ordering is intentional. Newsletter routes are registered before `/blog/:slug`, so `/blog/newsletter` is not treated as a blog article slug.
 
-The site uses a split content model.
+## Locale State
 
-### Local TypeScript content
+The locale context supports:
 
-These areas are still maintained directly in the repo:
+- `de`
+- `en`
 
-| Area | Main Source |
-| --- | --- |
-| Knowledge hubs | `src/content/topicPages.ts`, `src/content/topicPagesEn.ts` |
-| Knowledge articles | `src/content/knowledgeArticles.ts` |
-| Several homepage sections | Individual components such as intro and sessions sections |
-| Static blog fallback | `src/content/blogArticles.ts` |
+Behavior:
 
-This is still useful because it keeps the app stable even when CMS configuration is incomplete.
+- default locale is `de`
+- selected locale is stored in `localStorage` under `locale`
+- `document.documentElement.lang` is updated whenever the locale changes
+- content modules receive the locale and return German or English data when available
 
-### Sanity-backed content
+## Content Model
 
-These areas already depend on Sanity:
+The frontend currently uses a hybrid content model.
 
-| Area | Main Source |
-| --- | --- |
-| Blog listing | Sanity `post` documents |
-| Blog article routes | Sanity `post` documents |
-| Newsletter archive | Sanity `newsletter` documents |
-| Newsletter issue detail pages | Sanity `newsletter` documents |
-| Legacy imported newsletter view | Sanity `legacyHtmlPage` documents referenced from newsletters |
+| Area | Source | Runtime fallback |
+| --- | --- | --- |
+| Homepage | React components | None |
+| Shri Mataji routes | React page/component code | None |
+| Knowledge hubs | `topicPages.ts`, `topicPagesEn.ts` | None |
+| Knowledge articles | `knowledgeArticles.ts` | None |
+| Blog listing | Sanity `post` documents | `blogArticles.ts` |
+| Blog detail pages | Sanity `post` documents | `blogArticles.ts` |
+| Newsletter archive | Sanity `newsletter` documents | Empty state |
+| Newsletter detail pages | Sanity `newsletter` documents | Redirect to archive |
+| Legacy newsletter HTML | Sanity `legacyHtmlPage` through `newsletter.legacyImport` | Hidden if missing |
 
-## Blog And Newsletter Architecture
+This means CMS setup is required for newsletters, while the blog remains usable locally through static fallback articles.
 
-### Blog
+## Sanity Integration
 
-The blog is a real website section with:
+### Client Setup
 
-- a dedicated landing page at `/blog`
-- dedicated article routes at `/blog/:slug`
-- local fallback content when Sanity is unavailable
-- a preview section connected to the homepage
-
-Current blog implementation centers on:
-
-| File | Role |
-| --- | --- |
-| `src/pages/BlogPage.tsx` | Main editorial landing page |
-| `src/pages/BlogArticleRoute.tsx` | Individual article route |
-| `src/content/blogArticles.ts` | Local fallback article model |
-| `src/content/sanityBlog.ts` | Sanity query + mapping layer |
-| `src/components/BlogSection.tsx` | Homepage preview section |
-
-### Newsletter
-
-The newsletter is also a first-class section now, not a placeholder link or detached archive.
-
-Current newsletter implementation centers on:
-
-| File | Role |
-| --- | --- |
-| `src/pages/NewsletterPage.tsx` | Archive landing page |
-| `src/pages/NewsletterRoute.tsx` | Individual issue page |
-| `src/content/sanityNewsletters.ts` | Newsletter query + mapping layer |
-| `src/components/LegacyNewsletterFrame.tsx` | Render path for imported legacy HTML |
-| `api/newsletters.js` | Server-side newsletter endpoint |
-
-This gives the site a more coherent editorial structure:
-
-- the blog and newsletter live in the same editorial area
-- the latest newsletter can be surfaced prominently on `/blog`
-- archived issues remain directly addressable
-- older HTML newsletters can still be preserved instead of discarded
-
-## Sanity In This Frontend
-
-Sanity already plays two different roles here.
-
-### 1. Direct frontend fetching
-
-Blog content is fetched directly through the Sanity client when the app is configured with:
+`src/lib/sanity.ts` reads Vite environment variables:
 
 - `VITE_SANITY_PROJECT_ID`
 - `VITE_SANITY_DATASET`
+- `VITE_SANITY_API_VERSION`, default `2026-03-22`
+- `VITE_SANITY_USE_CDN`, enabled unless set exactly to `false`
 
-If Sanity is not configured, the blog falls back to local static content.
+If project ID or dataset is missing:
 
-### 2. API-first newsletter fetching
+- `isSanityConfigured` is `false`
+- `sanityClient` is `null`
+- blog Sanity fetches return `null`
+- newsletter direct Sanity fallback cannot run
 
-Newsletter content uses an API-first flow:
+### Blog Fetching
 
-1. the browser requests `/api/newsletters`
-2. that endpoint fetches the relevant `newsletter` documents from Sanity
-3. if the API route is unavailable, the frontend falls back to direct Sanity fetches
-4. newsletter pages can optionally load linked `legacyHtmlPage` imports
+`src/content/sanityBlog.ts` exposes:
 
-That API-first structure is useful because newsletters have a more complex retrieval path than the blog and can include archive-specific data.
+- `getSanityBlogArticles(locale)`
+- `getSanityBlogArticleBundle(locale, route)`
+
+Sanity query behavior:
+
+- fetches `post` documents for the active locale
+- orders listing data by `featured desc, publishedAt desc`
+- resolves category title through `category->title`
+- resolves related posts through `related[]->`
+- maps Sanity images through `getSanityImageUrl`
+
+A Sanity blog post must include these fields to render:
+
+- `slug.current`
+- `title`
+- `cardTitle`
+- `cardDescription`
+- `intro`
+- `heroImage`
+- `heroNote`
+- at least one section with `title` and `paragraphs`
+
+If mapping fails or no valid Sanity posts are returned, the app keeps the local fallback articles.
+
+### Newsletter Fetching
+
+`src/content/sanityNewsletters.ts` exposes:
+
+- `getSanityNewsletters(locale)`
+- `getSanityNewsletter(locale, slug)`
+- `getSanityNewsletterLegacyImport(locale, slug)`
+
+Newsletter reads are API-first in the browser:
+
+```text
+browser
+  |
+  +--> /api/newsletters
+        |
+        +--> Sanity server-side read
+```
+
+If the API fails, the module falls back to direct browser Sanity queries when the browser Sanity client is configured.
+
+Newsletter list behavior:
+
+- query localized newsletters first
+- if no localized newsletters exist, query all newsletters
+- order by `publishedAt desc`
+
+Newsletter detail behavior:
+
+- query localized issue by slug first
+- if no localized issue exists, query any issue with the slug
+
+A newsletter must include these fields to render:
+
+- `title`
+- `slug.current`
+- `issueLabel`
+- `introBody`
+- `publishedAt`
+
+Cards, links, schedules, donation fields, contact fields, and legacy imports are optional.
+
+## Newsletter API
+
+`api/newsletters.js` is a Vercel serverless function. It uses `@sanity/client` server-side and reads:
+
+- `process.env.VITE_SANITY_PROJECT_ID`
+- `process.env.VITE_SANITY_DATASET`
+- `process.env.VITE_SANITY_API_VERSION`, default `2026-03-22`
+
+It always uses `useCdn: false`.
+
+### Query Parameters
+
+| Parameter | Required | Purpose |
+| --- | --- | --- |
+| `locale` | No | Defaults to `de` |
+| `slug` | No | When present, fetches one issue instead of the archive list |
+| `includeLegacy` | No | When set to `1`, returns legacy import fields only |
+
+Examples:
+
+```text
+/api/newsletters?locale=de
+/api/newsletters?locale=de&slug=sahaja-yoga-newsletter-01-2026
+/api/newsletters?locale=de&slug=sahaja-yoga-newsletter-01-2026&includeLegacy=1
+```
+
+### Responses
+
+- `200`: JSON array of matching records
+- `503`: Sanity project ID or dataset is missing on the server
+- `500`: Sanity fetch failed or an unexpected server error occurred
+
+The Vercel config sets `Cache-Control: no-store` for `/api/*`.
+
+## Legacy Newsletter Rendering
+
+Imported legacy newsletter HTML is stored in Sanity as `legacyHtmlPage.rawHtml` and linked from `newsletter.legacyImport`.
+
+The detail page loads legacy HTML only after the user opens the imported issue view.
+
+`LegacyNewsletterFrame` then:
+
+- removes `<script>` and `<noscript>` blocks
+- extracts the `<body>` content when a body tag exists
+- injects local responsive CSS for old newsletter table layouts
+- renders the result through an iframe `srcDoc`
+- listens for iframe `postMessage` events to resize the iframe height
+
+This renderer is a compatibility layer for archived newsletter content. It is not a general-purpose HTML sanitizer.
 
 ## Environment Variables
 
-Copy `.env.example` to `.env.local`.
-
-| Variable | Required | Purpose |
-| --- | --- | --- |
-| `VITE_SITE_URL` | Recommended | Site URL for deployment-related configuration |
-| `VITE_SANITY_PROJECT_ID` | Required for Sanity features | Sanity project ID |
-| `VITE_SANITY_DATASET` | Required for Sanity features | Sanity dataset |
-| `VITE_SANITY_API_VERSION` | Recommended | Sanity API version |
-| `VITE_SANITY_USE_CDN` | Optional | Enables Sanity CDN reads unless set to `false` |
-
-Example:
+Create `modern-website/.env.local`.
 
 ```bash
 VITE_SITE_URL=http://localhost:5173
@@ -254,9 +308,17 @@ VITE_SANITY_API_VERSION=2026-03-22
 VITE_SANITY_USE_CDN=true
 ```
 
-Important note:
+| Variable | Required | Purpose |
+| --- | --- | --- |
+| `VITE_SITE_URL` | No | Canonical app URL placeholder; current app code does not read it |
+| `VITE_SANITY_PROJECT_ID` | Required for CMS content | Sanity project ID |
+| `VITE_SANITY_DATASET` | Required for CMS content | Sanity dataset |
+| `VITE_SANITY_API_VERSION` | Recommended | Sanity API version |
+| `VITE_SANITY_USE_CDN` | Optional | Browser Sanity CDN toggle |
 
-- the Vercel newsletter API route also needs the Sanity variables in the deployment environment
+The newsletter API route also needs the `VITE_SANITY_*` values in the deployment environment because it reads them from `process.env`.
+
+The checked-in `.env.example` includes `VITE_SITE_URL`, `VITE_GA_ID`, and `VITE_API_URL` placeholders. The current app code does not use them.
 
 ## Local Development
 
@@ -266,69 +328,84 @@ Install dependencies:
 npm install
 ```
 
-Start the app:
+Start Vite:
 
 ```bash
 npm run dev
 ```
 
-Vite runs locally at:
+Default local URL:
 
 ```text
 http://localhost:5173
 ```
 
-Useful local commands:
+Useful commands:
 
 | Command | Purpose |
 | --- | --- |
-| `npm run dev` | Start local development |
-| `npm run build` | Type-check and build |
-| `npm run preview` | Preview production build |
-| `npm run type-check` | Run TypeScript checks |
-| `npm run lint` | Current lint shortcut, implemented as type-checking |
-| `npm run format` | Format source files with Prettier |
+| `npm run dev` | Start the local Vite server |
+| `npm run build` | Run TypeScript validation and production build |
+| `npm run preview` | Preview the production build |
+| `npm run type-check` | Run `tsc --noEmit` |
+| `npm run lint` | Current lightweight lint command; it is TypeScript validation, not ESLint |
+| `npm run format` | Format frontend source and `index.html` with Prettier |
 
-## Build And Preview
+If the local Vite server does not serve `/api/newsletters`, newsletter fetching can still work through direct Sanity fallback as long as:
 
-Create a production build:
+- the Sanity browser env vars are present
+- Sanity CORS allows `http://localhost:5173`
+
+## Build And Deployment
+
+Build:
 
 ```bash
 npm run build
 ```
 
-Preview the built output locally:
+Preview the built output:
 
 ```bash
 npm run preview
 ```
 
-## Deployment Notes
+Vercel settings are defined in `vercel.json`.
 
-The app is configured for Vercel through `vercel.json`.
-
-Current deployment behavior:
-
-| Concern | Current behavior |
+| Setting | Value |
 | --- | --- |
-| Framework | Vite |
+| Framework | `vite` |
 | Install command | `npm install` |
 | Build command | `npm run build` |
+| Dev command | `npm run dev` |
 | Output directory | `dist` |
-| SPA routing | Non-asset requests rewrite to `index.html` |
-| Newsletter API | `/api/newsletters` served as a dynamic endpoint |
-| Static asset caching | Long-lived immutable caching |
-| HTML / route caching | Revalidation-oriented headers for app routes |
+| SPA rewrite | Extensionless non-API and non-asset requests go to `/index.html` |
+| API cache | `/api/*` is `no-store` |
+| Asset cache | `/assets/*` is immutable for one year |
+| App shell cache | `index.html` and route responses revalidate |
 
-If you deploy this frontend separately, make sure the deployment environment includes the same Sanity values used locally.
+When creating the Vercel project, set the project root to:
 
-## Notes For The Next Integration Pass
+```text
+modern-website
+```
 
-The strongest next improvements would be:
+Required production environment for CMS features:
 
-1. keep the current blog/newsletter Sanity integration and avoid rewriting it unnecessarily
-2. connect `siteSettings` from the Studio into the frontend where it is genuinely useful
-3. move only the most editorially active homepage or knowledge sections into Sanity, rather than forcing a full CMS migration all at once
-4. preserve the current local fallback approach for the blog because it keeps local development and partial configuration simpler
+```text
+VITE_SANITY_PROJECT_ID
+VITE_SANITY_DATASET
+VITE_SANITY_API_VERSION
+```
 
-In other words, the app is past the "should we add Sanity?" stage. The better question now is which remaining static sections are worth moving into Sanity next, and which should stay code-owned for stability.
+Also configure Sanity CORS for the deployed domain.
+
+## Maintenance Notes
+
+- There is no frontend test runner configured.
+- `npm run build` is the strongest automated verification currently available.
+- `npm run lint` is not ESLint.
+- Blog content has a local fallback; newsletter content does not.
+- Sanity `siteSettings` exists in the Studio but is not consumed by this app.
+- Knowledge and homepage content are still code-owned.
+- Imported legacy HTML is rendered for archive compatibility and should be treated as trusted migration content, not arbitrary user input.
