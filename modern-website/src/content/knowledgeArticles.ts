@@ -305,61 +305,56 @@ const articlesDe: Record<string, KnowledgeArticle> = {
       'Der Void ergänzt die sieben Hauptchakren als Raum von Würde und Selbstführung.'
     ],
     details: {
-      eyebrow: 'Die Zentren im Überblick',
-      title: 'Von Mooladhara bis Sahasrara',
+      eyebrow: 'Die Zentren des Systems',
+      title: 'Sieben Hauptchakren und der Raum des Void im Überblick',
       description:
-        'Diese Darstellung arbeitet die Zentren nicht nur symbolisch aus, sondern in ihrer psychologischen und körperlichen Bedeutung. Genau daraus entsteht eine präzise und moderne Lesart des subtilen Systems.',
+        'Jedes Zentrum hat eine subtile Qualität und zugleich eine körperliche Entsprechung. Wenn ein Chakra gestört ist, spürt man das oft im Verhalten, in Beziehungen oder in der Physiologie; wenn es genährt wird, zeigt sich dieselbe Qualität als Stärke.',
       items: [
         {
           title: 'Mooladhara',
-          subtitle: 'Unschuld und Weisheit',
+          subtitle: 'Unschuld, Weisheit, Richtung',
           description:
-            'Das erste Chakra bildet das Fundament des Systems. Es bewahrt Würde, kindliche Reinheit, Richtungssinn und die Fähigkeit, in Harmonie mit der Natur zu leben.',
-          note: 'Physische Entsprechung: Fortpflanzungs- und Ausscheidungssystem, Sexualorgane.',
+            'Das Fundament des Systems. Es schützt angeborene Würde, kindliche Lauterkeit und die Harmonie mit der Natur; körperlich ist es mit Fortpflanzungs- und Ausscheidungssystem verbunden.',
           image: mooladharaDeImg,
-          alt: 'Mooladhara',
+          alt: 'Mooladhara-Chakra',
           imageMode: 'contain',
           ...chakraFlipHover(mooladharaHoverImg)
         },
         {
           title: 'Swadisthana',
-          subtitle: 'Kreativität und Spontanität',
+          subtitle: 'Kreativität, Spontanität, Aufmerksamkeit',
           description:
-            'Dieses Zentrum versorgt Denken und Handeln mit Energie. Es trägt Ideenreichtum, Schönheitssinn, reines Wissen und jene Aufmerksamkeit, die für Meditation ungestört bleiben muss.',
-          note: 'Physische Entsprechung: Magen, Darm, untere Leber, Gallenblase und Milz.',
+            'Dieses Zentrum versorgt Denken und Handeln mit Energie. In Balance werden Kreativität, Schönheitssinn, klares Begreifen und ungestörte Aufmerksamkeit lebendig.',
           image: swadisthanaDeImg,
-          alt: 'Swadisthana',
+          alt: 'Swadisthana-Chakra',
           imageMode: 'contain',
           ...chakraFlipHover(swadisthanaHoverImg)
         },
         {
           title: 'Nabhi',
-          subtitle: 'Ruhe und Zufriedenheit',
+          subtitle: 'Zufriedenheit, Fürsorge, Frieden',
           description:
-            'Nabhi steht für Verdauung, Stoffwechsel und die Art, wie materielle Bedürfnisse in Frieden integriert werden. Es trägt Fürsorge, Rechtschaffenheit, Freude und ein Gefühl von Genüge.',
-          note: 'Physische Entsprechung: Magen, Eingeweide, obere Leber, Gallenblase und Milz.',
+            'Nabhi ordnet Verdauung, Stoffwechsel und das Verhältnis zu materiellen Bedürfnissen. Es unterstützt Zufriedenheit, Rechtschaffenheit, familiäre Stabilität und Freude.',
           image: nabhiDeImg,
-          alt: 'Nabhi',
+          alt: 'Nabhi-Chakra',
           imageMode: 'contain',
           ...chakraFlipHover(nabhiHoverImg)
         },
         {
           title: 'Void',
-          subtitle: 'Selbstdisziplin',
+          subtitle: 'Selbstdisziplin, Würde, Wahrheitssuche',
           description:
-            'Der Void steht für den Raum, in dem Wissen reift und innere Autorität entsteht. Hier entwickeln sich Würde, Entschlossenheit, Geduld und die Fähigkeit, sich selbst geistig zu führen.',
-          note: 'Der Void bildet mit Nabhi und Swadisthana eine integrierte Gruppe des inneren Wachstums.',
+            'Die Leere steht für den Raum zwischen den Zentren, in dem unerleuchtetes Wissen in echtes Verständnis verwandelt wird. Hier reifen Selbstführung, Geduld und spiritische Ernsthaftigkeit.',
           image: voidDeImg,
-          alt: 'Void',
+          alt: 'Void-Bereich des subtilen Systems',
           imageMode: 'contain',
           ...chakraFlipHover(voidHoverImg)
         },
         {
           title: 'Herz',
-          subtitle: 'Liebe, Mitgefühl und Sicherheit',
+          subtitle: 'Liebe, Mitgefühl, Sicherheit',
           description:
-            'Das Herzchakra öffnet bedingungslose Liebe, Vertrauen und das Gefühl innerer Geborgenheit. Es hilft, Angst zu lösen und sich selbst und andere auf wärmere Weise wahrzunehmen.',
-          note: 'Physische Entsprechung: Herz, Lunge, Brustraum, Atmung und Thymusdrüse.',
+            'Das Herz öffnet bedingungslose Liebe, Vertrauen und innere Sicherheit. Körperlich stützt es Herz, Lunge, Brustraum und jene Kräfte, die den Organismus schützen.',
           image: heartDeImg,
           alt: 'Herz-Chakra',
           imageMode: 'contain',
@@ -367,10 +362,9 @@ const articlesDe: Record<string, KnowledgeArticle> = {
         },
         {
           title: 'Vishuddi',
-          subtitle: 'Kommunikation und Diplomatie',
+          subtitle: 'Kommunikation, Diplomatie, Gemeinschaft',
           description:
-            'Dieses Zentrum verfeinert Sprache, Humor, Höflichkeit und Gemeinschaftssinn. Es ist wesentlich für gesunde Beziehungen und die Fähigkeit, Spannung mit Respekt zu entschärfen.',
-          note: 'Physische Entsprechung: Hals, Arme, Mund, Zunge, Zähne, Nase und Gesicht.',
+            'Dieses Zentrum verfeinert Sprache, Humor, Respekt und Beziehungskompetenz. Es hilft, Spannungen zu entschärfen, ohne Würde oder Verbundenheit zu verlieren.',
           image: vishuddiDeImg,
           alt: 'Vishuddi-Chakra',
           imageMode: 'contain',
@@ -378,10 +372,9 @@ const articlesDe: Record<string, KnowledgeArticle> = {
         },
         {
           title: 'Agnya',
-          subtitle: 'Vergebung und Stille',
+          subtitle: 'Vergebung, Stille, innere Weite',
           description:
-            'Agnya bringt Ego und Konditionierungen ins Gleichgewicht. Seine Essenz ist Vergebung, und genau dadurch öffnet sich der Zugang zu gedankenfreiem Gewahrsein.',
-          note: 'Physische Entsprechung: Sehen, Hören, Denken, Hypophyse und Zirbeldrüse.',
+            'Agnya ist das Tor zur gedankenfreien Stille. Es bringt Ego und Konditionierungen ins Gleichgewicht und wird frei, wenn echte Vergebung möglich wird.',
           image: agnyaDeImg,
           alt: 'Agnya-Chakra',
           imageMode: 'contain',
@@ -389,10 +382,9 @@ const articlesDe: Record<string, KnowledgeArticle> = {
         },
         {
           title: 'Sahasrara',
-          subtitle: 'Integration',
+          subtitle: 'Integration, Einheit, Verbundenheit',
           description:
-            'Im Sahasrara werden die verschiedenen Aspekte des Systems zu Einheit. Hier wird die Verbindung zur allgegenwärtigen Kraft als Integration, Sinn und Ganzheit erfahren.',
-          note: 'Physische Entsprechung: Gehirn.',
+            'Im höchsten Zentrum verbinden sich alle Aspekte des Systems. Hier wird die Beziehung zur allgegenwärtigen Kraft als Einheit, Sinn und umfassende Integration erfahren.',
           image: sahasraraDeImg,
           alt: 'Sahasrara-Chakra',
           imageMode: 'contain',
@@ -1245,61 +1237,56 @@ const articlesEn: Record<string, KnowledgeArticle> = {
       'The Void complements the seven chakras as a field of dignity and self-mastery.'
     ],
     details: {
-      eyebrow: 'The centres at a glance',
-      title: 'From Mooladhara to Sahasrara',
+      eyebrow: 'The Centres of the System',
+      title: 'Seven main chakras and the field of the Void',
       description:
-        'This presentation develops the centres not merely symbolically, but through their psychological and physical meaning. That is what gives this system a modern and surprisingly precise feel.',
+        'Each centre has a subtle quality and a bodily correspondence. When a chakra is strained the effect often appears in behaviour, relationship or physiology; when it is nourished, the same quality becomes a strength.',
       items: [
         {
           title: 'Mooladhara',
-          subtitle: 'Innocence and wisdom',
+          subtitle: 'Innocence, wisdom, direction',
           description:
-            'The first chakra forms the foundation of the system. It protects dignity, childlike purity, direction and the ability to remain in harmony with nature.',
-          note: 'Physical correspondence: reproductive and excretory systems, sexual organs.',
+            'The foundation of the system. It protects inborn dignity, childlike purity and harmony with nature, and is linked physically with reproductive and excretory functions.',
           image: mooladharaDeImg,
-          alt: 'Mooladhara',
+          alt: 'Mooladhara chakra',
           imageMode: 'contain',
           ...chakraFlipHover(mooladharaHoverImg)
         },
         {
           title: 'Swadisthana',
-          subtitle: 'Creativity and spontaneity',
+          subtitle: 'Creativity, spontaneity, attention',
           description:
-            'This centre supplies energy for thought and action. It carries creativity, appreciation of beauty, pure knowledge and the kind of attention meditation depends on.',
-          note: 'Physical correspondence: stomach, intestines, lower liver, gall bladder and spleen.',
+            'This centre energises thinking and doing. In balance it expresses creativity, appreciation of beauty, clear perception and undisturbed attention.',
           image: swadisthanaDeImg,
-          alt: 'Swadisthana',
+          alt: 'Swadisthana chakra',
           imageMode: 'contain',
           ...chakraFlipHover(swadisthanaHoverImg)
         },
         {
           title: 'Nabhi',
-          subtitle: 'Peace and contentment',
+          subtitle: 'Contentment, care, peace',
           description:
-            'Nabhi governs digestion, metabolism and the way material needs are integrated in peace. It supports satisfaction, righteousness, care and joy.',
-          note: 'Physical correspondence: stomach, intestines, upper liver, gall bladder and spleen.',
+            'Nabhi governs digestion, metabolism and the way we relate to worldly needs. It supports satisfaction, righteousness, family stability and joy.',
           image: nabhiDeImg,
-          alt: 'Nabhi',
+          alt: 'Nabhi chakra',
           imageMode: 'contain',
           ...chakraFlipHover(nabhiHoverImg)
         },
         {
           title: 'Void',
-          subtitle: 'Self-discipline',
+          subtitle: 'Self-discipline, dignity, search for truth',
           description:
-            'The Void is the field in which knowledge ripens and inner authority appears. Here self-guidance, patience, dignity and the search for truth are strengthened.',
-          note: 'The Void works together with Nabhi and Swadisthana as an integrated group of growth.',
+            'The Void is the field in which unilluminated knowledge is transformed into real understanding. Here self-mastery, patience and spiritual seriousness develop.',
           image: voidDeImg,
-          alt: 'Void',
+          alt: 'Void region',
           imageMode: 'contain',
           ...chakraFlipHover(voidHoverImg)
         },
         {
           title: 'Heart',
-          subtitle: 'Love, compassion and security',
+          subtitle: 'Love, compassion, security',
           description:
-            'The heart chakra opens unconditional love, trust and inner security. It helps fear dissolve and makes the self and others easier to meet with warmth.',
-          note: 'Physical correspondence: heart, lungs, chest, breathing and thymus gland.',
+            'The heart opens unconditional love, trust and inner security. On the physical level it supports the heart, lungs, chest and the body’s protective strength.',
           image: heartDeImg,
           alt: 'Heart chakra',
           imageMode: 'contain',
@@ -1307,10 +1294,9 @@ const articlesEn: Record<string, KnowledgeArticle> = {
         },
         {
           title: 'Vishuddi',
-          subtitle: 'Communication and diplomacy',
+          subtitle: 'Communication, diplomacy, collectivity',
           description:
-            'This centre refines speech, humour, politeness and collectivity. It is essential for healthy relationships and for dissolving tension without losing respect.',
-          note: 'Physical correspondence: throat, arms, mouth, tongue, teeth, nose and face.',
+            'This centre refines speech, humour, respect and relational intelligence. It helps tension dissolve without losing dignity or connection.',
           image: vishuddiDeImg,
           alt: 'Vishuddi chakra',
           imageMode: 'contain',
@@ -1318,10 +1304,9 @@ const articlesEn: Record<string, KnowledgeArticle> = {
         },
         {
           title: 'Agnya',
-          subtitle: 'Forgiveness and stillness',
+          subtitle: 'Forgiveness, silence, inner space',
           description:
-            'Agnya brings ego and conditioning into balance. Its essence is forgiveness, and through that forgiveness the gateway to thought-free awareness opens.',
-          note: 'Physical correspondence: seeing, hearing, thinking, pituitary and pineal glands.',
+            'Agnya is the gateway to thought-free stillness. It balances ego and conditioning and becomes clear when genuine forgiveness is possible.',
           image: agnyaDeImg,
           alt: 'Agnya chakra',
           imageMode: 'contain',
@@ -1329,10 +1314,9 @@ const articlesEn: Record<string, KnowledgeArticle> = {
         },
         {
           title: 'Sahasrara',
-          subtitle: 'Integration',
+          subtitle: 'Integration, unity, connectedness',
           description:
-            'At Sahasrara the different aspects of the system become one. Connection with the all-pervading power is experienced here as unity, meaning and wholeness.',
-          note: 'Physical correspondence: brain.',
+            'At the highest centre all aspects of the system come together. Here connection with the all-pervading power is experienced as unity, meaning and integration.',
           image: sahasraraDeImg,
           alt: 'Sahasrara chakra',
           imageMode: 'contain',

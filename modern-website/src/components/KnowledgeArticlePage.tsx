@@ -526,31 +526,45 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
                     key={`${item.title}-${item.subtitle}`}
                     className={`interactive-card reveal-ready group ${
                       usesFlipHover
-                        ? 'relative h-full overflow-hidden [perspective:1600px] hover:z-20'
+                        ? 'isolate min-h-[31rem] overflow-hidden [perspective:1600px] hover:z-20'
                         : `flex h-full flex-col overflow-hidden ${useSquareMeditationDetails ? 'lg:h-[32rem]' : ''}`
                     }`}
                   >
                     {usesFlipHover ? (
-                      <div className="relative h-full transform-gpu [transform-style:preserve-3d] [transform:rotateY(0deg)] transition duration-700 [will-change:transform] group-hover:[transform:rotateY(180deg)]">
-                        <div className="flex h-full flex-col overflow-hidden rounded-[1.5rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,248,244,0.88))] transform-gpu [-webkit-backface-visibility:hidden] [backface-visibility:hidden]">
-                          {detailImage}
-                          {detailCopy}
-                        </div>
+                      <div className="relative h-full min-h-[31rem] transform-gpu">
+                        <div className="relative h-full min-h-[31rem] transform-gpu [transform-style:preserve-3d] [transform:rotateY(0deg)] transition duration-700 [will-change:transform] group-hover:[transform:rotateY(180deg)]">
+                          <div className="absolute inset-0 flex h-full flex-col overflow-hidden rounded-[1.5rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,248,244,0.88))] transform-gpu [-webkit-backface-visibility:hidden] [backface-visibility:hidden]">
+                            <div className="relative h-56 overflow-hidden rounded-t-[1.5rem] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(226,243,255,0.92))] p-4">
+                              <img
+                                src={item.image}
+                                alt={item.alt}
+                                className="h-full w-full rounded-[1.1rem] object-contain transition duration-700 group-hover:scale-[1.08]"
+                              />
+                            </div>
+                            <div className="relative flex flex-1 flex-col p-6">
+                              <h3 className="text-balance text-2xl text-slate-800">{item.title}</h3>
+                              <p className="mt-2 text-sm font-semibold uppercase tracking-[0.18em] text-[#b35d4c]">
+                                {item.subtitle}
+                              </p>
+                              <p className="mt-3 flex-1 leading-8 text-slate-700">{item.description}</p>
+                            </div>
+                          </div>
 
-                        <div className="absolute inset-0 overflow-hidden rounded-[1.5rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,248,244,0.88))] transform-gpu [-webkit-backface-visibility:hidden] [backface-visibility:hidden] [transform:rotateY(180deg)]">
-                          <div className={`absolute inset-0 ${item.hoverBackgroundFrameClassName ?? ''}`}>
-                            <img
-                              src={item.hoverBackgroundImage}
-                              alt=""
-                              aria-hidden="true"
-                              className={`h-full w-full ${
-                                item.hoverBackgroundImageMode === 'contain'
-                                  ? 'object-contain'
-                                  : 'object-cover object-center'
-                              } transition duration-700 ${
-                                item.hoverBackgroundImageClassName ?? 'scale-[0.92] group-hover:scale-[0.96]'
-                              }`}
-                            />
+                          <div className="absolute inset-0 overflow-hidden rounded-[1.5rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,248,244,0.88))] transform-gpu [-webkit-backface-visibility:hidden] [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                            <div className={`absolute inset-0 ${item.hoverBackgroundFrameClassName ?? ''}`}>
+                              <img
+                                src={item.hoverBackgroundImage}
+                                alt=""
+                                aria-hidden="true"
+                                className={`h-full w-full ${
+                                  item.hoverBackgroundImageMode === 'contain'
+                                    ? 'object-contain'
+                                    : 'object-cover object-center'
+                                } transition duration-700 ${
+                                  item.hoverBackgroundImageClassName ?? 'scale-[0.92] group-hover:scale-[0.96]'
+                                }`}
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
