@@ -53,7 +53,7 @@ export type KnowledgeArticleDetailCard = {
   alt: string;
   imageMode?: 'cover' | 'contain';
   hoverBackgroundImage?: string;
-  hoverBackgroundImageMode?: 'cover' | 'contain';
+  hoverBackgroundImageMode?: 'cover' | 'contain' | 'fill';
   hoverBackgroundFrameClassName?: string;
   hoverBackgroundImageClassName?: string;
 };
@@ -83,10 +83,9 @@ export type KnowledgeArticle = {
 
 const chakraFlipHover = (hoverBackgroundImage: string) => ({
   hoverBackgroundImage,
-  hoverBackgroundImageMode: 'contain' as const,
-  hoverBackgroundFrameClassName:
-    'bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.98),rgba(226,243,255,0.92))] p-1',
-  hoverBackgroundImageClassName: 'scale-[0.99] group-hover:scale-[1.02]'
+  hoverBackgroundImageMode: 'fill' as const,
+  hoverBackgroundFrameClassName: 'bg-white',
+  hoverBackgroundImageClassName: 'rounded-[1.5rem]'
 });
 
 const articlesDe: Record<string, KnowledgeArticle> = {

@@ -135,6 +135,7 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
   const useSquareMeditationDetails =
     article.route === '/selbstverwirklichung-meditation/gedankenfreie-stille' ||
     article.route === '/selbstverwirklichung-meditation/meditationspraxis';
+  const isChakrasQualitiesPage = article.route === '/kundalini-energiesystem/chakren-und-qualitaeten';
   const detailsGridClassName =
     article.route === '/kundalini-energiesystem/kundalini' ||
     article.route === '/selbstverwirklichung-meditation/selbstverwirklichung' ||
@@ -148,6 +149,8 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
     article.route === '/kundalini-energiesystem/kanaele-und-balance' ||
     useSquareMeditationDetails
       ? 'section-shell max-w-[96rem]'
+      : isChakrasQualitiesPage
+        ? 'section-shell max-w-[79.1rem]'
       : 'section-shell';
   const useSplitBlockLayout = useThreeUpFeatureBlocks || useTwoUpChannelBlocks;
   const leadingBlocks = useSplitBlockLayout ? article.blocks.slice(0, 1) : article.blocks;
@@ -487,6 +490,12 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
             <div className={detailsGridClassName}>
               {article.details.items.map(item => {
                 const usesFlipHover = Boolean(item.hoverBackgroundImage);
+                const hoverBackgroundImageFitClass =
+                  item.hoverBackgroundImageMode === 'fill'
+                    ? 'object-fill'
+                    : item.hoverBackgroundImageMode === 'contain'
+                      ? 'object-contain'
+                      : 'object-cover object-center';
                 const detailImage = (
                   <div
                     className={`relative overflow-hidden rounded-t-[1.5rem] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.96),rgba(224,243,255,0.92))] p-4 ${
@@ -556,11 +565,7 @@ const KnowledgeArticlePage: React.FC<KnowledgeArticlePageProps> = ({
                                 src={item.hoverBackgroundImage}
                                 alt=""
                                 aria-hidden="true"
-                                className={`h-full w-full ${
-                                  item.hoverBackgroundImageMode === 'contain'
-                                    ? 'object-contain'
-                                    : 'object-cover object-center'
-                                } transition duration-700 ${
+                                className={`h-full w-full ${hoverBackgroundImageFitClass} transition duration-700 ${
                                   item.hoverBackgroundImageClassName ?? 'scale-[0.92] group-hover:scale-[0.96]'
                                 }`}
                               />
